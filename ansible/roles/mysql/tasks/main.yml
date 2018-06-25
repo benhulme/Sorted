@@ -1,0 +1,22 @@
+---
+# tasks file for mysql
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install dependent repository
+  apt: name=python-apt state=present
+
+- name: Set root password for mysql
+  debconf: name='mysql-server' question='mysql-server/root_password' vtype=password value='yaeWail2ve'
+
+- name: Set root pw
+  debconf: name='mysql-server' question='mysql-server/root_password_again' vtype=password value='yaeWail2ve'
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install MySQL
+  apt: name='mysql-server'
+
+- name: Start MySQL
+  service: name=mysql state=started

@@ -1,0 +1,7 @@
+[2016-01-14 17:21:46] /BlogApiCept.php.INFO: send get "/blog/get" [] []
+[2016-01-14 17:21:46] /BlogApiCept.php.INFO: see response code is 200 [] []
+[2016-01-14 17:21:46] /BlogApiCept.php.INFO: PASSED [] []
+[2016-01-14 17:22:09] /BlogApiCept.php.INFO: send get "/blog/get" [] []
+[2016-01-14 17:22:10] /BlogApiCept.php.INFO: see response code is 200 [] []
+[2016-01-14 17:22:10] /BlogApiCept.php.INFO: see response contains json {"ClassName":"SortedBlogPost"} [] []
+[2016-01-14 17:22:10] /BlogApiCept.php.INFO: PASSED [] []

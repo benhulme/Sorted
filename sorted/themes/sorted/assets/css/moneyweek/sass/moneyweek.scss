@@ -1,0 +1,1034 @@
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../Fonts/icomoon.eot?fet8hz');
+  src:  url('../Fonts/icomoon.eot?fet8hz#iefix') format('embedded-opentype'),
+  url('../Fonts/icomoon.ttf?fet8hz') format('truetype'),
+  url('../Fonts/icomoon.woff?fet8hz') format('woff'),
+  url('../Fonts/icomoon.svg?fet8hz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-navigate_next:before {
+  content: "\e409";
+}
+.icon-keyboard_arrow_down:before {
+  content: "\e313";
+}
+.icon-keyboard_arrow_left:before {
+  content: "\e314";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e315";
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e316";
+}
+.icon-menu:before {
+  content: "\e5d2";
+}
+
+
+
+/* Fonts */
+h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+a {
+  color: #06739a;
+}
+
+a:link, a:active, a:focus, a:visited {
+  color: #06739a;
+}
+
+@media (min-width: $screen-sm-min) {
+  h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Buttons */
+.moneyweek {
+  &.btn-primary {
+    margin-top: 12px;
+    padding: 14px 22px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+
+    display: inline-block;
+    line-height: 1;
+    height: auto;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/* Load more */
+.load-more-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  /* Load more */
+  &.load-more {
+    width: 100%;
+    max-width: 288px;
+    text-transform: uppercase;
+    color: rgba(0,0,0, 0.5);
+    border: 1px solid rgba(0,0,0, 0.5);
+    background-color: transparent;
+    border-radius: 0;
+
+    .icon-chevron-down,
+    .icon-chevron-up {
+      color: #ff6400;
+    }
+
+    span.icon {
+       float: right;
+       font-size: 18px;
+       margin-top: -1px;
+       margin-right: 5px;
+     }
+  }
+
+  /* Collapse */
+  &.collapse-item {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+
+    transform: rotate(0deg);
+    -webkit-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+    @media (min-width: $screen-sm-min) {
+      font-size: 30px;
+    }
+
+    &.set-open {
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.row-full {
+  width: 100%;
+}
+
+.background-solid-green {
+  background-color: #c9dd00;
+}
+
+.blade-background-green-gradient,
+.background-gradient-green {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9dd00+0,deeb73+100 */
+  background: #c9dd00; /* Old browsers */
+  background: -moz-linear-gradient(top,  #c9dd00 0%, #deeb73 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #c9dd00 0%,#deeb73 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #c9dd00 0%,#deeb73 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9dd00', endColorstr='#deeb73',GradientType=0 ); /* IE6-9 */
+
+}
+
+.background-solid-red {
+  background-color: #f1642c;
+}
+
+.background-gradient-red {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1642c+0,ef7240+100 */
+  background: #f1642c; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f1642c 0%, #ef7240 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #f1642c 0%,#ef7240 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #f1642c 0%,#ef7240 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1642c', endColorstr='#ef7240',GradientType=0 ); /* IE6-9 */
+
+  .helpful-item-summary {
+    &:before {
+      color: #fff !important;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.background-solid-purple {
+  background-color: #704c99;
+}
+
+.background-gradient-purple {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#704c99+0,7a6099+100 */
+  background: #704c99; /* Old browsers */
+  background: -moz-linear-gradient(top,  #704c99 0%, #7a6099 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #704c99 0%,#7a6099 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #704c99 0%,#7a6099 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#704c99', endColorstr='#7a6099',GradientType=0 ); /* IE6-9 */
+
+  p {
+    color: rgba(255,255,255,0.8);
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.blade-background-grey {
+  background-color: #f7f7f7;
+}
+
+.blade-background-white {
+  background-color: #fff;
+}
+
+.blade-background-green-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9dd00+0,deeb73+100 */
+  background: #c9dd00; /* Old browsers */
+  background: -moz-linear-gradient(top,  #c9dd00 0%, #deeb73 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #c9dd00 0%,#deeb73 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #c9dd00 0%,#deeb73 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9dd00', endColorstr='#deeb73',GradientType=0 ); /* IE6-9 */
+
+}
+
+.blade-full {
+  width: 100%;
+  float: left;
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  &.reduce-bottom-padding {
+    padding-bottom: 20px;
+  }
+}
+
+.col-padding-right {
+  padding-right: 30px !important;
+}
+
+.col-padding-left {
+  padding-left: 30px !important;
+}
+
+.header-full {
+  width: 100%;
+  margin-top: 78px;
+  height: 386px;
+  cursor: pointer;
+  float: left;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 78px;
+    height: 480px;
+  }
+
+	@media (min-width: 1025px) {
+		margin-top: 56px;
+	}
+
+  &.no-video {
+    cursor: auto;
+
+    .header-play-button {
+      display: none;
+    }
+  }
+
+  .header-play-button {
+    display: block;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.header-placeholder {
+  position: relative;
+  width: 100%;
+  min-height: 386px;
+  background-image: url('../images/moneyweek2017/header-bg-repeat.jpg');
+  background-repeat: repeat;
+  border: 0;
+
+  @media (min-width: $screen-sm-min) {
+    min-height: 480px;
+  }
+}
+
+.header-placeholder {
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-color: #000;
+  }
+
+  .sit-flex {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+}
+
+/* Site title */
+.site-title {
+  color: #fff;
+  font-size: 42px;
+  line-height: 110%;
+  /*margin: 0;*/
+  font-weight: bold;
+  padding: 0;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 50px;
+  }
+}
+
+/* Header logo */
+.header-placeholder-elements .header-logo {
+  max-width: 140px;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 234px;
+  }
+}
+
+/* Play button */
+.header-placeholder-elements .header-play-button {
+  max-width: 140px;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 262px;
+  }
+}
+
+/* BLADE DEBT START */
+.accordian-wrap {
+  width: 100%;
+  margin-top: 60px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 80px;
+  }
+}
+
+.accordian-wrap {
+  .accordian-item {
+    width: 100%;
+    float: left;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .accordian-item-head {
+    width: 100%;
+    height: 114px;
+    position: relative;
+    cursor: pointer;
+
+    @media (min-width: $screen-sm-min) {
+      height: 136px;
+    }
+
+    .btn.collapse-item {
+      position: absolute;
+      color: #fff;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%) rotate(180deg);
+
+      @media (min-width: 480px) {
+        right: 30px;
+      }
+
+      &.set-open {
+        transform: translateY(-50%) rotate(0deg);
+      }
+    }
+
+    &.background-solid-purple {
+      .quote {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.accordian-item {
+
+  padding: 0 !important;
+
+  &.accordian-collapse {
+    .accordian-item-body {
+      //height: 0;
+      max-height: 0;
+    }
+  }
+
+  .quote {
+
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    line-height: 60px;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 480px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      font-size: 27px;
+      line-height: 136px;
+      width: 75%;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-md-min) {
+      font-size: 40px;
+    }
+
+  }
+
+  .person {
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    width: 100%;
+    bottom: 0;
+    //background-size: contain;
+
+    @media (min-width: $screen-sm-min) {
+      background-size: cover;
+      width: 25%;
+      top: 0;
+      left:0;
+      bottom: auto;
+    }
+
+  }
+
+  &.accordian-item-first {
+    .person {
+
+      background-image: url('../images/moneyweek2017/accordian-bg-01-mobile.png');
+      @media (min-width: $screen-sm-min) {
+        background-image: url('../images/moneyweek2017/accordian-bg-01-desktop.png');
+      }
+
+    }
+  }
+
+  &.accordian-item-second {
+    .person {
+
+      background-image: url('../images/moneyweek2017/accordian-bg-02-mobile.png');
+      @media (min-width: $screen-sm-min) {
+        background-image: url('../images/moneyweek2017/accordian-bg-02-desktop.png');
+      }
+
+    }
+  }
+
+  &.accordian-item-third {
+    .person {
+      background-image: url('../images/moneyweek2017/accordian-bg-03-mobile.png');
+
+      @media (min-width: $screen-sm-min) {
+        background-image: url('../images/moneyweek2017/accordian-bg-03-desktop.png');
+      }
+
+
+    }
+  }
+}
+
+.accordian-item-body {
+
+  -webkit-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  -moz-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  -o-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+  //height: auto;
+  width: 100%;
+  float: left;
+  max-height: 10000px;
+  overflow: hidden;
+  background-color: #f2f2f2;
+
+  .column-left {
+    width: 100%;
+    float: left;
+
+    @media (min-width: $screen-sm-min) {
+      width: 25%;
+    }
+  }
+
+  .related-links {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 40px;
+
+    li {
+      width: 100%;
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 56px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      @media (min-width: $screen-sm-min) {
+        font-size: 14px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        height: 26px;
+        font-size: 14px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        height: 56px;
+        font-size: 16px;
+      }
+
+      a {
+        display: block;
+        line-height: 56px;
+        height: 56px;
+        color: #000;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus  {
+          text-decoration: none;
+        }
+
+        @media (min-width: $screen-sm-min) {
+          //border-bottom: 1px solid #000;
+          line-height: 110%;
+          height: auto;
+          display: inline-block;
+        }
+
+        @media (min-width: $screen-md-min) {
+          display: block;
+          line-height: 26px;
+          height: 26px;
+          border-bottom: none;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          line-height: 56px;
+          height: 56px;
+        }
+      }
+    }
+  }
+
+  .icon-holder {
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+
+    @media (min-width: $screen-sm-min) {
+      display: none;
+    }
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+      width: 26px;
+      height: 26px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: 56px;
+      height: 56px;
+    }
+
+    .related-icon {
+      width: 56px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @media (min-width: $screen-md-min) {
+        width: 26px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        width: 56px;
+      }
+    }
+  }
+
+  a:hover .icon-holder .related-icon {
+    top: 0;
+    bottom: auto;
+  }
+
+  /* Right column */
+  .column-right {
+    float: left;
+    width: 100%;
+    min-height: 300px;
+    text-align: center;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+
+    .accordian-item-footer {
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      text-align: left;
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 40px;
+      padding-bottom: 0px;
+      width: 75%;
+
+      .accordian-item-footer {
+        display: block;
+      }
+
+    }
+  }
+}
+
+/* Helpful items */
+.helpful-items-panels {
+  width: 100%;
+  margin-top: 50px;
+
+  .helpful-item {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+
+    @media (min-width: 480px) {
+
+      margin-bottom: 0px;
+      width: 50%;
+
+      &:first-child {
+        padding-right: 15px;
+      }
+
+      &:nth-child(2) {
+        padding-left: 15px;
+      }
+
+    }
+
+    @media (min-width: $screen-sm-min) {
+
+    }
+
+    .helpful-item-preview {
+      width: 100%;
+
+      .helpful-item-image {
+        width: 100%;
+      }
+    }
+
+    .helpful-item-summary {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 15px;
+
+      &:before {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f054";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        color: #ff7100;
+      }
+    }
+  }
+}
+
+.accordian-item-footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  width: 100%;
+
+  .btn.collapse-item {
+    float: right;
+  }
+}
+
+
+/* BLADE DEBT END */
+
+
+/* BLADE JOIN START */
+.blade-join {
+
+
+  @media (max-width: 991px) {
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .col-padding-right {
+      padding-right: 10px !important;
+    }
+
+    .col-padding-left {
+      padding-left: 10px !important;
+    }
+
+  }
+}
+
+.join-computer {
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 50px;
+    float: right;
+    max-width: 400px;
+  }
+}
+/* BLADE JOIN END */
+
+
+/* BLADE INVOLVED START */
+.blade-involved {
+
+}
+
+.involved-companies {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+
+    float: left;
+    height: 140px;
+    display: flex;
+    align-items: center;
+
+
+    @media (min-width: $screen-sm-min) {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      float: none;
+    }
+
+    img {
+      width: 100%;
+
+      @media (min-width: $screen-sm-min) {
+        width: auto;
+      }
+    }
+  }
+}
+
+/* BLADE INVOLVED END */
+
+
+
+
+/* RESOURCES START */
+.blade-resources {
+
+  .resource-items {
+    margin-top: 60px;
+  }
+
+}
+
+.resource-item {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .preview-picture img {
+    width: 100%;
+  }
+
+  .preview-summary, .preview-initiative {
+    width: 100%;
+    height: 160px;
+    padding: 20px 0;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .download {
+      font-size: 10px;
+
+      @media (min-width: $screen-sm-min) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .preview-initiative {
+    height: 75px;
+    a {
+    color: #000 !important;
+    }
+    a:hover {
+    text-decoration: underline !important;
+    }
+  }
+}
+
+/* RESOURCES END */
+
+/* FOOTER START */
+@media (max-width: 767px) {
+  .blade-footer .bottom {
+    padding-top: 30px;
+  }
+
+  .blade-footer .bottom p {
+    font-size: 12px;
+  }
+}
+
+.moneyweek-logo-cofc {
+  max-width: 160px;
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 301px;
+  }
+}
+
+.moneyweek-logo-moneyweek {
+  max-width: 100px;
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 186px;
+  }
+}
+/* FOOTER END */
+
+.font-white {
+  color: #fff;
+}
+
+.lighter {
+  opacity: 0.8;
+}
+
+/* Helpers */
+.sit-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masked-resources {
+  overflow: hidden;
+  max-height: 10000px;
+
+  -webkit-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  -moz-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  -o-transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  transition: all 1000ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+}
+
+.main {
+  opacity: 0;
+
+  -webkit-transition: all 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -moz-transition: all 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -o-transition: all 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: all 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+
+  &.fadeIn {
+    opacity: 1;
+  }
+}

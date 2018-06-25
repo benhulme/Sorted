@@ -1,0 +1,254 @@
+{
+  "title": "mortgage",
+  "type": "mortgage",
+  "model": "mortgageToolModel",
+  "CalcID": "4",
+  "inputs": [
+    {
+      "id": 0,
+      "title": "Mortgage 1",
+      "unique": "mortgage1"
+    },
+    {
+      "id": 1,
+      "title": "Mortgage 2",
+      "unique": "mortgage2"
+    },
+    {
+      "id": 2,
+      "title": "Mortgage 3",
+      "unique": "mortgage3"
+    }
+  ],
+  "fields": {
+    "amountOwed": {
+      "id": "loan1",
+      "type": "MONEY",
+      "label": "Loan amount",
+      "calcModel": "loan1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "The amount you’re considering borrowing, or the outstanding balance on your current mortgage.",
+      "validation": {
+        "type": "money1",
+        "min": 1,
+        "max": 9999999,
+        "message": "Please enter a number between 1 and 9999999, with no commas, spaces or symbols."
+      }
+    },
+    "interestRate": {
+      "type": "PERCENT",
+      "label": "Interest rate",
+      "calcModel": "interest1",
+      "format": {
+        "type": "FLOAT",
+        "decimals": 2
+      },
+      "value": 6,
+      "placeholder": "",
+      "required": true,
+      "tooltip": false,
+      "link": {
+        "text": "See interest.co.nz for current mortgage rates.",
+        "url": "http://interest.co.nz"
+      },
+      "validation": {
+        "type": "interestRate1",
+        "min": 0,
+        "max": 99,
+        "message": "Please enter a number between 0 and 99, with no commas, spaces or symbols."
+      }
+    },
+    "mortgageTerm": {
+      "id": "term1",
+      "type": "YEARS",
+      "label": "Term",
+      "calcModel": "term1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value":  20,
+      "placeholder": "",
+      "required": {
+        "OR": "repaymentAmount"
+      },
+      "tooltip": "The date the mortgage needs to be paid by.",
+      "validation": {
+        "type": "loanTerm1",
+        "min": 1,
+        "max": 30,
+        "message": "Please enter a number between 1 and 30, with no commas, spaces or symbols."
+      }
+    },
+    "repaymentAmount": {
+      "id": "repayments1",
+      "type": "MONEY",
+      "label": "Repayment",
+      "calcModel": "repayments1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "",
+      "required": {
+        "OR": "mortgageTerm"
+      },
+      "tooltip": "Enter your current repayment, or try another amount to see the difference it makes.",
+      "validation": {
+        "type": "money1",
+        "min": 1,
+        "max": 9999999,
+        "message": "Please enter a number between 1 and 9999999, with no commas, spaces or symbols."
+      }
+    },
+    "repaymentFrequency": {
+      "id": "repaymentFrequency",
+      "type": "BUTTON_SELECTOR",
+      "label": "Frequency",
+      "calcModel": "freq1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 26,
+      "required": true,
+      "tooltip": "Whether you pay your loan off weekly, fortnightly or monthly.",
+      "buttons": [
+        {
+          "text": "WEEKLY",
+          "value": "52",
+          "class": "font-xx"
+        },
+        {
+          "text": "FORTNIGHTLY",
+          "value": "26",
+          "class": "font-xx",
+          "selected": true
+        },
+        {
+          "text": "MONTHLY",
+          "value": "12",
+          "class": "font-xx"
+        }
+      ]
+    },    
+    "lumpSumRepayment": {
+      "type": "MONEY",
+      "label": "Extra repayment",
+      "calcModel": "lump_sum_repayment",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "",
+      "required": false,
+      "tooltip": "An extra amount you pay in addition to your regular repayments. This will be calculated as if you made this payment today.",
+      "validation": {
+        "type": "money1",
+        "min": 1,
+        "max": 9999999,
+        "message": "Please enter a number between 1 and 9999999, with no commas, spaces or symbols."
+      }
+    },
+    "yearBorn": {
+      "type": "HIDDEN",
+      "calcModel": "year_born1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": false,
+      "validation": {
+        "type": "money1",
+        "min": 1910,
+        "max": "TODAY_MINUS_15",
+        "message": "Please enter a number between 1 and 9999999, with no commas, spaces or symbols."
+      }
+    },
+    "monthBorn": {
+      "type": "HIDDEN",
+      "calcModel": "month_born1",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": false
+    }
+  },
+  "outputs": [
+    {
+      "type": "MONEY",
+      "label": {
+        "52": "Weekly repayments:",
+        "26": "Fortnightly repayments:",
+        "12": "Monthly repayments:"
+      },
+      "model": "min_repayment",
+      "tooltip": "The amount you are paying off your mortgage and the frequency it is being paid.",
+      "color": "font-black",
+      "active": true
+    },
+    {
+      "type": "MONEY",
+      "label": "Total you will pay:",
+      "tooltip": "The total of the loan amount and the interest you will pay on top of that.",
+      "model": "total",
+      "color": "font-red",
+      "active": true
+    },
+    {
+      "type": "MONEY",
+      "label": "Including interest of:",
+      "model": "interest",
+      "color": "font-purple",
+      "active": true
+    },
+    {
+      "type": "TIME",
+      "label": "For:",
+      "model": "time",
+      "color": "font-aqua",
+      "units": "years",
+      "active": true
+    },
+    {
+      "type": "AGE",
+      "label": "Age repaid by:",
+      "model": "age",
+      "color": "font-black",
+      "units": "years old",
+      "active": true
+    }
+  ],
+  "nudge": {
+    "label": "Sorted tip",
+    "tooltip": "Making just the minimum payment allows a mortgage to run on for its entire term.",
+    "text": "Increase repayments to save interest and be mortgage free sooner.",
+    "model": "repayments1",
+    "icon": "themes/sorted/assets/Uploads/nudge-repayment-icon.jpg",
+    "options": {
+      "floor": 0,
+      "ceil": 3,
+      "showSelectionBar": true
+    }
+  },
+  "graphic": {
+    "type": "HOUSE",
+    "smallIcons": [
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-0.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-1.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-2.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-3.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-4.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-5.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-6.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-7.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-8.svg",
+      "themes/sorted/assets/images/results/small-icons/mortgage-icon-9.svg"
+    ]
+  }
+}
+

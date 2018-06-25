@@ -1,0 +1,158 @@
+
+@media (min-width: 992px){
+  .modal-lg {
+    width: 970px;
+  }
+}
+
+
+
+.modal{
+  .modal-content{
+    padding:  0 5%;
+  }
+  .sign-up-content,.sign-up-header{
+    max-width: 800px;
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+  }
+  .sign-up-header{
+    margin: 30px auto;
+  }
+}
+
+
+.sign-up-form, .login-form{
+
+  .sidebar-divider{
+    margin: 20px 0 50px 0;
+  }
+  .field{
+    width:100%;
+    float: none;
+    position: relative;
+    &.dropdown{
+      padding:0;
+    }
+    &.checkbox{
+      line-height: 28px;
+      margin-bottom: 30px;
+      padding-left: 20px;
+      label{
+        padding-left: 0;
+      }
+      .checkbox{
+        display: inline;
+        width: auto;
+        height: auto;
+        margin-top: 6px;
+      }
+    }
+  }
+
+
+
+
+  .Actions{
+    padding: 20px 0 60px 0;
+    input[type='submit']{
+      width:100%;
+      margin-bottom: 0;
+    }
+    .cancel{
+      display: block;
+      text-align: center;
+      line-height: 50px;
+      height:50px;
+
+    }
+  }
+}
+
+.birth-date{
+  .date-month{
+    padding: 0 10px 0 0;
+    @media(max-width: $screen-sm-max){
+      padding: 0;
+    }
+
+  }
+  .date-year{
+    padding: 0 0 0 10px;
+    @media(max-width: $screen-sm-max){
+      padding: 0;
+
+    }
+
+  }
+
+}
+
+
+
+
+.orange-box{
+  padding: 20px 30px;
+  background: $orange-light;
+  border:  1px solid #ff550f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  h5{
+    margin-bottom: 30px;
+  }
+  .light-bulb-list{
+    list-style: none;
+    padding: 0;
+    li{
+      margin-bottom: 20px;
+      padding-left: 40px;
+      background: url('../../assets/images/light-bulb.png') no-repeat left top;
+    }
+  }
+}
+
+
+.required-information{
+  @media(max-width: 768px){
+    margin: 30px 0 20px;
+
+  }
+  &:before{
+    content: '*';
+    color: $red;
+
+  }
+}
+
+
+.login-form{
+  #Email-error{
+    bottom: 0;
+  }
+  #Password-error{
+    position: relative;
+    bottom: auto;
+    top:0;
+  }
+  #Email-error{
+    bottom: auto;
+    top: 80px;
+  }
+  .field.checkbox{
+    margin-top: 0;
+  }
+  input[name="Password"]{
+    margin-bottom: 5px;
+  }
+  .Actions{
+    padding-bottom: 15px;
+    div{
+      padding: 0;
+    }
+  }
+  #ForgotPassword{
+    padding-bottom: 50px;
+    @extend .font-xs;
+  }
+}

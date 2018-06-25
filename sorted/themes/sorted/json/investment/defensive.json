@@ -1,0 +1,294 @@
+{
+	"type": 0,
+	"title": "Defensive",
+	"output": [
+		[
+  		{
+		 		"type": "title",
+				"text": "What exactly is a defensive investor?",
+				"tooltip": {
+					"content": "These investor types give a general guideline for your information. Your type may change over time as your needs and goals change."
+				}
+			},
+			{
+				"type": "paragraph",
+				"text": "A defensive investor:",
+				"weight": "bold",
+				"tooltip": {
+					"content": "Keep in mind that your investor type is not a description of you – it is a measure of your financial situation, personality and the timeframe you have to invest. The higher the returns you chase, the more you need to accept risk and run the chance that your investments will fluctuate in value, lose value or fail entirely."
+				}
+			},
+			{
+				"type": "list",
+				"items": [
+					{
+						"text": "Requires investments to be protected to minimise ups and downs in value"
+					},
+					{
+						"text": "Is prepared to accept lower long-term returns"
+					},
+					{
+						"text": "May need regular income from their investments"
+					}
+				]
+			},
+			{
+				"type": "paragraph",
+				"text": "Use the drop-down list above to compare your type with others."
+			}
+		],
+		[
+			{
+				"type": "title",
+				"text": "What mix of investments suits a defensive investor?",
+				"tooltip": {
+					"content": "These investment mixes are only a general guideline for your information. Your ideal investment mix may change over time as your needs and goals change."
+				}
+			},
+			{
+				"type": "paragraph",
+				"text": "To achieve the results you are looking for as a defensive investor (the amount of money you get back and the ups and downs you experience), you’ll need a certain mix of various kinds of investments. For example, a defensive investor might have:",
+				"tooltip": {
+					"content": "Investment experts call this mix your 'asset allocation'. Research shows that the right mix allows you to achieve the results you are looking for. Within each kind of investment, it is also a good idea to spread your money across different companies, industries and countries in order to smooth out the ups and downs. This is called 'diversification'."
+				}
+			},
+			{
+				"type": "pieGraph",
+				"image": "/assets/images/investment/pie-defensive.svg",
+				"legend": [
+					{
+						"color": "#cf035a",
+						"text": "Cash",
+						"tooltip": {
+							"content": "Here cash means investing your money in things like a term deposit from a bank. To learn more about investing your money in bank deposits, see our <a href=\"/guides/bank-deposits\" target=\"_e\">bank deposits guide</a>."
+						},
+						"value": "10%"
+					},
+					{
+						"color": "#ccdc40",
+						"text": "Bonds",
+						"tooltip": {
+							"content": "Investing in bonds means that you lend your money to a government or company and they pay you regular interest payments. To learn more about investing in bonds, see our <a href=\"/guides/bonds\" target=\"_e\">bonds guide</a>."
+						},
+						"value": "70%"
+					},
+					{
+						"color": "#76529c",
+						"text": "Property",
+						"tooltip": {
+							"content": "Most people's homes are not an investment, so here property means either putting money in managed funds that invest in commercial property or owning rental property. To learn more, see our <a href=\"/guides/investing-in-property\" target=\"_e\">property investing guide</a>."
+						},
+						"value": "6%"
+					},
+					{
+						"color": "#09b2ff",
+						"text": "Shares",
+						"tooltip": {
+							"content": "Investing in shares means that you buy a part of a company (a 'share') and receive part of the company's profit, either through dividends paid by the company or because the value of a company goes up. To learn more about investing in shares, see our <a href=\"/guides/shares\" target=\"_e\">shares guide</a>."
+						},
+						"value": "14%"
+					}
+				]
+			}
+		],
+		[
+			{
+				"type": "title",
+				"text": "What can a defensive investor expect?",
+				"tooltip": {
+					"content": "These figures are only estimates – based on a <a class='popover-link-float' href=\"/how-these-calculators-work#range-of-assumptions\" target=\"_e\">range of assumptions</a> – and are no guarantee of investment performance. An investment's past performance does not necessarily indicate how it will do in the future."
+				}
+			},
+			{
+				"type": "table",
+				"data": [
+					{
+						"column1": {
+							"text": "The minimum amount of time you should invest over",
+							"tooltip": {
+								"content": "To experience results similar to those shown here, this is the shortest amount of time that you should commit to investing."
+							}
+						},
+						"column2": {
+							"text": "2 to 3 years"
+						}
+					},
+					{
+						"column1": {
+							"text": "Your expected average annual return",
+							"tooltip": {
+								"content": "This is the total of what you can expect to receive from this mix of investments – including the income and the increase in value – before fees, taxes and inflation."
+							}
+						},
+						"column2": {
+							"text": "4.6%",
+							"subtext": "(1.2% after fees, taxes and inflation)"
+						}
+					},
+					{
+						"column1": {
+							"text": "The range of annual returns you might have",
+							"tooltip": {
+								"content": "Your actual results might vary as much as this. The more risk you take in your investing, the more ups and downs you are likely to experience."
+							}
+						},
+						"column2": {
+							"text": "-0.7% to 10.2%",
+							"subtext": "(-4.1% to 6.8% after fees, taxes and inflation)"
+						}
+					},
+					{
+						"column1": {
+							"text": "Your chance of a negative return",
+							"tooltip": {
+								"content": "Your investments could also decrease in value. This is an estimate of how often you can expect to experience a loss."
+							}
+						},
+						"column2": {
+							"text": "1 year in 13"
+						}
+					},
+					{
+						"column1": {
+							"text": "The chance you might experience a loss over the next three years",
+							"tooltip": {
+								"content": "This is the chance that at any point in time you will experience an overall loss at the end of the three consecutive years that follow."
+							}
+						},
+						"column2": {
+							"text": "0.3%"
+						}
+					}
+				]
+			}
+		],
+		[
+			{
+				"type": "title",
+				"text": "Examples for a defensive investor",
+				"tooltip": {
+					"content": "The results shown here are projections based on a <a href=\"/how-these-calculators-work#range-of-assumptions\" class='popover-link-float' target=\"_e\">range of assumptions</a> and actual results will likely be different. Remember that results over different periods will vary."
+				}
+			},
+			{
+				"type": "subtitle",
+				"text": "The difference that contributing regularly makes"
+			},
+			{
+				"type": "lineGraph",
+				"image": "/assets/images/investment/line1-defensive.svg",
+				"imageSmall": "/assets/images/investment/line1-defensive-small.svg",
+				"legend": {
+					"item1": {
+						"image": "/assets/images/investment/line1-icon1.jpg",
+						"text": "$10,000 over 25 years"
+					},
+					"item2": {
+						"image": "/assets/images/investment/line1-icon2.jpg",
+						"text": "Same $10,000, but adding $50 a week"
+					},
+					"note": {
+						"text": "The next graph has a different vertical scale."
+					}
+				}
+			},
+			{
+				"type": "sidebyside",
+				"box1": {
+					"title": "If you invested $10,000 in your mix of investments over 25 years",
+					"list": {
+						"items": [
+							{
+								"text": "The shaded orange area shows the expected range of results you could have.",
+								"tooltip": {
+									"content": "Keep in mind that this graph shows only one illustration of what could happen – your actual results would typically be anywhere in the shaded areas."
+								}
+							},
+							{
+								"text": "In this illustration, the $10,000 grows to $14,500.",
+								"tooltip": {
+									"content": "Over the long term, higher-risk investments can typically come out with higher results. Yet in the short term, they tend to be more of a roller coaster."
+								}
+							},
+							{
+								"text": "Your results would typically be somewhere between $10,800 and $15,100.",
+								"tooltip": false
+							}
+						]
+					}
+				},
+				"box2": {
+					"title": "If you invested $10,000, and added $50 each week",
+					"list": {
+						"items": [
+							{
+								"text": "Your range of results becomes much wider and climbs much higher.",
+								"tooltip": {
+									"content": "Again, this chart shows only one illustration of what could happen – your actual results would typically be anywhere in the shaded area."
+								}
+							},
+							{
+								"text": "In this illustration, the $10,000 with $50 added grows to $85,800.",
+								"tooltip": {
+									"content": "Regularly adding to your investments can greatly improve your results."
+								}
+							},
+							{
+								"text": "Your results would typically be somewhere between $77,700 and $96,300."
+							}
+						]
+					}
+				}
+			},
+			{
+				"type": "subtitle",
+				"text": "More risk brings more ups and downs, but more growth, too"
+			},
+			{
+				"type": "lineGraph",
+				"text": "Adding $50 a week to a $10,000 defensive fund",
+				"image": "/assets/images/investment/line2-defensive.svg",
+				"imageSmall": "/assets/images/investment/line2-defensive-small.svg",
+				"legend": {
+					"item1": {
+						"image": "/assets/images/investment/line2-icon1.jpg",
+						"text": "Other investor types"
+					},
+					"item2": {
+						"image": "/assets/images/investment/line2-icon2.jpg",
+						"text": "Defensive"
+					},
+					"note": {
+						"text": "The previous graph had a different vertical scale."
+					}
+				}
+			},
+			{
+				"type": "summary",
+				"title": {
+					"text": "Some investor types experience more ups and downs than others."
+				},
+				"list": {
+					"items": [
+						{
+							"text": "As you can see when you compare all five investor types side by side, the ups and downs are much steeper as you increase the level of risk."
+						},
+						{
+							"text": "Around year 7 in this illustration, the defensive.json type is trailing and hasn’t had as good a result as the other less risky types."
+						},
+						{
+							"text": "By year 20, however, it comes out ahead."
+						},
+						{
+							"text": "In this illustration your type grows to $85,800; your results would typically be somewhere between $77,700 and $96,300.",
+							"tooltip": {
+								"title": "Tooltip title",
+								"content": "Regularly adding to your investments can greatly improve your results."
+							}
+						}
+					]
+				}
+			}
+		]
+	]
+}

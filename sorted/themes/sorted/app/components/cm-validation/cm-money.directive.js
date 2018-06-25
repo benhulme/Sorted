@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),INTEGER_REGEXP=/[$]?\b[0-9,.]+$/i;app.directive("cmMoney",function(){return{require:"ngModel",link:function(n,i,t,e){e.$validators.money=function(n,i){return!!e.$isEmpty(n)||("false"===t.cmCondition||!!INTEGER_REGEXP.test(i))}}}});

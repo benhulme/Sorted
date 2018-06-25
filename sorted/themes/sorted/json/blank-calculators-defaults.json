@@ -1,0 +1,87 @@
+{
+  "1": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/01.png",
+    "color": "yellow",
+    "buttonText": "show me",
+    "copy": "Forecast your future and see the steps to retire the way you want.",
+    "thumbnailButtonCopy": "PLAN YOUR RETIREMENT"
+
+  },
+  "2": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/02.png",
+    "color": "cyan",
+    "buttonText": "start now",
+    "copy": "Make a plan for your money - give each dollar a job to do.",
+    "thumbnailButtonCopy": "CREATE YOUR BUDGET"
+
+  },
+  "3": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/03.png",
+    "color": "pink",
+    "buttonText": "show me",
+    "copy": "See how quickly you can pay off your credit card, hire purchase, car loan or other debts.",
+    "thumbnailButtonCopy": "FIND OUT THE COST OF YOUR DEBT"
+
+  },
+  "4":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/04.png",
+    "color": "magenta",
+    "buttonText": "Start now",
+    "copy": "See how much that mortgage really costs - and how to pay it off faster.",
+    "thumbnailButtonCopy": "WORK OUT YOUR MORTGAGE COST"
+
+
+  },
+  "5":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/05.png",
+    "color": "cyan",
+    "buttonText": "show me",
+    "copy": "Work out your wealth - which way are you headed?",
+    "thumbnailButtonCopy": "CALCULATE YOUR NET WORTH"
+
+  },
+  "6":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/06.png",
+    "color": "yellow",
+    "buttonText": "find out",
+    "copy": "Get a sense of KiwiSaver fees and the choices you have.",
+    "thumbnailButtonCopy": "COMPARE KIWISAVER  FEES"
+  },
+  "7":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/07.png",
+    "color": "yellow",
+    "buttonText": "show me",
+    "copy": "Get the best out of KiwiSaver for a great retirement.",
+    "thumbnailButtonCopy": "WHAT COULD MY KIWISAVER BALANCE BE?"
+  },
+  "8":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/08.png",
+    "color": "blue",
+    "buttonText": "show me",
+    "copy": "Watch those savings  grow over time.",
+    "thumbnailButtonCopy": "SEE HOW MUCH YOU COULD SAVE"
+
+  },
+  "9":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/09.png",
+    "color": "blue",
+    "buttonText": "start now",
+    "copy": "Get an idea of your investor type, a mix of investments and what sort of results you can expect.",
+    "thumbnailButtonCopy": "Find out your investment style"
+
+  },
+  "10":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/10.png",
+    "color": "cyan",
+    "buttonText": "show me",
+    "copy": "Your personality affects the choices you make with money - what's yours?",
+    "thumbnailButtonCopy": "DISCOVER YOUR MONEY PERSONALITY"
+  },
+  "12":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/blankBackgrounds/12.png",
+    "color": "cyan",
+    "buttonText": "show me",
+    "copy": "Many goals in life need money and a plan - this goal-setting tool helps you take the first steps to make them happen.",
+    "thumbnailButtonCopy": "CREATE YOUR PLAN"
+  }
+}

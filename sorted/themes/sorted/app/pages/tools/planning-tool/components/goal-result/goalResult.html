@@ -1,0 +1,48 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+
+<div class="layout-container">
+  <div class="layout-content">
+    <div class="row layout-row">
+      <div class="col-xs-12 goal-result-page">
+        <h4>My Plan Results</h4>
+
+        <p>
+          Here are all your goals, organised by timeframe, and some resources to help with reaching them.
+        </p>
+        <a href="/how-these-calculators-work#goal-planner" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light visible-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+          <a href="/how-these-calculators-work#goal-planner" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light _right hidden-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+        <p class="back-link">
+          <a ng-href="tools/goal-planner"><span class="fa fa-chevron-right font-xs"></span> BACK TO GOAL PLANNER</a>
+        </p>
+        <p>
+          <button ng-click="saveGoals()" class="btn btn-primary btn-xs-fullwidth">save</button>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <result-collapse base="shortBase" data="short"></result-collapse>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <result-collapse base="mediumBase" data="medium"></result-collapse>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <result-collapse base="longBase" data="long"></result-collapse>
+      </div>
+
+
+    </div>
+    <div class="row layout-row">
+      <div class="col-xs-12">
+        <p class="social-and-fonts">
+          <socials data="data"></socials>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<email-signup></email-signup>
+
+<footer></footer>

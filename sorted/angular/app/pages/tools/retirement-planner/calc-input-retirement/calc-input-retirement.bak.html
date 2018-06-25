@@ -1,0 +1,473 @@
+<div class="calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-medium font-sm">Retirement Planner</span>
+</div>
+<div ng-repeat="(formKey, form) in calculator">
+
+  <!-- Loop through each 'Section' -->
+
+  <div ng-repeat="(inputKey, input) in form.inputs"
+       ng-class="{selected: (inputKey === 0 && formKey === 0), _hidden: input.visible === false}"
+       data-form-type="{{form.type}}"
+       class="calc-input-group">
+
+    <div class="calc-heading calc-input-heading font-medium"
+         data-form-type="{{form.type}}"
+         data-unique="{{input.unique}}">
+      <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+      <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+      <span class="calc-title-text _left _inline-block font-sm">{{input.title}}</span>
+    </div>
+
+    <div class="calc-input-container" ng-class="{_hidden: inputKey > 0 || formKey > 0}">
+
+      <form class="calc-input-form"
+            name="{{input.unique}}"
+            ng-class="{'calc-input-show-partner': model.get('partner')}">
+
+        <!-- Loop through all Sections -->
+
+        <div class="calc-input-section"
+             ng-repeat="(sectionName, section) in input.sections"
+             section-name="{{sectionName}}"
+             ng-class="{_hidden: section.visible == false}">
+
+          <!-- Loop through all Fields -->
+
+          <div class="calc-input-fieldset"
+               ng-repeat="sectionField in section.fields"
+               ng-if="form.fields[sectionField].type !== 'HIDDEN'"
+               ng-class="{'_no-margin': form.fields[sectionField].type === 'TITLE'}">
+
+            <div ng-switch="form.fields[sectionField].type">
+
+              <div ng-switch-when="TITLE" class="{{form.fields[sectionField].class}}">
+
+                <label class="font-lg _block">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                  <span class="font-sm" ng-show="form.fields[sectionField].optional">(optional)</span>
+                  <span class="font-sm" ng-show="form.fields[sectionField].subLabel">{{form.fields[sectionField].subLabel}}</span>
+                </label>
+                <a ng-if="form.fields[sectionField].link" ng-href="{{form.fields[sectionField].link.url}}" class="font-xx">{{form.fields[sectionField].link.text}}</a>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="CHECKBOX" class="calc-input-checkbox _clear {{form.fields[sectionField].class}}">
+
+                <input type="checkbox"
+                       ng-model="model.$attributes[field.calcModel]"
+                       ng-true-value="1"
+                       ng-false-value="0"
+                       class="_inline-block _left"></input>
+                <label class="font-sm calc-input-inline-label _left">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-if="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="SUPER_FREQUENCY" class="{{form.fields[sectionField].class}}">
+
+                <label class="font-sm">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+
+                <!--<div ng-if="models[input.unique].fields[field].modelLink">-->
+                <div>
+
+                  <!--<div class="calc-input-super-amount font-lg font-bold">{{calcSuper(models[input.unique].fields[models[input.unique].fields[field].modelLink].value) | currency:"$":0}}</div>-->
+                  <div class="calc-input-super-amount font-lg font-bold">{{model.calcSuper() | currency:"$":0}}</div>
+
+                  <!--<cm-select cm-placeholder="Weekly"
+                             cm-options="models[input.unique].fields[field].options"
+                             ng-model="models[input.unique].fields[models[input.unique].fields[field].modelLink].value"
+                             class="_inline-block _full-width"></cm-select>-->
+
+                  <calc-select
+                    field="form.fields[sectionField]"
+                    model="model.$attributes[form.fields[sectionField].calcModel]"
+                    class="_inline-block _full-width"
+                    cm-placeholder="Weekly"></calc-select>
+
+                </div>
+
+                <!--<div ng-if="!models[input.unique].fields[field].modelLink">
+                  &lt;!&ndash;<div class="calc-input-super-amount font-lg font-bold">{{calcSuper(models[input.unique].fields[field].value) | currency:"$":0}}</div>&ndash;&gt;
+                  <div class="calc-input-super-amount font-lg font-bold">{{model.calcSuper() | currency:"$":0}}</div>
+                  <cm-select cm-placeholder="Weekly"
+                             cm-options="models[input.unique].fields[field].options"
+                             ng-model="models[input.unique].fields[field].value"
+                             class="_inline-block _full-width"></cm-select>
+                </div>-->
+
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="SELECT" class="{{form.fields[sectionField].class}}">
+
+                <calc-select-months
+                  field="form.fields[sectionField]"
+                  model="model"></calc-select-months>
+
+              </div>
+
+              <div ng-switch-when="SELECT" class="{{form.fields[sectionField].class}}">
+
+                <!--<cm-select cm-placeholder="Weekly"
+                           cm-options="models[input.unique].fields[field].options"
+                           ng-model="models[input.unique].fields[field].value"
+                           class="_inline-block _full-width"></cm-select>-->
+
+                <calc-select
+                  field="form.fields[sectionField]"
+                  model="model"></calc-select>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="BIRTH_DATE" class="{{form.fields[sectionField].class}}">
+                <!--<label class="font-sm">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                </label>-->
+
+                <calc-input-label field="form.fields[sectionField]"></calc-input-label>
+
+                <div class="_clear">
+                  <!--<input type="text"
+                         cm-restrict-numbers
+                         maxlength="4"
+                         ng-model="models[input.unique].fields[models[input.unique].fields[field].yearField].value"
+                         ng-model-options="{updateOn: 'blur'}"
+                         class="calc-input-year form-control font-md _left"
+                         placeholder="Year"></input>-->
+
+                  <calc-input-number
+                    field="form.fields[sectionField]"
+                    model="model"></calc-input-number>
+
+                  <!--<cm-select cm-placeholder="Month"
+                             cm-options="calcStaticValues.months"
+                             ng-model="models[input.unique].fields[models[input.unique].fields[field].monthField].value"
+                             class="calc-input-month _inline-block _left"></cm-select>-->
+
+                  <calc-select
+                    field="form.fields[sectionField]"
+                    model="model"></calc-select>
+
+                </div>
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="SECTION_TOGGLE" class="{{form.fields[sectionField].class}}">
+
+                <div class="calc-input-container">
+                  <button class="_no-border calc-add-partners"
+                          data-form-type="{{form.type}}"
+                          data-unique="{{input.unique}}"
+                          section-toggle="{{form.fields[sectionField].section}}">
+                    <span class="font-lg font-orange calc-add-plus">+</span><span class="font-lg font-orange calc-add-minus _hidden">-</span> <span class="font-sm font-light _inline-block calc-input-add-text">{{form.fields[sectionField].label}}</span>
+                  </button>
+                </div>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="INTEGER" class="{{form.fields[sectionField].class}}">
+
+                <label class="font-sm">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+                <div class="input-group">
+
+                 <!-- <input type="text" class="form-control font-md" name="{{form.fields[sectionField].model}}"
+                         ng-model="models[input.unique].fields[field].value" ng-model-options="{updateOn: 'blur'}"
+                         cm-restrict-numbers
+                         maxlength="3">
+                  <div class="form-error" ng-show="{{input.unique}}[field.model].$error.money">amount invalid</div>-->
+
+                  <calc-input-money
+                    field="form.fields[sectionField]"
+                    model="model"></calc-input-money>
+
+                </div>
+
+                <a ng-if="form.fields[sectionField].link" ng-href="{{form.fields[sectionField].link.url}}" class="font-xx">{{form.fields[sectionField].link.text}}</a>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="MONEY" class="{{form.fields[sectionField].class}}">
+
+                <!--<label class="font-sm">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[sectionField].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[sectionField].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+                <div class="input-group form-inline-addon form-addon-dollar">
+                  <input type="text" class="form-control font-md" name="{{form.fields[field].model}}"
+                         ng-model="models[input.unique].fields[field].value" ng-model-options="{updateOn: 'blur'}"
+                         cm-money cm-restrict-numbers
+                         maxlength="10">
+                  <div class="form-error" ng-show="{{input.unique}}[field.model].$error.money">amount invalid</div>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>-->
+
+                <calc-input-money
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-money>
+
+              </div><!-- switch-when -->
+
+              <!--<div ng-switch-when="PERIOD" class="{{form.fields[field].class}}">
+
+                <label class="font-sm">
+                  {{form.fields[field].label}}
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[field].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+                <div class="input-group">
+                  <input type="text" class="form-control font-md" name="{{form.fields[field].model}}"
+                         ng-model="models[input.unique].fields[field].value" ng-model-options="{updateOn: 'blur'}"
+                         cm-restrict-numbers
+                         maxlength="2">
+                  <div class="form-error" ng-show="{{input.unique}}[field.model].$error.money">amount invalid</div>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>
+
+              </div>--><!-- switch-when -->
+
+              <div ng-switch-when="PERCENT" class="{{form.fields[sectionField].class}}">
+
+                <!--<label class="font-sm">
+                  {{form.fields[field].label}}
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[field].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+                <div class="input-group form-inline-addon form-addon-percent">
+                  <input type="text" class="form-control font-md" name="{{form.fields[field].model}}"
+                         ng-model="models[input.unique].fields[field].value" ng-model-options="{updateOn: 'blur'}"
+                         cm-percent cm-restrict-numbers allow-decimal="true"
+                         maxlength="5">
+                  <div class="form-error" ng-show="{{input.unique}}[field.model].$error.percent">invalid percentage</div>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>-->
+
+                <calc-input-percent
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-percent>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="BUTTON_SELECTOR" class="{{form.fields[sectionField].class}}">
+
+                <!--<label class="font-sm">
+                  {{form.fields[field].label}}
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[field].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+
+                <div button-selector class="btn-group _full-width calc-input-btn-group" role="group" aria-label="..." digest-calc-input="digestCalcInput()" ng-model="models[input.unique].fields[field].value">
+                  <button type="button" class="btn btn-default font-xx"
+                          ng-class="{selected: form.fields[field].buttons[0].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[0].buttonValue}}">{{form.fields[field].buttons[0].buttonText}}</button>
+                  <button type="button" class="btn btn-default btn-wide font-xx"
+                          ng-class="{selected: form.fields[field].buttons[1].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[1].buttonValue}}">{{form.fields[field].buttons[1].buttonText}}</button>
+                  <button type="button" class="btn btn-default font-xx"
+                          ng-class="{selected: form.fields[field].buttons[2].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[2].buttonValue}}">{{form.fields[field].buttons[2].buttonText}}</button>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>-->
+
+                <calc-input-button-select
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-button-select>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="BUTTON_BOOLEAN" class="_clear {{form.fields[sectionField].class}}">
+
+                <!--<label class="font-sm _left calc-input-inline-label">
+                  {{form.fields[sectionField].label}}
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[field].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+
+                <div button-selector
+                     class="btn-group calc-input-btn-group _right"
+                     role="group" aria-label="..."
+                     digest-calc-input="digestCalcInput()"
+                     ng-model="models[input.unique].fields[field].value">
+
+                  <button type="button" class="btn btn-default btn-boolean font-xx"
+                          ng-class="{selected: form.fields[field].buttons[0].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[0].buttonValue}}">{{form.fields[field].buttons[0].buttonText}}</button>
+                  <button type="button" class="btn btn-default btn-boolean font-xx"
+                          ng-class="{selected: form.fields[field].buttons[1].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[1].buttonValue}}">{{form.fields[field].buttons[1].buttonText}}</button>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>-->
+
+                <calc-input-button-select
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-button-select>
+
+              </div><!-- switch-when -->
+
+              <div ng-switch-when="BUTTON_BOOLEAN_WIDE" class="{{form.fields[sectionField].class}}">
+
+                <!--<label class="font-sm">
+                  {{form.fields[field].label}}
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="{{form.fields[field].tooltip}}">
+                    </button>
+                  </popover>
+                </label>
+
+                <div button-selector
+                     class="btn-group _full-width calc-input-btn-group"
+                     role="group" aria-label="..."
+                     digest-calc-input="digestCalcInput()"
+                     ng-model="models[input.unique].fields[field].value">
+                  <button type="button" class="btn btn-default btn-boolean-wide font-xx"
+                          ng-class="{selected: form.fields[field].buttons[0].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[0].buttonValue}}">{{form.fields[field].buttons[0].buttonText}}</button>
+                  <button type="button" class="btn btn-default btn-boolean-wide font-xx"
+                          ng-class="{selected: form.fields[field].buttons[1].buttonValue === models[input.unique].fields[field].value}"
+                          value="{{form.fields[field].buttons[1].buttonValue}}">{{form.fields[field].buttons[1].buttonText}}</button>
+                </div>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>-->
+
+                <calc-input-button-select
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-button-select>
+
+              </div><!-- switch-when -->
+
+              <!--<div ng-switch-when="YEARS" class="{{form.fields[sectionField].class}}">
+
+                &lt;!&ndash;<label class="font-sm">
+                  Mortgage Term
+                  <popover ng-show="form.fields[field].tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    </button>
+                  </popover>
+                </label>
+
+                <div class="input-group form-inline-addon form-addon-years">
+                  <input type="text" class="form-control font-md" name="mortgageTerm" ng-model="models[input.unique].fields[field].value" cm-integer
+                         ng-model-options="{updateOn: 'blur'}" cm-restrict-numbers allow-decimal="true">
+                  <div class="form-error" ng-show="{{input.unique}}[field.model].$error.notempty">amount invalid</div>
+                </div>&ndash;&gt;
+
+                <calc-input-years
+                  field="form.fields[sectionField]"
+                  model="model"></calc-input-years>
+
+                <rzslider
+                  ng-if="field.slider"
+                  class="slider-purple"
+                  rz-slider-model="models[input.unique].fields[field.slider.model]"
+                  rz-slider-options="slider.options"></rzslider>
+
+                <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>
+
+              </div>--><!-- switch-when -->
+
+            </div><!-- switch -->
+
+          </div><!-- repeat -->
+
+        </div>
+
+      </form>
+
+      <!--<div class="calc-input-container" ng-if="inputKey < form.inputs.length - 1 && form.inputs[inputKey+1].visible === false">
+        <button class="_no-border calc-input-add" data-form-type="{{form.type}}" data-unique="{{input.unique}}">
+          <span class="ui-add font-lg">+</span> <span class="font-sm font-light _inline-block calc-input-add-text">Add another {{form.title}}</span>
+        </button>
+      </div>-->
+
+    </div>
+
+  </div><!-- input in inputs -->
+
+</div><!-- form in calculator -->

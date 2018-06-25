@@ -1,0 +1,788 @@
+{
+  "title": "net_worth",
+  "type": "net-worth",
+  "CalcID": "5",
+  "models": [
+    {
+      "id": 0,
+      "identifier": 0,
+      "unique": "current_year",
+      "title": "Current year",
+      "categories": [
+        {
+          "id": 1,
+          "name": "assets",
+          "label": "What you own (assets)"
+        },
+        {
+          "id": 2,
+          "name": "liabilities",
+          "label": "What you owe (liabilities)"
+        }
+      ],
+      "fields": [
+        {
+          "id": "emergencyFund",
+          "type": "MONEY",
+          "label": "Emergency fund",
+          "calcModel": "savings",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Unexpected expenses always turn up. To avoid running up a credit card or going into costly debt, it’s worth setting aside at least three months’ worth of expenses to be ready when something happens. It’s great to know you have a buffer that’s there when you need it!",
+          "categoryId": 1,
+          "level": 1,
+          "link": false
+        },
+        {
+          "id": "kiwiSaver",
+          "type": "MONEY",
+          "label": "KiwiSaver",
+          "calcModel": "super_annuation",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "myHome",
+          "type": "MONEY",
+          "label": "Your home",
+          "calcModel": "home",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "otherSavings",
+          "type": "MONEY",
+          "label": "Other savings",
+          "calcModel": "other",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "property",
+          "type": "MONEY",
+          "label": "Property",
+          "calcModel": "properties",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "bonds",
+          "type": "MONEY",
+          "label": "Bonds, shares or managed funds",
+          "calcModel": "shares",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "businessTrusts",
+          "type": "MONEY",
+          "label": "Trusts",
+          "calcModel": "trust",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "vehicles",
+          "type": "MONEY",
+          "label": "Vehicles",
+          "calcModel": "vehicles",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "studentLoan",
+          "type": "MONEY",
+          "label": "Student loan",
+          "calcModel": "sl",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "creditCard",
+          "type": "MONEY",
+          "label": "Credit card",
+          "calcModel": "cc",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "personalLoan",
+          "type": "MONEY",
+          "label": "Personal loan",
+          "calcModel": "loan",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "hirePurchase",
+          "type": "MONEY",
+          "label": "Hire purchase",
+          "calcModel": "hp",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Hire purchase is an agreement to borrow to buy a product on credit, and we can take it home and use it while we’re paying it off. With HP we usually pay a deposit followed by monthly payments (including the interest and fees charged) over a set period. HP can also be called a credit sale or a credit contract.",
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "mortgages",
+          "type": "MONEY",
+          "label": "Mortgages",
+          "calcModel": "mortgages",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "otherDebt",
+          "type": "MONEY",
+          "label": "Other",
+          "calcModel": "other_debts",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "identifier": 10,
+      "unique": "in_ten_years",
+      "title": "In 10 years",
+      "categories": [
+        {
+          "id": 1,
+          "name": "assets",
+          "label": "What you own (assets)"
+        },
+        {
+          "id": 2,
+          "name": "liabilities",
+          "label": "What you owe (liabilities)"
+        }
+      ],
+      "fields": [
+        {
+          "id": "emergencyFund",
+          "type": "MONEY",
+          "label": "Emergency fund",
+          "calcModel": "savings",
+
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Unexpected expenses always turn up. To avoid running up a credit card or going into costly debt, it’s worth setting aside at least three months’ worth of expenses to be ready when something happens. It’s great to know you have a buffer that’s there when you need it!",
+          "categoryId": 1,
+          "level": 1,
+          "link": false
+        },
+        {
+          "id": "kiwiSaver",
+          "type": "MONEY",
+          "label": "KiwiSaver",
+          "calcModel": "super_annuation",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "myHome",
+          "type": "MONEY",
+          "label": "Your home",
+          "calcModel": "home",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "otherSavings",
+          "type": "MONEY",
+          "label": "Other savings",
+          "calcModel": "other",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "property",
+          "type": "MONEY",
+          "label": "Property",
+          "calcModel": "properties",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "bonds",
+          "type": "MONEY",
+          "label": "Bonds, shares or managed funds",
+          "calcModel": "shares",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "businessTrusts",
+          "type": "MONEY",
+          "label": "Trusts",
+          "calcModel": "trust",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "vehicles",
+          "type": "MONEY",
+          "label": "Vehicles",
+          "calcModel": "vehicles",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "studentLoan",
+          "type": "MONEY",
+          "label": "Student loan",
+          "calcModel": "sl",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "creditCard",
+          "type": "MONEY",
+          "label": "Credit card",
+          "calcModel": "cc",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "personalLoan",
+          "type": "MONEY",
+          "label": "Personal loan",
+          "calcModel": "loan",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "hirePurchase",
+          "type": "MONEY",
+          "label": "Hire purchase",
+          "calcModel": "hp",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Hire purchase is an agreement to borrow to buy a product on credit, and we can take it home and use it thile we`re paying it off. With HP we usually pay a deposit followed by monthly payments (including the interest and fees charged) over a set period. HP can also be called a credit sale or a credit contract.",
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "mortgages",
+          "type": "MONEY",
+          "label": "Mortgages",
+          "calcModel": "mortgages",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "otherDebt",
+          "type": "MONEY",
+          "label": "Other",
+          "calcModel": "other_debts",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "identifier": 20,
+      "unique": "in_twenty_years",
+      "title": "In 20 years",
+      "categories": [
+        {
+          "id": 1,
+          "name": "assets",
+          "label": "What you own (assets)"
+        },
+        {
+          "id": 2,
+          "name": "liabilities",
+          "label": "What you owe (liabilities)"
+        }
+      ],
+      "fields": [
+        {
+          "id": "emergencyFund",
+          "type": "MONEY",
+          "label": "Emergency fund",
+          "calcModel": "savings",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Unexpected expenses always turn up. To avoid running up a credit card or going into costly debt, it’s worth setting aside at least three months’ worth of expenses to be ready when something happens. It’s great to know you have a buffer that’s there when you need it!",
+          "categoryId": 1,
+          "level": 1,
+          "link": false
+        },
+        {
+          "id": "kiwiSaver",
+          "type": "MONEY",
+          "label": "KiwiSaver",
+          "calcModel": "super_annuation",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "myHome",
+          "type": "MONEY",
+          "label": "Your home",
+          "calcModel": "home",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "otherSavings",
+          "type": "MONEY",
+          "label": "Other savings",
+          "calcModel": "other",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 1
+        },
+        {
+          "id": "property",
+          "type": "MONEY",
+          "label": "Property",
+          "calcModel": "properties",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "bonds",
+          "type": "MONEY",
+          "label": "Bonds, shares or managed funds",
+          "calcModel": "shares",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "businessTrusts",
+          "type": "MONEY",
+          "label": "Trusts",
+          "calcModel": "trust",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "vehicles",
+          "type": "MONEY",
+          "label": "Vehicles",
+          "calcModel": "vehicles",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 1,
+          "level": 2
+        },
+        {
+          "id": "studentLoan",
+          "type": "MONEY",
+          "label": "Student loan",
+          "calcModel": "sl",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "creditCard",
+          "type": "MONEY",
+          "label": "Credit card",
+          "calcModel": "cc",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "personalLoan",
+          "type": "MONEY",
+          "label": "Personal loan",
+          "calcModel": "loan",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "hirePurchase",
+          "type": "MONEY",
+          "label": "Hire purchase",
+          "calcModel": "hp",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": "Hire purchase is an agreement to borrow to buy a product on credit, and we can take it home and use it thile we`re paying it off. With HP we usually pay a deposit followed by monthly payments (including the interest and fees charged) over a set period. HP can also be called a credit sale or a credit contract.",
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "mortgages",
+          "type": "MONEY",
+          "label": "Mortgages",
+          "calcModel": "mortgages",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        },
+        {
+          "id": "otherDebt",
+          "type": "MONEY",
+          "label": "Other",
+          "calcModel": "other_debts",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "",
+          "placeholder": "",
+          "required": false,
+          "tooltip": false,
+          "categoryId": 2,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "chart": {
+    "options": {
+      "seriesDefaults": {
+        "overlay": {
+          "gradient": "none"
+        },
+        "spacing": 0.1,
+        "gap": 1
+      },
+      "title": {
+        "text": "Amount ($)",
+        "visible": false
+      },
+      "legend": {
+        "visible": false,
+        "position": "top",
+        "labels": {}
+      },
+      "theme": "",
+      "seriesColors": [
+        "#20d4af",
+        "#ce0058",
+        "#00afff"
+      ],
+      "categoryAxis": {
+        "categories": [],
+        "majorGridLines": {
+          "visible": false
+        },
+        "majorTicks": {
+          "visible": true
+        },
+        "labels": {
+          "visible": false,
+          "rotation": "auto"
+        },
+        "title": {
+          "text": "Current Year | In 10 Years | In 20 Years",
+          "position": "bottom",
+          "padding": {
+            "top": 20
+          },
+          "visible": false
+        }
+      },
+      "valueAxis": {
+        "title": {
+          "text": "Amount ($)",
+          "position": "center",
+          "rotation": 270,
+          "padding": {
+            "bottom": 20
+          }
+        },
+        "labels": {
+          "template": "$#= kendo.format('{0:N0}', value / 1000) #k",
+          "step": "3"
+        },
+        "line": {
+          "visible": false
+        },
+        "majorGridLines": {
+          "width": 0.1
+        },
+        "plotBands": [
+          {
+            "from": "-1000000",
+            "to": "0",
+            "color": "#fae5ee"
+          }
+        ]
+      }
+    },
+    "dummyData": {
+      "assets": [
+        20000,
+        30000,
+        70000
+      ],
+      "debts": [
+        -10000,
+        -7500,
+        -5000
+      ]
+    }
+  }
+}
+

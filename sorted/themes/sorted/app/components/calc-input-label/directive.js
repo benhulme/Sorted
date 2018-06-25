@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("calcInputLabel",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/components/calc-input-label/index.html",restrict:"EA",scope:{field:"="},controller:["$scope",function(e){e.getLabel=function(){return e.field.label?e.field.label:e.field.groupLabel?e.field.groupLabel:""}}]}}])}();

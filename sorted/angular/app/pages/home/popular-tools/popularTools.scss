@@ -1,0 +1,76 @@
+.tools-li,
+.tools-icon {
+  width: 220px;
+  @media(max-width: $screen-sm-max){
+    width: 190px;
+  }
+  @media(max-width: $screen-xs-max){
+    width: 170px;
+  }
+  @media(max-width: $screen-xs){
+    width: 150px
+  }
+}
+
+.tools-icon {
+  .tools-icon-image {
+    top: -100px;
+  }
+  &:hover {
+    text-decoration: none;
+    .tools-icon-image {
+      top: 0;
+    }
+  }
+}
+
+.tools-icon-container {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.tools-icon-image {
+  width: 100%;
+  position: absolute;
+}
+
+.tools-text {
+  @extend ._align-center;
+  @extend .font-black;
+  width: 150px;
+  line-height: $line-h6 ;
+  margin: 10px auto;
+  @media(max-width: $screen-sm-max){
+    width: 140px;
+  }
+  @media(max-width: $screen-xs-max){
+    width: 130px;
+  }
+  @media(max-width: $screen-xs){
+    width: 120px
+  }
+}
+
+.tools-conveyor {
+  margin: 0 auto;
+  padding: 40px 0;
+  .conveyor-outer {
+    height: 160px;
+  }
+  .conveyor-mask {
+    height: 160px;
+  }
+  .conveyor-left {
+    top: 45px;
+  }
+  .conveyor-right {
+    top: 45px;
+  }
+}
+
+.tools-title {
+  margin: 0 0 20px 0;
+}

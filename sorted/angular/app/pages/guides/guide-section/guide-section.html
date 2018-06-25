@@ -1,0 +1,43 @@
+<h2 class="light-font guide-page-header">
+  {{data.Title}}
+</h2>
+
+
+<div class="social-and-fonts">
+  <div class="row">
+    <div class="col-md-7">
+      <socials data="data"></socials>
+    </div>
+    <div class="col-md-5">
+      <fonts-adjust></fonts-adjust>
+    </div>
+  </div>
+
+</div>
+<div class="guide-main-content">
+  <span adjustable-font class="sections-content" ng-bind-html="data.Content"></span>
+  <div class="sections-link" ng-show="data.Index==1">
+    <ul class="sections-link-list">
+      <li ng-repeat="(index,link) in data.sections"><a ng-click="scrollTo('section_' + index);" style="cursor: pointer;" analytics-on="click" analytics-event="section" analytics-category="jumplinks" analytics-interaction-type="0" analytics-label="{{link.Title}}">{{link.Title}}
+      </a></li>
+    </ul>
+    <a id="section0"></a>
+  </div>
+</div>
+
+<div class="sections">
+  <div class="row section-container" ng-repeat="(index,section) in data.sections" id="section_{{index}}">
+    <a id="section{{index + 1}}"></a>
+    <h3 class="section-title">{{section.Title}}</h3>
+    <div compile="section.Content" adjustable-font></div>
+  </div>
+</div>
+
+
+<div class="social-and-fonts ">
+  <div class="row">
+    <div class="col-md-7">
+      <socials data="data"></socials>
+    </div>
+  </div>
+</div>

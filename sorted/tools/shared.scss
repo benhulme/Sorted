@@ -1,0 +1,522 @@
+$sorted-styles-path:        '../../../angular/app/styles/';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.arrow{
+  display:none !important;
+}
+
+.btn-primary[disabled]{
+  border: none !important;
+}
+
+/**
+* Variables
+*/
+
+$white: #FFFFFF;
+$orange: #FF4B05;
+$orange-light: #ffeee7;
+$orange-medium: #fbccb8;
+$black: #1E1E1E;
+$grey-dark: #696B73;
+$grey-medium: #75787b;
+$grey-medium-light: #b7b8ba;
+$grey-light: #d9d9d6;
+$grey-lightest: #F5F5F5;
+$yellow: #FFDD70;
+$yellow-dark: #ffd700;
+$yellow-light: #fff2ac;
+$yellow-lightest: #fffbe5;
+$pink: #E18CC8;
+$pink-light: #f6dcee;
+$pink-lightest: #fcf3f9;
+$fuschia: #CE0058;
+$blue: #00AFFF;
+$blue-font: #006e94;
+$blue-lightest: #e5f7ff;
+$purple: #704C99;
+$purple-light: #DDD4E7;
+$purple-lightest: #f8f6fa;
+$aqua-lighter: #bcf2e7;
+$aqua: #4ddebf;
+$aqua-light: #bdf2e8;
+$aqua-lightest: #eefdfa;
+$lime: #CADC3C;
+$cyan: #4298B5;
+$link: #06739a;
+$red: #D00;
+
+$font-h1: 50px;
+$font-h2: 36px;
+$font-h3: 28px;
+$font-h4: 24px;
+$font-h5: 18px;
+$font-h6: 16px;
+$font-bq: 35px;
+$font-xl: 50px;
+$font-lg: 22px;
+$font-md: 18px;
+$font-sm: 16px;
+$font-xs: 14px;
+$font-xx: 12px;
+
+$line-h1: 60px;
+$line-h2: 48px;
+$line-h3: 36px;
+$line-h4: 32px;
+$line-h5: 22px;
+$line-h6: 20px;
+$line-bq: 42px;
+$line-xl: 60px;
+$line-lg: 30px;
+$line-md: 26px;
+$line-sm: 20px;
+$line-xs: 18px;
+$line-xx: 14px;
+
+$screen-md-factor: 0.9;
+$screen-sm-factor: 0.85;
+$screen-xs-factor: 0.8;
+
+$site-max: $screen-lg;
+
+
+
+
+@mixin gradient($base, $direction) {
+  $stop1: 5%;
+  $stop2: 20%;
+  $stop3: 10%;
+  @if $direction == 'LTR' {
+    background: $base; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, lighten($base, $stop1) 0%, lighten($base, $stop2) 15%, lighten($base, $stop3) 30%, $base 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, lighten($base, $stop1) 0%, lighten($base, $stop2) 15%, lighten($base, $stop3) 30%, $base 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, lighten($base, $stop1) 0%, lighten($base, $stop2) 15%, lighten($base, $stop3) 30%, $base 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  } @else {
+    background: $base; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $base 0%, lighten($base, $stop3) 70%, lighten($base, $stop2) 85%, lighten($base, $stop1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, $base 0%,lighten($base, $stop3) 70%,lighten($base, $stop2) 85%,lighten($base, $stop1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, $base 0%,lighten($base, $stop3) 70%,lighten($base, $stop2) 85%,lighten($base, $stop1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+}
+
+@mixin gradient-linear($base, $lighten) {
+  background: $base; /* Old browsers */
+  background: -moz-linear-gradient(top,  $base 0%, lighten($base, $lighten) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  $base 0%,lighten($base, $lighten) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  $base 0%,lighten($base, $lighten) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin placeholder($color, $style, $weight){
+  ::-webkit-input-placeholder { color:$color; font-style: $style; font-weight: $weight; }
+  ::-moz-placeholder { color:$color; font-style: $style; font-weight: $weight; } /* firefox 19+ */
+  :-ms-input-placeholder { color:$color; font-style: $style; font-weight: $weight; } /* ie */
+  input:-moz-placeholder { color:$color; font-style: $style; font-weight: $weight; }
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin border-radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin transform($expression){
+  -webkit-transform: #{$expression};
+  -moz-transform: #{$expression};
+  -ms-transform: #{$expression};
+  -o-transform: #{$expression};
+  transform: #{$expression};
+}
+
+@mixin transition($attrs){
+  -webkit-transition: $attrs;
+  -moz-transition: $attrs;
+  -ms-transition: $attrs;
+  -o-transition: $attrs;
+  transition: $attrs;
+}
+
+@mixin fontSize($fontSize, $lineHeight, $md-factor, $sm-factor, $xs-factor){
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  @include scalable(font-size, $fontSize, $md-factor, $sm-factor, $xs-factor);
+  @include scalable(line-height, $lineHeight, $md-factor, $sm-factor, $xs-factor);
+}
+
+@mixin scalable($property, $value, $md-factor, $sm-factor, $xs-factor){
+  @media(max-width: $screen-md-max){
+    #{$property}: $value * $md-factor;
+  }
+  @media(max-width: $screen-sm-max){
+    #{$property}: $value * $sm-factor;
+  }
+  @media(max-width: $screen-xs){
+    #{$property}: $value * $xs-factor;
+  }
+}
+
+@mixin appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;
+}
+
+@mixin elipsisLines($numLines, $lineHeight){
+  height: $lineHeight * $numLines;
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  @media(max-width: $screen-md-max){
+    height: $lineHeight * $numLines * $screen-md-factor;
+  }
+  @media(max-width: $screen-sm-max){
+    height: $lineHeight * $numLines * $screen-sm-factor;
+  }
+  @media(max-width: $screen-xs){
+    height: $lineHeight * $numLines * $screen-xs-factor;
+  }
+}
+
+@mixin column($totalCols, $pixels){
+  @if $pixels {
+    @include calc("width", "(100% -#{$pixels}) / #{$totalCols}");
+  } @else {
+    @include calc("width", "100% / #{$totalCols}");
+  }
+
+}
+
+@import "../angular/app/styles/_.scss";
+
+@import "../angular/app/styles/alert.scss";
+
+@import "../angular/app/styles/articles.scss";
+
+@import "../angular/app/styles/background.scss";
+
+@import "../angular/app/styles/base.scss";
+
+@import "../angular/app/styles/breadcrumbs.scss";
+
+@import "../angular/app/styles/btn.scss";
+
+@import "../angular/app/styles/calc.scss";
+
+@import "../angular/app/styles/dropdown.scss";
+
+@import "../angular/app/styles/filters.scss";
+
+@import "../angular/app/styles/fonts.scss";
+
+@import "../angular/app/styles/form.scss";
+
+@import "../angular/app/styles/layout.scss";
+
+@import "../angular/app/styles/legend.scss";
+
+@import "../angular/app/styles/link.scss";
+
+@import "../angular/app/styles/modal.scss";
+
+@import "../angular/app/styles/nudge.scss";
+
+@import "../angular/app/styles/outdatedbrowser.scss";
+
+@import "../angular/app/styles/popover.scss";
+
+@import "../angular/app/styles/quiz.scss";
+
+@import "../angular/app/styles/searchResult.scss";
+
+@import "../angular/app/styles/sidebar.scss";
+
+@import "../angular/app/styles/slider.scss";
+
+@import "../angular/app/styles/socials-and-fonts.scss";
+
+@import "../angular/app/styles/ui.scss";
+
+@import "../angular/app/styles/widgets.scss";
+
+@import "../angular/app/styles/wysiwyg.scss";
+
+@import "../angular/app/components/accordion/accordion.scss";
+
+@import "../angular/app/components/breadcrumbs/breadcrumbs.scss";
+
+@import "../angular/app/components/calc-chart/calcChart.scss";
+
+@import "../angular/app/components/calc-donut/calcDonut.scss";
+
+@import "../angular/app/components/calc-graphic/calcGraphic.scss";
+
+@import "../angular/app/components/calc-graphic-text/calcGraphicText.scss";
+
+@import "../angular/app/components/calc-inflation/calcInflation.scss";
+
+@import "../angular/app/components/calc-input/calcInput.scss";
+
+@import "../angular/app/components/calc-input-button-select/style.scss";
+
+@import "../angular/app/components/calc-input-iar-select/style.scss";
+
+@import "../angular/app/components/calc-input-quiz/calcInputQuiz.scss";
+
+@import "../angular/app/components/calc-input-select-date/calc-input-select-date.scss";
+
+@import "../angular/app/components/calc-input-select-year/calc-input-select-year.scss";
+
+@import "../angular/app/components/calc-nudge-slider/style.scss";
+
+@import "../angular/app/components/calc-output/calcOutput.scss";
+
+@import "../angular/app/components/calc-select/style.scss";
+
+@import "../angular/app/components/calc-select-months/style.scss";
+
+@import "../angular/app/components/calc-stacked/calcStacked.scss";
+
+@import "../angular/app/components/category-filter/categoryFilter.scss";
+
+@import "../angular/app/components/cm-print/cm-print.scss";
+
+@import "../angular/app/components/cm-select/cm-select.scss";
+
+@import "../angular/app/components/cm-spinner/cm-spinner.scss";
+
+@import "../angular/app/components/collapse-toggler/collapseToggler.scss";
+
+@import "../angular/app/components/conveyor/conveyor.scss";
+
+@import "../angular/app/components/cover-image/coverImage.scss";
+
+@import "../angular/app/components/editor-picks/editor-picks.scss";
+
+@import "../angular/app/components/email-signup/emailSignup.scss";
+
+@import "../angular/app/components/footer/footer.scss";
+
+@import "../angular/app/components/header/header.scss";
+
+@import "../angular/app/components/header-share-buttons/headerShareButtons.scss";
+
+@import "../angular/app/components/header-small/header-small.scss";
+
+@import "../angular/app/components/header-small-title/header-small-title.scss";
+
+@import "../angular/app/components/logged-in/loggedIn.scss";
+
+@import "../angular/app/components/navigation/navigation.scss";
+
+@import "../angular/app/components/not-logged-in/notLoggedIn.scss";
+
+@import "../angular/app/components/not-sure-box/not-sure-box.scss";
+
+@import "../angular/app/components/parallax/parallax.scss";
+
+@import "../angular/app/components/popover/popover.scss";
+
+@import "../angular/app/components/related-content/relatedContent.scss";
+
+@import "../angular/app/components/scroll-fade/scrollFade.scss";
+
+@import "../angular/app/components/sequence/sequence.scss";
+
+@import "../angular/app/components/slideshow/slideshow.scss";
+
+@import "../angular/app/components/sorted-tip/sortedTip.scss";
+
+@import "../angular/app/components/tool-title/toolTitle.scss";
+
+@import "../angular/app/pages/campaign/campaign.scss";
+
+@import "../angular/app/pages/contact/contact.scss";
+
+@import "../angular/app/pages/dashboard/dashboard.scss";
+
+@import "../angular/app/pages/glossary/glossary.scss";
+
+@import "../angular/app/pages/guides/guides.scss";
+
+@import "../angular/app/pages/home/home.scss";
+
+@import "../angular/app/pages/must-reads/blog-layout.scss";
+
+@import "../angular/app/pages/order/order.scss";
+
+@import "../angular/app/pages/password/password.scss";
+
+@import "../angular/app/pages/password/signup.scss";
+
+@import "../angular/app/pages/profile/profile.scss";
+
+@import "../angular/app/pages/template/template.scss";
+
+@import "../angular/app/pages/tools/tools.scss";
+
+@import "../angular/app/pages/guides/guide-page/guide-page.scss";
+
+@import "../angular/app/pages/home/calc-preview/calcPreview.scss";
+
+@import "../angular/app/pages/home/campaigns/campaigns.scss";
+
+@import "../angular/app/pages/home/must-reads/mustReads.scss";
+
+@import "../angular/app/pages/home/popular-tools/popularTools.scss";
+
+@import "../angular/app/pages/home/question-selector/questionSelector.scss";
+
+@import "../angular/app/pages/home/signup-prompt/signupPrompt.scss";
+
+@import "../angular/app/pages/must-reads/blog-filter/blog-filter.scss";
+
+@import "../angular/app/pages/must-reads/blog-header/blog-header.scss";
+
+@import "../angular/app/pages/must-reads/blog-list/blog-list.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/budgetingTool.scss";
+
+@import "../angular/app/pages/tools/debt-calculator/debt-calculator.scss";
+
+@import "../angular/app/pages/tools/investment-planner/investment-planner.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-fees/kiwisaver-fees.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-savings-calculator/style.scss";
+
+@import "../angular/app/pages/tools/money-personality/money-personality.scss";
+
+@import "../angular/app/pages/tools/mortgage-tool/mortgage-tool.scss";
+
+@import "../angular/app/pages/tools/planning-tool/planning-tool.scss";
+
+@import "../angular/app/pages/tools/net-worth-calculator/net-worth-calculator.scss";
+
+@import "../angular/app/pages/tools/retirement-planner/retirement-planner.scss";
+
+@import "../angular/app/pages/tools/savings-calculator/savings-calculator.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/modals/budgetModal.scss";
+
+@import "../angular/app/pages/tools/investment-planner/calc-output-investment/calcOutputInvestment.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-fees/calc-input-kiwisaver-fees/calcInputKiwisaverFees.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-fees/calc-output-kiwisaver-fees/calcOutputKiwisaverFees.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-fees/calc-output-kiwisaver-fees/calcOutputKiwisaverFeesMobile.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-fees/kiwisaver-fees-calc-inflation/calcInflation.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-savings-calculator/kiwisaver-savings-calc-nudge-slider/style.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-savings-calculator/kiwisaver-savings-form/style.scss";
+
+@import "../angular/app/pages/tools/kiwisaver-savings-calculator/kiwisaver-savings-result/style.scss";
+
+@import "../angular/app/pages/tools/money-personality/calc-output-personality/calcOutputPersonality.scss";
+
+@import "../angular/app/pages/tools/mortgage-tool/mortgage-tool-graphic/calcGraphic.scss";
+
+@import "../angular/app/pages/tools/mortgage-tool/mortgage-tool-graphic-text/calcGraphicText.scss";
+
+@import "../angular/app/pages/tools/mortgage-tool/mortgage-tool-input/calcInput.scss";
+
+@import "../angular/app/pages/tools/mortgage-tool/mortgage-tool-output/calcOutput.scss";
+
+@import "../angular/app/pages/tools/net-worth-calculator/calc-input-net-worth/calcInputNetWorth.scss";
+
+@import "../angular/app/pages/tools/net-worth-calculator/calc-output-net-worth/calcOutputNetWorth.scss";
+
+@import "../angular/app/pages/tools/retirement-planner/calc-input-retirement/calcInputRetirement.scss";
+
+@import "../angular/app/pages/tools/retirement-planner/calc-output-retirement/calcOutputRetirement.scss";
+
+@import "../angular/app/pages/tools/retirement-planner/retirement-planner-stacked/calcStacked.scss";
+
+@import "../angular/app/pages/tools/savings-calculator/savings-calc-iar-select/style.scss";
+
+@import "../angular/app/pages/tools/savings-calculator/savings-calc-nudge-slider/style.scss";
+
+@import "../angular/app/pages/tools/savings-calculator/savings-calculator-form/style.scss";
+
+@import "../angular/app/pages/tools/savings-calculator/savings-calculator-result/style.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/add-master-category/addMasterCategory.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/add-new-category/addNewCategory.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/add-new-category-listview/addNewCategoryListview.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-breakdown/budgetBreakdown.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-category-edit-form/budgetCategoryEditForm.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-category-facade/budgetCategoryFacade.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-header/budgetHeader.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-input-amount/budgetInputAmount.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-master-category/budgetMasterCategory.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-master-category-listview/budgetMasterCategoryListview.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-section-heading/budgetSectionHeading.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-period-dropdown/budgetPeriodDropdown.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-view-chooser/budgetViewChooser.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/income-stream/incomeStream.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/inline-editable-amount/inlineEditableAmount.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/intro-header/introHeader.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/mobile-save/mobileSave.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/save-to-home/saveToHome.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/views/budget-template/budgetTemplate.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/views/welcome/welcome.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/goal-draggable/goalDraggable.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/edit-modal/editModal.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/goal-droppable/goalDroppable.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/goal-result/goalResult.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/link-box/linkBox.scss";
+
+@import "../angular/app/pages/tools/planning-tool/components/welcome-header/welcomeHeader.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-breakdown/budget-breakdown-legend/budgetBreakdownLegend.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/components/budget-master-category/budget-category/budgetCategory.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/views/budget-template/budgeting-questions/budgetingQuestions.scss";
+
+@import "../angular/app/pages/tools/budgeting-tool/views/welcome/budget-amount-form/budgetAmountForm.scss";
+
+

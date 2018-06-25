@@ -1,0 +1,359 @@
+{
+  "Collateral": [
+    {
+      "ID": 1000,
+      "Title": "Set your goals - English",
+      "ShortCopy": "Targets to shoot for",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Goals-Booklet.pdf",
+        "Description": "PDF 0.45 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Goals-thumbnail.jpg",
+        "Title": "Goals_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1100,
+      "Title": "Set your goals - Te Reo",
+      "ShortCopy": "Tō mahi tuatahi e pai ake ai tāu whakarite i tō pūtea",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Goals-Te-Reo-Booklet.pdf",
+        "Description": "PDF 0.58 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Goals-Te-Reo-thumbnail.jpg",
+        "Title": "Goals_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1001,
+      "Title": "Budgeting - English",
+      "ShortCopy": "Making a plan to reach our goals",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Budgeting-Booklet.pdf",
+        "Description": "PDF 0.56 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Budgeting-thumbnail.jpg",
+        "Title": "Budgeting_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1101,
+      "Title": "Budgeting - Te Reo",
+      "ShortCopy": "Te whakarite pūtea e tutuki ai ō whāinga pūtea",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Budgeting-Te-Reo-Booklet.pdf",
+        "Description": "PDF 0.88 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Budgeting-Te-Reo-thumbnail.jpg",
+        "Title": "Budgeting_Te_Reo_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1002,
+      "Title": "Managing debt - English",
+      "ShortCopy": "Tackling it before it's a real drag!",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Debt-Booklet.pdf",
+        "Description": "PDF 0.43 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Debt-thumbnail.jpg",
+        "Title": "Debt_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1102,
+      "Title": "Managing debt - Te Reo",
+      "ShortCopy": "He ngāwari noa te whai i te nama, he uaua ake te utu i te nama",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Debt-Te-Reo-Booklet.pdf",
+        "Description": "PDF 0.6 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Debt-Te-Reo-thumbnail.jpg",
+        "Title": "Debt_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1006,
+      "Title": "Saving - English",
+      "ShortCopy": "Paying ourselves first!",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Saving-Booklet.pdf",
+        "Description": "PDF 0.68 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Saving-thumbnail.jpg",
+        "Title": "Saving_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1106,
+      "Title": "Saving - Te Reo",
+      "ShortCopy": "He tīmohea ka pakari ā tōna wā",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Saving-Te-Reo-Booklet.pdf",
+        "Description": "PDF 0.79 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Saving-Te-Reo-thumbnail.jpg",
+        "Title": "Saving_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1003,
+      "Title": "Retirement planning",
+      "ShortCopy": "Shaping our future lifestyles",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Retirement-Booklet.pdf",
+        "Description": "PDF 0.99 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Retirement-thumbnail.jpg",
+        "Title": "Retirement_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1004,
+      "Title": "Insurance",
+      "ShortCopy": "Covered, just in case",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Insurance-Booklet.pdf",
+        "Description": "PDF 0.3 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Insurance-thumbnail.jpg",
+        "Title": "Insurance_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1005,
+      "Title": "Investing",
+      "ShortCopy": "Making money work for us",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Investing-Booklet.pdf",
+        "Description": "PDF 0.72 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Investing-thumbnail.jpg",
+        "Title": "Investing_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1007,
+      "Title": "KiwiSaver",
+      "ShortCopy": "How can we make the most of it?",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-KiwiSaver-Booklet.pdf",
+        "Description": "PDF 0.81 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/KiwiSaver-thumbnail.jpg",
+        "Title": "KiwiSaver_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1008,
+      "Title": "Choice years",
+      "ShortCopy": "Money decisions in retirement",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Choice-Booklet.pdf",
+        "Description": "PDF 2.4 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Choice-thumbnail.jpg",
+        "Title": "Choice_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1009,
+      "Title": "Thinking of living in a retirement village?",
+      "ShortCopy": "Choosing the lifestyle you want",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Retirement-Village-Booklet.pdf",
+        "Description": "PDF 2.6 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Retirement-Village-thumbnail.jpg",
+        "Title": "Retirement_Village_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 1999,
+      "Title": "Set of Sorted booklets",
+      "ShortCopy": "Order the full set of Sorted booklets",
+      "PDF": {
+        "Filename": "assets/Order-Collateral-booklets/Sorted-Set-Booklets.zip",
+        "Description": "PDF 12.6 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-thumbnails/Set-thumbnail.png",
+        "Title": "Set_Thumbnail"
+      },
+      "CategoryID": "1"
+    },
+    {
+      "ID": 2000,
+      "Title": "Tackling debt",
+      "ShortCopy": "Good vs bad debt and how to get out of debt fast",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-Debt-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-Debt-Preview.pdf",
+        "Description": "PDF 14.3 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/Debt-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 2001,
+      "Title": "Getting ahead",
+      "ShortCopy": "Sorting our money, tackling debt and seeing the future",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-GettingAhead-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-Getting-Ahead-Preview.pdf",
+        "Description": "PDF 7.2 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/GettingAhead-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 2002,
+      "Title": "Setting goals, making a budget",
+      "ShortCopy": "The first steps to getting sorted",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-Goals-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-Goals-Preview.pdf",
+        "Description": "PDF 14.2 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/Goals-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 2003,
+      "Title": "Dialling up KiwiSaver",
+      "ShortCopy": "How the scheme works, choosing a fund and making the most of KiwiSaver",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-KiwiSaver-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-KiwiSaver-Preview.pdf",
+        "Description": "PDF 17.5 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/KiwiSaver-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 2004,
+      "Title": "Retirement planning",
+      "ShortCopy": "Planning for life after work and where the money will come from",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-Retirement-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-Retirement-Preview.pdf",
+        "Description": "PDF 14.2 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/Retirement-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 2005,
+      "Title": "Saving and investing",
+      "ShortCopy": "Paying ourselves first and investing to build wealth",
+      "Includes": [],
+      "PDF": {
+        "Filename": "assets/Order-Collateral-seminar/Sorted-Saving-Seminar.zip",
+        "Checked": false
+      },
+      "Preview": {
+        "Filename": "assets/Order-Collateral-seminar-preview/Sorted-Saving-and-Investing-Preview.pdf",
+        "Description": "PDF 18.6 MB"
+      },
+      "ThumbnailImage": {
+        "Filename": "assets/Order-Collateral-seminar-thumbnails/Saving-Seminar-thumbnail.jpg",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "2"
+    },
+    {
+      "ID": 3000,
+      "Title": "'Think' A2 poster",
+      "ShortCopy": "'To stick to your money plan, stick it to the fridge'",
+      "PDF": {
+        "Filename": "assets/Uploads/sample.pdf",
+        "Description": "PDF 1.5 MB, A5"
+      },
+      "ThumbnailImage": {
+        "Filename": "https://www.sorted.org.nz/files/styles/booklet_listing_image/public/products/booklets/cover_images/budgeting-cover-dec-14.jpg?itok=8aO0PiCj",
+        "Title": "Thumbnail"
+      },
+      "CategoryID": "3"
+    }
+  ],
+  "Categories": [
+    {
+      "ID": 1,
+      "Title": "Booklets",
+      "SortOrder": 1
+    },
+    {
+      "ID": 2,
+      "Title": "Seminars",
+      "SortOrder": 2
+    },
+    {
+      "ID": 3,
+      "Title": "Posters",
+      "SortOrder": 3
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+.calc-input-net-worth-group {
+
+  margin-bottom: 2px;
+}
+
+.calc-input-net-worth-heading {
+  cursor: pointer;
+  .fa {
+    float: left;
+    padding-top: 13px;
+    margin: 0 10px 0 0;
+  }
+
+  .calc-input-net-worth-title-amount {
+    line-height: 48px;
+    margin: 0 0 0 10px;
+  }
+
+
+  .fa-chevron-up {
+    display: inline-block;
+  }
+  .fa-chevron-down {
+    display: none;
+  }
+
+  &.selected {
+    cursor: default;
+    .fa-chevron-down {
+      display: inline-block;
+    }
+    .fa-chevron-up {
+      display: none;
+    }
+  }
+}
+
+
+.calc-input-net-worth-sub-heading, .calc-input-level-heading {
+  cursor: pointer;
+
+  .fa {
+    float: left;
+    padding-top: 15px;
+    margin: 0 10px 0 0;
+  }
+
+  .fa-minus {
+    display: none;
+  }
+  .fa-plus {
+    display: inline-block;
+  }
+
+  &.selected {
+    cursor: default;
+    .fa-minus {
+      display: inline-block;
+    }
+    .fa-plus {
+      display: none;
+    }
+  }
+}
+
+.calc-input-level-heading {
+  background-color: transparent!important;
+}
+
+.calc-input-net-worth-form {
+  .input-group {
+    margin: 0;
+  }
+}
+
+.calc-input-net-worth-fieldset {
+  margin-bottom: 16px;
+
+  .input-group {
+    border-color: $grey-medium 1px bold;
+  }
+}
+
+.calc-input-net-worth-btn-group {
+  .btn {
+    width: 30%;
+    line-height: 50px;
+    padding: 0;
+    color: $grey-medium;
+    &.selected {
+      color: $white;
+    }
+  }
+  .btn-wide {
+    width: 40%;
+  }
+}
+
+.calc-input-container-child {
+  .ui-results-link {
+    text-decoration: none;
+  }
+}

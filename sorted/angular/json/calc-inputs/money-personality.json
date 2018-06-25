@@ -1,0 +1,735 @@
+  {
+    "unique": "moneyPersonalityQuiz",
+    "model": "moneyPersonalityModel",
+    "title": "My money personality",
+    "inputs": [
+      {
+        "unique": "moneyPersonalityQuiz",
+        "visible": true,
+        "sections": {
+          "questions": {
+            "visible": true,
+            "fields": [
+              "q1",
+              "q2",
+              "q3",
+              "q4",
+              "q5",
+              "q6",
+              "q7",
+              "q8",
+              "q9",
+              "q10",
+              "q11",
+              "q12",
+              "q13",
+              "q14",
+              "q15",
+              "q16",
+              "q17",
+              "q18",
+              "q19",
+              "q20",
+              "q21",
+              "q22",
+              "q23",
+              "q24",
+              "q25"
+            ]
+          }
+        }
+      }
+    ],
+    "fields": {
+      "q1": {
+        "type": "QUESTION",
+        "label": "Question 1",
+        "calcModel": "spend",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Besides necessities like food, clothing and shelter, do you spend most of your cash on",
+        "options": [
+          {
+            "label": "Going out with friends, looking good and having fun?",
+            "name": "q1a",
+            "value": 1
+          },
+          {
+            "label": "Books, movies and/or other specialist pursuits?",
+            "name": "q1b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q2": {
+        "type": "QUESTION",
+        "label": "Question 2",
+        "calcModel": "investing_in",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Do you feel more drawn towards investing in",
+        "options": [
+          {
+            "label": "Great opportunities that may lead to bigger things?",
+            "name": "q2a",
+            "value": 1
+          },
+          {
+            "label": "Investments that are a sure thing and bring in standard returns?",
+            "name": "q2b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q3": {
+        "type": "QUESTION",
+        "label": "Question 3",
+        "calcModel": "people",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Financially, you think people should",
+        "options": [
+          {
+            "label": "Receive government support?",
+            "name": "q3a",
+            "value": 1
+          },
+          {
+            "label": "Fend more for themselves?",
+            "name": "q3b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q4": {
+        "type": "QUESTION",
+        "label": "Question 4",
+        "calcModel": "spending_plan",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Does following an overall spending plan",
+        "options": [
+          {
+            "label": "Appeal to you?",
+            "name": "q4a",
+            "value": 1
+          },
+          {
+            "label": "Cramp and even depress you (but you know it is something you should do)?",
+            "name": "q4b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q5": {
+        "type": "QUESTION",
+        "label": "Question 5",
+        "calcModel": "financial_pages",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Do you know or have you known someone who can understand the financial pages of the newspaper?",
+        "options": [
+          {
+            "label": "Yes",
+            "name": "q5a",
+            "value": 1
+          },
+          {
+            "label": "No",
+            "name": "q5b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q6": {
+        "type": "QUESTION",
+        "label": "Question 6",
+        "calcModel": "discuss",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Do you tend to discuss your money issues and ideas with",
+        "options": [
+          {
+            "label": "Many people?",
+            "name": "q6a",
+            "value": 1
+          },
+          {
+            "label": "A few people deeply?",
+            "name": "q6b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q7": {
+        "type": "QUESTION",
+        "label": "Question 7",
+        "calcModel": "drawn_to",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Are you drawn more towards",
+        "options": [
+          {
+            "label": "Theories about money?",
+            "name": "q7a",
+            "value": 1
+          },
+          {
+            "label": "Facts about money?",
+            "name": "q7b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q8": {
+        "type": "QUESTION",
+        "label": "Question 8",
+        "calcModel": "friends",
+        "format": {
+          "type": "INT"
+        },
+        "question": "When discussing your friends' financial situations, are you more inclined to be",
+        "options": [
+          {
+            "label": "Personal?",
+            "name": "q8a",
+            "value": 1
+          },
+          {
+            "label": "Objective?",
+            "name": "q8b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q9": {
+        "type": "QUESTION",
+        "label": "Question 9",
+        "calcModel": "like",
+        "format": {
+          "type": "INT"
+        },
+        "question": "You like",
+        "options": [
+          {
+            "label": "To develop systems with your finances, and to know exactly how much you don't have",
+            "name": "q9a",
+            "value": 1
+          },
+          {
+            "label": "The idea of structure and order, but tend to be more disordered",
+            "name": "q9b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q10": {
+        "type": "QUESTION",
+        "label": "Question 10",
+        "calcModel": "battles",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Your hardest financial battles are with",
+        "options": [
+          {
+            "label": "Yourself",
+            "name": "q10a",
+            "value": 1
+          },
+          {
+            "label": "Others",
+            "name": "q10b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q11": {
+        "type": "QUESTION",
+        "label": "Question 11",
+        "calcModel": "generally",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Would you generally",
+        "options": [
+          {
+            "label": "Talk about money easily to almost anyone for as long as you felt like it?",
+            "name": "q11a",
+            "value": 1
+          },
+          {
+            "label": "Only have something to say about money to certain people in certain situations?",
+            "name": "q11b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q12": {
+        "type": "QUESTION",
+        "label": "Question 12",
+        "calcModel": "investing",
+        "format": {
+          "type": "INT"
+        },
+        "question": "When it comes to investing would you be more likely to",
+        "options": [
+          {
+            "label": "Develop a way of your own?",
+            "name": "q12a",
+            "value": 1
+          },
+          {
+            "label": "Do it the accepted way?",
+            "name": "q12b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q13": {
+        "type": "QUESTION",
+        "label": "Question 13",
+        "calcModel": "you",
+        "format": {
+          "type": "INT"
+        },
+        "question": "You",
+        "options": [
+          {
+            "label": "Find it interesting trying to understand your money personality",
+            "name": "q13a",
+            "value": 1
+          },
+          {
+            "label": "Haven't given your money personality much thought",
+            "name": "q13b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q14": {
+        "type": "QUESTION",
+        "label": "Question 14",
+        "calcModel": "money_matters",
+        "format": {
+          "type": "INT"
+        },
+        "question": "When it comes to money matters are you more inclined to want to",
+        "options": [
+          {
+            "label": "Have things sorted?",
+            "name": "q14a",
+            "value": 1
+          },
+          {
+            "label": "Wait for a variety of reasons before deciding?",
+            "name": "q14b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q15": {
+        "type": "QUESTION",
+        "label": "Question 15",
+        "calcModel": "future",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Which best describes the way you think about your financial future?",
+        "options": [
+          {
+            "label": "The glass is half empty",
+            "name": "q15a",
+            "value": 1
+          },
+          {
+            "label": "The glass is half full",
+            "name": "q15b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q16": {
+        "type": "QUESTION",
+        "label": "Question 16",
+        "calcModel": "spend_cash",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Do new people you meet generally see how you like to spend your cash?",
+        "options": [
+          {
+            "label": "Pretty obviously",
+            "name": "q16a",
+            "value": 1
+          },
+          {
+            "label": "Only after they get to know you",
+            "name": "q16b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q17": {
+        "type": "QUESTION",
+        "label": "Question 17",
+        "calcModel": "people_see_you",
+        "format": {
+          "type": "INT"
+        },
+        "question": "How would you say that people see you with money?",
+        "options": [
+          {
+            "label": "Imaginative and individual",
+            "name": "q17a",
+            "value": 1
+          },
+          {
+            "label": "Practical and realistic",
+            "name": "q17b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q18": {
+        "type": "QUESTION",
+        "label": "Question 18",
+        "calcModel": "thought",
+        "format": {
+          "type": "INT"
+        },
+        "question": "You often analyse your thoughts and feelings and use them in making financial decisions.",
+        "options": [
+          {
+            "label": "True",
+            "name": "q18a",
+            "value": 1
+          },
+          {
+            "label": "False",
+            "name": "q18b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q19": {
+        "type": "QUESTION",
+        "label": "Question 19",
+        "calcModel": "bills",
+        "format": {
+          "type": "INT"
+        },
+        "question": "What is your attitude to bill payments?",
+        "options": [
+          {
+            "label": "Punctual",
+            "name": "q19a",
+            "value": 1
+          },
+          {
+            "label": "Leisurely",
+            "name": "q19b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q20": {
+        "type": "QUESTION",
+        "label": "Question 20",
+        "calcModel": "gone",
+        "format": {
+          "type": "INT"
+        },
+        "question": "You often wonder where your money has gone.",
+        "options": [
+          {
+            "label": "True",
+            "name": "q20a",
+            "value": 1
+          },
+          {
+            "label": "False",
+            "name": "q20b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q21": {
+        "type": "QUESTION",
+        "label": "Question 21",
+        "calcModel": "advice",
+        "format": {
+          "type": "INT"
+        },
+        "question": "If seeing someone for financial advice, would you",
+        "options": [
+          {
+            "label": "Just expect that you would ask all you wanted to ask and say all you wanted to say?",
+            "name": "q21a",
+            "value": 1
+          },
+          {
+            "label": "Have rehearsed and planned the things you wanted to ask and say?",
+            "name": "q21b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q22": {
+        "type": "QUESTION",
+        "label": "Question 22",
+        "calcModel": "adviser",
+        "format": {
+          "type": "INT"
+        },
+        "question": "What would you be more likely to want from a financial adviser?",
+        "options": [
+          {
+            "label": "Inspiration",
+            "name": "q22a",
+            "value": 1
+          },
+          {
+            "label": "Sensible advice",
+            "name": "q22b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q23": {
+        "type": "QUESTION",
+        "label": "Question 23",
+        "calcModel": "past",
+        "format": {
+          "type": "INT"
+        },
+        "question": "You seldom think of how your past spending or possible investments could have affected you now",
+        "options": [
+          {
+            "label": "True",
+            "name": "q23a",
+            "value": 1
+          },
+          {
+            "label": "False",
+            "name": "q23b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q24": {
+        "type": "QUESTION",
+        "label": "Question 24",
+        "calcModel": "purchasing",
+        "format": {
+          "type": "INT"
+        },
+        "question": "When purchasing a new item such as a household appliance, are you more likely to",
+        "options": [
+          {
+            "label": "Decide on one shop and choose pretty quickly from there?",
+            "name": "q24a",
+            "value": 1
+          },
+          {
+            "label": "Wait, research the market and shop around?",
+            "name": "q24b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      },
+      "q25": {
+        "type": "QUESTION",
+        "label": "Question 25",
+        "calcModel": "wallet",
+        "format": {
+          "type": "INT"
+        },
+        "question": "Are you often forgetting where you put your wallet?",
+        "options": [
+          {
+            "label": "Yes",
+            "name": "q25a",
+            "value": 1
+          },
+          {
+            "label": "No",
+            "name": "q25b",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      }
+    },
+    "dropdown": {
+      "label": "Select a money personality type",
+      "placeholder": "Please Select",
+      "format": {
+        "type": "INT"
+      },
+      "model": "outputPersonality",
+      "options": [
+        {
+          "label": "Adviser speculator",
+          "value": "adviser-speculator"
+        },
+        {
+          "label": "System innovator",
+          "value": "system-innovator"
+        },
+        {
+          "label": "Insightful investor",
+          "value": "insightful-investor"
+        },
+        {
+          "label": "Authentic dreamer",
+          "value": "authentic-dreamer"
+        },
+        {
+          "label": "Sound controller",
+          "value": "sound-controller"
+        },
+        {
+          "label": "Money mechanic",
+          "value": "money-mechanic"
+        },
+        {
+          "label": "Practical domestic",
+          "value": "practical-domestic"
+        },
+        {
+          "label": "Sensible drifter",
+          "value": "sensible-drifter"
+        },
+        {
+          "label": "Financial controller",
+          "value": "financial-controller"
+        },
+        {
+          "label": "Entrepreneur",
+          "value": "entrepreneur"
+        },
+        {
+          "label": "Money mentor",
+          "value": "money-mentor"
+        },
+        {
+          "label": "Visual stylist",
+          "value": "visual-stylist"
+        },
+        {
+          "label": "Money surgeon",
+          "value": "money-surgeon"
+        },
+        {
+          "label": "Money maestro",
+          "value": "money-maestro"
+        },
+        {
+          "label": "Money organiser",
+          "value": "money-organiser"
+        },
+        {
+          "label": "Hedonist",
+          "value": "hedonist"
+        }
+      ],
+      "value": "",
+      "required": false
+    },
+    "outputs": [
+      {
+        "type": "MONEY_INPUT",
+        "label": "Desired retirement income",
+        "tooltip": "This is my placeholder tool tip",
+        "model": "liveOn",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY_PERIOD",
+        "label": "You're on track to have",
+        "tooltip": "This is my placeholder tool tip",
+        "model": "retirement_income",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-black"
+      },
+      {
+        "type": "MONEY_PERIOD",
+        "label": "You'll need to save an extra",
+        "model": "deficit_lump_amount",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-red"
+      },
+      {
+        "type": "DIVIDER"
+      },
+      {
+        "type": "MONEY",
+        "label": "You'll need an extra lump sum of",
+        "tooltip": "This is my placeholder tool tip",
+        "model": "amount_total",
+        "color": "font-red"
+      }
+    ]
+  }
+

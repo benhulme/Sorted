@@ -1,0 +1,69 @@
+<div class="calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-medium font-sm">{{calculator[0].title}}</span>
+</div>
+
+<form class="quiz-form" name="{{form.unique}}" ng-repeat="(formKey, form) in calculator">
+
+  <div ng-repeat="(inputKey, input) in form.inputs" data-form-type="{{form.type}}">
+
+    <div class="calc-input-section"
+         ng-repeat="(sectionName, section) in input.sections"
+         section-name="{{sectionName}}">
+
+
+      <div ng-repeat="(fieldKey, field) in section.fields"
+           class="calc-input-group"
+           ng-class="{selected: (inputKey === 0 && fieldKey === 0)}">
+
+        <div class="calc-heading calc-input-heading font-medium" data-form-type="{{form.type}}" data-unique="{{field}}">
+          <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+          <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+          <span class="calc-title-text _left _inline-block font-sm">{{form.fields[field].label}}</span>
+          <span class="quiz-title-tick _right inline-block font-sm font-orange" ng-class="{_hidden:  model.$attributes[calculator.fields[field].calcModel] === ''}">
+            <span class="fa fa-check"></span>
+          </span>
+        </div>
+
+        <div class="calc-input-container" ng-class="{_hidden: inputKey > 0 || fieldKey > 0}">
+
+          <div class="calc-input-form">
+
+            <div class="calc-input-fieldset" ng-class="{'_no-margin': form.fields[field].type === 'TITLE'}">
+
+              <div ng-switch="form.fields[field].type">
+
+                <div ng-switch-when="QUESTION" class="{{form.fields[field].class}}">
+
+                  <div class="font-sm font-medium">
+                    {{form.fields[field].question}}
+                  </div>
+
+                  <div ng-repeat="option in form.fields[field].options" class="quiz-options">
+                    <input type="radio"
+                           value="{{option.value}}"
+                           class="quiz-options-input"
+                           name="{{field}}"
+                           id="{{option.name}}"
+                           ng-model="form.fields[field].value" />
+                    <label class="quiz-options-label font-sm font-book" for="{{option.name}}">{{option.label}}</label>
+                  </div>
+
+                  <a ng-if="field.link" ng-href="{{form.fields[field].link.url}}" class="font-xx">{{form.fields[field].link.text}}</a>
+
+                </div><!-- switch-when -->
+
+              </div><!-- switch -->
+
+            </div>
+
+          </div>
+
+        </div><!-- repeat -->
+
+      </div>
+
+    </div>
+
+  </div><!-- input in inputs -->
+
+</form><!-- form in calculator -->

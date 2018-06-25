@@ -1,0 +1,14 @@
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle form-control"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="true"
+          ng-model="model"
+  ><span>{{model.Title}}</span>   <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="period in periods">
+      <a class="dropdown-link text-center" ng-click="setPeriod(model,period)">{{period.Title}}</a>
+    </li>
+  </ul>
+</div>

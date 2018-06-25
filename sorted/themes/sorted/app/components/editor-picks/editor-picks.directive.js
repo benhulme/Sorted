@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("editorPicks",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/components/editor-picks/editor-picks.html",restrict:"E",scope:{data:"=",title:"@"},controller:["$scope","silverStripeService",function(){}]}}])}();

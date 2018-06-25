@@ -1,0 +1,12 @@
+.private-alert{
+  position: fixed;
+  top: 50px;
+  width: 60%;
+  left:20%;
+  text-align: center;
+  @media (max-width: $screen-sm-max) {
+    width: 90%;
+    left: 5%;
+    top: 100px;
+  }
+}

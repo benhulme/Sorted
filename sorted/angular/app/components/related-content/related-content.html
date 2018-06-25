@@ -1,0 +1,32 @@
+<div class="layout-container articles-container" scroll-fade>
+  <div scroll-fade-item class="layout-content">
+
+
+    <h2 class="related-heading font-light">{{Title}}</h2>
+    <div class="row layout-row">
+        <div class="col-md-4 col-sm-6 col-xs-12 articles-column" ng-repeat="(index, post) in data.Related | limitTo:3" data-index="{{index}}">
+
+          <a class="_block _relative" ng-href="{{post.Link}}" analytics-on="click" analytics-category="sidecta" analytics-event="relatedcontent" analytics-interaction-type="0"  target="_self" aspect-ratio="16:9">
+            <div class="articles-thumbnail _full-height" ng-if="post.ThumbnailImage.Filename && !post.FeaturedImage.Filename" cover-image="{{post.ThumbnailImage.Filename}}"></div>
+            <div class="articles-thumbnail _full-height" ng-if="post.FeaturedImage.Filename" cover-image="{{post.FeaturedImage.Filename}}"></div>
+          </a>
+
+          <h4 class="font-light font-h4 related-title _clear">
+            <img ng-show="post.CalcIcon.Filename" ng-src="{{post.CalcIcon.Filename}}" class="related-icon _inline-block _left" />
+            <span ng-show="post.CalcIcon.Filename" class="_inline-block related-title-text _left _elipsis _no-wrap has-icon">{{post.MenuTitle}}</span>
+            <span ng-show="!post.CalcIcon.Filename" class="_inline-block related-title-text _left _elipsis _no-wrap _full-width">{{post.MenuTitle}}</span>
+          </h4>
+          <div class="_elipsis related-copy" num-lines="2">
+            {{post.ShortCopy}}
+          </div>
+
+          <a href="{{post.Link}}" analytics-on="click" analytics-category="sidecta" analytics-event="relatedcontent" analytics-interaction-type="0" target="_self" ng-show="!showLink(post) && (post.ClassName != 'ToolPage')" class="ui-link font-sm articles-more">Read More <span class="fa fa-chevron-right font-xs"></span></a>
+          <a href="{{post.Link}}" analytics-on="click" analytics-category="sidecta" analytics-event="relatedcontent" analytics-interaction-type="0" ng-show="showLink(post)" class="ui-link font-sm articles-more">Read More <span class="fa fa-chevron-right font-xs"></span></a>
+          <a href="{{post.Link}}" analytics-on="click" analytics-category="sidecta" analytics-event="relatedcontent" analytics-interaction-type="0" ng-show="!showLink(post) && (post.ClassName == 'ToolPage')" class="ui-link font-sm articles-more">Get Started <span class="fa fa-chevron-right font-xs"></span></a>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+

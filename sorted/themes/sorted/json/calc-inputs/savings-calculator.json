@@ -1,0 +1,663 @@
+{
+  "title": "My savings",
+  "type": "savings-calculator",
+  "CalcID": "8",
+  "controls": [
+    {
+      "id": "savingType",
+      "type": "BUTTON_SELECTOR",
+      "label": "I plan to save",
+      "calcModel": "type",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 0,
+      "required": true,
+      "tooltip": "This tool works for when you’re saving a regular amount or if you’re saving for a specific goal.",
+      "buttons": [
+        {
+          "text": "A REGULAR AMOUNT",
+          "value": 0,
+          "class": "font-xx",
+          "related": "#regular_amount",
+          "toggle": ".savings-type-select",
+          "toggleOutput": ".savings-type-result",
+          "modelId": 0
+        },
+        {
+          "text": "FOR A GOAL",
+          "value": 1,
+          "class": "font-xx",
+          "related": "#goal",
+          "toggle": ".savings-type-select",
+          "toggleOutput": ".savings-type-result",
+          "modelId": 1
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": 0,
+      "unique": "regular_amount",
+      "title": "A Regular Amount",
+      "name": "regular_amount",
+      "type": 0,
+      "fields": [
+        {
+          "id": "savingsGoalAmount",
+          "type": "MONEY",
+          "label": "My savings goal is",
+          "calcModel": "saving_amount",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "class": "_hidden",
+          "placeholder": "",
+          "related": [
+            "regularAmount"
+          ],
+          "required": {
+            "OR": "regularAmount"
+          },
+          "tooltip": "Even small amounts add up over time.",
+          "validation": {
+            "type": "money1",
+            "min": 1,
+            "max": 100000,
+            "message": "Please enter a number between 1 and 100000, with no commas, spaces or symbols."
+          }
+        },
+        {
+          "id": "savingStart",
+          "type": "DATE_SELECT",
+          "label": "I want to start saving on",
+          "calcModel": "starting",
+          "format": {
+            "type": "DATE"
+          },
+          "value": null,
+          "class": "",
+          "placeholder": "",
+          "related": [],
+          "required": true,
+          "tooltip": false
+        },
+        {
+          "id": "savingEnd",
+          "type": "DATE_SELECT",
+          "label": "I want to finish by",
+          "calcModel": "ending",
+          "format": {
+            "type": "DATE"
+          },
+          "value": "",
+          "class": "",
+          "placeholder": "",
+          "related": [],
+          "required": true,
+          "tooltip": false
+        },
+        {
+          "id": "regularAmount",
+          "type": "MONEY",
+          "label": "The amount I plan to save",
+          "calcModel": "regular_amount",
+          "format": {
+            "type": "FLOAT"
+          },
+          "value": "0",
+          "placeholder": "",
+          "related": "savingsGoal",
+          "required": true,
+          "tooltip": "Even small amounts add up over time."
+        },
+        {
+          "id": "regularFrequency",
+          "type": "SELECT",
+          "label": false,
+          "calcModel": "saving_freq",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": 52,
+          "required": false,
+          "tooltip": false,
+          "placeholder": "Please Select",
+          "options": [
+            {
+              "label": "WEEKLY",
+              "value": 52,
+              "selected": true
+            },
+            {
+              "label": "FORTNIGHTLY",
+              "value": 26
+            },
+            {
+              "label": "MONTHLY",
+              "value": 12
+            },
+            {
+              "label": "YEARLY",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "reqularDurationAmount",
+          "type": "NUMBER",
+          "label": "Over this time period",
+          "calcModel": "regular_duration_amount",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "placeholder": "",
+          "related": false,
+          "tooltip": "Enter how long you’ll be saving the regular amount for."
+        },
+        {
+          "id": "regularDurationAmountType",
+          "type": "BUTTON_SELECTOR",
+          "label": false,
+          "calcModel": "regular_duration_amount_type",
+          "format": {
+            "type": "STRING"
+          },
+          "value": "weeks",
+          "required": false,
+          "tooltip": false,
+          "buttons": [
+            {
+              "text": "WEEKS",
+              "value": "weeks",
+              "class": "btn btn-default font-xs"
+            },
+            {
+              "text": "MONTHS",
+              "value": "months",
+              "class": "btn btn-default font-xs"
+            },
+            {
+              "text": "YEARS",
+              "value": "years",
+              "class": "btn btn-default font-xs"
+            }
+          ]
+        },
+        {
+          "id": "savingsInterestRate",
+          "type": "PERCENT",
+          "label": "Interest rate",
+          "calcModel": "interest_rate",
+          "format": {
+            "type": "FLOAT"
+          },
+          "value": "2",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": true,
+          "tooltip": "The interest rate you expect to earn on your savings. See <a class='popover-link-float' href='http://www.interest.co.nz/' target=\"_blank\">interest.co.nz</a> for current rates for savings accounts and term deposits.",
+          "link": {
+            "url": "http://interest.co.nz",
+            "text": "See interest.co.nz for current rates"
+          }
+        },
+        {
+          "id": "savingsAlreadySaved",
+          "type": "MONEY",
+          "label": "I've already saved",
+          "calcModel": "initial_savings",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": "If you want to include any money you’ve already saved, enter it here."
+        },
+        {
+          "id": "inflationAdjust",
+          "type": "BUTTON_SELECTOR",
+          "label": "Adjusted for inflation",
+          "tooltip":{
+            "visible": true,
+            "text": "These results have been adjusted downwards to show the effects of inflation. In 20 years, for example, today’s $200,000 will only be worth around $135,000 (if there’s 2% inflation). To see the results without the effect of inflation, select ‘OFF’."
+          },
+
+          "calcModel": "iar",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1",
+          "required": true,
+          "buttons": [
+            {
+              "text": "ON",
+              "value": 1,
+              "class": "btn btn-default font-xs btn-yellow",
+              "related": false,
+              "toggle": ""
+            },
+            {
+              "text": "OFF",
+              "value": 0,
+              "class": "btn btn-default font-xs btn-yellow",
+              "related": false,
+              "toggle": ""
+            }
+          ]
+        },
+        {
+          "id": "ageMonth",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "age_month",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        },
+        {
+          "id": "ageYEAR",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "age_year",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1970",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        },
+        {
+          "id": "nudgeDollars",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "nudge_dollars",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "50",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "unique": "goal",
+      "title": "For A Goal",
+      "name": "goal",
+      "type": 1,
+      "fields": [
+        {
+          "id": "savingsGoalAmount",
+          "type": "MONEY",
+          "label": "My savings goal is",
+          "calcModel": "saving_amount",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "class": "_hidden",
+          "placeholder": "",
+          "related": [
+            "regularAmount"
+          ],
+          "required": {
+            "OR": "regularAmount"
+          },
+          "tooltip": "Even small amounts add up over time."
+        },
+        {
+          "id": "savingStart",
+          "type": "DATE_SELECT",
+          "label": "I want to start saving on",
+          "calcModel": "starting",
+          "format": {
+            "type": "DATE"
+          },
+          "value": null,
+          "class": "",
+          "placeholder": "",
+          "related": [],
+          "required": true,
+          "tooltip": "Select the date you’re starting to save towards your goal."
+        },
+        {
+          "id": "savingEnd",
+          "type": "DATE_SELECT",
+          "label": "I want to finish by",
+          "calcModel": "ending",
+          "format": {
+            "type": "DATE"
+          },
+          "value": "",
+          "class": "",
+          "placeholder": "",
+          "related": [],
+          "required": true,
+          "tooltip": "Select the date you’ll need to reach your goal by."
+        },
+        {
+          "id": "regularAmount",
+          "type": "MONEY",
+          "label": "The amount I plan to save",
+          "calcModel": "regular_amount",
+          "format": {
+            "type": "FLOAT"
+          },
+          "value": "0",
+          "placeholder": "",
+          "related": "savingsGoal",
+          "required": true,
+          "tooltip": false
+        },
+        {
+          "id": "regularFrequency",
+          "type": "SELECT",
+          "label": false,
+          "calcModel": "saving_freq",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "52",
+          "required": false,
+          "tooltip": false,
+          "placeholder": "Please Select",
+          "options": [
+            {
+              "label": "Weekly",
+              "value": 52,
+              "selected": true
+            },
+            {
+              "label": "Fortnightly",
+              "value": 26
+            },
+            {
+              "label": "Monthly",
+              "value": 12
+            },
+            {
+              "label": "Yearly",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "reqularDurationAmount",
+          "type": "NUMBER",
+          "label": "For how long?",
+          "calcModel": "regular_duration_amount",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "placeholder": "",
+          "related": false,
+          "tooltip": false
+        },
+        {
+          "id": "regularDurationAmountType",
+          "type": "BUTTON_SELECTOR",
+          "label": false,
+          "calcModel": "regular_duration_amount_type",
+          "format": {
+            "type": "STRING"
+          },
+          "value": "weeks",
+          "required": false,
+          "tooltip": false,
+          "buttons": [
+            {
+              "text": "WEEK",
+              "value": "weeks",
+              "class": "btn btn-default font-xs"
+            },
+            {
+              "text": "MONTH",
+              "value": "months",
+              "class": "btn btn-default font-xs"
+            },
+            {
+              "text": "YEAR",
+              "value": "years",
+              "class": "btn btn-default font-xs"
+            }
+          ]
+        },
+        {
+          "id": "savingsInterestRate",
+          "type": "PERCENT",
+          "label": "Interest rate",
+          "calcModel": "interest_rate",
+          "format": {
+            "type": "FLOAT"
+          },
+          "value": "2",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": true,
+          "tooltip": "The interest rate you expect to earn on your savings. See <a class='popover-link-float' href='http://www.interest.co.nz/' target=\"_blank\">interest.co.nz</a> for current rates for savings accounts and term deposits.",
+          "link": {
+            "url": "http://interest.co.nz",
+            "text": "See interest.co.nz for current rates"
+          }
+        },
+        {
+          "id": "savingsAlreadySaved",
+          "type": "MONEY",
+          "label": "I've already saved ",
+          "calcModel": "initial_savings",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "0",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": "If you want to include any money you’ve already saved, enter it here."
+        },
+        {
+          "id": "inflationAdjust",
+          "type": "BUTTON_SELECTOR",
+          "label": "Adjusted for inflation",
+          "tooltip":{
+            "visible": true,
+            "text": "These results have been adjusted downwards to show the effects of inflation. In 20 years, for example, today’s $200,000 will only be worth around $135,000 (if there’s 2% inflation). To see the results without the effect of inflation, select ‘OFF’."
+          },
+
+          "calcModel": "iar",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1",
+          "required": true,
+          "buttons": [
+            {
+              "text": "ON",
+              "value": 1,
+              "class": "btn btn-default font-xs btn-yellow",
+              "related": false,
+              "toggle": ""
+            },
+            {
+              "text": "OFF",
+              "value": 0,
+              "class": "btn btn-default font-xs btn-yellow",
+              "related": false,
+              "toggle": ""
+            }
+          ]
+        },
+        {
+          "id": "ageMonth",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "age_month",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        },
+        {
+          "id": "ageYEAR",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "age_year",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "1970",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        },
+        {
+          "id": "nudgeDollars",
+          "type": "HIDDEN",
+          "label": "",
+          "calcModel": "nudge_dollars",
+          "format": {
+            "type": "INTEGER"
+          },
+          "value": "50",
+          "class": "",
+          "placeholder": "",
+          "related": false,
+          "required": false,
+          "tooltip": false
+        }
+      ]
+    }
+  ],
+  "chart": {
+    "options": {
+      "transition": false,
+      "legend": {
+        "visible": false
+      },
+      "seriesDefaults": {
+        "type": "area",
+        "opacity": 1,
+        "area": {
+          "line": {
+            "style": "smooth"
+          }
+        },
+        "stack": true
+      },
+      "series": [
+        {
+          "name": "Amount saved",
+          "data": [
+            0,
+            10000
+          ],
+          "color": "#006e96"
+        },
+        {
+          "name": "Interest earned",
+          "data": [
+            0,
+            200
+          ],
+          "color": "#0091ff"
+        }
+      ],
+      "seriesColors": [
+        "#006e96",
+        "#0091ff"
+      ],
+      "valueAxis": {
+        "title": {
+          "text": "Amount ($)"
+        },
+        "labels": {
+          "template": "#= kendo.format('{0:N0}', value) #",
+          "step": "1"
+        },
+        "line": {
+          "visible": false
+        },
+        "axisCrossingValue": -10
+      },
+      "categoryAxis": {
+        "title": {
+          "text": "Term for 12 months"
+        },
+        "categories": [
+          2016,
+          2017
+        ],
+        "majorGridLines": {
+          "visible": false
+        },
+        "labels": {
+          "rotation": "auto"
+        }
+      },
+      "tooltip": {
+        "visible": true,
+        "format": "${0}",
+        "template": "#= series.name #: $#= value #"
+      }
+    }
+  },
+  "nudge": [
+    {
+      "label": "Sorted tip",
+      "tooltip": "Most of us underestimate how much we can achieve over time!",
+      "text": "Saving a bit more gets you even better results.",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 1,
+        "ceil": 1000,
+        "showSelectionBar": true,
+        "step": 1
+      },
+      "field": "nudge_dollars"
+    },
+    {
+      "label": "Sorted tip",
+      "tooltip": "Increasing your savings amount shortens the time needed to reach your target.",
+      "text": "The more you put towards your goal, the faster you reach it. ",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 1,
+        "ceil": 1000,
+        "showSelectionBar": true,
+        "step": 1,
+        "interval": 10
+      },
+      "field": "nudge_dollars"
+    }
+  ]
+}

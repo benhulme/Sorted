@@ -1,0 +1,1 @@
+$(document).ready(function(){var i=$(".slider-list"),t=function(){i.append($(".slide").first())},n=function(){i.prepend($(".slide").last())};$("#left").on("click",n),$("#right").on("click",t),$("#menu-button").on("click",function(){$(this).toggleClass("active"),$(".mobile-navigation-list").toggleClass("active")})});

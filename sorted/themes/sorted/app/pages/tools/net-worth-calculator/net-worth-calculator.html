@@ -1,0 +1,57 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12">-->
+      <!--<a href="https://www.facebook.com/sorted.org.nz" target="e"><img-->
+        <!--ng-src="{{siteConfig.APP_PATH}}/assets/images/facebook-blue-logo.svg" class="net-worth-social-logo"/></a>-->
+      <!--<a href="https://twitter.com/SortedNZ" target="e"><img-->
+        <!--ng-src="{{siteConfig.APP_PATH}}/assets/images/twitter-blue-logo.svg" class="net-worth-social-logo"/></a>-->
+      <!--<a href="https://www.youtube.com/user/NZSorted" target="e"><img-->
+        <!--ng-src="{{siteConfig.APP_PATH}}/assets/images/email-grey-logo.svg" class="net-worth-social-logo"/></a>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="layout-container net-worth-container">
+  <div class="layout-content">
+    <div class="row layout-row">
+      <div class="col-md-4">
+        <calc-input-net-worth
+          calculator="calculator"
+          models="model.collection"></calc-input-net-worth>
+      </div>
+      <div class="col-md-8 _relative">
+        <!-- Summary -->
+        <calc-output-net-worth
+          calculator="calculator"
+          model="model"
+          models="model.collection"></calc-output-net-worth>
+
+        <!-- Chart of Net Worth -->
+        <calc-chart></calc-chart>
+
+
+        <div class="col-xs-12">
+
+          <div class="_inline-block _right calc-results-print-bottom">
+            <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+            <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm hidden-md" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+          </div>
+        </div>
+
+        <div class="calc-overlay" ng-class="{disabled: model.hasResult()}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<related-content data="data" title="More from Sorted"></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>

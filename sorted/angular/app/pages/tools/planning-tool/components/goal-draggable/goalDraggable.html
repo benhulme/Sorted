@@ -1,0 +1,15 @@
+<div ng-repeat="item in data.GoalList track by $index" class="col-xs-6 goal-drag" ng-show="item.Title">
+  <div class="goal-bubble-container">
+    <div class="goal-bubble {{item.Color}}" data-drag="{{item.Draggable}}" ng-model="data.GoalList" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}}, animate: true,placeholder:false, onStop: 'test(data,item)'}">
+      <div class="goal-content">
+        <p>
+          {{item.Title}} <br>
+          <strong>
+            $ {{item.Price}}
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>

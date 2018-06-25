@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("ToolsController",["$scope","siteConfig","toolsViewModel",function(o,t,e){o.siteConfig=t,o.search="",e.build().then(function(t){o.data=t})}])}();

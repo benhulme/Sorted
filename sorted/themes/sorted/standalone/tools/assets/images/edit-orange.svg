@@ -1,0 +1,16 @@
+<svg id="Edit_Category" data-name="Edit Category" xmlns="http://www.w3.org/2000/svg" width="45.969" height="46.44" viewBox="0 0 45.969 46.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff550f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="22.985" cy="23.22" r="22.985"/>
+  <path class="cls-2" d="M556.789,2242.05a2.133,2.133,0,0,1,2.859,0l2.963,2.76a1.806,1.806,0,0,1,0,2.67l-2.523,2.35-5.816-5.43Zm-19.217,23.77a0.641,0.641,0,0,1-.124-0.76l4.347-8.4,5.8,5.42-9.215,3.88A0.766,0.766,0,0,1,537.572,2265.82Zm6.1-10.99,9.248-8.63,5.816,5.43-9.248,8.63Z" transform="translate(-527.031 -2231.19)"/>
+</svg>

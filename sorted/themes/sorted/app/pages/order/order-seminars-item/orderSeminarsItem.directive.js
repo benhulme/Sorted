@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("orderSeminarsItem",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/pages/order/order-seminars-item/orderSeminarsItem.html",restrict:"E",link:function(){}}}])}();

@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("headerShareButtons",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/components/header-share-buttons/headerShareButtons.html",restrict:"E",scope:{facebook:"@",twitter:"@",gplus:"@",email:"@"},link:function(t){t.siteConfig=e}}}])}();

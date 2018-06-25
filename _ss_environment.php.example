@@ -1,0 +1,18 @@
+<?php
+/* What kind of environment is this: development, test, or live (ie, production)? */
+define('SS_ENVIRONMENT_TYPE', 'dev');
+
+/* Database connection */
+define('SS_DATABASE_CLASS', 'MySQLPDODatabase');
+define('SS_DATABASE_SERVER', 'localhost');
+define('SS_DATABASE_NAME', 'sorted');
+define('SS_DATABASE_USERNAME', 'sorted');
+define('SS_DATABASE_PASSWORD', '123');
+
+/* Configure a default username and password to access the CMS on all sites in this environment. */
+define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
+define('SS_DEFAULT_ADMIN_PASSWORD', 'admin');
+
+define('SS_ERROR_LOG', '.log/silverstripe.log');
+define('SS_SEND_ALL_EMAILS_FROM', 'Sorted.local <no-reply@sorted.dev>');
+define('SS_SEND_ALL_EMAILS_TO', 'Root <root@localhost>');

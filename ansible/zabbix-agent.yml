@@ -1,0 +1,11 @@
+# Sorted zabbix agent installing script
+---
+- hosts: sortedprodb
+  become: yes
+  roles:
+    - zabbix_agent
+  vars_prompt:
+    - name: "zabbix_hostname"
+      prompt: "Input new zabbix host name:"
+      private: no
+

@@ -1,0 +1,125 @@
+[
+  {
+    "ClassName":"GuidePageHolder",
+    "LastEdited":"2016-02-05 03:03:51",
+    "Created":"2016-02-05 03:02:03",
+    "URLSegment":"guides",
+    "Title":"Guides",
+    "ShowInMenus":"1",
+    "ShowInSearch":"1",
+    "Sort":"3",
+    "HasBrokenFile":"0",
+    "HasBrokenLink":"0",
+    "CanViewType":"Inherit",
+    "CanEditType":"Inherit",
+    "Version":"3",
+    "ParentID":"1",
+    "ID":8,
+    "RecordClassName":"GuidePageHolder",
+    "parser":{},
+    "HeaderCopy":"Looking for advice? We've got lots of different guides to help you get clued up.",
+    "ShortCopy":null,
+    "ForegroundImageID":"12",
+    "BackgroundImageID":"13",
+    "ThumbnailImageID":"0",
+    "ForegroundImage": {
+      "ClassName":"Image",
+      "LastEdited":"2016-02-05 03:03:28",
+      "Created":"2016-02-05 03:03:28",
+      "Name":"Sorted-Saving.png",
+      "Title":"Sorted Saving",
+      "Filename":"assets\/Uploads\/Sorted-Saving.png",
+      "ShowInSearch":"1",
+      "ParentID":"1",
+      "OwnerID":"1",
+      "ID":12,
+      "RecordClassName":"Image"
+    },
+    "BackgroundImage": {
+      "ClassName":"Image",
+      "LastEdited":"2016-02-05 03:03:35",
+      "Created":"2016-02-05 03:03:35",
+      "Name":"guides-background.jpg",
+      "Title":"guides background",
+      "Filename":"assets\/Uploads\/guides-background.jpg",
+      "ShowInSearch":"1",
+      "ParentID":"1",
+      "OwnerID":"1",
+      "ID":13,
+      "RecordClassName":"Image"
+    },
+    "ThumbnailImage": {
+      "ID":0,
+      "ClassName":"Image",
+      "RecordClassName":"Image",
+      "ShowInSearch":1
+    },
+    "GuidePages": [
+      {
+        "Title":"Setting goals",
+        "URLSegment":"setting-goals",
+        "CategoryIDs":{
+          "1":"1"
+        }
+      }
+    ],
+    "Categories": [
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:44:12",
+        "Created":"2016-02-05 03:44:12",
+        "Title":"Planning & Budgeting",
+        "GuidePageHolderID":"8",
+        "ID":1,
+        "RecordClassName":"GuideCategory"
+      },
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:44:27",
+        "Created":"2016-02-05 03:44:27",
+        "Title":"Tackling Debt",
+        "GuidePageHolderID":"8",
+        "ID":2,
+        "RecordClassName":"GuideCategory"
+      },
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:44:51",
+        "Created":"2016-02-05 03:44:51",
+        "Title":"Home Buying",
+        "GuidePageHolderID":"8",
+        "ID":3,
+        "RecordClassName":"GuideCategory"
+      },
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:46:58",
+        "Created":"2016-02-05 03:45:08",
+        "Title":"Protecting Wealth",
+        "GuidePageHolderID":"8",
+        "ID":4,
+        "RecordClassName":"GuideCategory"
+      },
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:47:20",
+        "Created":"2016-02-05 03:45:44",
+        "Title":"KiwiSaver & Retirement",
+        "GuidePageHolderID":"8",
+        "ID":5,
+        "RecordClassName":"GuideCategory"
+      },
+      {
+        "ClassName":"GuideCategory",
+        "LastEdited":"2016-02-05 03:47:39",
+        "Created":"2016-02-05 03:46:26",
+        "Title":"Investing & Savings",
+        "GuidePageHolderID":"8",
+        "ID":6,
+        "RecordClassName":"GuideCategory"
+      }
+    ],
+    "Related": [
+    ]
+  }
+]

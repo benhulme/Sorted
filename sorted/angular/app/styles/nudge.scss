@@ -1,0 +1,58 @@
+.nudge-container {
+  border: solid 1px $orange;
+  background-color: $orange-light;
+  @include border-radius(3px);
+  padding: 20px;
+}
+
+.nudge-icon {
+  width: 50px;
+  margin: 0 15px;
+  @media(max-width: $screen-xs){
+    width: 40px;
+    margin: 0 5px;
+  }
+}
+
+.nudge-icon-wide {
+  width: 84px;
+  margin: 0;
+  @media(max-width: $screen-xs){
+    width: 50px;
+  }
+}
+
+.nudge-main {
+  @include calc('width', '100% - 120px');
+  margin-left: 10px;
+  @media(max-width: $screen-xs){
+    @include calc('width', '100% - 60px');
+  }
+}
+
+.nudge-slider-container {
+  margin-top: 10px;
+  @media(max-width: $screen-xs-max){
+    margin-top: 20px;
+  }
+}
+
+.nudge-slider-left {
+  width: 12px;
+}
+
+.nudge-slider {
+  @include calc('width', '100% - 100px');
+  margin: 9px 20px 0 20px;
+}
+
+.rz-slider-has-ticks {
+ .nudge-slider {
+   width: 100%;
+   margin: 9px 0 0 0;
+ }
+}
+
+.nudge-slider-right {
+  width: 40px;
+}

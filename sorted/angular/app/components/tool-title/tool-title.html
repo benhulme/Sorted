@@ -1,0 +1,26 @@
+<div class="layout-container tool-title-container" scroll-fade>
+  <div class="layout-content">
+    <div class="_clear">
+      <div class="pull-left">
+        <div class="tool-title-icon _left">
+          <img ng-src="{{data.CalcIcon.Filename}}" class="_full-width" />
+        </div>
+        <div class="header-container">
+          <h2 class="font-light">{{data.Title}}</h2>
+        </div>
+      </div>
+
+      <a href="/how-these-calculators-work#{{data.URLSegment}}" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light _right hidden-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+    </div>
+    <div>
+      <div class="tool-title-subtext" ng-bind-html="data.Content"></div>
+      <a href="/how-these-calculators-work#{{data.URLSegment}}" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light visible-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+    </div>
+
+    <div class="social-and-fonts">
+      <socials data="data"></socials>
+    </div>
+
+  </div>
+
+</div>

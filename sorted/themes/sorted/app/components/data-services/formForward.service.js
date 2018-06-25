@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").service("formForwardService",["apiEndpoints","$location",function(r,n){return{forward:function(o,t){n.path(r[o]).search(t)}}}])}();

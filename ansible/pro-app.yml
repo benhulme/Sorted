@@ -1,0 +1,10 @@
+# Playbook to deploy sorted application server [Production]
+---
+- hosts: sorted-app2
+  become: yes
+  roles:
+    #- git-client
+    #- php
+    #- nginx
+    #- app-cfg
+    - msmtp

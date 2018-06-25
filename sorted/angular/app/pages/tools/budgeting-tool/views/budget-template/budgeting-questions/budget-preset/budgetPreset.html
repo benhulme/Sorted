@@ -1,0 +1,13 @@
+<div class="preset-icon col-xs-6"
+  ng-click="togglePresetSelect(preset)"
+  ng-class="{'preset-selected': preset.Selected}"
+  ng-style="{'background-color': getPresetBackground(preset, question.Color) || '#fff'}">
+  <figure class="figure">
+    <div class="preset-image-container center-block">
+      <img class="preset-image figure-img"
+        ng-error="this.src='{{siteConfig.APP_PATH}}{{preset.Icon.Fallback}}';this.onerror=null;"
+        ng-src="{{siteConfig.APP_PATH}}{{preset.Icon.Filename}}">
+    </div>
+    <figcaption class="preset-caption figure-caption">{{preset.Answer}}</figcaption>
+  </figure>
+</div>

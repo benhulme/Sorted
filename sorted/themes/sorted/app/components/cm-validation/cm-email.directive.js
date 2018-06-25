@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),EMAIL_REGEXP=/^[a-zA-Z0-9.+_-]+@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;app.directive("cmEmail",function(){return{require:"ngModel",link:function(i,a,n,t){t.$validators.email=function(i,a){return!!t.$isEmpty(i)||("false"===n.cmCondition||!!EMAIL_REGEXP.test(a))}}}});

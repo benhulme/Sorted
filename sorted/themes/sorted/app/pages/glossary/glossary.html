@@ -1,0 +1,35 @@
+
+<div class="glossary-page">
+
+<navigation></navigation>
+<header-small-title data="data"></header-small-title>
+
+<div class="layout-container clearfix">
+  <div class="col-md-12 glossary-container">
+    <div class="row glossary-filter-container" >
+
+        <glossary-filter data="data"  search="search"></glossary-filter>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-8 col-sm-12 left-side">
+        <fonts-adjust></fonts-adjust>
+        <glossary-list data="data" search="search"></glossary-list>
+        <div ng-bind-html="data.Content"></div>
+      </div>
+      <div class="col-md-4 right-side hidden-sm">
+        <related-links></related-links>
+      </div>
+    </div>
+  </div>
+  <!--<scroll-top class="hidden-sm"></scroll-top>-->
+
+
+
+</div>
+<email-signup></email-signup>
+
+<footer></footer>
+
+</div>

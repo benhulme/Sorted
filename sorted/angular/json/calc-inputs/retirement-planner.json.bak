@@ -1,0 +1,142 @@
+{
+  "title": "Retirement Planner",
+  "type": "retirement",
+  "model": "RetirementPlanner",
+  "CalcID": "1",
+  "sections": [
+    {
+      "id": 0,
+      "title": "How close is retirement",
+      "unique": "howClose",
+      "visible": true
+    },
+    {
+      "id": 1,
+      "title": "How long do you need to plan for?",
+      "unique": "howClose",
+      "visible": true
+    }
+  ],
+  "fields": {
+    "yourBirthDate": {
+      "type": "BIRTH_DATE",
+      "label": "Your birthdate",
+      "calcModel": "your_birthdate",
+      "format": {
+        "type": "DATE"
+      },
+      "value": "",
+      "monthField": "yourMonthBorn",
+      "yearField": "yourYearBorn",
+      "required": false,
+      "tooltip": "This is my placeholder tooltip"
+    },
+    "yourMonthBorn": {
+      "type": "HIDDEN",
+      "calcModel": "your_month_born",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true,
+      
+    },
+    "yourYearBorn": {
+      "type": "HIDDEN",
+      "calcModel": "your_year_born",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true
+    },
+    "yourRetirementAge": {
+      "type": "INTEGER",
+      "label": "Age you plan to retire",
+      "calcModel": "your_retire_age",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "65",
+      "required": true,
+      "tooltip": "This is my placeholder tooltip"
+    },
+    "partnerToggle": {
+      "type": "SECTION_TOGGLE",
+      "label": "Add partner (optional)",
+      "section": "addPartnerSection",
+      "calcModel": "partnerToggle",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 0,
+      "required": false
+    },
+    "includePartner": {
+      "type": "BUTTON_BOOLEAN",
+      "section": "partnerSection",
+      "label": "Include partner?",
+      "calcModel": "partner",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 0,
+      "required": true,
+      "tooltip": "This is my placeholder tool tip",
+      "buttons": [
+        {
+          "buttonText": "YES",
+          "buttonValue": 1
+        },
+        {
+          "buttonText": "NO",
+          "buttonValue": 0
+        }
+      ]
+    },
+    "partnerBirthDate": {
+      "type": "BIRTH_DATE",
+      "section": "partnerSection",
+      "label": "Your partner's birthdate",
+      "calcModel": "partner_birth_date",
+      "format": {
+        "type": "DATE"
+      },
+      "value": "",
+      "monthField": "partnerMonthBorn",
+      "yearField": "partnerYearBorn",
+      "required": false,
+      "tooltip": "This is my placeholder tooltip"
+    },
+    "partnerMonthBorn": {
+      "type": "HIDDEN",
+      "calcModel": "partner_month_born",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": false
+    },
+    "partnerYearBorn": {
+      "type": "HIDDEN",
+      "calcModel": "partner_year_born",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": false
+    },
+    "partnerRetirementAge": {
+      "type": "INTEGER",
+      "section": "partnerSection",
+      "label": "Age your partner plans to retire",
+      "calcModel": "partner_retire_age",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "65",
+      "required": false,
+      "tooltip": "This is my placeholder tooltip"
+    }
+  },
+}

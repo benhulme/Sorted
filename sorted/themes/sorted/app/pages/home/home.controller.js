@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("HomeController",["$scope","$location","$window","siteConfig",function(o,n,t,e){o.siteConfig=e}])}();

@@ -1,0 +1,29 @@
+<div class="campaigns-container" scroll-fade>
+  <div slideshow slideshow-delay="10000">
+
+    <div slideshow-mask>
+
+      <ul slideshow-items class="_no-bullets">
+
+        <li slideshow-item ng-repeat="(index, campaign) in campaigns" class="_relative campaigns-li" cover-image="{{campaign.BladeImage.Filename}}">
+          <div class="_full-height" vert-middle="campaigns-content">
+            <div class="layout-container _align-center">
+
+            <div class="row layout-row">
+
+              <div class="col-md-8 col-md-offset-2">
+
+                <div class="campaigns-content layout-content" scroll-fade-item>
+                  <h2 class="campaigns-title">{{campaign.Title}}</h2>
+                  <p class="campaigns-short">{{campaign.ShortCopy}}</p>
+                  <a ng-href="{{campaign.Link}}" target="_self" class="btn btn-primary btn-xs-fullwidth campaigns-button"  analytics-on="click" analytics-category="campaignteaser" analytics-event="click" analytics-label="{{campaign.Title}}" analytics-interaction-type="0">{{campaign.ButtonCopy}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

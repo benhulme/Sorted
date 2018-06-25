@@ -1,0 +1,27 @@
+<form name="budgetTemplateQuestions" ng-submit="submitForm()">
+  <div class="row">
+    <div class="budget-skip-link-top">
+      <a class="font-orange" ng-click="submitForm(true)">SKIP <i class="fa fa-chevron-right font-xs"></i></a><br>
+    </div>
+  </div>
+  <div class="budget-template-question text-center"
+       ng-repeat="question in data.BudgetQuestions">
+    <div class="row text-center budget-question">
+        <h5>{{$index+1}}. {{question.Question}}</h5>
+    </div>
+    <div class="row preset-container text-center">
+      <budget-preset ng-repeat="preset in question.BudgetPresets"></budget-preset>
+    </div>
+  </div>
+
+  <budget-view-plate></budget-view-plate>
+
+  <div class="row text-center">
+    <div class="col-sm-4 col-sm-offset-4 budget-template-create">
+      <button class="btn btn-primary btn-xs-fullwidth" type="submit">Create template</button>
+    </div>
+    <div class="col-sm-4 budget-skip-link">
+      <a class="font-orange" ng-click="submitForm(true)">SKIP <i class="fa fa-chevron-right font-xs"></i></a><br>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,18 @@
+form {
+  .help-block {
+    //display: none;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  //&.ng-invalid.ng-valid-parse {
+  //  .help-block {
+  //    display: block;
+  //  }
+  //}
+
+  .input-invalid {
+    .help-block {
+      display: block !important;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.calc-input-group {
+
+  margin-bottom: 2px;
+
+  .calc-input-heading {
+    cursor: pointer;
+    .fa-chevron-down {
+      display: inline-block;
+    }
+    .fa-chevron-up {
+      display: none;
+    }
+  }
+
+  &.selected {
+    cursor: default;
+    .calc-input-heading {
+      .fa-chevron-up {
+        display: inline-block;
+      }
+      .fa-chevron-down {
+        display: none;
+      }
+    }
+  }
+}
+.calc-input-heading {
+  .fa {
+    float: left;
+    padding-top: 13px;
+    margin: 0 10px 0 0;
+  }
+
+  .calc-input-title-amount {
+    line-height: 48px;
+    margin: 0 0 0 10px;
+  }
+}
+
+.calc-input-form {
+  padding: 20px;
+  .input-group {
+    margin: 0;
+  }
+}
+
+.calc-input-fieldset {
+  margin-bottom: 16px;
+}
+
+.calc-input-btn-group {
+  .btn {
+    width: 30%;
+    line-height: 50px;
+    padding: 0;
+    color: $grey-medium;
+    &.selected {
+      color: $white;
+    }
+  }
+  .btn-wide {
+    width: 40%;
+  }
+}
+
+.calc-input-add {
+  margin: 0 20px 30px 20px;
+}
+
+.calc-input-add-text {
+  line-height: 36px;
+}
+
+.retirement-include-partner {
+  width: 120px;
+}
+
+.retirement-container {
+  .calc-heading span {
+    @media(max-width: 1120px) and (min-width: $screen-md){
+      font-size: 13px;
+    }
+  }
+}

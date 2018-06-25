@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").controller("LogoutWarningModalCtrl",["$scope","$uibModalInstance",function(o,n){o.logoutContinue=function(){n.close(!0)},o.logoutCancel=function(){n.close(!1)}}])}();

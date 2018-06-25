@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h5 class="font-grey hidden-xs">Filter categories</h5>
+
+    <div class="row layout-row filters-row">
+      <div class="visible-xs">
+        <div class="dropdown filters-select _full-width">
+          <button class="dropdown-toggle form-control" dropdown="" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Filter {{type}}</button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+              <a class="category-filter-link dropdown-link _clear" 
+                ng-class="{selected: search === ''}"
+                category="" analytics-on="click" analytics-category="filter" analytics-event="{{type}}" analytics-label="all" analytics-interaction-type="0">
+                <span class="filters-dd-icon _relative _inline-block _left">
+                  <img class="_full-width filters-dd-image _absolute"
+                    ng-src="{{prefix}}assets/images/filters/filters-{{type|lowercase}}.svg"
+                    category="">
+                </span>
+                <span class="filters-dd-text _inline-block _left"
+                  category="">All {{type}}</span>
+              </a>
+            </li>
+            <li ng-repeat="category in data">
+              <a class="category-filter-link dropdown-link _clear" 
+                ng-class="{selected: category.Slug === search}" 
+                category="{{category.Slug}}" analytics-on="click" analytics-category="filter" analytics-event="{{type}}" analytics-label="{{category.Slug}}" analytics-interaction-type="0">
+                <span class="filters-dd-icon _relative _inline-block _left">
+                  <img class="_full-width filters-dd-image _absolute"
+                    ng-src="{{prefix}}assets/images/filters/filters-{{category.Slug}}.svg"
+                    category="{{category.Slug}}">
+                </span>
+                <span class="filters-dd-text _inline-block _left"
+                  ng-bind-html="category.Title"
+                  category="{{category.Slug}}"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-12 layout-col _relative visible-sm visible-md visible-lg">
+        <a class="category-filter-link filters-link _left _align-center" 
+          ng-class="{selected: search === ''}"
+          category="" analytics-on="click" analytics-category="filter" analytics-event="{{type}}" analytics-label="all" analytics-interaction-type="0">
+          <div class="filters-icon _relative">
+            <img class="_full-width filters-image _absolute"
+              ng-src="{{prefix}}assets/images/filters/filters-{{type|lowercase}}.svg"
+              category="">
+          </div>
+          <span class="_inline-block font-black font-sm filters-text"
+                category="">All<br>{{type}}</span>
+        </a>
+        <a class="category-filter-link filters-link _left _align-center"
+          ng-repeat="category in data"
+          ng-class="{selected: category.Slug === search}" 
+          category="{{category.Slug}}" analytics-on="click" analytics-category="filter" analytics-event="{{type}}" analytics-label="{{category.Slug}}" analytics-interaction-type="0">
+          <div class="filters-icon _relative">
+            <img class="_full-width filters-image _absolute"
+              ng-src="{{prefix}}assets/images/filters/filters-{{category.Slug}}.svg"
+              category="{{category.Slug}}">
+          </div>
+          <span class="_inline-block font-black font-sm filters-text" 
+            ng-bind-html="category.Title"
+            category="{{category.Slug}}"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

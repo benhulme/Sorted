@@ -1,0 +1,45 @@
+<div class="goal-modal" >
+
+  <h4>Add a goal</h4>
+  <form novalidate name="newGoal">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="field text">
+          <label for="goal-name" class="pull-left">Goal name</label>
+          <span class="notice pull-right"><20 characters</span>
+          <div>
+            <input ng-model="newGoal.name" name="newName" id="goal-name" maxlength="20" required type="text">
+          </div>
+          <div ng-show="newGoal.$submitted || newGoal.newName.$touched">
+            <label class="error" ng-show="newGoal.newName.$error.required">This field is required</label>
+          </div>
+
+        </div>
+        <div class="field text">
+          <label for="goal-amount">Amount</label>
+          <div class="input-group form-inline-addon form-addon-dollar">
+            <input ng-model="newGoal.amount" id="goal-amount" maxlength="7" name="newAmount" integer required type="text">
+          </div>
+          <div ng-show="newGoal.$submitted || newGoal.newAmount.$touched">
+            <label class="error non-absolute" ng-show="newGoal.newAmount.$error.required">This field is required</label>
+            <label class="error non-absolute" ng-show="newGoal.newAmount.$error.integer">Please enter a number with no decimals, commas, spaces or symbols.</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row form-actions">
+      <div class="col-xs-12 col-md-6">
+        <button ng-disabled="newGoal.$invalid" ng-click="ok()" class="btn btn-primary" type="submit">add goal</button>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <a class="font-orange make-button" href="javascript:void(0)" ng-click="cancel()">CANCEL</a>
+      </div>
+    </div>
+
+
+
+  </form>
+
+</div>

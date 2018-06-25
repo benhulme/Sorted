@@ -1,0 +1,39 @@
+.output-ksf-mobile-container {
+  padding: 20px 0;
+}
+
+.output-ksf-dropdown {
+  .btn {
+    border: none;
+    background-color: $grey-lightest;
+    padding: 8px 20px;
+
+  }
+}
+
+.output-ksf-mobile-content {
+  padding: 20px;
+  .btn-compare {
+    padding: 0 20px;
+  }
+}
+
+.output-ksf-mobile-table {
+  margin-top: 20px;
+}
+
+.ksf-mobile-row {
+
+}
+
+.output-ksf-mobile-divider {
+  margin: 20px 0;
+}
+
+.output-ksf-mobile-column-left {
+  width: 100px;
+}
+
+.output-ksf-mobile-column-right {
+  @include calc('width', '100% - 100px');
+}

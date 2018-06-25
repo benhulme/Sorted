@@ -1,0 +1,7 @@
+# Sorted production DB server setup script
+---
+- hosts: sorteds
+  become: yes
+  roles:
+    #- nginx
+    - msmtp

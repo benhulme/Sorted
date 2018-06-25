@@ -1,0 +1,38 @@
+<div class="row budget-section-heading"
+  ng-click="mc.expanded=!mc.expanded">
+  <div class="col-xs-10 col-md-11">
+    <div class="row">
+      <div class="budget-section-heading-copy col-xs-8 col-md-6 pull-left">
+        <h3 class="budget-section-title"
+          ng-click="openMasterCategoryModal(mc);$event.stopPropagation();">
+          <img class="budget-master-category-icon"
+            ng-if="mc.Icon.Filename.length > 0"
+            ng-src="{{siteConfig.APP_PATH}}{{mc.Icon.Filename}}">
+          <i class="budget-master-category-icon img-circle"
+            ng-if="mc.Icon.Filename.length === 0"
+            ng-style="{'background-color':mc.Color}"></i>
+          {{mc.Title | limitTo:18}}
+        </h3>
+        <span class="master-category-title-edit pull-right hidden-print"
+          ng-if="mc.expanded"
+          ng-click="openMasterCategoryModal(mc);$event.stopPropagation();">
+        </span>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-xs-4 budget-master-category-total">{{masterCategoryDisplayTotal(mc) | currency:'$':0}}</div>
+    </div>
+  </div>
+
+  <div class="col-xs-2 col-md-1 budget-section-toggle-control text-center center-block">
+    <span class="fa-stack _relative">
+      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+      <img class="budget-toggle-section fa-stack-1x _absolute"
+        ng-show="mc.expanded"
+        ng-src="{{siteConfig.APP_PATH}}assets/images/section-minus.svg"
+        ng-show="mc.expanded">
+      <img class="budget-toggle-section fa-stack-1x"
+        ng-hide="mc.expanded"
+        ng-src="{{siteConfig.APP_PATH}}assets/images/section-plus.svg"
+        ng-hide="mc.expanded">
+  </div>
+</div>

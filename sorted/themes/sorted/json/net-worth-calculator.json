@@ -1,0 +1,41 @@
+[
+  {
+    "Title": "Net&nbsp;Worth Calculator",
+    "Content": "<p>This calculator shows you how long it will take you to pay off your credit card, hire purchase, car loan and other loan debt, and the total amount of interest you will pay.</p>",
+    "RelatedContent": [
+      {
+        "Title": "Buying your first home?",
+        "ShortCopy": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+        "UrlSegment": "/#/tools",
+        "ThumbnailImage": {
+          "Filename": "assets/Uploads/blog1.jpg"
+        }
+      },
+      {
+        "Title": "Budgeting Tools",
+        "ShortCopy": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.",
+        "UrlSegment": "/#/tools",
+        "ThumbnailImage": {
+          "Filename": "assets/Uploads/blog2.jpg"
+        },
+        "CalcIcon": {
+          "Filename": "assets/Uploads/tools-mortgage-icon.svg"
+        }
+      },
+      {
+        "Title": "Debt Calculator",
+        "ShortCopy": "Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.",
+        "UrlSegment": "/#/tools",
+        "ThumbnailImage": {
+          "Filename": "assets/Uploads/blog3.jpg"
+        },
+        "CalcIcon": {
+          "Filename": "assets/Uploads/tools-mortgage-icon.svg"
+        }
+      }
+    ],
+    "CalcIcon": {
+      "Filename": "/assets/Uploads/tools-net-worth.svg"
+    }
+  }
+]

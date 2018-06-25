@@ -1,0 +1,16 @@
+<svg id="Plus_with_ellipse" data-name="Plus with ellipse" xmlns="http://www.w3.org/2000/svg" width="57.969" height="58" viewBox="0 0 57.969 58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b7b8ba;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="28.984" cy="29" rx="28.984" ry="29"/>
+  <path id="PLUS" class="cls-2" d="M77.851,4925.06h-7.1v7.82a0.806,0.806,0,0,1-.806.81h-1.2a0.806,0.806,0,0,1-.806-0.81v-7.82H60.149a0.8,0.8,0,0,1-.806-0.8v-1.2a0.806,0.806,0,0,1,.806-0.81h7.788v-7.13a0.806,0.806,0,0,1,.806-0.81h1.2a0.806,0.806,0,0,1,.806.81v7.13h7.1a0.806,0.806,0,0,1,.806.81v1.2A0.8,0.8,0,0,1,77.851,4925.06Z" transform="translate(-40 -4895)"/>
+</svg>

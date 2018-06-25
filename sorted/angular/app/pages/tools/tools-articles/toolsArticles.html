@@ -1,0 +1,74 @@
+<div class="row category-container"
+  ng-repeat=" category in data"
+  ng-if="category.Slug === search || (search === '' && category.Pages.length > 0)">
+  <div ng-repeat="(index,tool) in category.Pages">
+    <div class="row category-row">
+      <div class="col-md-11 col-md-offset-1 col-xs-12 col-xs-offset-0 clearfix" ng-class="{dots : index < (category.Pages.length - 1)}">
+        <div class="col-lg-8 main-content col-md-12">
+          <a ng-href="{{tool.Link}}/welcome" ng-if="tool.CalcID == 12">
+            <div class="icon-container">
+              <img ng-src="{{tool.Icon.Filename}}" alt="{{tool.Title}}">
+            </div>
+          </a>
+          <a ng-href="{{tool.Link}}" ng-if="tool.CalcID != 12">
+            <div class="icon-container">
+              <img ng-src="{{tool.Icon.Filename}}" alt="{{tool.Title}}">
+            </div>
+          </a>
+          <div class="header-container">
+            <h2 class="font-light"><a ng-href="{{tool.Link}}/welcome" ng-if="tool.CalcID == 12" analytics-on="click" analytics-category="toolclick" analytics-event="{{tool.Title}}" analytics-label="title" analytics-interaction-type="0">{{tool.Title}}</a>
+              <a ng-href="{{tool.Link}}" ng-if="tool.CalcID != 12" analytics-on="click" analytics-category="toolclick" analytics-event="{{tool.Title}}" analytics-label="title" analytics-interaction-type="0">{{tool.Title}}</a></h2>
+          </div>
+          <p class="hidden-xs content-text font-book" ng-bind-html="tool.ShortCopy"></p>
+          <ul class="arrow-list"  ng-if="tool.CalcID == 2">
+            <li ng-repeat="link in tool.Links"><a class="font-book" ng-href="/tool/{{link.Url}}" ng-bind-html="link.Text" analytics-on="click" analytics-category="toolclick" analytics-event="{{tool.Title}}" analytics-label="question" analytics-interaction-type="0"></a></li>
+          </ul>
+          <ul class="arrow-list" ng-if="tool.CalcID != 2">
+            <li ng-repeat="link in tool.Links"><a class="font-book" ng-href="/tools/{{link.Url}}" ng-bind-html="link.Text" analytics-on="click" analytics-category="toolclick" analytics-event="{{tool.Title}}" analytics-label="question" analytics-interaction-type="0"></a></li>
+          </ul>
+
+        </div>
+        <div ng-show="tool.ThumbnailImage.Filename.length " class="col-lg-4 side-content hidden-md hidden-sm hidden-xs">
+          <img alt="{{tool.Title}}"
+            ng-src="{{tool.ThumbnailImage.Filename}}">
+          <a href="{{tool.Link}}/welcome" ng-if="tool.CalcID == 12" class="btn btn-primary">{{blankPlatesCustom[tool.CalcID].thumbnailButtonCopy}}</a>
+          <a href="{{tool.Link}}" ng-if="tool.CalcID != 12" class="btn btn-primary">{{blankPlatesCustom[tool.CalcID].thumbnailButtonCopy}}</a>
+        </div>
+      </div>
+    </div>
+    <div ng-show="tool.CalcID == 1" class='row category-row'>
+      <div class="col-md-11 col-md-offset-1 col-xs-12 col-xs-offset-0 clearfix dots">
+        <div class="col-lg-8 main-content col-md-12">      
+          <a ng-href="http://fundfinder.sorted.org.nz" target="_blank">
+            <div class="icon-container">
+              <img ng-src="/assets/Uploads/tools-kiwisaver-fund-finder.svg" alt="KiwiSaver fund finder">
+            </div>
+          </a>
+          <div class="header-container">
+            <h2 class="font-light">
+              <a ng-href="http://fundfinder.sorted.org.nz" target="_blank"  analytics-on="click" analytics-category="toolclick" analytics-event="KiwiSaver fund finder" analytics-label="title" analytics-interaction-type="0">KiwiSaver Fund finder</a>
+            </h2>
+          </div>
+          <p class="hidden-xs content-text font-book">Compare different funds using our KiwiSaver Fund finder site.</p>
+          <ul class="arrow-list" >
+            <li>
+              <a class="font-book" ng-href="http://fundfinder.sorted.org.nz" target="_blank" analytics-on="click" analytics-category="toolclick" analytics-event="KiwiSaver Fund Finder" analytics-label="question" analytics-interaction-type="0">What's my current fund like?</a>
+            </li>
+            <li>
+              <a class="font-book" ng-href="http://fundfinder.sorted.org.nz" target="_blank" analytics-on="click" analytics-category="toolclick" analytics-event="KiwiSaver Fund Finder" analytics-label="question" analytics-interaction-type="0">What type of fund suits my situation?</a>
+            </li>
+            <li>
+              <a class="font-book" ng-href="http://fundfinder.sorted.org.nz" target="_blank" analytics-on="click" analytics-category="toolclick" analytics-event="KiwiSaver Fund Finder" analytics-label="question" analytics-interaction-type="0">How much do they cost, what level of service do they provide, and what results have they been getting?</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-lg-4 side-content hidden-md hidden-sm hidden-xs">
+          <img alt="KiwiSaver fund finder"
+            ng-src="/assets/Uploads/kiwisaver-fund-finder.png">
+          <a href="http://fundfinder.sorted.org.nz" target="_blank" class="btn btn-primary">Visit Kiwisaver Fund Finder</a>
+        </div>
+      </div>  
+  </div>  
+  </div>  
+</div>

@@ -1,0 +1,29 @@
+.qs-container {
+  padding: 20px;
+  @media(max-width: $screen-xs-max){
+    text-align:center;
+    padding: 10px 0 20px 0;
+  }
+  .form-group {
+    @media(max-width: $screen-xs-max){
+      margin: 0;
+    }
+  }
+}
+
+.qs-label {
+  padding: 0 10px 0 0;
+  @media(max-width: $screen-xs-max){
+    padding: 0 0 6px 0;
+    float: none;
+    line-height: 30px;
+  }
+}
+
+.qs-select {
+  @include calc(width, '100% - 134px');
+  @media(max-width: $screen-xs-max){
+    width: 100%;
+    float: none;
+  }
+}

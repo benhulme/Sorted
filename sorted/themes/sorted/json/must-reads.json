@@ -1,0 +1,125 @@
+[
+  {
+    "_SortColumn0": "0",
+    "ClassName": "SortedBlogPost",
+    "LastEdited": "2016-01-17 21:18:21",
+    "Created": "2016-01-15 05:07:40",
+    "URLSegment": "solutions-without-functional-solutions",
+    "Title": "Solutions without functional solutions",
+    "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.<\/p>",
+    "ShowInMenus": "0",
+    "ShowInSearch": "1",
+    "Sort": "5",
+    "HasBrokenFile": "0",
+    "HasBrokenLink": "0",
+    "CanViewType": "Inherit",
+    "CanEditType": "Inherit",
+    "Version": "4",
+    "ParentID": "6",
+    "PublishDate": "2016-01-15 05:08:00",
+    "InheritSideBar": "1",
+    "FeaturedImageID": "27",
+    "SideBarID": "6",
+    "IsVideoPost": "1",
+    "ThumbImageID": "0",
+    "ID": 15,
+    "RecordClassName": "SortedBlogPost",
+    "parser": {},
+    "ThumbImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "FeaturedImage": {
+      "Filename": "assets/Uploads/blog7.jpg"
+    },
+    "Author": {
+    "FirstName": "Default Admin",
+    "Email": "admin",
+    "ID": 1
+    }
+  },
+  {
+    "_SortColumn0": "0",
+    "ClassName": "SortedBlogPost",
+    "LastEdited": "2016-01-15 05:07:25",
+    "Created": "2016-01-15 05:07:06",
+    "URLSegment": "dramatically-maintain-clicks-and-mortar",
+    "Title": "Dramatically maintain clicks-and-mortar",
+    "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.<\/p>",
+    "ShowInMenus": "0",
+    "ShowInSearch": "1",
+    "Sort": "4",
+    "HasBrokenFile": "0",
+    "HasBrokenLink": "0",
+    "CanViewType": "Inherit",
+    "CanEditType": "Inherit",
+    "Version": "3",
+    "ParentID": "6",
+    "PublishDate": "2016-01-15 05:07:25",
+    "InheritSideBar": "1",
+    "FeaturedImageID": "6",
+    "FeaturedImage": {
+      "Filename": "assets/Uploads/blog7.jpg"
+    },
+    "SideBarID": "5",
+    "IsVideoPost": "0",
+    "ThumbImageID": "0",
+    "ID": 14,
+    "RecordClassName": "SortedBlogPost",
+    "parser": {},
+    "ThumbImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "Author": {
+    "FirstName": "Default Admin",
+    "Email": "admin",
+    "ID": 1
+    }
+  },
+  {
+    "_SortColumn0": "0",
+    "ClassName": "SortedBlogPost",
+    "LastEdited": "2016-01-15 05:07:02",
+    "Created": "2016-01-15 05:06:40",
+    "URLSegment": "quickly-maximize-timely-deliverables",
+    "Title": "Quickly maximize timely deliverables",
+    "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.<\/p>",
+    "ShowInMenus": "0",
+    "ShowInSearch": "1",
+    "Sort": "3",
+    "HasBrokenFile": "0",
+    "HasBrokenLink": "0",
+    "CanViewType": "Inherit",
+    "CanEditType": "Inherit",
+    "Version": "4",
+    "ParentID": "6",
+    "PublishDate": "2016-01-15 05:06:00",
+    "InheritSideBar": "1",
+    "FeaturedImageID": "5",
+    "FeaturedImage": {
+      "Filename": "assets/Uploads/blog7.jpg"
+    },
+    "SideBarID": "4",
+    "IsVideoPost": "0",
+    "ThumbImageID": "0",
+    "ID": 13,
+    "RecordClassName": "SortedBlogPost",
+    "parser": {},
+    "ThumbImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "Author": {
+    "FirstName": "Default Admin",
+    "Email": "admin",
+    "ID": 1
+    }
+  }
+]

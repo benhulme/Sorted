@@ -1,0 +1,18 @@
+<div class="link-box">
+  <div class="link-part" ng-repeat="linkPart in data.Links">
+    <h5 class="link-title">
+      <div class="icon-container">
+        <img ng-src="{{siteConfig.APP_PATH+'/'+linkPart.icon}}" alt="">
+      </div>
+        {{linkPart.title}}
+
+    </h5>
+    <ul class="arrow-list">
+      <li ng-repeat="link in linkPart.links">
+        <a ng-href="{{link.url}}" target="_blank">{{link.title}}</a>
+      </li>
+    </ul>
+  </div>
+
+
+</div>

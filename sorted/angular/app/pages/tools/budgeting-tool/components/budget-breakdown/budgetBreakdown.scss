@@ -1,0 +1,142 @@
+budget-breakdown {
+  div._expanded {
+    text-align: left;
+    .budget-section-toggle-control {
+      .budget-toggle-section {
+        margin: 0;
+      }
+    }
+  }
+
+  .budget-breakdown-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px 5px;
+  }
+
+  .budget-breakdown-chart {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .budget-breakdown-content {
+    .total-budgeted {
+      .subtotal {
+        color: #ce0259;
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -2px;
+        margin-bottom: 0;
+      }
+
+      .subtotal-copy {
+        margin-bottom: 0;
+      }
+
+      .subtotal-period {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0;
+      }
+    }
+  }
+
+  .budget-section-heading {
+    text-align: center;
+
+    h3 {
+      display: inline-block;
+    }
+
+    .budget-section-toggle-control {
+      .budget-toggle-section {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .breakdown-mobile-container {
+    padding: 0;
+
+    .budget-section-heading {
+      h3 {
+        font-size: 12px !important;
+        font-weight: 400;
+      }
+    }
+
+    .budget-section-toggle-control {
+      border-left: 2px #d9dad5 dotted;
+      padding: 12px 0;
+
+
+      .budget-toggle-section {
+        height: 10px;
+        width: 10px;
+        margin: 20px;
+      }
+    }
+
+  }
+
+  .breakdown-title-vertical {
+    display: none;
+    background-color: #ececea;
+    height:800px;
+    width: 50px;
+    padding-top: 20px;
+    text-align: center;
+    i {
+      margin: 20px 0;
+    }
+  }
+}
+
+budget-breakdown.breakdown-horizontal {
+  section {
+    border-top: 3px #d9d9d6 solid;
+  }
+}
+
+budget-breakdown.breakdown-vertical {
+  display: none;
+
+  section {
+    transition: 0.5s linear right;
+    position: absolute;
+    right: 0;
+    top: 280px;
+    background-color: white;
+    border-top: 3px #d9d9d6 solid;
+    border-bottom: 3px #d9d9d6 solid;
+    width: 425px;
+    z-index: 100;
+  }
+
+  section._collapsed {
+    right: -372px;
+    z-index: 100;
+  }
+
+  .breakdown-title-vertical {
+    display: block;
+  }
+
+  .budget-section-heading {
+    display: none;
+  }
+}
+
+@media(min-width: $screen-md-min) {
+  budget-breakdown.breakdown-horizontal {
+    display: none;
+  }
+  budget-breakdown.breakdown-vertical {
+    display: block;
+  }
+
+  .budget-breakdown-content{
+    margin-top:60px;
+  }
+
+}

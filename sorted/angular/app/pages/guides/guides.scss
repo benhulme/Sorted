@@ -1,0 +1,118 @@
+guides-articles {
+
+	.main-content {
+
+        .icon-container {
+            position: static !important;
+            left: 0 !important;
+
+            img {
+                display: block;
+                margin-top: 0 !important;
+
+                &:hover {
+                    margin-top: -80px !important;
+                }
+
+            }
+
+        }
+
+        .content-text {
+        padding-top: 0 !important;
+
+        .arrow-list {
+
+            li {
+                float: left;
+                width: 50%;
+            }
+
+        }
+    }
+
+    }
+
+}
+
+category-filter>div {
+    padding: 65px 0;
+}
+
+@media (max-width: 768px) {
+
+    category-filter>div {
+        padding: 0;
+    }
+
+}
+
+
+.double-col{
+  -moz-column-count: 2;
+  -moz-column-gap: 100px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 100px;
+  column-count: 2;
+  column-gap: 100px;
+  li{
+    a{
+      display: block;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    -moz-column-count: 1;
+    -moz-column-gap: 70px;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 70px;
+    column-count: 1;
+    column-gap: 70px;
+  }
+}
+
+
+
+
+.guide-page-header{
+  border-bottom: 1px  #b7b8ba dashed ;
+  padding-bottom: 35px;
+  margin: 0 0 50px 0;
+
+}
+.guide-main-content{
+  padding-bottom: 50px;
+  border-bottom: 1px  #b7b8ba dashed ;
+  .sections-link-list{
+    margin-top: 30px;
+    list-style-image: url("../../../assets/images/link-icon.png");
+    li{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+.section-container{
+  padding: 60px 0;
+  border-bottom: 1px  #b7b8ba dashed ;
+  &:last-of-type{
+    border: none;
+  }
+  .section-title{
+    margin:  0 0 40px ;
+  }
+}
+
+
+
+.guides-header{
+  .breadcrumb{
+    left: 5px;
+  }
+}
+.guides-related{
+  .layout-content{
+    padding: 0;
+  }
+}

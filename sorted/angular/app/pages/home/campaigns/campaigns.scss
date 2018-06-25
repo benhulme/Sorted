@@ -1,0 +1,25 @@
+.campaigns-container,
+.campaigns-li {
+  height: 500px;
+}
+
+.campaigns-content {
+  //@extend ._vert-middle;
+}
+
+.campaigns-image {
+  width: 100%;
+}
+
+.campaigns-title {
+  @extend .font-white;
+  @extend .font-book;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.campaigns-short {
+  @extend .font-white;
+  @extend .font-light;
+  margin-bottom: 30px;
+}

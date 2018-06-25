@@ -1,0 +1,61 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+<div class="layout-container mortgage-container">
+  <div class="layout-content">
+    <div class="row layout-row">
+      <div class="col-md-4">
+        <!-- Input form -->
+        <mortgage-tool-input
+          model="model"
+          calculator="calculator" validation="validation"></mortgage-tool-input>
+      </div>
+      <div class="col-md-8 _relative">
+        <!-- Output -->
+        <mortgage-tool-output
+          model="model"
+          calculator="calculator"></mortgage-tool-output>
+
+        <!-- Graphics -->
+        <div class="_full-width hidden-sm hidden-xs" aspect-ratio="16:8">
+          <mortgage-tool-graphic
+            model="model"
+            calculator="calculator"></mortgage-tool-graphic>
+        </div>
+        <div class="_full-width visible-sm visible-xs" aspect-ratio="16:10">
+          <mortgage-tool-graphic
+            model="model"
+            calculator="calculator"></mortgage-tool-graphic>
+        </div>
+
+        <!-- GraphicText -->
+        <mortgage-tool-graphic-text
+          model="model"
+          calculator="calculator"></mortgage-tool-graphic-text>
+
+        <div class="col-xs-12">
+
+          <div class="_inline-block _right calc-results-print-bottom">
+            <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+            <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm hidden-md" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+          </div>
+
+
+        </div>
+
+        <!-- Overlay -->
+        <mortgage-tool-overlay
+          model="model"></mortgage-tool-overlay>
+      </div>
+    </div>
+  </div>
+</div>
+
+<related-content data="data" title="More from Sorted"></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>

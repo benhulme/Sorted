@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("calcInputRadioSelect",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/components/calc-input-radio-select/input.html",restrict:"EA",scope:{field:"=",input:"="},link:function(t,n){n.on("click",function(t){console.log(t.currentTarget)})}}}])}();

@@ -1,0 +1,16 @@
+<div class="goal-dropzone {{data.Class}}">
+  <div class="drop-title" data-drop="true" data-jqyoui-options ng-model="data.GoalList" jqyoui-droppable="{onOver: 'over()'}" >
+    <p class="drop-amount" ng-if="(data.GoalList | withTitle).length > 0">
+        {{(data.GoalList | withTitle).length}}
+    </p>
+    <p class="drop-name">
+      {{data.Title}}
+    </p>
+
+  </div>
+
+  <p class="drop-dates">
+    {{data.Dates}}
+  </p>
+
+</div>

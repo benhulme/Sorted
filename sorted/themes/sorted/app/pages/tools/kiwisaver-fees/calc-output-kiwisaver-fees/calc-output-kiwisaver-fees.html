@@ -1,0 +1,231 @@
+<div class="calc-output">
+
+  <div class="calc-form-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-black font-bold">Results</span>
+
+    <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+    <a href="/#/tools/mortgage-tool"
+       class="font-xs font-orange font-medium _right calc-output-print hidden-sm hidden-xs" cm-print>PRINT <span
+      class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+  <div class="output-ksf-container hidden-xs">
+
+    <div class="output-ksf-heading _clear">
+      <span class="font-lg _left">Compare Schemes</span>
+
+      <button class="btn btn-primary btn-small _right btn-compare" ng-class="{disabled: numToCompare === 0}">
+        <span ng-show="!comparing">COMPARE</span><span ng-show="comparing">SHOW ALL OPTIONS</span>
+      </button>
+
+    </div>
+
+    <div class="output-ksf-body font-xs">
+
+      <div class="output-ksf-row _uppercase _clear">
+
+        <div class="output-ksf-th _left output-ksf-fees">
+          <div class="output-ksf-th-title">
+            <div>Fees Until Age 65</div>
+            <div class="_clear">
+              <div class="_two-column _left _align-center">($)</div>
+              <div class="_two-column _left _align-center">(%)</div>
+            </div>
+
+          </div>
+          <div class="output-ksf-th-actions _clear">
+            <button class="_no-border _absolute output-ksf-direction" data-sort-field="fees_till_65_dollars">
+              <span class="fa fa-caret-down" ng-show="directions.fees_till_65_dollars === 'DOWN'"></span>
+              <span class="fa fa-caret-up" ng-show="directions.fees_till_65_dollars === 'UP'"></span>
+              <span class="output-ksf-neutral" ng-show="directions.fees_till_65_dollars === 'NEUTRAL'">
+                <span class="fa fa-caret-up _block"></span>
+                <span class="fa fa-caret-down _block"></span>
+              </span>
+            </button>
+            <popover class=" _absolute output-ksf-tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="The estimated total amount of fees you’ll pay until age 65, shown in dollars as well as a percentage of your estimated total balance.">
+              </button>
+            </popover>
+          </div>
+        </div>
+
+        <div class="output-ksf-th _left output-ksf-name">
+          <div class="output-ksf-th-title">Scheme name/fund name/<br/>type of fund</div>
+          <div class="output-ksf-th-actions _clear">
+            <button class="_no-border _absolute output-ksf-direction" data-sort-field="scheme">
+              <span class="fa fa-caret-down" ng-show="directions.scheme === 'DOWN'"></span>
+              <span class="fa fa-caret-up" ng-show="directions.scheme === 'UP'"></span>
+              <span class="output-ksf-neutral" ng-show="directions.scheme === 'NEUTRAL'">
+                <span class="fa fa-caret-up _block"></span>
+                <span class="fa fa-caret-down _block"></span>
+              </span>
+            </button>
+            <popover class=" _absolute output-ksf-tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-html="true"
+                data-placement="top"
+                data-content="This shows the name of the KiwiSaver scheme, the specific fund within it, and the type of fund it is. <a class='popover-link-float' href='http://fundfinder.sorted.org.nz/must-knows-of-kiwisaver/#fund-types' target='_blank'>See here for more about fund types.</a>">
+              </button>
+            </popover>
+          </div>
+        </div>
+
+        <div class="output-ksf-th _left output-ksf-type">
+          <div class="output-ksf-th-title">Active/ Passive</div>
+          <div class="output-ksf-th-actions _clear">
+            <button class="_no-border _absolute output-ksf-direction" data-sort-field="active">
+              <span class="fa fa-caret-down" ng-show="directions.active === 'DOWN'"></span>
+              <span class="fa fa-caret-up" ng-show="directions.active === 'UP'"></span>
+              <span class="output-ksf-neutral" ng-show="directions.active === 'NEUTRAL'">
+                <span class="fa fa-caret-up _block"></span>
+                <span class="fa fa-caret-down _block"></span>
+              </span>
+            </button>
+            <popover class=" _absolute output-ksf-tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="Funds can be managed in an active or passive way. Active managers usually trade frequently, looking to improve returns, while passive managers often buy and hold funds that track a given market index. Active management costs more, so the fees tend to be higher.">
+              </button>
+            </popover>
+          </div>
+        </div>
+
+        <div class="output-ksf-th _left output-ksf-compare">
+          <div class="output-ksf-th-title">Compare</div>
+          <div class="output-ksf-th-actions _clear">
+            <popover class=" _absolute output-ksf-tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="Tick the individual funds you’d like to compare.">
+              </button>
+            </popover>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Desktop results -->
+      <div ng-repeat="(key, item) in result">
+
+        <div ng-show="(comparing && item.compare) || !comparing">
+
+          <div class="output-ksf-row _clear" data-id="{{item.id}}">
+
+            <div class="output-ksf-td _left output-ksf-fees">
+              <div class="_clear">
+                <div class="_two-column _left _align-center font-blue">{{item.fees_till_65_dollars |
+                  currency: "$" : 0}}
+                </div>
+                <div class="_two-column _left _align-center">{{item.fees_till_65_percent}}%</div>
+              </div>
+            </div>
+
+            <div class="output-ksf-td _left output-ksf-name">
+              <div class="font-blue">{{item.scheme}}</div>
+              <div class="font-lg">{{item.fund}}</div>
+              <div class="font-blue _uppercase">{{item.risk}}</div>
+            </div>
+
+            <div class="output-ksf-td _left output-ksf-type _align-center">
+              <span>{{item.active}}</span>
+            </div>
+
+            <!-- Results compare and filer -->
+            <div class="output-ksf-td _left output-ksf-compare _align-center">
+              <input type="checkbox" class="output-ksf-checkbox" ng-true-value="true" ng-false-value="false"
+                     ng-model="item.compare"/>
+            </div>
+
+          </div>
+
+          <div class="layout-divider-dashed output-ksf-divider"></div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="output-ksf-footer _clear">
+
+      <button class="btn btn-primary btn-small _right btn-compare" ng-class="{disabled: numToCompare === 0}">
+        <span ng-show="!comparing">COMPARE</span><span ng-show="comparing">SHOW ALL OPTIONS</span>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Mobile results  -->
+  <div class="output-ksf-mobile-container visible-xs">
+
+    <cm-select cm-placeholder="Sort by"
+               cm-options="mobileFilterOptions"
+               ng-model="mobileFilter"
+               class="_inline-block _full-width output-ksf-dropdown"></cm-select>
+
+    <div class="output-ksf-mobile-content">
+
+      <button class="btn btn-primary btn-compare _full-width font-sm" ng-class="{disabled: numToCompare === 0}">
+        <span ng-show="!comparing">COMPARE SELECTED OPTIONS</span><span ng-show="comparing">SHOW ALL OPTIONS</span>
+      </button>
+
+      <div class="output-ksf-mobile-table">
+
+        <div ng-repeat="(key, item) in result">
+
+          <div ng-show="(comparing && item.compare) || !comparing">
+
+            <div class="output-ksf-mobile-row _clear" data-id="{{item.id}}">
+
+              <div class="output-ksf-mobile-column-left _left">
+
+                <div class="">
+                  <div class="_align-center font-blue">{{item.fees_till_65_dollars | currency: "$" : 0}}
+                  </div>
+                  <div class="_align-center">{{item.fees_till_65_percent}}%</div>
+                </div>
+
+                <div class="output-ksf-mobile-compare _align-center">
+                  <input type="checkbox" class="output-ksf-checkbox" ng-true-value="true" ng-false-value="false"
+                         ng-model="item.compare"/>
+                  <div class="font-xs">COMPARE</div>
+                </div>
+
+              </div>
+
+              <div class="output-ksf-mobile-column-right _left">
+                <div class="font-blue">{{item.scheme}}</div>
+                <div class="font-lg">{{item.fund}}</div>
+                <div class="font-blue _uppercase">{{item.risk}}</div>
+                <span>{{item.active}}</span>
+              </div>
+
+            </div>
+
+            <div class="layout-divider-dashed output-ksf-mobile-divider"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</div>

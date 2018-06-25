@@ -1,0 +1,12 @@
+<div class="dropdown _left _full-width cm-select">
+  <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {{placeholder}}
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li ng-repeat="(key,option) in options" ng-class="{'dropdown-header' : option.header, selected: ngModel == option.value}" class="dropdown-item">
+      <span class="cm-header" ng-if="option.header">{{option.label}}</span>
+      <a class="cm-option" ng-if="!option.header" cm-value="{{option.value}}" cm-label="{{option.label}}">{{option.label}}</a>
+    </li>
+  </ul>
+</div>

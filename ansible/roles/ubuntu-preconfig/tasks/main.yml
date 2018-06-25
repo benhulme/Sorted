@@ -1,0 +1,18 @@
+---
+# tasks file for ubuntu-preconfig
+
+#Install packages
+- apt: name=python-apt state=present update_cache=yes
+- apt: name=fish
+- apt: name=vim
+- apt: name=git
+- apt: name=gzip
+- apt: name=p7zip-full
+- apt: name=htop
+- apt: name=mc
+- apt: name=screen
+
+# Create users
+
+- name: replace sshd_config
+  template: src=sshd_config dest=/etc/ssh/sshd_config backup=yes

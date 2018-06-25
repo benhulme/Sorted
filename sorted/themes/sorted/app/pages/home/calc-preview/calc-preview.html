@@ -1,0 +1,40 @@
+<div class="bg-grey-lightest  calc-pre-container" scroll-fade>
+    <div vert-middle="calc-pre-content" vert-disable-below="480" class="_full-height-xs-above">
+        <div class="layout-container _relative">
+
+            <div class="row _relative _full-height-xs-above"  scroll-fade-item>
+                <div class="col-sm-6 calc-pre-image-container hidden-xs _relative">
+                    <img class="calc-pre-image" ng-src="{{calcPreview.BladeImage.Filename}}" />
+                </div>
+                <div class="layout-col col-sm-6 _full-height-xs-above">
+                    <div class="calc-pre-content layout-content">
+
+                        <h2 class="_align-center-xs calc-pre-title">{{calcPreview.Title}}</h2>
+
+                        <p class="_align-center-xs">{{calcPreview.Content}}</p>
+
+                        <form  class="form-horizontal calc-pre-form" name="calcPreviewForm">
+
+                            <div class="form-label-group">
+                                <label class="form-label">My monthly salary is</label>
+                                <div class="input-group form-inline-addon form-addon-dollar">
+                                    <input type="text" analytics-on="click" analytics-category="budgettoolteaser" analytics-event="interact" analytics-label="moneyfield" analytics-interaction-type="0" class="form-control" name="salary" ng-model="calcPreModel.salary" cm-money cm-notempty>
+                                    <div class="form-error" ng-show="calcPreviewForm.salary.$error.money">amount invalid</div>
+                                    <div class="form-error" ng-show="calcPreviewForm.salary.$error.notempty">enter amount</div>
+                                </div>
+                            </div>
+
+                            
+
+                            <a href="/tool/budgeting-tool#/welcome?salary={{calcPreModel.salary}}" class="btn btn-primary btn-xs-fullwidth calc-pre-submit" analytics-on="click" analytics-category="budgettoolteaser" analytics-event="submit" analytics-interaction-type="0">{{calcPreview.ButtonCopy}}</a>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

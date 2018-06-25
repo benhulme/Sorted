@@ -1,0 +1,29 @@
+sorted-tip {
+  .sorted-tip-container {
+    min-height: 125px;
+    border: solid 1px #FF4B05;
+    background-color: #ffeee7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 10px;
+
+    .sorted-tip-main {
+      margin-left: 10px;
+
+      .sorted-tip-content {
+        line-height: 26px;
+      }
+    }
+
+    .sorted-tip-icon {
+      width: 50px;
+      margin: 0 15px;
+
+      img {
+        margin-bottom: 26px;
+      }
+    }
+  }
+}

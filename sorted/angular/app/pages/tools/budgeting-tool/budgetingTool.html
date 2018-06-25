@@ -1,0 +1,30 @@
+  <navigation></navigation>
+  <intro-header class="hidden-print"></intro-header>
+  <budget-header class="hidden-print"></budget-header>
+
+  <main class="container-fluid budget-main"
+        ng-class="{'budget-shrink': breakdownDesktopExpanded}">
+      <print-view></print-view>
+
+      <budget-breakdown class="breakdown-horizontal hidden-print"></budget-breakdown>
+      <budget-view-chooser class="hidden-print"></budget-view-chooser>
+
+      <ng-include class="hidden-print" src="getBudgetTemplate()"></ng-include>
+
+      <add-master-category class="hidden-print"></add-master-category>
+      <mobile-save class="hidden-print"></mobile-save>
+      <sorted-tip class="add-to-home-tip hidden-print">
+        Save your budget first, then add to your home screen for quick mobile access.
+        <save-to-home></save-to-home>
+      </sorted-tip>
+
+
+  </main>
+
+  <budget-breakdown class="breakdown-vertical"></budget-breakdown>
+  <footer></footer>
+
+
+
+
+

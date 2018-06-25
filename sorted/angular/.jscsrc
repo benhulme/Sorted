@@ -1,0 +1,7 @@
+{
+  "preset": "airbnb",
+  "maxErrors": 1000,
+  "requirePaddingNewLinesAfterBlocks": false,
+  "maximumLineLength": 120,
+  "excludeFiles":["bower_components/**"]
+}

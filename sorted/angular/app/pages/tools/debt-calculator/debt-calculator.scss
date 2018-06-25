@@ -1,0 +1,17 @@
+.debt-container {
+  .calc-heading {
+    background-color: $pink-light;
+    color: $black;
+  }
+  .calc-input-container {
+    background-color: $pink-lightest;
+  }
+
+  .calc-input-btn-group .btn.selected {
+    background-color: $pink;
+    color: $black;
+  }
+  .ui-add {
+    background-color: $pink;
+  }
+}

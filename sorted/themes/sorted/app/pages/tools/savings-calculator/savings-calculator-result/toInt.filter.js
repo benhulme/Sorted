@@ -1,0 +1,1 @@
+(function(){"use strict";angular.module("sorted").filter("toInt",function(){return function(t){return parseInt(t)||0}})}).call(this);

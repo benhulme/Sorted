@@ -1,0 +1,479 @@
+<div ng-if="!tool.isReady" >
+    
+      <div class="layout-header-small">
+    
+        <div class="header-small-container">
+    
+          <div class="header-background" style="background-image: url(themes/sorted/standalone/tools/budget-calculator/assets/images/header-background-tools.jpg)">
+            <div class="header-small-opacity"></div>
+    
+          </div>
+    
+          <div style="position: relative; top:96px; z-index: 1000; width: 100%">
+            <div style="display: flex; justify-content: center; margin-top: 50px;">
+              <img class="img-responsive" src="themes/sorted/standalone/tools/budget-calculator/assets/images/Eclipse.svg">
+            </div>
+    
+            <div class="text-center">
+              loading data
+            </div>
+          </div>
+    
+    
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    <div ng-if="tool.isReady">
+    
+    <tool-header breadcrumbs="tool.breadcrumbs"
+                 profiledata="tool.userProfileData"
+                 imagepath="tool.imagePath"
+                 budgetdata="tool.currentBudget"></tool-header>
+    
+    
+    <print-view>
+      <div class="budget-breakdown-wrap breakdown-vertical" style="position: relative !important;">
+        <div class="budget-graph-wrap">
+          <div class="budget-breakdown-chart"
+               kendo-chart
+               k-options="tool.chartOptions"
+               k-rebind="tool.chartOptions"></div>
+          <div class="budget-breakdown-readable">
+            <div class="budget-breakdown-titles">
+              <h3 class="subtotal" ng-bind-html="tool.currentBudget.MasterCategoriesTotalFormattedString | currency"></h3>
+              <h5 class="subtotal-copy">Total budgeted</h5>
+              <p class="subtotal-period" ng-bind-html="tool.currentBudget.Income.Period.Title"></p>
+            </div>
+            <div class="budget-breakdown-legend">
+              <ul class="breakdown-master-categories">
+                <li ng-repeat="masterCategory in tool.currentBudget.MasterCategories">                    
+                  <div class="inner-legend" style="background-color:{{masterCategory.Color}} !important; -webkit-print-color-adjust: exact;"></div>
+                  <div class="legend-label font-medium" ng-bind-html="masterCategory.Title"></div>
+                  <div class="legend-amount font-medium">{{masterCategory.PieValuePercent}}%</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid budget-tool-container view-list"ng-class="{'breakdown-reduce':tool.breakdownCollapse}">
+        <div class="budget-items-form-wrap">
+          <div class="budget-tool-rows">
+            <!-- NgRepeat a Master Category -->
+            <div class="budget-tool-row" ng-repeat="masterCategory in tool.budgetData.MasterCategories">
+              <div class="budget-tool-master-category" ng-class="{'master-category-open':masterCategory.DisplayOpen}">
+                <div class="budget-tool-master-category-inner">
+                  <div class="master-category-icon pointer"
+                       ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)">
+    
+                    <img ng-if="masterCategory.Icon != ''"
+                          ng-src="{{tool.TOOL_ASSETS + masterCategory.Icon}}">
+    
+                    <div style="display: flex; justify-content: center;" ng-if="masterCategory.Icon == ''">    
+                      <span style="background-color: {{masterCategory.Color}} !important; 
+                                    width: 30px;
+                                    height: 30px;
+                                    display: inline-block;
+                                    border-radius: 50%;
+                                    margin-top: 11px;
+                                    -webkit-print-color-adjust: exact !important;"></span>
+                    </div>
+                  </div>
+                  <div class="master-category-title"
+                       modal-activator modal-type="edit_master_category"
+                       data-mastercategory="{{masterCategory}}">
+                    <input modal-activator modal-type="edit_master_category"
+                            type="text" ng-model="masterCategory.Title" readonly onfocus="this.blur()">
+                  </div>
+                  <div class="master-category-value pointer" ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)">
+                    <input type="text" ng-model="masterCategory.ValueFormattedString" class="pointer" readonly onfocus="this.blur()">
+                  </div>
+                  <div class="master-category-view-toggle pointer" ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)"></div>
+                </div>
+                <!-- NgRepeat the Sub categories within this Master Category -->
+                <div class="categories-list-items">
+                  <div ng-repeat="subCategory in masterCategory.SubCategories" class="sub-category-item" ng-class="{'category-state-edit':subCategory.stateEdit}">
+                    <div class="cat-section-left">
+                      <div class="sub-category-image"
+                            modal-activator modal-type="add_subcategory"
+                            data-subcategory="{{subCategory}}"
+                            data-mastercatindex="{{$parent.$index}}"
+                            data-catindex="{{$index}}"
+                            ng-style="{'background-image':'url(./'+ subCategory.Image+')'}">
+                        <img class="orange-edit"
+                            ng-src="{{tool.TOOL_ASSETS + 'assets/images/edit-orange.svg'}}">
+                      </div>
+                      <div class="sub-category-title">
+                        <input type="text" ng-model="subCategory.Title"
+                                           ng-focus="tool.onSubCategoryTitle_focusInHandler($event, subCategory)"
+                                           ng-blur="tool.onSubCategoryTitle_focusOutHandler($event, subCategory)"
+                                           ng-keyup="tool.onSubCategoryTitle_keyUpHandler($event)"
+                                           prevent-input-zoom>
+                      </div>
+                      <div class="sub-category-value">
+                        <input type="text"
+                              ng-model="subCategory.ValueFormattedString"
+                              ng-focus="tool.onSubCategoryValue_focusInHandler($event, subCategory)"
+                              ng-blur="tool.onSubCategoryValue_focusOutHandler($event, subCategory)"
+                              restrict-currency
+                              prevent-input-zoom>
+                      </div>
+                      <div class="sub-category-period budget-period"><div class="dropdown" uib-dropdown>
+                        <button class="btn btn-default dropdown-toggle form-control"
+                                type="button"
+                                uib-dropdown-toggle
+                                aria-haspopup="true"
+                                aria-expanded="true"
+                        ><span>{{subCategory.Period.Title}}</span>  <i class="icon-chevron-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu">
+                          <li ng-repeat="period in tool.budgetPeriods">
+                            <a class="dropdown-link" ng-click="tool.onSetPeriod_clickHandler($event, period, subCategory)">{{period.Title}}</a>
+                          </li>
+                        </ul>
+                      </div></div>
+                    </div>
+                    <div class="cat-section-right">
+                      <div class="sub-category-view-toggle">
+                        <button class="btn-delete-category"
+                          modal-activator
+                          modal-type="delete_subcategory"
+                          data-subcategory="{{subCategory}}"
+                          data-mastercatindex="{{$parent.$index}}"
+                          data-catindex="{{$index}}"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add new sub category row -->
+                  <div class="sub-category-item">
+                    <button class="btn-sub-category-add"
+                      modal-activator modal-type="add_subcategory"
+                      data-mastercatindex="{{$index}}"
+                      data-mastercategory="{{masterCategory}}">Add Category</button></div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- // Ideally this would be in the /components/popovers directory -->
+            <script type="text/ng-template" id="addMasterCategoryPopover.html">
+              <button type="button" class="popover-close-button btn btn-default" ng-click="tool.onMasterCategoryCancel_clickHandler($event)" aria-hidden="true">×</button>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control"
+                                         placeholder="Add name"
+                                         autofocus=""
+                                         ng-model="tool.newMasterCategory.Title"
+                                         ng-keyup="tool.onMasterCategoryInput_keyUpHandler($event)">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <a class="font-orange" ng-click="tool.onMasterCategoryCancel_clickHandler($event)">CANCEL</a>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <button class="btn btn-primary" type="button" ng-click="tool.onMasterCategorySave_clickHandler($event)">OK</button>
+                  </div>
+                </div>
+    
+              </div>
+            </script>
+            <div class="budget-tool-row">
+              <div class="budget-tool-master-category-inner master-category-add">
+                <button class="btn-master-category-add" popover-is-open="tool.newMasterCategory.PopoverOpen"
+                        uib-popover-template="'addMasterCategoryPopover.html'"
+                        popover-placement="top-left"
+                        popover-class="add-master-category-popover"
+                        type="button">Add Master Category</button>
+                <div class="tool-print-options-wrap pull-right">
+                  <a href="javascript:window.print()" class="ui-link budget-print-link arrow-right hide-for-mobile">PRINT</a>
+    
+                  <button ng-if="!tool.isLoggedIn"
+                          data-toggle="modal"
+                          data-target="#login-modal"
+                          class="btn btn-primary btn-small ui-link">SAVE</button>
+    
+                  <button ng-if="tool.isLoggedIn"
+                          class="btn btn-primary btn-small ui-link" ng-click="tool.onSave_clickHandler($event)">SAVE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </print-view>
+    
+    <div class="container-fluid budget-tool-container hide-for-print" ng-class="{'view-list':(tool.viewState == 'list'), 'view-grid':(tool.viewState == 'grid'), 'breakdown-reduce':tool.breakdownCollapse}">
+      <div class="budget-items-form-wrap">
+        <!-- Budget Breakdown Mobile START-->
+        <section class="breakdown-horizontal">
+    
+          <div class="budget-breakdown-mobile-container">
+            <div class="budget-breakdown-mobile-heading">
+              <div class="budget-breakdown-icon-container">
+                <img class="budget-breakdown-icon" src="/themes/sorted/assets/images/icon-breakdown.png">
+              </div>
+              <div class="budget-breakdown-mobile-title">
+                <p>Budget Breakdown</p>
+              </div>
+              <div ng-click="tool.onToggleMobileBudget_clickHandler($event)" class="budget-breakdown-mobile-toggle" ng-class="{'budget-breakdown-mobile-open':tool.showMobileBudget}"></div>
+            </div> <!-- Budget Breakdown Mobile Heading END -->
+    
+            <div class="budget-breakdown-mobile-content">
+              <div ng-if="tool.showMobileBudget" class="budget-graph-wrap">
+                <div class="budget-breakdown-chart"
+                  kendo-chart
+                  k-options="tool.chartOptions"
+                  k-rebind="tool.chartOptions">
+                </div>
+                <div class="budget-breakdown-readable">
+                  <div class="budget-breakdown-titles">
+                    <h3 class="subtotal" ng-bind-html="tool.currentBudget.MasterCategoriesTotalFormattedString | currency"></h3>
+                    <h5 class="subtotal-copy">Total budgeted</h5>
+                    <p class="subtotal-period" ng-bind-html="tool.currentBudget.Income.Period.Title"></p>
+                  </div>
+                  <div class="budget-breakdown-legend">
+                    <ul class="breakdown-master-categories">
+                      <li ng-repeat="masterCategory in tool.currentBudget.MasterCategories">
+                        <div class="inner-legend" ng-style="{'background-color': masterCategory.Color}"></div>
+                        <div class="legend-label font-medium" ng-bind-html="masterCategory.Title"></div>
+                        <div class="legend-amount font-medium">{{masterCategory.PieValuePercent}}%</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Budget Breakdown Mobile Content END -->
+    
+          </div> <!-- Budget Breakdown Mobile Container END -->
+        </section> <!-- Budget Breakdown Mobile END -->
+    
+        <!-- Budget Tool header START -->
+        <div class="budget-view-chooser-container row">
+          <div class="budget-view-copy-container col-xs-3 col-xs-offset-5  col-sm-2 col-sm-offset-6 col-md-offset-5">Budgeted</div>
+          <div class="col-xs-4 text-right pull-right">
+            <div class="budget-view-button-container text-left ng-scope">
+              <img class="budget-view-button" 
+                ng-src="/themes/sorted/standalone/tools/budget-calculator/assets/images/grid.svg" 
+                ng-class="{'selected': (tool.viewState == 'grid')}" 
+                ng-click="tool.onViewToggle_clickHandler($event, 'grid')" 
+                src="/themes/sorted/assets/images/tools/budgeting-tool/grid.svg">
+            </div>
+            <div class="budget-view-button-container text-left ng-scope">
+              <img class="budget-view-button selected" 
+                ng-src="/themes/sorted/standalone/tools/budget-calculator/assets/images/list.svg" 
+                ng-class="{'selected': (tool.viewState == 'list')}"
+                ng-click="tool.onViewToggle_clickHandler($event, 'list')" 
+                src="/themes/sorted/assets/images/tools/budgeting-tool/list.svg">
+            </div>
+          </div>
+        </div>
+        <!-- Budget Tool header END -->
+    
+        <div class="budget-tool-rows">
+    
+          <!-- NgRepeat a Master Category -->
+          <div class="budget-tool-row" ng-repeat="masterCategory in tool.budgetData.MasterCategories">
+            <div class="budget-tool-master-category" ng-class="{'master-category-open':masterCategory.DisplayOpen}">
+              <div class="budget-tool-master-category-inner">
+                <div class="master-category-icon pointer" ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)">
+    
+                  <img ng-if="masterCategory.Icon != ''"
+                       ng-src="{{tool.TOOL_ASSETS + masterCategory.Icon}}">
+    
+    
+    
+                  <div style="display: flex;
+                              justify-content: center;"
+                       ng-if="masterCategory.Icon == ''">
+    
+                    <span style="background-color: {{masterCategory.Color}} !important;
+                                  width: 30px !important;
+                                  height: 30px !important;
+                                  display: inline-block !important;
+                                  border-radius: 50% !important;
+                                  margin-top: 11px !important;" >
+    
+                    </span>
+                  </div>
+    
+                </div>
+                <div class="master-category-title"
+                     modal-activator modal-type="edit_master_category"
+                     data-mastercategory="{{masterCategory}}">
+    
+                  <input modal-activator modal-type="edit_master_category"
+                         type="text" ng-model="masterCategory.Title" readonly>    
+                </div>
+                <div class="master-category-value pointer" ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)">
+                  <input type="text" ng-model="masterCategory.ValueFormattedString" class="pointer" readonly onfocus="this.blur()">
+                </div>
+                <div class="master-category-view-toggle pointer" ng-click="tool.onMasterCategory_clickHandler($event, masterCategory)"></div>
+              </div>
+    
+              <!-- NgRepeat the Sub categories within this Master Category -->
+              <div class="categories-list-items">
+                <div ng-repeat="subCategory in masterCategory.SubCategories" class="sub-category-item" ng-class="{'category-state-edit':subCategory.stateEdit}">
+                  <div class="cat-section-left">
+                    <div class="sub-category-image"
+                         modal-activator modal-type="add_subcategory"
+                         data-subcategory="{{subCategory}}"
+                         data-mastercatindex="{{$parent.$index}}"
+                         data-catindex="{{$index}}"
+                         ng-style="{'background-image':'url(./'+ subCategory.Image+')'}">
+                      <img class="orange-edit"
+                          ng-src="{{tool.TOOL_ASSETS + 'assets/images/edit-orange.svg'}}"
+                      >
+    
+                    </div>
+                    <div class="sub-category-title">
+                      <input type="text"
+                              ng-model="subCategory.Title"
+                              ng-focus="tool.onSubCategoryTitle_focusInHandler($event, subCategory)"
+                              ng-blur="tool.onSubCategoryTitle_focusOutHandler($event, subCategory)"
+                              ng-keyup="tool.onSubCategoryTitle_keyUpHandler($event)"
+                              prevent-input-zoom>
+                    </div>
+                    <div class="sub-category-value">
+                      <input type="text"
+                              ng-model="subCategory.ValueFormattedString"
+                              ng-focus="tool.onSubCategoryValue_focusInHandler($event, subCategory)"
+                              ng-blur="tool.onSubCategoryValue_focusOutHandler($event, subCategory)"
+                              restrict-currency
+                              prevent-input-zoom>
+                    </div>
+                    <div class="sub-category-period budget-period"><div class="dropdown" uib-dropdown>
+                      <button class="btn btn-default dropdown-toggle form-control"
+                              type="button"
+                              uib-dropdown-toggle
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                      ><span>{{subCategory.Period.Title}}</span>  <i class="icon-chevron-down" aria-hidden="true"></i></button>
+                      <ul class="dropdown-menu">
+                        <li ng-repeat="period in tool.budgetPeriods">
+                          <a class="dropdown-link" ng-click="tool.onSetPeriod_clickHandler($event, period, subCategory)">{{period.Title}}</a>
+                        </li>
+                      </ul>
+                    </div></div>
+                  </div>
+                  <div class="cat-section-right">
+                    <div class="sub-category-view-toggle">
+                      <img src="/themes/sorted/standalone/tools/budget-calculator/assets/images/trash-grey.svg"
+                              class="btn-delete-category"
+                              modal-activator
+                              modal-type="delete_subcategory"
+                              data-subcategory="{{subCategory}}"
+                              data-mastercatindex="{{$parent.$index}}"
+                              data-catindex="{{$index}}">
+                    </div>
+                  </div>
+                </div>
+    
+                <!-- Add new sub category row -->
+                <div class="sub-category-item">
+                  <button class="btn-sub-category-add"
+                          modal-activator modal-type="add_subcategory"
+                          data-mastercatindex="{{$index}}"
+                          data-mastercategory="{{masterCategory}}">Add Category</button></div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- // Ideally this would be in the /components/popovers directory -->
+          <script type="text/ng-template" id="addMasterCategoryPopover.html">
+            <button type="button" class="popover-close-button btn btn-default" ng-click="tool.onMasterCategoryCancel_clickHandler($event)" aria-hidden="true">×</button>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control"
+                            placeholder="Add name" autofocus=""
+                            ng-model="tool.newMasterCategory.Title"
+                            ng-keyup="tool.onMasterCategoryInput_keyUpHandler($event)"
+                            prevent-input-zoom>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 text-center">
+                  <a class="font-orange" ng-click="tool.onMasterCategoryCancel_clickHandler($event)">CANCEL</a>
+                </div>
+                <div class="col-xs-6 text-center">
+                  <button class="btn btn-primary" type="button" ng-click="tool.onMasterCategorySave_clickHandler($event)">OK</button>
+                </div>
+              </div>
+    
+            </div>
+          </script>
+          <div class="budget-tool-row">
+            <div class="budget-tool-master-category-inner master-category-add">
+              <button class="btn-master-category-add" popover-is-open="tool.newMasterCategory.PopoverOpen"
+                      uib-popover-template="'addMasterCategoryPopover.html'"
+                      popover-placement="top-left"
+                      popover-class="add-master-category-popover"
+                      type="button">Add Master Category</button>
+              <div class="tool-print-options-wrap pull-right">
+                <a href="javascript:window.print()" class="ui-link budget-print-link arrow-right hide-for-mobile">PRINT</a>
+    
+                <button ng-if="!tool.isLoggedIn"
+                        data-toggle="modal"
+                        data-target="#login-modal"
+                        class="btn btn-primary btn-small ui-link">SAVE</button>
+    
+                <button ng-if="tool.isLoggedIn"
+                        class="btn btn-primary btn-small ui-link" ng-click="tool.onSave_clickHandler($event)">SAVE</button>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+      <!-- Budget Breakdown - Desktop -->
+      <div class="budget-breakdown-wrap breakdown-vertical" id="main-breakdown-vertical">
+        <div class="left-bar"><button class="btn-toggle-breakdownview" ng-click="tool.onBreakdownToggle_clickHandler($event)">
+          <div class="icon reduce">
+            <span class="icon-chevron-left"></span>
+          </div>
+          <div class="icon open">
+            <span class="icon-chevron-right"></span>
+          </div>
+    
+          <span class="button-label">Budget Breakdown</span>
+        </button></div>
+    
+        <div class="budget-graph-wrap">
+          <div class="budget-breakdown-chart"
+               kendo-chart
+               k-options="tool.chartOptions"
+               k-rebind="tool.chartOptions"></div>
+          <div class="budget-breakdown-readable">
+            <div class="budget-breakdown-titles">
+              <h3 class="subtotal" ng-bind-html="tool.currentBudget.MasterCategoriesTotalFormattedString | currency"></h3>
+              <h5 class="subtotal-copy">Total budgeted</h5>
+              <p class="subtotal-period" ng-bind-html="tool.currentBudget.Income.Period.Title"></p>
+            </div>
+            <div class="budget-breakdown-legend">
+              <ul class="breakdown-master-categories">
+                <li ng-repeat="masterCategory in tool.currentBudget.MasterCategories">
+    
+                  <div class="inner-legend" ng-style="{'background-color': masterCategory.Color}"></div>
+    
+                  <div class="legend-label font-medium"
+                        ng-bind-html="masterCategory.Title">
+    
+                  </div>
+                  <div class="legend-amount font-medium">{{masterCategory.PieValuePercent}}%</div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    

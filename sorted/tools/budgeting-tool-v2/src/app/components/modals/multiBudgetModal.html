@@ -1,0 +1,30 @@
+<div class="budget-header-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="$ctrl.onCancel_clickHandler($event)" aria-hidden="true">×</button>
+    <h4 class="modal-title">Warning!</h4>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <p>It looks like you already have a budget saved on Sorted. You can only have one – would you like to overwrite?</p>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <button class="btn btn-primary form-control" type="button" ng-click="$ctrl.onCancel_clickHandler()">KEEP EXISTING</button>
+        <p class="overwrite-confirm-button-copy font-sm ng-binding">Keep my existing budget from {{$ctrl.editDate | date:'fullDate'}}</p>
+        <p>
+        </p></div>
+      <div class="col-sm-6 text-center">
+        <button class="btn btn-primary form-control" type="button" ng-click="$ctrl.onOverWrite_clickHandler()">OVERWRITE WITH NEW</button>
+        <p class="overwrite-confirm-button-copy font-sm"><span class="font-medium">Overwrite</span> my existing budget</p>
+      </div>
+    </div>
+  </div>
+</div>
+

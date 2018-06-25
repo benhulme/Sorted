@@ -1,0 +1,62 @@
+not-logged-in, logged-in {
+  p {
+    margin-top: 20px;
+
+    .not-logged-in-link, .logged-in-link {
+      color: #ff4B05;
+      text-transform: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.budget-amount-form-container {
+  padding: 0 !important;
+}
+
+.create-a-budget {
+  text-align: center;
+  padding: 50px 0 150px 0;
+  overflow: hidden;
+
+  .device-image-container {
+    position: relative;
+    float: right;
+    height: 300px;
+    width: 600px;
+
+    img {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+    }
+  }
+
+  @media(min-width: $screen-sm-min) {
+    padding-bottom: 100px;
+
+    h2 {
+      margin-top: 50px;
+    }
+
+    h2, p {
+      text-align: left;
+    }
+
+    .device-image-container {
+      float: none;
+
+      img {
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
+
+  @media(min-width: $screen-lg-min) {
+    .device-image-container {
+      height: 400px;
+      width: 800px;
+    }
+  }
+}

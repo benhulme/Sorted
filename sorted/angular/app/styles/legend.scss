@@ -1,0 +1,31 @@
+.legend-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  .legend-list {
+    text-align: center;
+    @media(max-width: $screen-xs) {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+  .legend-item {
+    @media(max-width: $screen-xs) {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+.legend-square {
+  width: 14px;
+  height: 14px;
+  margin: 0 8px 0 0;
+}
+
+.legend-label {
+  margin-right: 10px;
+  @media(max-width: $screen-xs) {
+    margin-right: 0;
+  }
+}

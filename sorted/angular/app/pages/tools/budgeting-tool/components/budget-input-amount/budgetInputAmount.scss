@@ -1,0 +1,46 @@
+budget-input-amount {
+  input[type=number] {
+    font-size: 16px;
+  }
+
+  .help-block {
+    display: none;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  input[type=number], input[type=number]:focus {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    -moz-appearance:textfield;
+    border-radius: 4px !important;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number]:focus {
+    border-color: #ccc !important;
+  }
+
+  input[type=number].ng-invalid, input[type=number]:focus.ng-invalid {
+    border-color: red !important;
+  }
+
+  input[type=number].ng-empty.ng-invalid, input[type=number]:focus.ng-empty.ng-invalid {
+    border-color: #ccc !important;
+  }
+
+  input[type=number].ng-invalid + .help-block {
+    display: block !important;
+    color: red;
+  }
+
+  input[type=number].ng-empty.ng-invalid + .help-block {
+    display: none !important;
+  }
+}

@@ -1,0 +1,306 @@
+<navigation></navigation>
+
+<header-small-title data="data"></header-small-title>
+
+<div class="layout-container order">
+
+  <div class="row" ng-if="formSend">
+    <div class="col-sm-12">
+      <div style="padding:10% 0;">
+        Thanks for your order! We hope you'll find these materials useful and we'd love to hear any feedback you might have.
+        <!--<div ng-show="selectedOrders(data.Seminars).length">-->
+          <!--<p>Lorem ipsum dolor sit amet.</p>-->
+          <!--<ul>-->
+            <!--<li ng-repeat="seminar in selectedOrders(data.Seminars)">-->
+              <!--<a ng-href="{{seminar.PDF.Filename}}" download>{{seminar.Title}}</a>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+
+      </div>
+    </div>
+  </div>
+
+
+<div ng-hide="formSend">
+  <div class="row">
+    <div class="col-sm-12">
+      <p adjustable-font class="order-content">Helping people get their money sorted can be good for business and the community. If you want to help the people you work with or your community to get sorted we have a range of resources you can use – all of which are free, independent and impartial. Here's a list of facilitators if you need one. <br/><br/><a href="https://www.cffc.org.nz/financial-capability/looking-for-a-facilitator/sorted-facilitators/" target="_blank" analytics-on="click" analytics-event="facilitatorslist" analytics-category="download">Seminar facilitators list</a></p>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+
+      <!--<fonts-adjust></fonts-adjust>-->
+    </div>
+  </div>
+
+  <!-- Collateral -->
+  <div class="row">
+    <div class="col-sm-12">
+
+
+
+      <form novalidate name="itemsForm" >
+        <div class="panel-group">
+          <div class=" order-panel"
+               ng-repeat="(index, category) in data.Categories | orderBy: category.SortOrder:true">
+
+            <!-- Order Seminars -->
+            <order-seminars-item
+              ng-if="category.Title === 'Seminars'"
+              category="category"
+              index="index">
+            </order-seminars-item>
+
+            <!-- Order Booklets-->
+            <order-booklets-item
+              ng-if="category.Title === 'Booklets'"
+              category="category"
+              index="index">
+            </order-booklets-item>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--&lt;!&ndash; TODO remove after testing complete &ndash;&gt;-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-12">-->
+        <!--<pre>Order = {{Order | json}}</pre>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Place Order -->
+          <div >
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="font-medium font-h4 place-order-copy" >Place Order</div>
+                <p  adjustable-font>Enter your details to place your order for the resources selected above. Seminars will be delivered via digital download link, and you will receive booklets by mail within 2-3 weeks.</p>
+              </div>
+            </div>
+
+
+          <div class="col-sm-10 col-sm-offset-1">
+
+
+
+
+            <form name="orderForm" class="orderForm">
+
+              <!-- Your Details -->
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4>Your details</h4>
+                  </div>
+                </div>
+                <div class="row user-details">
+                  <div class="col-md-6">
+                    <label for="firstName">First Name <span>*</span></label>
+                    <input ng-model="Order.User.first_name"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="firstName"
+                           name="firstName"
+                           type="text"
+                           ng-required=true
+                           class="required">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="lastName" class="required">Last Name <span>*</span></label>
+                    <input ng-model="Order.User.family_name"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="lastName"
+                           name="lastName"
+                           type="text"
+                           ng-required=true>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="required">Email Address <span>*</span></label>
+                    <input ng-model="Order.User.email"
+                           ng-model-options="{updateOn: 'default'}"
+                           id="email"
+                           name="email"
+                           type="email"
+                           ng-required=true>
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <label for="seminarAudience">Expected seminar audience (if ordering seminars)</label>
+                    <input ng-model="Order.User.seminarAudience"
+                           ng-model-options="{updateOn: 'default'}"
+                           id="seminarAudience"
+                           name="seminarAudience"
+                           type="number"
+                           ng-required=false
+                            placeholder="Number of people">
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Your organisation -->
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4>Your organisation</h4>
+                    <p adjustable-font class="organisation-copy">
+                      If you’re ordering on behalf of an organisation, please provide the following information.
+                    </p>
+                  </div>
+                </div>
+                <div class="row organisation-details">
+                  <div class="col-md-6">
+                    <label for="organisationName">Organisation name</label>
+                    <input ng-model="Order.Organisation.company_name"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="organisationName"
+                           name="company_name"
+                           type="text"
+                           ng-required=false>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="yourPosition">Your position/role</label>
+                    <input ng-model="Order.Organisation.position_description"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="yourPosition"
+                           name="position_description"
+                           type="text"
+                           ng-required=false>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="organisationType">Organisation type</label>
+                    <select ng-model="Order.Organisation.organisation_type"
+                            ng-model-options="{updateOn: 'default blur'}"
+                            id="organisationType"
+                            name="organisation_type"
+                            type="text"
+                            ng-options="option.name for option in data.organisationTypes track by option.id"
+                            ng-required=false>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="organisationSize">Number of employees/members in NZ</label>
+                    <select ng-model="Order.Organisation.organisation_size"
+                            ng-model-options="{updateOn: 'default blur'}"
+                            id="organisationSize"
+                            name="organisation_size"
+                            type="text"
+                            ng-options="option.name for option in data.organisationSizes track by option.id"
+                            ng-required=false>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delivery Address -->
+              <div class="form-group" >
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4>Delivery address</h4>
+                  </div>
+                </div>
+                <div class="row deliver-to">
+                  <div class="col-md-12">
+                    <label for="streetAddress" class="required">Street address <span>*</span></label>
+                    <input ng-model="Order.DeliverTo.street_address"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="streetAddress"
+                           name="street_address"
+                           type="text"
+                           ng-required=true>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="suburbAddress" class="required">Suburb</label>
+                    <input ng-model="Order.DeliverTo.suburb_address"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="suburbAddress"
+                           name="suburb_address"
+                           type="text"
+                           ng-required=false>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="townCityAddress">Town/City <span>*</span></label>
+                    <input ng-model="Order.DeliverTo.town_city"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           name="town_city"
+                           id="townCity"
+                           type="text"
+                           ng-required=true>
+                  </div>
+
+
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-6">
+                    <label for="postCodeAddress" class="required">Postcode <span>*</span></label>
+                    <input ng-model="Order.DeliverTo.post_code"
+                           ng-model-options="{updateOn: 'default blur'}"
+                           id="postCodeAddress"
+                           name="post_code"
+                           type="text"
+                           ng-required=true>
+                    <div class="post-code-finder">
+                      <a href="http://tools.nzpost.co.nz/tools/address-postcode-finder/"
+                         target="_blank">
+                        <span class="small">Postcode Finder</span></a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Submit -->
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <a class="btn btn-primary btn-lg" ng-click="save()" type="submit">
+                      Request Materials
+                    </a>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="small order-btn-subtext">
+                      <!--<strong>{{getOrderItemCount()}}</strong> items in order-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+<footer></footer>

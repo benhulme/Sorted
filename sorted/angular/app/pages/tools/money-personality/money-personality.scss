@@ -1,0 +1,28 @@
+.personality-container {
+  .calc-form-heading {
+    background-color: $aqua;
+    margin-bottom: 2px;
+    color: $black;
+  }
+  .calc-heading {
+    background-color: $aqua-light;
+    color: $black;
+  }
+
+  .calc-input-container {
+    background-color: $aqua-lightest;
+  }
+  .quiz-see-result {
+    padding: 10px;
+    margin-top: -3px;
+    background-color: $aqua-lightest;
+  }
+
+}
+
+.personality-save {
+  margin-right: 20px;
+  @media(max-width: $screen-sm-max) {
+    margin-right: 0;
+  }
+}

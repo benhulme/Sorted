@@ -1,0 +1,91 @@
+<div class="calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-medium font-sm">{{calculator.title}}</span>
+</div>
+
+<form class="quiz-form" name="{{calculator.unique}}">
+
+  <div class="_clear visible-xs visible-sm quiz-see-result">
+    <a href="/#/tools/mortgage-tool" class="ui-results-link _inline-block font-orange _right">
+      <span class="ui-results-text font-sm _inline-block">SEE RESULT</span><img class="ui-results-image" ng-src="{{siteConfig.APP_PATH}}/assets/images/ui-down.svg"/>
+    </a>
+  </div>
+
+  <div ng-repeat="(inputKey, input) in calculator.inputs" data-form-type="{{calculator.type}}">
+
+    <div class="calc-input-section"
+         ng-repeat="(sectionName, section) in input.sections"
+         section-name="{{sectionName}}">
+
+
+      <div ng-repeat="(fieldKey, field) in section.fields"
+           class="calc-input-group"
+           ng-class="{selected: (inputKey === 0 && fieldKey === 0)}">
+
+        <div class="calc-heading calc-input-heading font-medium" data-form-type="{{calculator.type}}" data-unique="{{field}}">
+          <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+          <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+          <span class="calc-title-text _left _inline-block font-sm">{{calculator.fields[field].label}}</span>
+          <span class="font-sm" ng-if="calculator.fields[field].tooltip">
+            <popover>
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{calculator.fields[field].tooltip}}">
+              </button>
+            </popover>
+          </span>
+          <span class="quiz-title-tick _right inline-block font-sm font-black" ng-class="{_hidden: model.$attributes[calculator.fields[field].calcModel] === ''}">
+            <span class="fa fa-check"></span>
+          </span>
+        </div>
+
+        <div class="calc-input-container" ng-class="{_hidden: inputKey > 0 || fieldKey > 0}">
+
+          <div class="calc-input-form">
+
+            <div class="calc-input-fieldset" ng-class="{'_no-margin': calculator.fields[field].type === 'TITLE'}">
+
+              <div ng-switch="calculator.fields[field].type">
+
+                <div ng-switch-when="QUESTION" class="{{calculator.fields[field].class}}">
+
+                  <div class="font-sm font-medium">
+                    {{calculator.fields[field].question}}
+                  </div>
+
+                  <div ng-repeat="option in calculator.fields[field].options" class="quiz-options">
+                    <input type="radio"
+                           value="{{option.value}}"
+                           class="quiz-options-input"
+                           name="{{field}}"
+                           id="{{option.name}}"
+                           ng-model="model.$attributes[calculator.fields[field].calcModel]" />
+                    <label class="quiz-options-label font-sm font-book" for="{{option.name}}">{{option.label}}</label>
+                  </div>
+
+                  <a ng-if="field.link" ng-href="{{calculator.fields[field].link.url}}" class="font-xx">{{calculator.fields[field].link.text}}</a>
+
+                </div><!-- switch-when -->
+
+              </div><!-- switch -->
+
+            </div>
+
+          </div>
+
+        </div><!-- repeat -->
+
+      </div>
+
+    </div>
+
+  </div><!-- input in inputs -->
+
+  <div class="_clear visible-xs visible-sm quiz-see-result" ng-class="{'visible-md visible-lg' : calculator.unique === 'moneyPersonalityQuiz' }">
+    <a href="/#/tools/mortgage-tool" class="ui-results-link _inline-block font-orange _right">
+      <span class="ui-results-text font-sm _inline-block">SEE RESULT</span><img class="ui-results-image" ng-src="{{siteConfig.APP_PATH}}/assets/images/ui-down.svg"/>
+    </a>
+  </div>
+
+</form><!-- form in calculator -->

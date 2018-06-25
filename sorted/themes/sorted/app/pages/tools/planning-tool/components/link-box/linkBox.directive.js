@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("linkBox",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/pages/tools/planning-tool/components/link-box/linkBox.html",restrict:"E",scope:{data:"="}}}])}();

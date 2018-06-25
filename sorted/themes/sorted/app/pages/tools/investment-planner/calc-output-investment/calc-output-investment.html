@@ -1,0 +1,306 @@
+<div>
+
+  <div class="calc-form-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-black font-medium">Result</span>
+
+    <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+
+    <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+
+
+  <div class="calc-output-container">
+
+    <h4 class="font-medium _align-center quiz-output-heading" ng-show="!quizResult">Answer these nine questions to see your investor type.</h4>
+    <h4 class="font-medium _align-center quiz-output-heading" ng-show="quizResult">Sounds like you're a<span ng-show="quizResultTitle==='Aggressive'">n</span> <span class="font-book font-h3">{{quizResultTitle}} investor</span>
+      <popover>
+        <button
+          class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+              data-toggle="popover"  data-trigger="focus"
+          data-placement="top"
+          data-html="true"
+          data-content="We're using terms here that are generally used in the financial services industry. This will make it easier for you to discuss your investor type with a professional adviser.">
+        </button>
+      </popover>
+    </h4>
+
+    <div sticky-block class="quiz-output-form bg-grey-lightest">
+
+      <div class="row">
+        <div class="col-sm-4 _align-right-sm-above _align-center-xs-max">
+          <label>Investor types</label>
+        </div>
+        <div class="col-sm-6">
+          <cm-select cm-placeholder="{{dropdown.placeholder}}"
+                     cm-options="dropdown.options"
+                     ng-model="dropdown.value"
+                     class="_inline-block _full-width"></cm-select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quiz-output-default" ng-show="!currentResult">
+      <img ng-src="{{siteConfig.APP_PATH}}/assets/images/quiz-investment-default.jpg" />
+    </div>
+
+    <div class="quiz-output-result" ng-show="currentResult">
+
+      <div class="investment-output-section" ng-repeat="(index, section) in currentResult.output">
+
+        <div ng-repeat="(type, item) in section">
+
+          <div ng-switch="item.type">
+
+            <div ng-switch-when="title">
+              <h4 class="_inline-block investment-output-title">
+              {{item.text}}
+              <popover ng-show="item.tooltip">
+                <button
+                  class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                      data-toggle="popover"  data-trigger="focus"
+                  data-placement="top"
+                  data-html="true"
+                  data-content="{{item.tooltip.content}}">
+                </button>
+              </popover>
+              </h4>
+
+            </div>
+
+            <div ng-switch-when="paragraph">
+              <p class="_inline-block investment-output-paragraph">
+              {{item.text}}
+              <popover ng-show="item.tooltip">
+                <button
+                  class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                      data-toggle="popover"  data-trigger="focus"
+                  data-placement="top"
+                  data-html="true"
+                  data-content="{{item.tooltip.content}}">
+                </button>
+              </popover>
+              </p>
+            </div>
+
+            <div ng-switch-when="list">
+              <ul class="investment-output-list">
+                <li ng-repeat="listItem in item.items" class="investment-output-list-item">{{listItem.text}}</li>
+              </ul>
+            </div>
+
+            <div ng-switch-when="pieGraph" class="investment-pie-container _inline-block _full-width">
+
+              <div class="row" vert-middle="investment-pie-legend" vert-middle-relative="vert-middle-preload" vert-disable-below="768">
+                <div class="col-sm-6 investment-pie-image">
+                  <img ng-src="{{siteConfig.APP_PATH}}{{item.image}}" class="vert-middle-preload" />
+                </div>
+                <div class="col-sm-6 investment-pie-legend">
+                  <ul class="legend-list _no-bullets">
+                    <li class="legend-item _block _clear" ng-repeat="legendItem in item.legend">
+                      <div class="investment-legend-left _left">
+                        <span class="legend-square _inline-block" ng-style="{'background-color': legendItem.color}"></span>
+                        <span class="legend-label">{{legendItem.text}}</span>
+                        <popover ng-show="legendItem.tooltip" class="popover-inline-links">
+                          <button
+                            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                                data-toggle="popover"  data-trigger="focus"
+                            data-placement="top"
+                            data-html="true"
+                            data-content="{{legendItem.tooltip.content}}">
+                          </button>
+                        </popover>
+                      </div>
+                      <div class="investment-legend-right _right">
+                        {{legendItem.value}}
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div ng-switch-when="table" class="investment-table _inline-block _full-width">
+              <div class="row investment-table-row" ng-repeat="tableRow in item.data">
+                <div class="col-sm-8 font-sm font-medium investment-table-left">
+                  {{tableRow.column1.text}}
+                  <popover ng-show="tableRow.column1.tooltip">
+                    <button
+                      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                          data-toggle="popover"  data-trigger="focus"
+                      data-placement="top"
+                      data-html="true"
+                      data-content="{{tableRow.column1.tooltip.content}}">
+                    </button>
+                  </popover>
+                </div>
+                <div class="col-sm-4 investment-table-right">
+                  <div class="font-lg font-medium">
+                  {{tableRow.column2.text}}
+                  </div>
+                  <div class="font-sm">
+                  {{tableRow.column2.subtext}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div ng-switch-when="subtitle">
+              <h5 class="font-book font-lg investment-subtitle">{{item.text}}</h5>
+            </div>
+
+            <div ng-switch-when="lineGraph">
+              <p class="font-sm _align-center font-medium">{{item.text}}</p>
+              <div class="investment-line-image">
+                <img ng-src="{{siteConfig.APP_PATH}}{{item.image}}" class="hidden-xs" />
+                <img ng-src="{{siteConfig.APP_PATH}}{{item.imageSmall}}" class="visible-xs" />
+              </div>
+              <div class="investment-line-legend">
+
+                <ul class="_inline-list legend-list _align-center">
+                  <li class="legend-item _block _clear">
+                    <span class="legend-square _inline-block"><img ng-src="{{siteConfig.APP_PATH}}{{item.legend.item1.image}}" /></span>
+                    <span class="legend-label font-sm">{{item.legend.item1.text}}</span>
+                  </li>
+                  <li class="legend-item _block _clear">
+                    <span class="legend-square _inline-block"><img ng-src="{{siteConfig.APP_PATH}}{{item.legend.item2.image}}" /></span>
+                    <span class="legend-label font-sm">{{item.legend.item2.text}}</span>
+                  </li>
+                </ul>
+
+                <p class="_align-center font-sm">
+                  <span class="font-bold">NOTE:</span> {{item.legend.note.text}}
+                </p>
+
+              </div>
+            </div>
+
+            <div ng-switch-when="sidebyside" class="investment-sidebyside">
+
+              <div class="row _relative">
+                <div class="col-sm-6 _full-height _relative">
+                  <div class="investment-box bg-orange-light _full-height _relative">
+                    <p class="font-medium">{{item.box1.title}}</p>
+
+                    <ul>
+                      <li ng-repeat="listItem in item.box1.list.items" class="investment-output-list-item">
+                      {{listItem.text}}
+                      <popover ng-show="listItem.tooltip">
+                          <button
+                            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                                data-toggle="popover"  data-trigger="focus"
+                            data-placement="top"
+                            data-html="true"
+                            data-content="{{listItem.tooltip.content}}">
+                          </button>
+                        </popover>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div class="col-sm-6 _full-height _absolute investment-column-right">
+                  <div class="investment-box bg-blue-lightest _full-height _relative">
+                    <p class="font-medium">{{item.box2.title}}</p>
+                    <ul>
+                      <li ng-repeat="listItem in item.box2.list.items" class="investment-output-list-item">
+                        {{listItem.text}}
+                        <popover ng-show="listItem.tooltip">
+                          <button
+                            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                                data-toggle="popover"  data-trigger="focus"
+                            data-placement="top"
+                            data-html="true"
+                            data-content="{{listItem.tooltip.content}}">
+                          </button>
+                        </popover>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div ng-switch-when="summary" class="investment-summary">
+
+              <div class="investment-box bg-blue-lightest">
+
+                <p class="font-medium _inline-block investment-summary-title">
+                  {{item.title.text}}
+                </p>
+
+
+                <ul class="investment-summary-list">
+                  <li ng-repeat="listItem in item.list.items" ng-class="{selected: listItem.selected === true}" class="investment-output-list-item">
+                      <span class="investment-summary-right">
+                        {{listItem.text}}
+                        <!--<popover ng-show="listItem.tooltip">-->
+                          <!--<button-->
+                            <!--class="fa fa-question-circle font-md font-grey-medium-light _no-border"-->
+                            <!--    data-toggle="popover"  data-trigger="focus"   -->
+                            <!--data-placement="top"-->
+                            <!--data-html="true"-->
+                            <!--data-content="{{listItem.content}}">-->
+                          <!--</button>-->
+                        <!--</popover>-->
+                      </span>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="layout-divider-dashed investment-output-divider" ng-show="index !== currentResult.output.length - 1"></div>
+
+      </div>
+
+    </div>
+
+    <div class="investment-output-conent" ng-show="currentResult">
+
+      <div class="nudge-container">
+
+        <div class="_clear">
+          <div class="_left nudge-icon _align-center">
+            <img ng-src="{{siteConfig.APP_PATH}}assets/images/nudge-repayment-icon.jpg" class="_full-width" />
+          </div>
+
+          <div class="_left nudge-main">
+
+            <label class="font-sm">
+             Sorted Tip
+              <popover>
+                <button
+                  class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                      data-toggle="popover"  data-trigger="focus"
+                  data-html="true"
+                  data-placement="top"
+                  data-content="When you’re looking at KiwiSaver, you can <a href='http://fundfinder.sorted.org.nz/find-the-right-type-of-fund-for-you/' class='popover-link-float' target='_blank'>use this three-question quiz </a> to find the right type of fund for you.">
+                </button>
+              </popover>
+            </label>
+
+            <div class="font-sm">
+              Is your KiwiSaver fund a good fit? Use our <a href="http://fundfinder.sorted.org.nz" target="_blank">KiwiSaver fund finder</a> to compare different funds’ performance and fee levels, as well as the services offered by providers.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

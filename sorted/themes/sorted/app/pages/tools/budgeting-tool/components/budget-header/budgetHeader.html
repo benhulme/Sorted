@@ -1,0 +1,39 @@
+<div class="row budget-header">
+  <uib-alert class="budgeting-tool-alert alert budgeting-tool-alert-fade"
+    ng-if="alert.type"
+    type="{{alert.type}}"
+    dismiss-on-timeout="{{alert.timeout}}"
+    close="closeAlert(alert)">{{alert.message}}</uib-alert>
+  <div class="budget-header-user-avatar center-block _relative col-md-2" ng-if="profile.Image.Filename"  ng-style="{'background-image': 'url('+'{{profile.Image.Filename}}'+')'}"></div>
+  <div class="budget-header-user-avatar center-block _relative col-md-2" ng-if="!profile.Image.Filename"  ng-style="{'background-image': 'url('+'{{siteConfig.APP_PATH}}assets/images/user-icon.svg'+')'}"></div>
+    <!--<img class="img-responsive center-block img-circle" ng-src="{{profile.Image.Filename}}">-->
+    <!--<img class="img-responsive  center-block img-circle" ng-if="!profile.Image.Filename" ng-src="{{siteConfig.APP_PATH}}assets/images/user-icon.svg">-->
+
+
+
+  <div class="budget-title-row col-md-4" ng-click="openHeaderModal(profile)">
+    <h1 class="budget-title" ng-model="budget.Title">{{budget.Title}}</h1>
+    <img class="budget-title-edit" ng-src="{{siteConfig.APP_PATH}}assets/images/edit-grey.svg">
+    <p class="budget-period">{{budget.Period.Title}}</p>
+  </div>
+  <div class="col-md-3">
+    <h2 class="budget-amount"
+      ng-class="{'budget-exceeded': getRemainingDisplay() < 0}"
+      ng-click="openHeaderModal(profile)">{{getRemainingDisplay() | currency}}</h2>
+    <p class="budget-amount-copy">Available to budget</p>
+  </div>
+  <div class="budget-print col-md-3 pull-right text-right">
+    <a href="javascript:window.print()" class="budget-print-link ui-link ui-arrow--right">PRINT </a>
+   <!--  <i class="fa fa-chevron-right font-sm"></i> -->
+    <button class="btn btn-primary btn-small"
+      ng-disabled="!dirty()"
+      ng-click="save()">SAVE</button><br>
+  </div>
+
+  <div class="row how-this-tools-works-container">
+    <div class="col-sm-12">
+       <a href="/how-these-calculators-work#budgeting-tool" target="_blank" class="font-book ui-arrow--left">How this tool works</a>
+    </div>
+  </div>
+
+</div>

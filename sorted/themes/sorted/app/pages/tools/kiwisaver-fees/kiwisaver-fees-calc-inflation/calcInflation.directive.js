@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("kiwisaverFeesCalcInflation",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/pages/tools/kiwisaver-fees/kiwisaver-fees-calc-inflation/calc-inflation.html",restrict:"EA",scope:{field:"=",model:"="}}}])}();

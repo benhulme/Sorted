@@ -1,0 +1,41 @@
+<div class="savings-type">
+
+  <label class="font-sm">
+    {{field.label}}
+    <popover ng-show="field.tooltip.visible">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip.text}}">
+      </button>
+    </popover>
+  </label>
+
+  <div class="btn-group btn-group-justified btn-container"
+       data-toggle="buttons">
+
+    <label class="btn btn-default active">
+      <input type="radio"
+             name="type"
+             id="0"
+             autocomplete="off" checked
+             ng-model="models[input.type].fields[field.id].value">
+      <span class="font-xs">A REGULAR AMOUNT</span>
+      </input>
+    </label>
+
+    <label class="btn btn-default active">
+      <input type="radio"
+             name="type"
+             id="1"
+             autocomplete="off"
+             ng-model="models[input.type].fields[field.id].value">
+      <span class="font-xs">FOR A GOAL</span>
+      </input>
+    </label>
+
+  </div>
+
+  <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx">{{field.link.text}}</a>
+</div>

@@ -1,0 +1,75 @@
+<div class="budget-header-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="cancelHeaderModal()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Edit Budget</h4>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="budget-modal-user-avatar center-block text-center _relative col-md-3">
+
+        <div class="budget-header-user-avatar center-block _relative " ng-if="profile.Image.Filename"  ng-style="{'background-image': 'url('+'{{profile.Image.Filename}}'+')'}"></div>
+        <div class="budget-header-user-avatar center-block _relative " ng-if="!profile.Image.Filename"  ng-style="{'background-image': 'url('+'{{siteConfig.APP_PATH}}assets/images/user-icon.svg'+')'}"></div>
+
+        <!--<img class="img-responsive center-block" ng-src="{{siteConfig.APP_PATH}}{{profile.Image.Filename}}">
+        <img class="img-responsive center-block" ng-if="!profile.Image.Filename" ng-src="{{siteConfig.APP_PATH}}assets/images/user-icon.svg">-->
+
+
+
+        <div class="modal-edit-profile-link">
+          <a class="font-orange" ng-click="toProfile()">EDIT PROFILE <i class="fa fa-chevron-right font-xs"></i></a>
+        </div>
+      </div>
+      <div class="form-group col-md-6 budget-title-group">
+        <label for="budget-title">Budget name:</label>
+        <input type="text" class="budget-title form-control" 
+          ng-model="budget.Title"
+          ng-keyup="$event.keyCode == 13 && saveHeaderModal()" autofocus>
+      </div>
+      <div class="form-group col-md-3 budget-period-group">
+        <label for="budget-period-dropdown">Budgeting period:</label>
+        <budget-period-dropdown 
+          model="budget.Period"></budget-period-dropdown>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="income-streams">Income streams:</label>
+      </div>
+    </div>
+    <income-stream 
+      ng-repeat="stream in budget.IncomeStreams track by $index" 
+      model="stream"
+      period="initialPeriod"
+      ng-keyup="$event.keyCode == 13 && saveHeaderModal()"
+      placeholder="{{budgetingToolConfig.INCOME_STREAM_PLACEHOLDER}}"
+      remove-stream="removeIncomeStream($index)"></income-stream>
+
+    <div class="row">
+    <div class="col-md-8">
+       <span class="fa-stack income-stream-add" ng-click="addIncomeStream()">
+         <i class="fa fa-circle fa-stack-2x"></i>
+         <i class="fa fa-stack-1x fa-inverse">+</i>
+       </span>
+       <label for="income-stream-add">
+         <span class="income-stream-add-label" ng-click="addIncomeStream()">Add Income</span>
+       </label>
+    </div>
+    <div class="col-md-4">
+       <h2 class="budget-amount-total">{{getAvailable() | currency}}</h2>
+       <p class="budget-amount-copy">Available to budget</p>
+    </div>
+  </div>
+
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-md-6 modal-cancel-link">
+        <a class="font-orange" href="javascript:void(0)" ng-click="cancelHeaderModal()">CANCEL</a>
+      </div>
+      <div class="col-md-6 modal-ok-button">
+        <button class="btn btn-primary btn-xs-fullwidth" type="button" ng-click="saveHeaderModal()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

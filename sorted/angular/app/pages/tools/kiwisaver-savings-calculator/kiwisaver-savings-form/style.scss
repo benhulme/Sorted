@@ -1,0 +1,32 @@
+.kiwisaver-savings-section-container {
+
+  .kiwisaver-savings-section {
+    cursor: pointer;
+    .fa {
+      float: left;
+      padding-top: 13px;
+      margin: 0 10px 0 0;
+    }
+
+    .fa-chevron-up {
+      display: inline-block;
+    }
+    .fa-chevron-down {
+      display: none;
+    }
+
+    &.selected {
+      cursor: pointer;
+      .fa-chevron-down {
+        display: inline-block;
+      }
+      .fa-chevron-up {
+        display: none;
+      }
+    }
+  }
+}
+
+.kiwisaver-savings-form {
+  margin-bottom: 2px;
+}

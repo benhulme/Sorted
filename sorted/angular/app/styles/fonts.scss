@@ -1,0 +1,243 @@
+.font-orange {
+  color: $orange;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $orange;
+  }
+  &:hover {
+    color: $orange;
+  }
+}
+
+.font-black {
+  color: $black;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $black;
+  }
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.font-white {
+  color: $white;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+
+.font-red {
+  color: $red;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $red;
+  }
+  &:hover {
+    color: $red;
+  }
+}
+
+
+.font-aqua {
+  color: $aqua;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $aqua;
+  }
+  &:hover {
+    color: $aqua;
+    color: $aqua;
+  }
+}
+
+.font-grey-light {
+  color: $grey-light;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $grey-light;
+  }
+  &:hover {
+    color: $grey-light;
+  }
+}
+
+.font-grey {
+  color: $grey-medium;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $grey-medium;
+  }
+  &:hover {
+    color: $grey-medium;
+  }
+}
+
+.font-grey-medium-light {
+  color: $grey-medium-light;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $grey-medium-light;
+  }
+  &:hover {
+    color: $grey-medium-light;
+  }
+}
+
+.font-purple {
+  color: $purple;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $purple;
+  }
+  &:hover {
+    color: $purple;
+  }
+}
+
+.font-blue {
+  color: $blue-font;
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $blue-font;
+  }
+  &:hover {
+    color: $blue-font;
+  }
+}
+
+
+.font-h1 {
+  @include fontSize($font-h1, $line-h1, 0.9, 0.8, 0.6);
+}
+
+.font-h2 {
+  @include fontSize($font-h2, $line-h2, 0.9, 0.8, 0.7);
+}
+
+.font-h3 {
+  @include fontSize($font-h3, $line-h3, 0.9, 0.8, 0.7);
+}
+
+.font-h4-reduced {
+  @include fontSize($font-h4, $line-h4, 0.9, 0.8, 0.7);
+}
+
+.font-h4 {
+  @include fontSize($font-h4, $line-h4, 0.95, 0.90, 0.85);
+}
+
+.font-h5 {
+  @include fontSize($font-h5, $line-h5, 0.95, 0.90, 0.85);
+}
+
+.font-h6 {
+  @include fontSize($font-h6, $line-h6, 0.95, 0.90, 0.85);
+}
+
+.font-bq {
+  @include fontSize($font-bq, $line-bq, 0.9, 0.8, 0.7);
+}
+
+.font-xl {
+  @include fontSize($font-xl, $line-xl, 0.95, 0.90, 0.85);
+}
+
+.font-lg {
+  @include fontSize($font-lg, $line-lg, 0.95, 0.90, 0.85);
+}
+
+.font-md {
+  @include fontSize($font-md, $line-md, 0.95, 0.90, 0.85);
+}
+
+.font-sm {
+  @include fontSize($font-sm, $line-sm, 0.95, 0.90, 0.85);
+}
+
+.font-xs {
+  @include fontSize($font-xs, $line-xs, 0.95, 0.90, 0.85);
+}
+
+.font-xx {
+  @include fontSize($font-xx, $line-xx, 0.95, 0.9, 0.85);
+}
+
+
+.font-light {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 200;
+}
+
+.font-light-italic {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: italic;
+  font-weight: 200;
+}
+
+.font-book {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 300;
+}
+
+
+.font-book-italic {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-medium {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.font-bold {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 600;
+}
+
+.font-semi-bold{
+  font-weight: 400;
+}
+
+
+
+
+@font-face {
+  font-family: Avenir;
+  src: url('../../assets/Fonts/AvenirNext-Bold.eot');
+  src: url('../../assets/Fonts/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/Fonts/AvenirNext-Bold.woff2') format('woff2'),
+  url('../../assets/Fonts/AvenirNext-Bold.woff') format('woff'),
+  url('../../assets/Fonts/AvenirNext-Bold.ttf')  format('truetype');
+}

@@ -1,0 +1,33 @@
+.header-small-container {
+  .header-background {
+    height: 230px;
+    @media(max-width: $screen-sm-max){
+      height: 162px;
+    }
+  }
+
+}
+
+.header-small-opacity {
+  width: 100%;
+  position: absolute;
+  z-index: 98;
+  height: 230px;
+  @media(max-width: $screen-sm-max){
+    height: 162px;
+  }
+  background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $white 100%);
+  background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $white 100%);
+  background: -o-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $white 100%);
+  background: -ms-linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $white 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00FFFFFF', endColorstr='#FFFFFFFF');
+}
+
+.header-small-text {
+  top: 130px;
+  z-index: 99;
+  @media(max-width: $screen-sm-max){
+    top: 100px;
+  }
+}

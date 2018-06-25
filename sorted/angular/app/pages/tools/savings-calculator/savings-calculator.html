@@ -1,0 +1,69 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+
+<div class="layout-container savings-container">
+  <div class="layout-content">
+
+    <div class="row layout-row">
+      <div class="col-md-4">
+
+        <!-- Form -->
+        <savings-calculator-form
+          models="model.collection"
+          calculator="calculator"
+          nudge="currentNudge"></savings-calculator-form>
+
+      </div>
+      <div class="col-md-8 _relative">
+        <!-- Summary -->
+
+        <savings-calculator-result
+          model="currentModel"
+          nudge="currentNudge"></savings-calculator-result>
+
+        <!-- Chart of Results | relies on 'broadcast' to display-->
+        <calc-chart></calc-chart>
+
+        <div class="row layout-row">
+          <div class="col-md-7">
+
+            <!-- regular_amount -->
+            <div class="savings-type-result" ng-show="model.collection.currentType === 0">
+              <calc-input-iar-select
+                field="calculator.models[0].fields[9]"
+                model="model.collection.get(0)"></calc-input-iar-select>
+            </div>
+
+            <!-- goal -->
+            <div class="savings-type-result" ng-show="model.collection.currentType === 1">
+              <calc-input-iar-select
+                field="calculator.models[1].fields[9]"
+                model="model.collection.get(1)"></calc-input-iar-select>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-xs-12 saving-calculator-saving-button _right">
+            <button class="btn btn-bar btn-primary  _right" save-trigger>SAVE</button>
+            <a href="/#/tools/savings-calculator"
+               class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm hidden-md" cm-print>
+              PRINT <span class="fa fa-chevron-right font-xs"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="calc-overlay" ng-class="{disabled: currentModel.hasResult()}"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<related-content data="data" title="More from Sorted "></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>

@@ -1,0 +1,16 @@
+income-stream {
+  .income-stream-amount-group {
+    .input-group {
+      margin: 0;
+    }
+    .income-stream-trash {
+      margin-top: 5px;
+    }
+  }
+
+  @media(min-width: $screen-md-min) {
+    label {
+      display: none;
+    }
+  }
+}

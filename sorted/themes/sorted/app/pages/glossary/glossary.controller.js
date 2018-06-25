@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("GlossaryController",["$scope","siteConfig","silverStripeService",function(e,o,r){function t(o){200===o.status?e.data=o.data[0]:console.error("unexpected response status",o)}function s(e){console.error("failure",e)}e.siteConfig=o,e.search=[],e.search.category="",r.get("glossary").then(t,s)}])}();

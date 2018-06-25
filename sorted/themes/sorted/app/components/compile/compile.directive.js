@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("compile",["$compile",function(n){return function(t,c,e){t.$watch(function(){return t.$eval(e.compile)},function(e){c.html(e),n(c.contents())(t)})}}])}();

@@ -1,0 +1,40 @@
+<div class="goal-modal">
+
+  <h4>Edit a goal</h4>
+  <form novalidate name="editGoal">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="field">
+          <label for="edit-name" class="pull-left">Goal name</label>
+          <span class="notice pull-right"><20 characters</span>
+          <div>
+            <input ng-model="name" id="edit-name" maxlength="20" name="editName" required type="text">
+          </div>
+          <div ng-show="editGoal.$submitted || editGoal.editName.$touched">
+            <label class="error" ng-show="editGoal.editName.$error.required">This field is required</label>
+          </div>
+
+        </div>
+        <div class="field">
+          <label for="edit-amount">Amount</label>
+          <div class="input-group form-inline-addon form-addon-dollar">
+            <input ng-model="price" name="editAmount" id="edit-amount" maxlength="7" integer required>
+          </div>
+          <div ng-show="editGoal.$submitted || editGoal.editAmount.$touched">
+            <label class="error non-absolute" ng-show="editGoal.editAmount.$error.required">This field is required</label>
+            <label class="error non-absolute" ng-show="editGoal.editAmount.$error.integer">Please enter a number with no decimals, commas, spaces or symbols.</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-actions">
+      <div class="col-xs-12 col-md-6">
+        <button ng-disabled="editGoal.$invalid"  ng-click="ok()" class="btn btn-primary">ok</button>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <a class="font-orange make-button" ng-click="cancel()">CANCEL</a>
+      </div>
+    </div>
+  </form>
+
+</div>

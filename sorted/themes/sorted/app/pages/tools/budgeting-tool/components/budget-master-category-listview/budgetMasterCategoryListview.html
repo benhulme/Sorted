@@ -1,0 +1,10 @@
+<section class="budget-master-category"
+  ng-class="{'budget-master-category-first': $first}">
+  <budget-section-heading></budget-section-heading>
+
+  <div class="row budget-category-list" uib-collapse="!mc.expanded">
+    <inline-editable-category
+      ng-repeat="category in mc.Categories"></inline-editable-category>
+    <add-new-category-listview class="hidden-print"></add-new-category-listview>
+  </div>
+</section>

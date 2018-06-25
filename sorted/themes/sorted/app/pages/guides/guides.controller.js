@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("GuidesController",["$scope","siteConfig","guidesViewModel",function(e,o,i){e.siteConfig=o,e.search="",i.build().then(function(o){e.data=o})}])}();

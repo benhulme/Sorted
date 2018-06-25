@@ -1,0 +1,19 @@
+<div class="row add-master-category">
+  <div class="col-xs-12 col-md-6 add-master-category-copy"
+    uib-popover-template="addMasterCategoryPopover"
+    popover-animation="true"
+    popover-placement="top-left"
+    popover-is-open="masterCategoryPopoverOpen">
+    <h3 class="add-master-category-title">
+      <img class="add-master-category-button" ng-src="{{siteConfig.APP_PATH}}assets/images/icon-plus-grey.svg">
+      Add Master Category
+    </h3>
+  </div>
+
+  <div class="budget-print col-md-6 text-right">
+    <a href="javascript:window.print()" class="budget-print-link ui-link">PRINT <i class="fa fa-chevron-right font-sm"></i></a>
+    <button class="btn btn-primary btn-small" 
+      ng-disabled="!dirty()"
+      ng-click="save()">SAVE</button><br>
+  </div>
+</div>

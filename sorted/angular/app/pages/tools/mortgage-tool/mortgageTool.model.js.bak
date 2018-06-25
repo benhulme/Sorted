@@ -1,0 +1,146 @@
+'use strict';
+
+angular.module('sorted')
+  .factory('mortgageToolModel', [function mortgageToolModel() {
+
+    var clone = function(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    };
+
+    function formatFloat(val, decimal) {
+      var parsedFloat = false;
+      if (val) {
+        if (typeof (val) === 'string') {
+          val = val.replace('$', '').replace(',', '');
+        }
+        parsedFloat = parseFloat(val).toFixed(decimal);
+      }
+
+      if (!parsedFloat || isNaN(parsedFloat)) {
+        return false;
+      } else {
+        return parsedFloat;
+      }
+    }
+
+    function formatInteger(val) {
+
+      var parsedInteger = false;
+
+      if (val) {
+        if (typeof (val) === 'string') {
+          val = val.replace('$', '').replace(',', '');
+        }
+        parsedInteger = parseInt(val);
+      }
+
+      if (!parsedInteger || isNaN(parsedInteger)) {
+        return false;
+      } else {
+        return parsedInteger;
+      }
+
+    }
+
+    function checkConditionalRequired(prepared, data, dataItem) {
+
+      if (typeof data[dataItem].required === 'object') {
+
+        if (data[dataItem].required.OR) {
+
+          var crossCheckItem = data[data[dataItem].required.OR];
+          var crossCheckVal = prepared[crossCheckItem.calcModel];
+          if (!crossCheckVal && crossCheckVal !== 0) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+
+    }
+
+    function checkRequired(data, prepared) {
+
+      var ready = true;
+
+      for (var dataItem in data) {
+
+        if (data.hasOwnProperty(dataItem) && data[dataItem].required !== false) {
+          var currentValue = prepared[data[dataItem].calcModel];
+          if (!currentValue && currentValue !== 0 && data[dataItem].required === true) {
+            ready = false;
+          } else if (!currentValue && currentValue !== 0 && !checkConditionalRequired(prepared, data, dataItem)) {
+            ready = false;
+          }
+        }
+      }
+
+      return ready;
+    }
+
+    var Model = function(form) {
+
+      this.fields = {};
+      this.result = {};
+      this.nudge = clone(form.nudge);
+      this.graphic = clone(form.graphic);
+      this.modelName = form.model;
+
+      for (var fieldItem in form.fields) {
+        if (form.fields.hasOwnProperty(fieldItem)) {
+          this.fields[fieldItem] = {
+            calcModel: clone(form.fields[fieldItem].calcModel),
+            format: clone(form.fields[fieldItem].format),
+            required: clone(form.fields[fieldItem].required),
+            value: clone(form.fields[fieldItem].value),
+          };
+        }
+      }
+
+      this.prepare = function(data) {
+        var prepared = {};
+
+        for (var dataItem in data) {
+          if (data.hasOwnProperty(dataItem)) {
+
+            var value = data[dataItem].value;
+
+            if (data[dataItem].format) {
+              switch (data[dataItem].format.type) {
+                case 'INTEGER':
+                  value = formatInteger(data[dataItem].value);
+                  break;
+                case 'FLOAT':
+                  value = formatFloat(data[dataItem].value, data[dataItem].format.decimals);
+                  break;
+              }
+            }
+
+            prepared[data[dataItem].calcModel] = value;
+
+          }
+        }
+
+        var ready = checkRequired(data, prepared);
+
+        if (prepared.lump_sum_repayment) {
+          prepared.loan1 = prepared.loan1 - prepared.lump_sum_repayment;
+        }
+
+        return {
+          ready: ready,
+          data: prepared,
+        };
+      };
+    };
+
+    var modelInstance = {
+      getInstance: function(fields) {
+        return new Model(fields);
+      },
+    };
+
+    return modelInstance;
+
+  }]);

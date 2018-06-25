@@ -1,0 +1,332 @@
+{
+  "unique": "investmentPlannerQuiz",
+  "model": "investmentPlannerModel",
+  "title": "Investor kickstarter",
+  "inputs": [
+    {
+      "unique": "investmentPlannerQuiz",
+      "visible": true,
+      "sections": {
+        "questions": {
+          "visible": true,
+          "fields": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6",
+            "q7",
+            "q8",
+            "q9"
+          ]
+        }
+      }
+    }
+  ],
+  "fields": {
+    "q1": {
+      "type": "QUESTION",
+      "label": "1. Your stage of life",
+      "tooltip": "How much time you have is important. The younger you are, the more time you have to ride the ups and downs in value that you could experience with some investments.",
+      "calcModel": "field_ir2_age[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "What’s your age?",
+      "options": [
+        {
+          "label": "40 and under",
+          "name": "q1a",
+          "value": 20
+        },
+        {
+          "label": "41 - 50",
+          "name": "q1b",
+          "value": 15
+        },
+        {
+          "label": "51 - 65",
+          "name": "q1c",
+          "value": 10
+        },
+        {
+          "label": "66 - 75",
+          "name": "q1d",
+          "value": 5
+        },
+        {
+          "label": "Over 75",
+          "name": "q1e",
+          "value": 0
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q2": {
+      "type": "QUESTION",
+      "label": "2. Your income",
+      "tooltip": "Your income level indicates how much of a cushion you might have... and how cautious you might be about losing it.",
+      "calcModel": "field_ir2_income[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "What’s your income each year?",
+      "options": [
+        {
+          "label": "Below $40,000",
+          "name": "q2a",
+          "value": 0
+        },
+        {
+          "label": "$40,000 - $80,000",
+          "name": "q2b",
+          "value": 3
+        },
+        {
+          "label": "Over $80,000",
+          "name": "q2c",
+          "value": 5
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q3": {
+      "type": "QUESTION",
+      "label": "3. Your time horizon",
+      "tooltip": "How soon will you need the money you're investing? The longer you can leave it, the more time you have to ride the ups and downs in value that you could experience with some investments.",
+      "calcModel": "field_ir2_length[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "How long are you investing for?",
+      "options": [
+        {
+          "label": "Up to 3 years",
+          "name": "q3a",
+          "value": 0
+        },
+        {
+          "label": "4 - 9 years",
+          "name": "q3b",
+          "value": 10
+        },
+        {
+          "label": "10 years or more",
+          "name": "q3c",
+          "value": 20
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q4": {
+      "type": "QUESTION",
+      "label": "4. Your preparedness",
+      "tooltip": "Having a savings cushion also means that you can avoid suddenly cashing up your investments.",
+      "calcModel": "field_ir2_savings[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "Do you have savings you can access if you lose your day-to-day income?",
+      "options": [
+        {
+          "label": "No",
+          "name": "q4a",
+          "value": 0
+        },
+        {
+          "label": "Some savings or insurance that would help",
+          "name": "q4b",
+          "value": 3
+        },
+        {
+          "label": "Savings or insurance to cover essential costs for several months",
+          "name": "q4c",
+          "value": 5
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q5": {
+      "type": "QUESTION",
+      "label": "5. Your need for returns",
+      "tooltip": "There is always a risk that your investment could lose value. How you feel about that indicates what type of investor you are, and what kinds of investments you should choose.",
+      "calcModel": "field_ir2_importance[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "What's most important to you?",
+      "options": [
+        {
+          "label": "Always getting back at least as much money as I put in",
+          "name": "q5a",
+          "value": 0
+        },
+        {
+          "label": "Coming out ahead with my investments in the end, despite ups and downs along the way",
+          "name": "q5b",
+          "value": 7
+        },
+        {
+          "label": "Maximum profit regardless of risk – I'm investing money I can afford to lose",
+          "name": "q5c",
+          "value": 13
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q6": {
+      "type": "QUESTION",
+      "label": "6. Your debt",
+      "tooltip": "Generally, it's good to get any debt you have out of the way before you start to invest. (KiwiSaver is an exception because of the government and employer contributions.)",
+      "calcModel": "field_ir2_debit[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "How much total debt do you have? (Exclude student loans, but include mortgages.)",
+      "options": [
+        {
+          "label": "Debt worth more than a year's income",
+          "name": "q6a",
+          "value": 0
+        },
+        {
+          "label": "Debt worth less than a year's income",
+          "name": "q6b",
+          "value": 3
+        },
+        {
+          "label": "No significant debt",
+          "name": "q6c",
+          "value": 5
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q7": {
+      "type": "QUESTION",
+      "label": "7. Your outlook",
+      "tooltip": "Investments go up and down in value, so how uncomfortable you might be in the event of a loss will influence what type of investor you are.",
+      "calcModel": "field_ir2_you[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "Which description best fits you?",
+      "options": [
+        {
+          "label": "Conservative, worry about money",
+          "name": "q7a",
+          "value": 0
+        },
+        {
+          "label": "Cautious, but realise some risk may be necessary to make money over the long term",
+          "name": "q7b",
+          "value": 7
+        },
+        {
+          "label": "Comfortable in taking a risk with money",
+          "name": "q7c",
+          "value": 13
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q8": {
+      "type": "QUESTION",
+      "label": "8. Your security",
+      "tooltip": "A sudden change in your income could mean that you need to get to your funds in a hurry – which means that some kinds of investments won't be a good option.",
+      "calcModel": "field_ir2_job_security[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "How do you see the security of your job, business or finances over the next five years?",
+      "options": [
+        {
+          "label": "Not good",
+          "name": "q8a",
+          "value": 0
+        },
+        {
+          "label": "Satisfactory",
+          "name": "q8b",
+          "value": 3
+        },
+        {
+          "label": "Very good",
+          "name": "q8c",
+          "value": 5
+        }
+      ],
+      "value": "",
+      "required": true
+    },
+    "q9": {
+      "type": "QUESTION",
+      "label": "9. Your comfort with risk",
+      "tooltip": "The higher the risk you take, the higher the returns you could receive – but the more chance you have of taking a loss, too.",
+      "calcModel": "field_ir2_risk[und]",
+      "format": {
+        "type": "INT"
+      },
+      "question": "What level of risk are you comfortable taking?",
+      "options": [
+        {
+          "label": "Low risk",
+          "name": "q9a",
+          "value": 0
+        },
+        {
+          "label": "Medium risk",
+          "name": "q9b",
+          "value": 7
+        },
+        {
+          "label": "High risk",
+          "name": "q9c",
+          "value": 14
+        }
+      ],
+      "value": "",
+      "required": true
+    }
+  },
+  "dropdown": {
+    "label": "Select a money personality type",
+    "placeholder": "Please Select",
+    "format": {
+      "type": "INT"
+    },
+    "model": "outputPersonality",
+    "options": [
+      {
+        "label": "Aggressive",
+        "value": 4
+      },
+      {
+        "label": "Growth",
+        "value": 3
+      },
+      {
+        "label": "Balanced",
+        "value": 2
+      },
+      {
+        "label": "Conservative",
+        "value": 1
+      },
+      {
+        "label": "Defensive",
+        "value": 0
+      }
+    ],
+    "value": "",
+    "required": false
+  }
+}

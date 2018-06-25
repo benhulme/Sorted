@@ -1,0 +1,12 @@
+[
+  {
+    "Title":"Guides",
+    "HeaderCopy":"Looking for advice? We've got lots of different guides to help you get clued up.",
+    "ForegroundImage": {
+      "Filename": "assets/Uploads/sorted-saving.png"
+    },
+    "BackgroundImage": {
+      "Filename": "assets/Uploads/guide-header-background.jpg"
+    }
+  }
+]

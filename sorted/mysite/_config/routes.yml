@@ -1,0 +1,19 @@
+---
+Name: mysiteroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'api/v0.1/campaign//$Action': 'ApiCampaignController'
+    'api/v0.1/profile//$Action!/$ID': 'ApiProfileController'
+    'api/v0.1/page//$Action/$URLSegment': 'ApiPageController'
+    'api/v0.1/blog//$Action!': 'ApiBlogController'
+    'api/v0.1/search': 'ApiSearchController'
+    'api/v0.1/calculator//$Action/$ID': 'ApiCalculatorController'
+    'api/v0.1/rest//$Action!/$ID': 'ApiToolController'
+    'activate//$Action/$ID!': 'ActivateController'
+    'api/v0.1/collector//$Action': 'ApiCollectorController'
+    'api/v0.1/question//$Action': 'ApiQuestionController'
+    'api/v0.1/goal//$Action': 'ApiGoalController'
+    'api/v0.1/order//$Action': 'ApiOrderController'
+

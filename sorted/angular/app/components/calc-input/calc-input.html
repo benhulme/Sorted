@@ -1,0 +1,253 @@
+<div ng-repeat="(formKey, form) in calculator">
+
+  <div ng-repeat="(inputKey, input) in form.inputs"
+       ng-class="{selected: (inputKey === 0 && formKey === 0), _hidden: input.visible === false && models[input.unique].ready !== true}"
+       data-form-type="{{form.type}}"
+       class="calc-input-group">
+
+    <div class="calc-heading calc-input-heading font-medium" data-form-type="{{form.type}}"
+         data-unique="{{input.unique}}">
+      <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+      <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+      <span class="calc-title-text _left _inline-block font-sm ">{{input.title}}</span>
+      <span class="calc-input-title-amount _right _inline-block font-book"
+            ng-show="models[input.unique].fields.amountOwed.value">{{models[input.unique].fields.amountOwed.value | currency:"$":0}}</span>
+    </div>
+
+    <div class="calc-input-container" ng-class="{_hidden: inputKey > 0 || formKey > 0}">
+
+      <form class="calc-input-form" name="{{input.unique}}">
+
+        <div class="_clear visible-xs visible-sm">
+          <a href="/#/tools/mortgage-tool" class="ui-results-link _inline-block font-orange _right">
+            <span class="ui-results-text font-sm _inline-block">SEE RESULT</span><img class="ui-results-image"
+                                                                                      ng-src="{{siteConfig.APP_PATH}}/assets/images/ui-down.svg"/>
+          </a>
+        </div>
+
+        <div class="calc-input-fieldset" ng-repeat="(fieldKey, field) in form.fields" ng-if="field.type !== 'HIDDEN'">
+
+          <div ng-switch="field.type">
+
+            <div ng-switch-when="MONEY">
+              <label class="font-sm">
+                {{field.label}}
+                <popover>
+                  <button
+                    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                        data-toggle="popover"  data-trigger="focus"
+                    data-placement="top"
+                    data-content="{{field.tooltip}}">
+                  </button>
+                </popover>
+              </label>
+              <div class="input-group form-inline-addon form-addon-dollar">
+
+
+                <input type="text" class="form-control font-md" name="{{fieldKey}}"
+                       ng-if="field.validation !== false"
+                       no-commas
+                       ng-model="models[input.unique].fields[fieldKey].value" ng-model-options="{updateOn: 'blur'}"
+                       cm-money cm-minamount="{{field.validation.min}}" cm-maxamount="{{field.validation.max}}"
+                       cm-required="{{field.required}}"
+                       maxlength="10"
+                       ng-enter="doBlur($event)">
+                <input type="text" class="form-control font-md" name="{{fieldKey}}"
+                       no-commas
+                       ng-if="field.validation === false"
+                       ng-model="models[input.unique].fields[fieldKey].value" ng-model-options="{updateOn: 'blur'}"
+                       maxlength="10"
+                       ng-enter="doBlur($event)">
+
+                <div class="form-error calc-input-error"
+                     ng-show="{{input.unique}}[fieldKey].$error.money || {{input.unique}}[fieldKey].$error.minamount || {{input.unique}}[fieldKey].$error.maxamount">
+                  {{field.validation.message}}
+                </div>
+
+              </div>
+
+              <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx">{{field.link.text}}</a>
+
+            </div><!-- switch-when -->
+
+            <div ng-switch-when="PERIOD">
+
+              <label class="font-sm">
+                {{field.label}}
+                <popover>
+                  <button
+                    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                        data-toggle="popover"  data-trigger="focus"
+                    data-placement="top"
+                    data-content="{{field.tooltip}}">
+                  </button>
+                </popover>
+              </label>
+              <div class="input-group" ng-if="!field.unique">
+                <input type="text" class="form-control font-md" name="{{fieldKey}}"
+                       ng-model="models[input.unique].fields[fieldKey].value" ng-model-options="{updateOn: 'blur'}"
+                       cm-minamount="{{field.validation.min}}" cm-maxamount="{{field.validation.max}}" cm-integer
+                       cm-required="{{field.required}}"
+                       maxlength="2"
+                       ng-enter="doBlur($event)">
+
+                <div class="form-error calc-input-error"
+                     ng-show="{{input.unique}}[fieldKey].$error.integer || {{input.unique}}[fieldKey].$error.minamount || {{input.unique}}[fieldKey].$error.maxamount">
+                  {{field.validation.message}}
+                </div>
+              </div>
+
+
+              <div ng-if="field.unique" class="input-group">
+                <input type="text" class="form-control font-md" name="{{fieldKey}}"
+                       ng-model="models[input.unique].fields[fieldKey].value" ng-model-options="{updateOn: 'blur'}"
+                       cm-minamount="{{((models[input.unique].fields.interestFreePeriod.value | toInt) + (models[input.unique].fields.deferredPaymentPeriod.value | toInt)+1)}}" cm-maxamount="{{field.validation.max}}" cm-integer
+                       cm-required="{{field.required}}"
+                       maxlength="2"
+                       ng-enter="doBlur($event)">
+
+                <div class="form-error calc-input-error"
+                     {{{{input.unique}}[fieldKey].$error.minamount}}
+                     ng-show="{{input.unique}}[fieldKey].$error.integer || {{input.unique}}[fieldKey].$error.minamount || {{input.unique}}[fieldKey].$error.maxamount">
+                  Please enter a number between {{((models[input.unique].fields.interestFreePeriod.value | toInt) + (models[input.unique].fields.deferredPaymentPeriod.value | toInt)+1)}} and 60, with no commas, spaces or symbols
+                </div>
+              </div>
+
+
+
+
+
+
+              <a ng-if="field.link" ng-href="{{field.link.url}}" target="e" class="font-xx">{{field.link.text}}</a>
+
+            </div><!-- switch-when -->
+
+            <div ng-switch-when="PERCENT">
+
+              <label class="font-sm">
+                {{field.label}}
+                <popover>
+                  <button
+                    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                        data-toggle="popover"  data-trigger="focus"
+                    data-placement="top"
+                    data-content="{{field.tooltip}}">
+                  </button>
+                </popover>
+              </label>
+              <div class="input-group form-inline-addon form-addon-percent">
+
+                <input type="text" class="form-control font-md" name="{{fieldKey}}"
+                       ng-model="models[input.unique].fields[fieldKey].value" ng-model-options="{updateOn: 'blur'}"
+                       cm-percent allow-decimal="true"
+                       cm-minamount="{{field.validation.min}}" cm-maxamount="{{field.validation.max}}"
+                       cm-required="{{field.required}}"
+                       maxlength="5"
+                       ng-enter="doBlur($event)">
+                <div class="form-error calc-input-error"
+                     ng-show="{{input.unique}}[fieldKey].$error.percent || {{input.unique}}[fieldKey].$error.minamount || {{input.unique}}[fieldKey].$error.maxamount">
+                  {{field.validation.message}}
+                </div>
+
+              </div>
+
+              <a ng-if="field.link" ng-href="{{field.link.url}}" target="e" class="font-xx">{{field.link.text}}</a>
+
+            </div><!-- switch-when -->
+
+            <div ng-switch-when="BUTTON_SELECTOR">
+
+              <label class="font-sm">
+                {{field.label}}
+                <popover>
+                  <button
+                    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                        data-toggle="popover"  data-trigger="focus"
+                    data-placement="top"
+                    data-content="{{field.tooltip}}">
+                  </button>
+                </popover>
+              </label>
+
+              <div button-selector class="btn-group _full-width calc-input-btn-group" role="group" aria-label="..."
+                   digest-calc-input="digestCalcInput()" ng-model="models[input.unique].fields[fieldKey].value">
+                <button type="button" class="btn btn-default font-xx"
+                        ng-class="{selected: field.buttons[0].buttonValue === models[input.unique].fields[fieldKey].value}"
+                        value="{{field.buttons[0].buttonValue}}">{{field.buttons[0].buttonText}}
+                </button>
+                <button type="button" class="btn btn-default btn-wide font-xx"
+                        ng-class="{selected: field.buttons[1].buttonValue === models[input.unique].fields[fieldKey].value}"
+                        value="{{field.buttons[1].buttonValue}}">{{field.buttons[1].buttonText}}
+                </button>
+                <button type="button" class="btn btn-default font-xx"
+                        ng-class="{selected: field.buttons[2].buttonValue === models[input.unique].fields[fieldKey].value}"
+                        value="{{field.buttons[2].buttonValue}}">{{field.buttons[2].buttonText}}
+                </button>
+              </div>
+
+              <a ng-if="field.link" ng-href="{{field.link.url}}" target="e" class="font-xx">{{field.link.text}}</a>
+
+            </div><!-- switch-when -->
+
+            <div ng-switch-when="YEARS">
+
+              <label class="font-sm">
+                Mortgage Term
+                <popover>
+                  <button
+                    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                        data-toggle="popover"  data-trigger="focus"
+                    data-placement="top"
+                    data-content="{{field.tooltip}}">
+                  </button>
+                </popover>
+              </label>
+
+              <div class="input-group form-inline-addon form-addon-years">
+
+                <input type="text" class="form-control font-md" name="mortgageTerm"
+                       ng-model="models[input.unique].fields[fieldKey].value"
+                       cm-minamount="{{field.validation.min}}" cm-maxamount="{{field.validation.max}}" cm-integer
+                       cm-required="{{field.required}}"
+                       ng-model-options="{updateOn: 'blur'}" allow-decimal="true"
+                       ng-enter="doBlur($event)">
+                <div class="form-error calc-input-error"
+                     ng-show="{{input.unique}}[fieldKey].$error.integer || {{input.unique}}[fieldKey].$error.minamount || {{input.unique}}[fieldKey].$error.maxamount">
+                  {{field.validation.message}}
+                </div>
+              </div>
+
+              <a ng-if="field.link" ng-href="{{field.link.url}}" target="e" class="font-xx">{{field.link.text}}</a>
+
+            </div><!-- switch-when -->
+
+          </div><!-- switch -->
+
+        </div><!-- repeat -->
+
+
+      </form>
+      </form>
+
+      <div class="calc-input-container"
+           ng-if="inputKey < form.inputs.length - 1 && form.inputs[inputKey+1].visible === false && models[form.inputs[inputKey+1].unique].ready !== true">
+        <button class="_no-border calc-input-add" data-form-type="{{form.type}}" data-unique="{{input.unique}}">
+          <span class="ui-add font-lg">+</span> <span class="font-sm font-light _inline-block calc-input-add-text">Add another {{form.title}}</span>
+        </button>
+      </div>
+
+<div class="calc-input-form  visible-xs visible-sm">
+
+  <div class="_clear calc-input-container">
+    <a href="/#/" class="ui-results-link _inline-block font-orange _right">
+      <span class="ui-results-text font-sm _inline-block">SEE RESULT</span><img class="ui-results-image"
+                                                                                ng-src="{{siteConfig.APP_PATH}}/assets/images/ui-down.svg"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+
+  </div><!-- input in inputs -->
+
+</div><!-- form in calculator -->

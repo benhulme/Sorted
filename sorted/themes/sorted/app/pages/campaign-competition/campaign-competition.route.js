@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").config(["$routeProvider","siteConfig",function(o,t){o.when("/campaign-competition",{templateUrl:t.APP_PATH+"app/pages/campaign-competition/campaign-competition.html",controller:"CampaignCompetitionController"})}])}();

@@ -1,0 +1,30 @@
+[
+  {
+    "Title": "Home",
+    "HeaderCopy":"Everything you need to get ahead.",
+
+    "links": [
+      {
+        "Url": "/must-reads",
+        "Text": "Tackle my debt"
+      },
+      {
+        "Text": "Sort my money",
+        "Url": "/#/guides"
+      },
+      {
+        "Text": "See my future",
+        "Url": "www.google.com"
+      }
+    ],
+    "ForegroundImage": {
+      "Filename": "assets/Uploads/header-hand-95.png"
+    },
+    "RightImage": {
+      "Filename": "assets/Uploads/home-right.png"
+    },
+    "BackgroundImage": {
+      "Filename": "assets/Uploads/home-background.jpg"
+    }
+  }
+]

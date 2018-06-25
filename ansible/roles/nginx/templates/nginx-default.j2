@@ -1,0 +1,16 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server ipv6only=on;
+	listen 443 ssl default_server;
+    include snippets/snakeoil.conf;
+	root /srv/www/default;
+
+	index index.html index.htm;
+
+	# Make site accessible from http://localhost/
+	server_name _;
+
+	location / {
+		empty_gif;
+	}
+}

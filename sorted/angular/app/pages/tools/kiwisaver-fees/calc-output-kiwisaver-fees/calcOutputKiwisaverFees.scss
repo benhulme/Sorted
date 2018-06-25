@@ -1,0 +1,66 @@
+.output-ksf-body {
+  margin-top: 20px;
+}
+
+.output-ksf-divider {
+  margin: 10px 0;
+}
+
+.output-ksf-footer {
+  margin-top: 40px;
+}
+
+.output-ksf-th {
+  background-color: $grey-lightest;
+  @include border-radius(3px);
+  padding: 10px;
+  height: 80px;
+  position: relative;
+  border: 1px solid $white;
+}
+
+.output-ksf-td {
+  padding: 10px;
+}
+
+.output-ksf-container {
+  padding: 20px 0;
+}
+
+.output-ksf-fees {
+  width: 25%;
+}
+
+.output-ksf-name {
+  width: 45%;
+}
+
+.output-ksf-type {
+  width: 15%;
+}
+
+.output-ksf-compare {
+  width: 15%;
+}
+
+.output-ksf-direction {
+  bottom: 0;
+  left: 0;
+  padding: 10px 15px;
+}
+
+.output-ksf-tooltip {
+  bottom: 5px;
+  right: 10px;
+}
+
+
+.output-ksf-neutral {
+  .fa {
+    line-height: 7px;
+  }
+}
+
+.output-ksf-heading {
+  padding: 0 20px;
+}

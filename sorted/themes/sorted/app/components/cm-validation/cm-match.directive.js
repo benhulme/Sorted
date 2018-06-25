@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation");app.directive("cmMatch",function(){return{require:"ngModel",link:function(a,t,n,i){var r=t.parents("form").attr("name"),e=a[r][n.cmMatch];i.$validators.match=function(a){return!!i.$isEmpty(a)||("false"===n.cmCondition||e.$viewValue===a)}}}});

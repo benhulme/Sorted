@@ -1,0 +1,14 @@
+<div class="dropdown">
+  <button id="budget-period-dropdown"
+          class="btn btn-default dropdown-toggle form-control" 
+          type="button" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="true" 
+          ng-model="category.Period">{{category.Period.Title}}</button>
+  <ul class="dropdown-menu" aria-labelledby="budget-period-dropdown">
+    <li ng-repeat="period in periods">
+      <a class="dropdown-link" ng-click="setPeriod(period)">{{period.Title}}</a>
+    </li>
+  </ul>
+</div>

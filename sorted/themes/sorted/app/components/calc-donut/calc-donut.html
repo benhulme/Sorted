@@ -1,0 +1,32 @@
+
+<div class="legend-container row font-sm">
+  <div class="col-xs-12">
+    <ul class="_inline-list legend-list">
+      <li class="legend-item">
+        <span class="legend-square _inline-block" ng-style="{'background-color': model.graphic.icon.color}"></span><span class="legend-label">Total you'll pay</span>
+      </li>
+      <li class="legend-item">
+        <span class="legend-square _inline-block" ng-style="{'background-color': model.graphic.amountOwed.color}"></span><span class="legend-label">Amount Owed</span>
+      </li>
+      <li class="legend-item">
+        <span class="legend-square _inline-block" ng-style="{'background-color': model.graphic.interest.color}"></span><span class="legend-label">Interest</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="donut-column-icon"
+     ng-if="model.graphic.icon.type"
+     vert-middle="donut-icon"
+     data-icon-type="{{model.graphic.icon.type}}">
+  <div class="donut-icon _relative _right">
+    <img class="_full-height vert-middle-preload" ng-src="{{siteConfig.APP_PATH}}{{model.graphic.icon.file}}" />
+    <span class="donut-icon-text font-sm _absolute _align-center"
+          ng-show="model.result.result_total"
+          data-icon-type="{{model.graphic.icon.type}}">Total you'll pay <br />{{model.result.result_total | currency:"$":0}}</span>
+  </div>
+</div>
+
+<div class="donut-column-graph">
+  <div class="donut-chart"></div>
+</div>

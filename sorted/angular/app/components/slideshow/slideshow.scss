@@ -1,0 +1,30 @@
+.slideshow-outer {
+  position: relative;
+  height: 100%;
+}
+
+.slideshow-mask {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.slideshow-items {
+  position: absolute;
+  height: 100%;
+}
+
+.slideshow-item {
+  float: left;
+}
+
+.slideshow-dots {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  font-size: $font-sm;
+  @extend ._inline-list;
+}

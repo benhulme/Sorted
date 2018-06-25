@@ -1,0 +1,16 @@
+<label class="font-lg _block">
+{{field.label}}
+<popover ng-show="field.tooltip">
+  <button
+    class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+        data-toggle="popover"  data-trigger="focus"
+    data-placement="top"
+    data-html="true"
+    data-content="{{field.tooltip}}">
+  </button>
+</popover>
+<span class="font-sm" ng-show="field.optional">(optional)</span>
+<span class="font-sm" ng-show="field.subLabel">{{field.subLabel}}</span>
+</label>
+<a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx">{{field.link.text}}</a>
+

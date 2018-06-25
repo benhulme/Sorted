@@ -1,0 +1,37 @@
+<div class="_clear">
+
+  <label class="font-sm calc-input-inline-label _left" tabindex="-100" ng-if="field.label && label !== false">
+    {{field.label}}
+    <popover ng-show="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+           data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip}}" tabindex="-100">
+      </button>
+    </popover>
+  </label>
+
+  <!-- btn-group-justified  -->
+  <div class="btn-group btn-container btn-group-full-width _left"
+       role="group"
+       aria-label="">
+
+    <div class="btn-group calc-input-btn-group {{field.class}}"
+         role="group"
+         ng-repeat="(btnKey, button) in field.buttons">
+
+      <button type="button" class="btn btn-default btn-boolean font-xx input-select-button"
+              ng-class="{selected: model.$attributes[field.calcModel] === button.value}"
+              data-value="{{button.value}}"
+              data-related="{{button.related}}"
+              data-toggle="{{button.toggle}}"
+              data-result="{{button.toggleOutput}}">{{button.text}}</button>
+
+    </div>
+
+  </div>
+
+  <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx">{{field.link.text}}</a>
+
+</div>

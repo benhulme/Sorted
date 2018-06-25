@@ -1,0 +1,24 @@
+---
+# tasks file for solr
+
+- name: Install dependent repository
+  apt: name=python-apt state=present
+
+- name: Add Java repo
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install required packages
+  apt: name=oracle-java8-installer
+
+- name: Download Solr package
+  get_url: url=http://www-us.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz dest=/root/solr-5.2.1.tgz
+
+- name: Extract Solr
+  shell: tar xzf /root/solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
+
+- name: Install Solr
+  shell: ./install_solr_service.sh /root/solr-5.2.1.tgz
+

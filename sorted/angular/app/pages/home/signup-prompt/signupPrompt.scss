@@ -1,0 +1,62 @@
+.signup-prompt-container {
+  height: 500px;
+  @media(max-width: $screen-xs-max){
+    height: 540px;
+    text-align: center;
+  }
+  @media(max-width: $screen-xs){
+    height: auto;
+    padding: 40px 0;
+  }
+}
+
+.signup-prompt-link {
+  margin-top: 20px;
+  @media(max-width: $screen-xs-max){
+    margin-top: -60px;
+  }
+}
+
+.signup-prompt-row {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.signup-prompt-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @media(max-width: $screen-md-max) {
+    width: 105%;
+  }
+}
+
+.signup-prompt-mobile-container {
+  height: 320px;
+  position: relative;
+  display: none;
+  margin: 20px 0;
+  text-align: center;
+  @media(max-width: $screen-xs-max){
+    display: block;
+  }
+}
+
+.signup-prompt-mobile-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  @media (max-width: $screen-xs-max) {
+    max-width: 450px;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.signup-prompt-title {
+  margin-top: 0;
+}

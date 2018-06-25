@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").directive("incomeStream",["siteConfig",function(e){return{restrict:"E",scope:{placeholder:"@",stream:"=model",period:"=",removeStream:"&"},templateUrl:e.APP_PATH+"app/pages/tools/budgeting-tool/components/income-stream/incomeStream.html"}}])}();

@@ -1,0 +1,8 @@
+# Sorted production DB server setup script
+---
+- hosts: sorted-db
+  become: yes
+  roles:
+    - startup
+    - mysql
+    - solr

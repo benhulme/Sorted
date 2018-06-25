@@ -1,0 +1,26 @@
+# Example for a user configuration file
+
+# Set default values for all following accounts.
+defaults
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile
+syslog LOG_MAIL
+aliases /etc/aliases
+
+# A freemail service
+account rackspace
+host smtp.mailgun.org
+from bot@{{ ansible_hostname }}.saatchi.net.nz
+auth on
+user postmaster@rs37321.mailgun.org
+password 7fhkw6sjnf80
+
+# WebDrive SMTP server
+account webdrive
+host smtp.webhost.co.nz
+auth off
+from root@{{ inventory_hostname }}.saatchi.net.nz
+domain {{ inventory_hostname }}.saatchi.net.nz
+
+account default : webdrive

@@ -1,0 +1,40 @@
+<div class="goal-welcome">
+
+  <navigation></navigation>
+
+  <welcome-header data="data"></welcome-header>
+
+  <tool-title data="data"></tool-title>
+
+  <div class="layout-container">
+    <div class="layout-content">
+      <div class="row layout-row">
+        <div class="col-xs-12">
+          <!--<h5 ng-hide="userLogged">Already saved some goals? <a class="ui-link font-xs" data-toggle="modal" data-target="#login-modal">Login here <span class="fa fa-chevron-right font-xs"></span></a></h5>-->
+
+          <div class="goal-demo">
+              <p class="text-center">
+                Drag and drop your goals to <br> create your plan.
+              </p>
+              <div class="animation-block-planning">
+                <div class="draggable animated">
+                  <div class="circle"></div>
+                  <img ng-src="{{appPath}}assets/images/dragging-hand.png" alt="" class="hand animated">
+                </div>
+                <div class="droppable animated"></div>
+              </div>
+          </div>
+          <div class="start-button text-center">
+            <a ng-href="tools/goal-planner" class="btn btn-primary btn-xs-fullwidth">
+              START YOUR Plan
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  <email-signup></email-signup>
+  <footer></footer>
+
+</div>

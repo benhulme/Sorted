@@ -1,0 +1,935 @@
+{
+  "welcome" : {
+    "Header" : {
+      "Title" : "Budgeting tool"
+
+    }
+  },
+  "budget-template" : {
+    "Header" : {
+      "Title" : "Create a budget template",
+      "Content" : "Tell us a bit about yourself and we'll create a budget with the right categories just for you. Please select all that apply."
+    },
+    "Questions" : {
+      "List" : [
+        {
+          "Title" : "What is your living arrangement?",
+          "Color": "#704C99",
+          "TemplateColor" : "rgba(112, 76, 153, 0.2)",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"I live for free", "Icon":"assets/images/questions/live_free.svg", "Categories": []},
+            {"CategoryId" : 1, "Title":"I rent", "Icon":"assets/images/questions/rent.svg", "Categories": [19, 20, 21, 22, 23, 24, 28]},
+            {"CategoryId" : 2, "Title":"I own", "Icon":"assets/images/questions/own.svg", "Categories": [27, 20, 21, 22, 23, 24, 25, 26, 28, 54, 55]}
+          ]
+        },
+        {
+          "Title" : "What is your family situation?",
+          "Color": "#CADB3B",
+          "TemplateColor" : "rgba(202, 219, 59, 0.2)",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"Kids 4/under", "Icon":"assets/images/questions/kids4under.svg", "Categories": [84, 80, 68, 77, 78, 85]},
+            {"CategoryId" : 1, "Title":"Kids 5/over", "Icon":"assets/images/questions/kids5over.svg", "Categories": [79, 80, 81, 82, 83, 68, 77, 78]},
+            {"CategoryId" : 2, "Title":"Other Dependants", "Icon":"assets/images/questions/other_dependants.svg", "Categories": [36, 37, 38]},
+            {"CategoryId" : 3, "Title":"Pets", "Icon":"assets/images/questions/pets.svg", "Categories": [14, 57, 58, 59, 60, 61]}
+          ]
+        },
+        {
+          "Title" : "How do you get around?",
+          "Color": "#00AFFF",
+          "TemplateColor" : "rgba(0, 175, 255, 0.2)",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"Free", "Icon":"assets/images/questions/walk.svg", "Categories": []},
+            {"CategoryId" : 1, "Title":"Public Transport", "Icon":"assets/images/questions/public_transport.svg", "Categories": [17]},
+            {"CategoryId" : 2, "Title":"I have a vehicle", "Icon":"assets/images/questions/own_vehicle.svg", "Categories": [15, 18, 49, 50, 51, 52, 53]}
+          ]
+        },
+        {
+          "Title" : "What are your savings goals?",
+          "Color": "#006E96",
+          "TemplateColor" : "rgba(0, 110, 150, 0.2)",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"Emergency Savings", "Icon":"assets/images/questions/emergency_savings.svg", "Categories": [62]},
+            {"CategoryId" : 1, "Title":"House Deposit", "Icon":"assets/images/questions/house_deposit.svg", "Categories": [63]},
+            {"CategoryId" : 2, "Title":"Holiday", "Icon":"assets/images/questions/holiday.svg", "Categories": [64]},
+            {"CategoryId" : 3, "Title":"Long-term Savings", "Icon":"assets/images/questions/longterm_savings.svg", "Categories": [65]},
+            {"CategoryId" : 4, "Title":"Retirement", "Icon":"assets/images/questions/retirement.svg", "Categories": [66]}
+          ]
+        },
+        {
+          "Title" : "Do you have any debts?",
+          "Color": "#E18CC8",
+          "TemplateColor" : "rgba(225, 140, 200, 0.2)",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"Credit Card", "Icon":"assets/images/questions/credit_card.svg", "Categories": [86]},
+            {"CategoryId" : 1, "Title":"Hire Purchase", "Icon":"assets/images/questions/hire_purchase.svg", "Categories": [87]},
+            {"CategoryId" : 2, "Title":"Car Loan", "Icon":"assets/images/questions/car_loan.svg", "Categories": [88]},
+            {"CategoryId" : 4, "Title":"Personal Loan", "Icon":"assets/images/questions/personal_loan.svg", "Categories": [89]},
+            {"CategoryId" : 5, "Title":"Payday Lenders", "Icon":"assets/images/questions/payday_lenders.svg", "Categories": [90]},
+            {"CategoryId" : 6, "Title":"Debts To Friends & Family", "Icon":"assets/images/questions/iou.svg", "Categories": [91]},
+            {"CategoryId" : 7, "Title":"Other Loan(s)", "Icon":"assets/images/questions/other_loans.svg", "Categories": [92]}
+          ]
+        },
+        {
+          "Title" : "Which type of view do you prefer?",
+          "Color": "#f0c3cb",
+          "TemplateColor" : "#f0c3cb",
+          "Buttons" : [
+            {"CategoryId" : 0, "Title":"Visual with Images", "Icon":"assets/images/questions/gridPlate.svg", "Categories": []},
+            {"CategoryId" : 1, "Title":"List View", "Icon":"assets/images/questions/listPlate.svg", "Categories": []}
+          ],
+          "ButtonOptions" : {
+            "Toggle" : true,
+            "ToggleSelectDefault":1
+          }
+        }
+      ]
+    },
+    "MasterCategories": [
+      {
+        "ID": 1,
+        "Title": "Everyday Expenses",
+        "Icon": {
+          "Filename": "assets/images/everyday_expenses.svg"
+        },
+        "Color": "#CE0058",
+        "Cents": 0,
+        "Default": true,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 11,
+            "Title": "Groceries",
+            "Icon": {
+              "Filename": "assets/images/categories/groceries.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 12,
+            "Title": "Takeaways",
+            "Icon": {
+              "Filename": "assets/images/categories/takeaways.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 13,
+            "Title": "Dining out",
+            "Icon": {
+              "Filename": "assets/images/categories/dining-out.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 14,
+            "Title": "Pet food",
+            "Icon": {
+              "Filename": "assets/images/categories/pet-food.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 15,
+            "Title": "Fuel",
+            "Icon": {
+              "Filename": "assets/images/categories/fuel.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 16,
+            "Title": "Entertainment",
+            "Icon": {
+              "Filename": "assets/images/categories/entertainment.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 17,
+            "Title": "Public Transport Fares",
+            "Icon": {
+              "Filename": "assets/images/categories/public-transport-fares.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 18,
+            "Title": "Bought Lunches",
+            "Icon": {
+              "Filename": "assets/images/categories/bought-lunches.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          }
+        ]
+      },
+      {
+        "ID": 2,
+        "Title": "Living Expenses",
+        "Icon": {
+          "Filename": "assets/images/living_expenses.svg"
+        },
+        "Color": "#704C99",
+        "Cents": 0,
+        "Default":true,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 19,
+            "Title": "Rent",
+            "Icon": {
+              "Filename": "assets/images/categories/rent.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 20,
+            "Title": "Power",
+            "Icon": {
+              "Filename": "assets/images/categories/power.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 21,
+            "Title": "Gas/Wood",
+            "Icon": {
+              "Filename": "assets/images/categories/gas-wood.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 22,
+            "Title": "Water",
+            "Icon": {
+              "Filename": "assets/images/categories/water.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 23,
+            "Title": "Internet/Home Phone",
+            "Icon": {
+              "Filename": "assets/images/categories/internet-home-phone.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 24,
+            "Title": "Garden Maintenance",
+            "Icon": {
+              "Filename": "assets/images/categories/garden-maintenance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 25,
+            "Title": "House Maintenance",
+            "Icon": {
+              "Filename": "assets/images/categories/house-maintenance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 26,
+            "Title": "Land Rates",
+            "Icon": {
+              "Filename": "assets/images/categories/land-rates.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 27,
+            "Title": "Mortgage",
+            "Icon": {
+              "Filename": "assets/images/categories/mortgage.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 28,
+            "Title": "Cleaning",
+            "Icon": {
+              "Filename": "assets/images/categories/cleaning.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 29,
+            "Title": "Laundry/Drycleaning",
+            "Icon": {
+              "Filename": "assets/images/categories/laundry-drycleaning.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 30,
+            "Title": "Mobile Phone",
+            "Icon": {
+              "Filename": "assets/images/categories/mobile-phone.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          }
+        ]
+      },
+      {
+        "ID": 3,
+        "Title": "Regular Expenses",
+        "Icon": {
+          "Filename": "assets/images/regular_expenses.svg"
+        },
+        "Color": "#CADC3C",
+        "Cents": 0,
+        "Default":true,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 31,
+            "Title": "Sky/Paid TV",
+            "Icon": {
+              "Filename": "assets/images/categories/sky-paid-tv.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 32,
+            "Title": "Bank Fees",
+            "Icon": {
+              "Filename": "assets/images/categories/bank-fees.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 33,
+            "Title": "Subscriptions/Fees",
+            "Icon": {
+              "Filename": "assets/images/categories/recreation-subscription-fees.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 34,
+            "Title": "Social Club/Union Fees",
+            "Icon": {
+              "Filename": "assets/images/categories/social-club-union-fees.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 35,
+            "Title": "Appliance Rentals",
+            "Icon": {
+              "Filename": "assets/images/categories/appliance-rentals.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 36,
+            "Title": "Child Support",
+            "Icon": {
+              "Filename": "assets/images/categories/child-support.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 37,
+            "Title": "Elder Care",
+            "Icon": {
+              "Filename": "assets/images/categories/elder-care.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 38,
+            "Title": "Specialist Care",
+            "Icon": {
+              "Filename": "assets/images/categories/specialist-care.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 39,
+            "Title": "Clubs & Membership",
+            "Icon": {
+              "Filename": "assets/images/categories/clubs-membership.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          }
+        ]
+      },
+      {
+        "ID": 4,
+        "Title": "Irregular Expenses",
+        "Icon": {
+          "Filename": "assets/images/irregular_expenses.svg"
+        },
+        "Cents": 0,
+        "Color": "#00AFFF",
+        "Default":true,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 40,
+            "Title": "Christmas Savings",
+            "Icon": {
+              "Filename": "assets/images/categories/christmas-savings.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 41,
+            "Title": "Optician/Glasses",
+            "Icon": {
+              "Filename": "assets/images/categories/optician-glasses.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 42,
+            "Title": "Dental",
+            "Icon": {
+              "Filename": "assets/images/categories/dental.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 43,
+            "Title": "Life Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/life-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 44,
+            "Title": "Medical Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/medical-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 45,
+            "Title": "Doctors",
+            "Icon": {
+              "Filename": "assets/images/categories/doctors.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 46,
+            "Title": "Health Products",
+            "Icon": {
+              "Filename": "assets/images/categories/health-products.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 47,
+            "Title": "Gifts",
+            "Icon": {
+              "Filename": "assets/images/categories/gifts.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 48,
+            "Title": "Vehicle Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/vehicle-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 49,
+            "Title": "Vehicle Maintenance",
+            "Icon": {
+              "Filename": "assets/images/categories/vehicle-maintenance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 50,
+            "Title": "Vehicle Registration",
+            "Icon": {
+              "Filename": "assets/images/categories/vehicle-registration.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 51,
+            "Title": "WOF",
+            "Icon": {
+              "Filename": "assets/images/categories/wof.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 52,
+            "Title": "Breakdown Cover",
+            "Icon": {
+              "Filename": "assets/images/categories/breakdown-cover.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 53,
+            "Title": "Road User Charges",
+            "Icon": {
+              "Filename": "assets/images/categories/road-user-charges.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 54,
+            "Title": "Home Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/home-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 55,
+            "Title": "Body Corporate Fees",
+            "Icon": {
+              "Filename": "assets/images/categories/body-corporate-fees.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 56,
+            "Title": "Contents Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/contents-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 57,
+            "Title": "Vet Fees",
+            "Icon": {
+              "Filename": "assets/images/categories/vet-fees.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 58,
+            "Title": "Pet Registration",
+            "Icon": {
+              "Filename": "assets/images/categories/pet-registration.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 59,
+            "Title": "Pet Insurance",
+            "Icon": {
+              "Filename": "assets/images/categories/pet-insurance.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 60,
+            "Title": "Pet Grooming",
+            "Icon": {
+              "Filename": "assets/images/categories/pet-grooming.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 61,
+            "Title": "Catteries/Kennels",
+            "Icon": {
+              "Filename": "assets/images/categories/catteries-kennels.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          }
+        ]
+      },
+      {
+        "ID": 5,
+        "Title": "Savings",
+        "Icon": {
+          "Filename": "assets/images/savings.svg"
+        },
+        "Color": "#006E96",
+        "Cents": 0,
+        "Default":false,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 62,
+            "Title": "Emergency Savings",
+            "Icon": {
+              "Filename": "assets/images/categories/emergency-savings.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 63,
+            "Title": "House Deposit",
+            "Icon": {
+              "Filename": "assets/images/categories/house-deposit.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 64,
+            "Title": "Holiday",
+            "Icon": {
+              "Filename": "assets/images/categories/holiday.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 65,
+            "Title": "Long-term Savings",
+            "Icon": {
+              "Filename": "assets/images/categories/longterm-savings.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 66,
+            "Title": "Retirement",
+            "Icon": {
+              "Filename": "assets/images/categories/retirement.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 67,
+            "Title": "KiwiSaver Top-ups",
+            "Icon": {
+              "Filename": "assets/images/categories/kiwisaver-top-ups.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 68,
+            "Title": "Kids Savings Fund",
+            "Icon": {
+              "Filename": "assets/images/categories/kids-savings-fund.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          }
+        ]
+      },
+      {
+        "ID": 6,
+        "Title": "Personal",
+        "Icon": {
+          "Filename": "assets/images/personal.svg"
+        },
+        "Cents": 0,
+        "Color": "#FFD700",
+        "Default":true,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 69,
+            "Title": "Personal Cash",
+            "Icon": {
+              "Filename": "assets/images/categories/personal-cash.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 70,
+            "Title": "Clothing/Shoes",
+            "Icon": {
+              "Filename": "assets/images/categories/clothing-shoes.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 71,
+            "Title": "Hair & Beauty",
+            "Icon": {
+              "Filename": "assets/images/categories/hair-beauty.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 72,
+            "Title": "Charity",
+            "Icon": {
+              "Filename": "assets/images/categories/charity.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 73,
+            "Title": "Community Contributions",
+            "Icon": {
+              "Filename": "assets/images/categories/religious-community-contributions.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 74,
+            "Title": "Nicotine Replacement",
+            "Icon": {
+              "Filename": "assets/images/categories/tobacco-nicotine-replacement.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 75,
+            "Title": "Beverages",
+            "Icon": {
+              "Filename": "assets/images/categories/beverages.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          },
+          {
+            "ID": 76,
+            "Title": "Lotto",
+            "Icon": {
+              "Filename": "assets/images/categories/lotto.jpg"
+            },
+            "Cents": 0,
+            "Default": true
+          }
+        ]
+      },
+      {
+        "ID": 7,
+        "Title": "Kids",
+        "Icon": {
+          "Filename": "assets/images/kids.svg"
+        },
+        "Cents": 0,
+        "Color": "#20D4AF",
+        "Default":false,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 77,
+            "Title": "Kids Activities/Learning",
+            "Icon": {
+              "Filename": "assets/images/categories/kids-activities-learning.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 78,
+            "Title": "Kids Parties/Gifts",
+            "Icon": {
+              "Filename": "assets/images/categories/kids-parties-gifts.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 79,
+            "Title": "After School Care",
+            "Icon": {
+              "Filename": "assets/images/categories/after-school-care.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 80,
+            "Title": "Kids Pocket Money",
+            "Icon": {
+              "Filename": "assets/images/categories/kids-pocket-money.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 81,
+            "Title": "School Trips",
+            "Icon": {
+              "Filename": "assets/images/categories/school-trips.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 82,
+            "Title": "School Fees/Stationery",
+            "Icon": {
+              "Filename": "assets/images/categories/school-fees-stationery.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 83,
+            "Title": "School Uniforms",
+            "Icon": {
+              "Filename": "assets/images/categories/school-uniforms.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 84,
+            "Title": "Baby Expenses",
+            "Icon": {
+              "Filename": "assets/images/categories/baby-expenses.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 85,
+            "Title": "Daycare",
+            "Icon": {
+              "Filename": "assets/images/categories/daycare.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          }
+        ]
+      },
+      {
+        "ID": 8,
+        "Title": "Debts",
+        "Icon": {
+          "Filename": "assets/images/debts.svg"
+        },
+        "Color": "#E18CC8",
+        "Cents": 0,
+        "Default":false,
+        "Expanded": false,
+        "Categories": [
+          {
+            "ID": 86,
+            "Title": "Credit Card",
+            "Icon": {
+              "Filename": "assets/images/categories/credit-card.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 87,
+            "Title": "Hire Purchase",
+            "Icon": {
+              "Filename": "assets/images/categories/hire-purchase.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 88,
+            "Title": "Car Loan",
+            "Icon": {
+              "Filename": "assets/images/categories/car-loan.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 89,
+            "Title": "Personal Loan",
+            "Icon": {
+              "Filename": "assets/images/categories/personal-loan.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 90,
+            "Title": "Payday Lenders",
+            "Icon": {
+              "Filename": "assets/images/categories/payday-lenders.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 91,
+            "Title": "Debts To Friends",
+            "Icon": {
+              "Filename": "assets/images/categories/debts-to-friends-and-family.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          },
+          {
+            "ID": 92,
+            "Title": "Other Loan(s)",
+            "Icon": {
+              "Filename": "assets/images/categories/other-loans.jpg"
+            },
+            "Cents": 0,
+            "Default": false
+          }
+        ]
+      }
+    ]
+  },
+  "budgeting-tool" : {
+
+  }
+}

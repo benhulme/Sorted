@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").filter("withTitle",function(){return function(t){var n=function(t){if(t.Title)return t};return t.filter(n)}})}();

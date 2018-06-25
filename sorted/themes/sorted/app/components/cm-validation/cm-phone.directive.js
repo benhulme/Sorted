@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),PHONE_REGEXP=/^\+?\d+$/;app.directive("cmPhone",function(){return{require:"ngModel",link:function(n,i,t,e){e.$validators.phone=function(n,i){return!!e.$isEmpty(n)||("false"===t.cmCondition||!!PHONE_REGEXP.test(i))}}}});

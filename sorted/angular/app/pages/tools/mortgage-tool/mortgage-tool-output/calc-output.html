@@ -1,0 +1,118 @@
+<div>
+
+  <div class="calc-heading calc-output">
+    <span class="calc-title-text _left _inline-block font-sm font-purple">Results - {{currentModel.get('title')}}</span>
+
+    <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+    <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print" cm-print>PRINT <span
+      class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+  <!-- Create a single result, swapping out the model when the input according is changed -->
+  <div class="calc-output-container {{currentModel.get('unique')}}">
+
+    <div class="row calc-output-row"
+         ng-repeat="(outputKey, output) in calculator.outputs | filter:{active: true}">
+
+      <div class="col-sm-7 layout-col" ng-if="output.model == 'min_repayment'">
+        {{output.label[currentModel.get('freq1')]}}
+      </div>
+
+      <div class="col-sm-7 layout-col" ng-if="output.model != 'min_repayment' && output.model !== 'age'">{{output.label}}</div>
+
+      <div class="col-sm-7 layout-col mortgage-age-label" ng-if="output.model == 'age'">{{output.label}}</div>
+
+      <div class="col-sm-5 layout-col calc-output-value" class="{{output.color}}">
+
+        <div ng-if="output.type === 'MONEY'" class="{{output.color}} font-medium">
+          <span ng-if="currentModel.result.get(output.model) > 0">{{currentModel.result.get(output.model) | currency: "$": 0}}</span>
+          <span ng-if="!(currentModel.result.get(output.model)) || currentModel.result.get(output.model) === 0">$-</span>
+        </div>
+
+        <div ng-if="output.type === 'TIME'"
+             class="{{output.color}} font-medium">
+          <span ng-if="currentModel.result.get(output.model) > 0">{{currentModel.result.get(output.model) | number : 0}} {{output.units}}</span>
+          <span ng-if="!(currentModel.result.get(output.model))">-</span>
+        </div>
+
+        <div ng-if="output.type === 'AGE'"
+             class="calc-output-age {{output.color}} font-medium">
+
+          <span ng-if="currentModel.result.get('age')">{{currentModel.result.get('age')}}</span>
+
+          <span ng-show="!currentModel.result.get('age')">
+            <a href="/#/show-age-form" ng-show="ageFormHidden"
+               class="font-sm font-italic font-black calc-output-birthdate">Enter your birthdate</a>
+
+            <div ng-show="!ageFormHidden">
+
+              <calc-input-number field="calculator.fields.yearBorn"
+                                 model="currentModel"
+                                 class="mortgage-age-years _right"></calc-input-number>
+
+              <calc-select-months field="calculator.fields.monthBorn"
+                                  model="currentModel"
+                                  class="mortgage-age-months _right"></calc-select-months>
+
+            </div>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Nudge -->
+    <div class="nudge-container" ng-show="currentModel.has('repayments1')">
+
+      <div class="_clear">
+        <div class="_left nudge-icon _align-center">
+          <img ng-src="{{nudge.icon}}" class="_full-width" />
+        </div>
+
+        <div class="_left nudge-main">
+
+          <label class="font-sm">
+            {{nudge.label}}
+            <popover>
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{nudge.tooltip}}">
+              </button>
+            </popover>
+          </label>
+
+          <div class="font-sm">{{nudge.text}}</div>
+
+          <div class="nudge-slider-container _clear  hidden-xs">
+            <div class="_left font-orange nudge-slider-left">$</div>
+            <rzslider
+              class="_left nudge-slider slider-orange"
+              rz-slider-model="currentModel.$attributes.repayments1"
+              rz-slider-options="nudge.options"></rzslider>
+            <div class="_left font-orange nudge-slider-right">$$$</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nudge-slider-container _clear visible-xs">
+        <div class="_left font-orange nudge-slider-left">$</div>
+        <rzslider
+          class="_left nudge-slider slider-orange"
+          rz-slider-model="currentModel.$attributes.repayments1"
+          rz-slider-options="nudge.options"></rzslider>
+        <div class="_left font-orange nudge-slider-right">$$$</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

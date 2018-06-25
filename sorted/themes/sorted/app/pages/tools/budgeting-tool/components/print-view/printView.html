@@ -1,0 +1,25 @@
+<div class="visible-print-block printable-part">
+  <div class="row">
+    <div class="col-xs-6 text-center">
+      <div class="logo-container">
+        <img ng-src="assets/Uploads/tools-budgeting-tool2.png">
+      </div>
+      <h1 class="budget-title" ng-model="budget.Title">{{budget.Title}}</h1>
+      <p class="budget-period">{{budget.Period.Title}}</p>
+      <h2 class="budget-amount"
+          ng-class="{'budget-exceeded': getRemainingDisplay() < 0}">{{getRemainingDisplay() | currency}}</h2>
+      <p class="budget-amount-copy">Available to budget</p>
+    </div>
+    <div class="col-xs-6">
+      <div class="row text-center">
+        <div class="total-budgeted text-center">
+          <h3 class="subtotal">{{subtotalDisplay() | currency}}</h3>
+          <h5 class="subtotal-copy">Total budgeted</h5>
+          <p class="subtotal-period">{{budget.Period.Title}}</p>
+        </div>
+      </div>
+      <budget-breakdown-legend></budget-breakdown-legend>
+    </div>
+    <budget-master-category-listview ng-repeat="mc in budget.MasterCategories"></budget-master-category-listview>
+  </div>
+</div>

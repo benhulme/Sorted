@@ -1,0 +1,137 @@
+.header-home {
+    height: 540px;
+    @media(max-width: $screen-xs-max){
+        height: 520px;
+    }
+    .header-background {
+        height: 540px;
+        @media(max-width: $screen-xs-max){
+            height: 520px;
+        }
+    }
+}
+
+.header-standard {
+    height: 390px;
+    @media(max-width: $screen-xs-max){
+        height: 430px;
+    }
+    .header-background {
+        height: 390px;
+        @media(max-width: $screen-xs-max){
+            height: 430px;
+        }
+    }
+}
+
+.header-background {
+    width: 100%;
+    background-position:bottom center;
+    position: absolute;
+}
+
+.header-hand-container {
+    position: absolute;
+    width: 551px;
+    height: 540px;
+    bottom: 0;
+    right: 0;
+    @media(max-width: $screen-md-max){
+        width: 46%;
+    }
+    @media(max-width: $screen-sm-max){
+        width: 40%;
+    }
+    @media(max-width: $screen-xs-max){
+        width: 100%;
+    }
+}
+
+.header-hand {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    @media(max-width: $screen-xs-max){
+        width: 220px;
+    }
+}
+
+.header-foreground-layout {
+    top: 0;
+    height: 390px;
+    @media(max-width: $screen-xs-max){
+        height: 430px;
+    }
+}
+
+.header-foreground-container {
+    position: absolute;
+    height: 350px;
+    bottom: 0;
+    right: 185px;
+    width: 370px;
+    @media(max-width: $screen-sm-max){
+        right: 90px;
+        height: 310px;
+    }
+    @media(max-width: $screen-xs-max) {
+        height: 220px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.header-foreground-image {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @media(max-width: $screen-xs-max) {
+        position: relative;
+    }
+}
+
+.header-standard-copy {
+    top: 100px;
+    @media(max-width: $screen-xs-max){
+        top: 70px;
+    }
+}
+
+.header-home-copy {
+    top: 140px;
+    @media(max-width: $screen-xs-max){
+        top: 90px;
+    }
+}
+
+.header-li {
+    margin: 10px 0;
+}
+
+.header-link,
+.header-link:link,
+.header-link:active,
+.header-link:visited {
+    color: $black;
+    border-bottom: 1px solid $orange;
+    transition: visibility 0s, opacity 0.5s linear;
+    &:hover, &:focus {
+        color: $orange;
+        text-decoration: none;
+    }
+}
+
+.header-subhead {
+    margin-top: 40px;
+    transition: visibility 0s, opacity 0.5s linear;
+    @media(max-width: $screen-xs-max){
+        margin-top: 20px;
+    }
+}
+
+

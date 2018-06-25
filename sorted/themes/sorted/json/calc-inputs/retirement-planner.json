@@ -1,0 +1,729 @@
+[
+  {
+    "title": "how close",
+    "type": "howClose",
+    "model": "retirementPlannerModel",
+    "inputs": [
+      {
+        "title": "How close is retirement?",
+        "unique": "howClose",
+        "visible": true,
+        "sections": {
+          "yourSection": {
+            "visible": true,
+            "fields": [
+              "yourBirthDate",
+              "yourRetirementAge",
+              "partnerToggle"
+            ]
+          },
+          "addPartnerSection": {
+            "visible": false,
+            "fields": [
+              "includePartner",
+              "partnerBirthDate",
+              "partnerRetirementAge"
+            ]
+          }
+        }
+      }
+    ],
+    "fields": {
+      "yourBirthDate": {
+        "type": "BIRTH_DATE",
+        "label": "Your birthdate",
+        "calcModel": "your_birthdate",
+        "format": {
+          "type": "DATE"
+        },
+        "value": "",
+        "monthField": "yourMonthBorn",
+        "yearField": "yourYearBorn",
+        "required": false,
+        "tooltip": "Your age determines how long you have until retirement. It's never too early or too late to start investing for your future!"
+      },
+      "yourMonthBorn": {
+        "type": "HIDDEN",
+        "calcModel": "your_month_born",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": true
+      },
+      "yourYearBorn": {
+        "type": "HIDDEN",
+        "calcModel": "your_year_born",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": true,
+        "placeholder": "Year"
+      },
+      "yourRetirementAge": {
+        "type": "INTEGER",
+        "label": "Age you plan to retire",
+        "calcModel": "your_retire_age",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "65",
+        "required": true,
+        "tooltip": "The age you or your partner would like to stop full-time paid work. NZ Super (the government pension) is paid from age 65, but you don't have to stop working at that age."
+      },
+      "partnerToggle": {
+        "type": "SECTION_TOGGLE",
+        "label": "Add partner (optional)",
+        "section": "addPartnerSection",
+        "calcModel": "partnerToggle",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 0,
+        "required": false
+      },
+      "includePartner": {
+        "type": "BUTTON_BOOLEAN",
+        "section": "partnerSection",
+        "label": "Include partner?",
+        "calcModel": "partner",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 0,
+        "required": true,
+        "tooltip": "Select 'YES' to include your partner in this calculation.",
+        "buttons": [
+          {
+            "text": "YES",
+            "value": 1
+          },
+          {
+            "text": "NO",
+            "value": 0
+          }
+        ]
+      },
+      "partnerBirthDate": {
+        "type": "BIRTH_DATE",
+        "section": "partnerSection",
+        "label": "Your partner's birthdate",
+        "calcModel": "partner_birth_date",
+        "format": {
+          "type": "DATE"
+        },
+        "value": "",
+        "monthField": "partnerMonthBorn",
+        "yearField": "partnerYearBorn",
+        "required": false,
+        "tooltip": "Your age determines how long you have until retirement. It's never too early or too late to start investing for your future!"
+      },
+      "partnerMonthBorn": {
+        "type": "HIDDEN",
+        "calcModel": "partner_month_born",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+      },
+      "partnerYearBorn": {
+        "type": "HIDDEN",
+        "calcModel": "partner_year_born",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+      },
+      "partnerRetirementAge": {
+        "type": "INTEGER",
+        "section": "partnerSection",
+        "label": "Age your partner plans to retire",
+        "calcModel": "partner_retire_age",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "65",
+        "required": false,
+        "tooltip": "The age you or your partner would like to stop full-time paid work. NZ Super (the government pension) is paid from age 65, but you don't have to stop working at that age."
+      }
+    },
+    "outputs": [
+      {
+        "type": "MONEY_INPUT",
+        "label": "You're aiming to have:",
+        "tooltip": "This is the amount you would like to live on in retirement, which you entered earlier. You can adjust this to see different possibilities.",
+        "model": "liveOn",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY_PERIOD",
+        "label": "You're on track to have:",
+        "tooltip": "Here you can see how much of a gap you have between how much you’d like to have and what you’re on track to have. How much will it take to fill it?",
+        "model": "retirement_income",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-black"
+      },
+      {
+        "type": "MONEY_PERIOD",
+        "label": "Now you need to invest:",
+        "model": "deficit_lump_amount",
+        "modelUnique": "howMuch",
+        "modelFreq": "lifestyleFreq",
+        "color": "font-red"
+      },
+      {
+        "type": "DIVIDER"
+      },
+      {
+        "type": "MONEY",
+        "label": "You’ll need an extra:",
+        "tooltip": "Here you can see how much of a gap you have between how much you’d like to have and what you’re on track to have. How much will it take to fill it?",
+        "model": "amount_total",
+        "color": "font-red"
+      }
+    ],
+    "nudge": {
+      "label": "Sorted tip",
+      "tooltip": "Here you can see how much of a gap you have between how much you’d like to have and what you’re on track to have. How much will it take to fill it?",
+      "text": "The more you invest now, the more income you’ll have then.",
+      "extraText": "RETIREMENT",
+      "model": "yourLumpSum",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": "total_amount"
+      }
+    },
+    "graphic": {
+      "type": "STACKED",
+      "super": {
+        "color": "#ffd700",
+        "model": "income_nz_superannuation"
+      },
+      "kiwiSaver": {
+        "color": "#ffe140",
+        "model": "income_kiwisaver_lump_sum"
+      },
+      "otherLump": {
+        "color": "#ffed8c",
+        "model": "income_other_lump_sums"
+      },
+      "otherIncome": {
+        "color": "#fff5bf",
+        "model": "income_other_income_sources"
+      },
+      "liveOn": {
+        "color": "#cadc3c",
+        "model": "desired_retirement_income"
+      },
+      "deficitLump": {
+        "color": "#ce0058",
+        "model": "deficit_lump_amount"
+      }
+    }
+  },
+  {
+    "title": "how long",
+    "type": "howLong",
+    "model": "retirementPlannerModel",
+    "inputs": [
+      {
+        "title": "How long do you need to plan for?",
+        "unique": "howLong",
+        "visible": true,
+        "sections": {
+          "yourSection": {
+            "visible": true,
+            "fields": [
+              "yourGender",
+              "yourLifeExpectancy",
+              "partnerGender",
+              "partnerLifeExpectancy"
+            ]
+          }
+        }
+      }
+    ],
+    "fields": {
+      "yourGender": {
+        "type": "BUTTON_BOOLEAN_WIDE",
+        "label": "Your gender",
+        "calcModel": "your_gender",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": true,
+        "tooltip": "Men and women have different life expectancies and may need different levels of savings.",
+        "buttons": [
+          {
+            "text": "MALE",
+            "value": 2
+          },
+          {
+            "text": "FEMALE",
+            "value": 1
+          }
+        ]
+      },
+      "yourLifeExpectancy": {
+        "type": "INTEGER",
+        "label": "Your life expectancy",
+        "calcModel": "your_life_expectancy",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "default": {
+          "field": "yourGender",
+          "values": {
+            "2": 87,
+            "1": 90
+          }
+        },
+        "required": true,
+        "tooltip": "We’re living longer than ever – the average ages shown here are for 80% of us, based on Stats New Zealand data. <a href='https://www.sorted.org.nz/guides/planning-for-retirement' target='_blank'>Read more</a>"
+      },
+      "partnerGender": {
+        "type": "BUTTON_BOOLEAN_WIDE",
+        "label": "Your partner's gender",
+        "calcModel": "partner_gender",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "class": "calc-input-partner",
+        "tooltip": "Men and women have different life expectancies and may need different levels of savings.",
+        "buttons": [
+          {
+            "text": "MALE",
+            "value": 2
+          },
+          {
+            "text": "FEMALE",
+            "value": 1
+          }
+        ]
+      },
+      "partnerLifeExpectancy": {
+        "type": "INTEGER",
+        "label": "Your partner's life expectancy",
+        "calcModel": "partner_life_expectancy",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "default": {
+          "field": "partnerGender",
+          "values": {
+            "2": 87,
+            "1": 90
+          }
+        },
+        "required": false,
+        "class": "calc-input-partner",
+        "tooltip": "We’re living longer than ever – the average ages shown here are for 80% of us, based on Stats New Zealand data. <a href='https://www.sorted.org.nz/guides/planning-for-retirement' target='_blank'>Read more</a>"
+      }
+    },
+    "nudge": {
+      "label": "Sorted Tip",
+      "tooltip": "",
+      "text": "Increase your repayments and be debt free quicker",
+      "model": "repaymentAmount",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": "amountOwed",
+        "ceilFactor": 3
+      }
+    },
+    "graphic": {
+      "type": "DONUT",
+      "icon": {
+        "type": "creditCard",
+        "file": "/assets/images/results/credit-card.svg",
+        "color": "#CE0058",
+        "model": "result_total"
+      },
+      "smallIcons": [
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-0.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-1.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-2.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-3.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-4.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-5.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-6.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-7.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-8.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-9.svg"
+      ],
+      "interest": {
+        "color": "#E18CC8",
+        "model": "result_interest"
+      },
+      "amountOwed": {
+        "color": "#ECB7DC",
+        "model": "amountOwed"
+      }
+    }
+  },
+  {
+    "title": "how much",
+    "type": "howMuch",
+    "model": "retirementPlannerModel",
+    "inputs": [
+      {
+        "title": "How much will you need?",
+        "unique": "howMuch",
+        "visible": true,
+        "sections": {
+          "yourSection": {
+            "visible": true,
+            "fields": [
+              "liveOn",
+              "lifestyleFreq"
+            ]
+          }
+        }
+      }
+    ],
+    "fields": {
+      "liveOn": {
+        "type": "MONEY",
+        "label": "The amount you would like to live on",
+        "calcModel": "live_on",
+        "link": {
+          "text": "Not sure?",
+          "url": "guides/planning-for-retirement"
+        },
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": true,
+        "tooltip": "This is your goal for your income after you stop working. How much will be enough? For help estimating, <a class='popover-link-float' href='https://www.sorted.org.nz/must-reads/how-much-is-enough/' target='_blank'>read more here</a>"
+      },
+      "lifestyleFreq": {
+        "type": "SELECT",
+        "calcModel": "lifestyle_freq",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 52,
+        "placeholder": "Weekly",
+        "options": [
+          {
+            "value": 52,
+            "label": "Weekly"
+          },
+          {
+            "value": 26,
+            "label": "Fortnightly"
+          },
+          {
+            "value": 12,
+            "label": "Monthly"
+          },
+          {
+            "value": 1,
+            "label": "Yearly"
+          }
+        ],
+        "required": true
+      }
+    }
+  },
+  {
+    "title": "where will the money come from",
+    "type": "whereMoney",
+    "model": "retirementPlannerModel",
+    "inputs": [
+      {
+        "title": "Where will the money come from?",
+        "unique": "whereMoney",
+        "visible": true,
+        "sections": {
+          "yourSection": {
+            "visible": true,
+            "fields": [
+              "superTitle",
+              "yourSuper",
+              "yourSuperFreq",
+              "partnerSuperFreq",
+              "kiwiSaverTitle",
+              "yourKiwiSaver",
+              "partnerKiwiSaver",
+              "lumpSumTitle",
+              "yourLumpSum",
+              "partnerLumpSum",
+              "otherIncomeTitle",
+              "yourOtherIncome",
+              "yourOtherFreq",
+              "partnerOtherIncome",
+              "partnerOtherFreq",
+              "tabViewed"
+            ]
+          }
+        }
+      }
+    ],
+    "fields": {
+      "tabViewed": {
+        "type": "HIDDEN",
+        "calcModel": "tab_viewed",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": true
+      },
+      "inflation": {
+        "type": "HIDDEN",
+        "label": "Adjusted for inflation",
+        "tooltip": "These results have been adjusted downwards to show the effects of inflation. In 20 years, for example, today’s $200,000 will only be worth around $135,000 (if there’s 2% inflation). To see the results without the effect of inflation, select ‘OFF’.",
+        "calcModel": "iar",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 1,
+        "buttons": [
+          {
+            "text": "ON",
+            "value": 1
+          },
+          {
+            "text": "OFF",
+            "value": 0
+          }
+        ],
+        "required": true
+      },
+      "superTitle": {
+        "type": "TITLE",
+        "label": "NZ Super",
+        "tooltip": "If you’d like to forecast your retirement without NZ Super included, untick the box below."
+      },
+      "yourSuper": {
+        "type": "CHECKBOX",
+        "label": "Include NZ Super",
+        "calcModel": "your_super",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 1,
+        "required": true
+      },
+      "yourSuperFreq": {
+        "type": "SUPER_FREQUENCY",
+        "label": "Your NZ Super",
+        "calcModel": "super_freq",
+        "tooltip": "You can <a class='popover-link-float' href='/guides/this-years-nz-super-rates' target='_blank'>check this year’s NZ Super rates here</a>.",
+        "format": {
+          "type": "INTEGER"
+        },
+        "placeholder": "Weekly",
+        "value": 52,
+        "options": [
+          {
+            "value": 52,
+            "label": "Weekly"
+          },
+          {
+            "value": 26,
+            "label": "Fortnightly"
+          },
+          {
+            "value": 12,
+            "label": "Monthly"
+          },
+          {
+            "value": 1,
+            "label": "Yearly"
+          }
+        ],
+        "required": true
+      },
+      "partnerSuperFreq": {
+        "type": "SUPER_FREQUENCY",
+        "label": "Your partner's NZ Superannuation",
+        "calcModel": "super_freq",
+        "format": {
+          "type": "INTEGER"
+        },
+        "modelLink": "yourSuperFreq",
+        "value": 52,
+        "placeholder": "Weekly",
+        "options": [
+          {
+            "value": 52,
+            "label": "Weekly"
+          },
+          {
+            "value": 26,
+            "label": "Fortnightly"
+          },
+          {
+            "value": 12,
+            "label": "Monthly"
+          },
+          {
+            "value": 1,
+            "label": "Yearly"
+          }
+        ],
+        "required": false,
+        "class": "calc-input-partner"
+      },
+      "kiwiSaverTitle": {
+        "type": "TITLE",
+        "label": "KiwiSaver",
+        "tooltip": "The amount you expect to receive at age 65 from your KiwiSaver scheme. Sorted assumes your KiwiSaver will continue to earn interest and that you will draw down the entire amount over your retirement years."
+      },
+      "kiwiSaverLabel": {
+        "type": "TITLE",
+        "label": "To estimate how much KiwiSaver money you’ll have, use this  <a href='/#/tools/kiwisaver-savings-calculator' target='_blank'>KiwiSaver savings calculator</a>.",
+        "tooltip": false
+      },
+      "yourKiwiSaver": {
+        "type": "MONEY",
+        "label": "Your balance from KiwiSaver",
+        "calcModel": "your_ks",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+
+      },
+      "partnerKiwiSaver": {
+        "type": "MONEY",
+        "label": "Your partner’s balance",
+        "calcModel": "partner_ks",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "class": "calc-input-partner"
+      },
+      "lumpSumTitle": {
+        "type": "TITLE",
+        "label": "Other savings and investments",
+        "subLabel": "(e.g. other super schemes, term deposits)"
+      },
+      "yourLumpSum": {
+        "type": "MONEY",
+        "label": "Your other savings and investments",
+        "calcModel": "your_other_schemes",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "tooltip": "Any other money you expect to receive when you retire (after taxes have been paid), e.g. a payout from another superannuation or savings scheme, proceeds from the sale of a house, etc."
+      },
+      "partnerLumpSum": {
+        "type": "MONEY",
+        "label": "Your partner’s other savings and investments",
+        "calcModel": "partner_other_schemes",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "class": "calc-input-partner"
+      },
+      "otherIncomeTitle": {
+        "type": "TITLE",
+        "label": "Other income",
+        "subLabel": "(e.g. rental income, dividends)"
+      },
+      "yourOtherIncome": {
+        "type": "MONEY",
+        "label": "Your other income",
+        "calcModel": "your_other_income",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "tooltip": "Other regular income you expect to receive in retirement (after taxes have been paid) in addition to NZ Super, e.g. rental income."
+      },
+      "yourOtherFreq": {
+        "type": "SELECT",
+        "calcModel": "your_other_income_freq",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 52,
+        "placeholder": "Weekly",
+        "options": [
+          {
+            "value": 52,
+            "label": "Weekly"
+          },
+          {
+            "value": 26,
+            "label": "Fortnightly"
+          },
+          {
+            "value": 12,
+            "label": "Monthly"
+          },
+          {
+            "value": 1,
+            "label": "Yearly"
+          }
+        ],
+        "required": false
+      },
+      "partnerOtherIncome": {
+        "type": "MONEY",
+        "label": "Your partner’s other income",
+        "calcModel": "partner_other_income",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false,
+        "class": "calc-input-partner"
+      },
+      "partnerOtherFreq": {
+        "type": "SELECT",
+        "calcModel": "partner_other_income_freq",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 52,
+        "placeholder": "Weekly",
+        "options": [
+          {
+            "value": 52,
+            "label": "Weekly"
+          },
+          {
+            "value": 26,
+            "label": "Fortnightly"
+          },
+          {
+            "value": 12,
+            "label": "Monthly"
+          },
+          {
+            "value": 1,
+            "label": "Yearly"
+          }
+        ],
+        "required": false,
+        "class": "calc-input-partner"
+      }
+    }
+  }
+]

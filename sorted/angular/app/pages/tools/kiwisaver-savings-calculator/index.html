@@ -1,0 +1,35 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+
+<div class="layout-container kiwisaver-savings-container">
+  <div class="layout-content">
+    <div class="row layout-row">
+      <div class="col-md-4">
+        <!-- Input -->
+        <kiwisaver-savings-form></kiwisaver-savings-form>
+
+      </div>
+      <div class="col-md-8 _relative">
+        <!-- Summary -->
+
+        <kiwisaver-savings-result
+          calculator="calculator"
+          model="model"></kiwisaver-savings-result>
+
+
+        <div class="calc-overlay" ng-class="{disabled: hasResult()}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<related-content data="data" title="More from Sorted"></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>

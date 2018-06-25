@@ -1,0 +1,65 @@
+.calc-pre-container {
+  height: 500px;
+  @media(max-width: $screen-xs-max){
+    height: 450px;
+  }
+  @media(max-width: $screen-xs){
+    height: auto;
+    padding: 40px 0;
+  }
+}
+
+.calc-pre-image-container {
+  height: 500px;
+}
+
+.calc-pre-image {
+  position: absolute;
+  bottom: 0;
+  @media(max-width: $screen-sm-max){
+    width: 100%;
+  }
+  @media(max-width: $screen-xs-max){
+    height: 100%;
+    width: auto;
+    right: 0;
+  }
+
+}
+
+.calc-pre-form {
+  .form-label {
+    width: 200px;
+    margin-right: 10px;
+    @media(max-width: $screen-md-max){
+      width: 190px;
+    }
+    @media(max-width: $screen-sm-max){
+      width: 180px;
+    }
+    @media(max-width: $screen-xs){
+      width: 100%;
+      height: 20px;
+    }
+  }
+  .input-group {
+    @include calc(width, '80% - 210px');
+    @media(max-width: $screen-md-max){
+      @include calc(width, '80% - 200px');
+    }
+    @media(max-width: $screen-sm-max){
+      @include calc(width, '100% - 190px');
+    }
+    @media(max-width: $screen-xs){
+      @include calc(width, '100%');
+    }
+  }
+}
+
+.calc-pre-submit {
+  margin-top: 20px;
+}
+
+.calc-pre-title {
+  margin-top: 0;
+}

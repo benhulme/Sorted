@@ -1,0 +1,42 @@
+blockquote{
+	padding:0;
+	margin:0;
+	border:0;
+	text-align:center;
+	
+
+	p{
+		font-size:28px;
+		font-style:italic;
+		color:#333;
+	}
+}
+
+.tip{
+	border: solid 1px $orange;
+  background-color: $orange-light;
+  @include border-radius(3px);
+  padding: 20px;
+}
+
+.tip-icon {
+  width: 50px;
+  margin: 0 15px;
+  @media(max-width: $screen-xs){
+    width: 40px;
+    margin: 0 5px;
+  }
+}
+
+.tip-main {
+  @include calc('width', '100% - 120px');
+  margin-left: 10px;
+  @media(max-width: $screen-xs){
+    @include calc('width', '100% - 60px');
+  }
+}
+
+hr{
+  height: 0;
+  border: 1px #b7b8ba dashed;
+}

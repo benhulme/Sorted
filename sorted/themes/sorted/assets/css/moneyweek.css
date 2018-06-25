@@ -1,0 +1,696 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../Fonts/icomoon.eot?fet8hz");
+  src: url("../Fonts/icomoon.eot?fet8hz#iefix") format("embedded-opentype"), url("../Fonts/icomoon.ttf?fet8hz") format("truetype"), url("../Fonts/icomoon.woff?fet8hz") format("woff"), url("../Fonts/icomoon.svg?fet8hz#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-left:before {
+  content: "\f053"; }
+
+.icon-chevron-right:before {
+  content: "\f054"; }
+
+.icon-chevron-up:before {
+  content: "\f077"; }
+
+.icon-chevron-down:before {
+  content: "\f078"; }
+
+.icon-navigate_next:before {
+  content: "\e409"; }
+
+.icon-keyboard_arrow_down:before {
+  content: "\e313"; }
+
+.icon-keyboard_arrow_left:before {
+  content: "\e314"; }
+
+.icon-keyboard_arrow_right:before {
+  content: "\e315"; }
+
+.icon-keyboard_arrow_up:before {
+  content: "\e316"; }
+
+.icon-menu:before {
+  content: "\e5d2"; }
+
+/* Fonts */
+h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-size: 28px; }
+
+a {
+  color: #06739a; }
+
+a:link, a:active, a:focus, a:visited {
+  color: #06739a; }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+    margin-bottom: 20px; } }
+
+/* Buttons */
+.moneyweek.btn-primary {
+  margin-top: 12px;
+  padding: 14px 22px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  height: auto; }
+  .moneyweek.btn-primary:hover {
+    text-decoration: none; }
+
+/* Load more */
+.load-more-container {
+  text-align: center;
+  margin-top: 20px; }
+
+.btn {
+  /* Load more */
+  /* Collapse */ }
+  .btn.load-more {
+    width: 100%;
+    max-width: 288px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    border-radius: 0; }
+    .btn.load-more .icon-chevron-down,
+    .btn.load-more .icon-chevron-up {
+      color: #ff6400; }
+    .btn.load-more span.icon {
+      float: right;
+      font-size: 18px;
+      margin-top: -1px;
+      margin-right: 5px; }
+  .btn.collapse-item {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    transform: rotate(0deg);
+    -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    -o-transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    /* easeInOutExpo */ }
+    @media (min-width: 768px) {
+      .btn.collapse-item {
+        font-size: 30px; } }
+    .btn.collapse-item.set-open {
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); }
+
+.row-full {
+  width: 100%; }
+
+.background-solid-green {
+  background-color: #c9dd00; }
+
+.blade-background-green-gradient,
+.background-gradient-green {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9dd00+0,deeb73+100 */
+  background: #c9dd00;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #c9dd00 0%, #deeb73 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c9dd00 0%, #deeb73 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c9dd00 0%, #deeb73 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9dd00', endColorstr='#deeb73',GradientType=0 );
+  /* IE6-9 */ }
+
+.background-solid-red {
+  background-color: #f1642c; }
+
+.background-gradient-red {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1642c+0,ef7240+100 */
+  background: #f1642c;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f1642c 0%, #ef7240 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f1642c 0%, #ef7240 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f1642c 0%, #ef7240 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1642c', endColorstr='#ef7240',GradientType=0 );
+  /* IE6-9 */ }
+  .background-gradient-red .helpful-item-summary:before {
+    color: #fff !important; }
+  .background-gradient-red a {
+    color: #fff; }
+
+.background-solid-purple {
+  background-color: #704c99; }
+
+.background-gradient-purple {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#704c99+0,7a6099+100 */
+  background: #704c99;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #704c99 0%, #7a6099 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #704c99 0%, #7a6099 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #704c99 0%, #7a6099 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#704c99', endColorstr='#7a6099',GradientType=0 );
+  /* IE6-9 */ }
+  .background-gradient-purple p {
+    color: rgba(255, 255, 255, 0.8); }
+  .background-gradient-purple a {
+    color: #fff; }
+
+.blade-background-grey {
+  background-color: #f7f7f7; }
+
+.blade-background-white {
+  background-color: #fff; }
+
+.blade-background-green-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9dd00+0,deeb73+100 */
+  background: #c9dd00;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #c9dd00 0%, #deeb73 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c9dd00 0%, #deeb73 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c9dd00 0%, #deeb73 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9dd00', endColorstr='#deeb73',GradientType=0 );
+  /* IE6-9 */ }
+
+.blade-full {
+  width: 100%;
+  float: left;
+  padding-top: 50px;
+  padding-bottom: 40px; }
+  .blade-full.reduce-bottom-padding {
+    padding-bottom: 20px; }
+
+.col-padding-right {
+  padding-right: 30px !important; }
+
+.col-padding-left {
+  padding-left: 30px !important; }
+
+.header-full {
+  width: 100%;
+  margin-top: 78px;
+  height: 386px;
+  cursor: pointer;
+  float: left; }
+  @media (min-width: 768px) {
+    .header-full {
+      margin-top: 78px;
+      height: 480px; } }
+  @media (min-width: 1025px) {
+    .header-full {
+      margin-top: 56px; } }
+  .header-full.no-video {
+    cursor: auto; }
+    .header-full.no-video .header-play-button {
+      display: none; }
+  .header-full .header-play-button {
+    display: block; }
+  .header-full iframe {
+    width: 100%;
+    height: 100%; }
+
+.header-placeholder {
+  position: relative;
+  width: 100%;
+  min-height: 386px;
+  background-image: url("../images/moneyweek2017/header-bg-repeat.jpg");
+  background-repeat: repeat;
+  border: 0; }
+  @media (min-width: 768px) {
+    .header-placeholder {
+      min-height: 480px; } }
+
+.header-placeholder:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #000; }
+
+.header-placeholder .sit-flex {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+/* Site title */
+.site-title {
+  color: #fff;
+  font-size: 42px;
+  line-height: 110%;
+  /*margin: 0;*/
+  font-weight: bold;
+  padding: 0; }
+  @media (min-width: 768px) {
+    .site-title {
+      font-size: 50px; } }
+
+/* Header logo */
+.header-placeholder-elements .header-logo {
+  max-width: 140px; }
+  @media (min-width: 768px) {
+    .header-placeholder-elements .header-logo {
+      max-width: 234px; } }
+
+/* Play button */
+.header-placeholder-elements .header-play-button {
+  max-width: 140px; }
+  @media (min-width: 768px) {
+    .header-placeholder-elements .header-play-button {
+      max-width: 262px; } }
+
+/* BLADE DEBT START */
+.accordian-wrap {
+  width: 100%;
+  margin-top: 60px; }
+  @media (min-width: 768px) {
+    .accordian-wrap {
+      margin-top: 80px; } }
+
+.accordian-wrap .accordian-item {
+  width: 100%;
+  float: left;
+  margin-bottom: 60px; }
+  .accordian-wrap .accordian-item:last-child {
+    margin-bottom: 0px; }
+
+.accordian-wrap .accordian-item-head {
+  width: 100%;
+  height: 114px;
+  position: relative;
+  cursor: pointer; }
+  @media (min-width: 768px) {
+    .accordian-wrap .accordian-item-head {
+      height: 136px; } }
+  .accordian-wrap .accordian-item-head .btn.collapse-item {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%) rotate(180deg); }
+    @media (min-width: 480px) {
+      .accordian-wrap .accordian-item-head .btn.collapse-item {
+        right: 30px; } }
+    .accordian-wrap .accordian-item-head .btn.collapse-item.set-open {
+      transform: translateY(-50%) rotate(0deg); }
+  .accordian-wrap .accordian-item-head.background-solid-purple .quote {
+    color: #fff; }
+
+.accordian-item {
+  padding: 0 !important; }
+  .accordian-item.accordian-collapse .accordian-item-body {
+    max-height: 0; }
+  .accordian-item .quote {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    line-height: 60px;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 100%;
+    text-align: center; }
+    @media (min-width: 480px) {
+      .accordian-item .quote {
+        padding-left: 20px;
+        padding-right: 20px; } }
+    @media (min-width: 768px) {
+      .accordian-item .quote {
+        font-size: 27px;
+        line-height: 136px;
+        width: 75%;
+        text-align: left; } }
+    @media (min-width: 992px) {
+      .accordian-item .quote {
+        font-size: 40px; } }
+  .accordian-item .person {
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    bottom: 0; }
+    @media (min-width: 768px) {
+      .accordian-item .person {
+        background-size: cover;
+        width: 25%;
+        top: 0;
+        left: 0;
+        bottom: auto; } }
+  .accordian-item.accordian-item-first .person {
+    background-image: url("../images/moneyweek2017/accordian-bg-01-mobile.png"); }
+    @media (min-width: 768px) {
+      .accordian-item.accordian-item-first .person {
+        background-image: url("../images/moneyweek2017/accordian-bg-01-desktop.png"); } }
+  .accordian-item.accordian-item-second .person {
+    background-image: url("../images/moneyweek2017/accordian-bg-02-mobile.png"); }
+    @media (min-width: 768px) {
+      .accordian-item.accordian-item-second .person {
+        background-image: url("../images/moneyweek2017/accordian-bg-02-desktop.png"); } }
+  .accordian-item.accordian-item-third .person {
+    background-image: url("../images/moneyweek2017/accordian-bg-03-mobile.png"); }
+    @media (min-width: 768px) {
+      .accordian-item.accordian-item-third .person {
+        background-image: url("../images/moneyweek2017/accordian-bg-03-desktop.png"); } }
+
+.accordian-item-body {
+  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  -moz-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  -o-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  /* easeInOutExpo */
+  width: 100%;
+  float: left;
+  max-height: 10000px;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  /* Right column */ }
+  .accordian-item-body .column-left {
+    width: 100%;
+    float: left; }
+    @media (min-width: 768px) {
+      .accordian-item-body .column-left {
+        width: 25%; } }
+  .accordian-item-body .related-links {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 40px; }
+    .accordian-item-body .related-links li {
+      width: 100%;
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 56px;
+      padding-left: 10px;
+      padding-right: 10px; }
+      @media (min-width: 768px) {
+        .accordian-item-body .related-links li {
+          font-size: 14px; } }
+      @media (min-width: 992px) {
+        .accordian-item-body .related-links li {
+          height: 26px;
+          font-size: 14px; } }
+      @media (min-width: 1200px) {
+        .accordian-item-body .related-links li {
+          height: 56px;
+          font-size: 16px; } }
+      .accordian-item-body .related-links li a {
+        display: block;
+        line-height: 56px;
+        height: 56px;
+        color: #000;
+        text-decoration: none; }
+        .accordian-item-body .related-links li a:hover, .accordian-item-body .related-links li a:active, .accordian-item-body .related-links li a:focus {
+          text-decoration: none; }
+        @media (min-width: 768px) {
+          .accordian-item-body .related-links li a {
+            line-height: 110%;
+            height: auto;
+            display: inline-block; } }
+        @media (min-width: 992px) {
+          .accordian-item-body .related-links li a {
+            display: block;
+            line-height: 26px;
+            height: 26px;
+            border-bottom: none; } }
+        @media (min-width: 1200px) {
+          .accordian-item-body .related-links li a {
+            line-height: 56px;
+            height: 56px; } }
+  .accordian-item-body .icon-holder {
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    margin-right: 10px; }
+    @media (min-width: 768px) {
+      .accordian-item-body .icon-holder {
+        display: none; } }
+    @media (min-width: 992px) {
+      .accordian-item-body .icon-holder {
+        display: block;
+        width: 26px;
+        height: 26px; } }
+    @media (min-width: 1200px) {
+      .accordian-item-body .icon-holder {
+        width: 56px;
+        height: 56px; } }
+    .accordian-item-body .icon-holder .related-icon {
+      width: 56px;
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+      @media (min-width: 992px) {
+        .accordian-item-body .icon-holder .related-icon {
+          width: 26px; } }
+      @media (min-width: 1200px) {
+        .accordian-item-body .icon-holder .related-icon {
+          width: 56px; } }
+  .accordian-item-body a:hover .icon-holder .related-icon {
+    top: 0;
+    bottom: auto; }
+  .accordian-item-body .column-right {
+    float: left;
+    width: 100%;
+    min-height: 300px;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px; }
+    .accordian-item-body .column-right .accordian-item-footer {
+      display: none; }
+    @media (min-width: 480px) {
+      .accordian-item-body .column-right {
+        text-align: left;
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      .accordian-item-body .column-right {
+        text-align: left;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 40px;
+        padding-bottom: 0px;
+        width: 75%; }
+        .accordian-item-body .column-right .accordian-item-footer {
+          display: block; } }
+
+/* Helpful items */
+.helpful-items-panels {
+  width: 100%;
+  margin-top: 50px; }
+  .helpful-items-panels .helpful-item {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px; }
+    @media (min-width: 480px) {
+      .helpful-items-panels .helpful-item {
+        margin-bottom: 0px;
+        width: 50%; }
+        .helpful-items-panels .helpful-item:first-child {
+          padding-right: 15px; }
+        .helpful-items-panels .helpful-item:nth-child(2) {
+          padding-left: 15px; } }
+    .helpful-items-panels .helpful-item .helpful-item-preview {
+      width: 100%; }
+      .helpful-items-panels .helpful-item .helpful-item-preview .helpful-item-image {
+        width: 100%; }
+    .helpful-items-panels .helpful-item .helpful-item-summary {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 15px; }
+      .helpful-items-panels .helpful-item .helpful-item-summary:before {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f054";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        color: #ff7100; }
+
+.accordian-item-footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  width: 100%; }
+  .accordian-item-footer .btn.collapse-item {
+    float: right; }
+
+/* BLADE DEBT END */
+/* BLADE JOIN START */
+@media (max-width: 991px) {
+  .blade-join {
+    text-align: center; } }
+
+@media (max-width: 767px) {
+  .blade-join .col-padding-right {
+    padding-right: 10px !important; }
+  .blade-join .col-padding-left {
+    padding-left: 10px !important; } }
+
+@media (min-width: 768px) {
+  .join-computer {
+    max-width: 400px;
+    margin: 0 auto; } }
+
+@media (min-width: 992px) {
+  .join-computer {
+    margin-top: 50px;
+    float: right;
+    max-width: 400px; } }
+
+/* BLADE JOIN END */
+/* BLADE INVOLVED START */
+.involved-companies {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+  .involved-companies li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    float: left;
+    height: 140px;
+    display: flex;
+    align-items: center; }
+    @media (min-width: 768px) {
+      .involved-companies li {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        float: none; } }
+    .involved-companies li img {
+      width: 100%; }
+      @media (min-width: 768px) {
+        .involved-companies li img {
+          width: auto; } }
+
+/* BLADE INVOLVED END */
+/* RESOURCES START */
+.blade-resources .resource-items {
+  margin-top: 60px; }
+
+.resource-item {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .resource-item .preview-picture img {
+    width: 100%; }
+  .resource-item .preview-summary, .resource-item .preview-initiative {
+    width: 100%;
+    height: 160px;
+    padding: 20px 0; }
+    .resource-item .preview-summary p, .resource-item .preview-initiative p {
+      margin-top: 0;
+      margin-bottom: 0; }
+    .resource-item .preview-summary .download, .resource-item .preview-initiative .download {
+      font-size: 10px; }
+      @media (min-width: 768px) {
+        .resource-item .preview-summary .download, .resource-item .preview-initiative .download {
+          font-size: 14px; } }
+  .resource-item .preview-initiative {
+    height: 75px; }
+    .resource-item .preview-initiative a {
+      color: #000 !important; }
+    .resource-item .preview-initiative a:hover {
+      text-decoration: underline !important; }
+
+/* RESOURCES END */
+/* FOOTER START */
+@media (max-width: 767px) {
+  .blade-footer .bottom {
+    padding-top: 30px; }
+  .blade-footer .bottom p {
+    font-size: 12px; } }
+
+.moneyweek-logo-cofc {
+  max-width: 160px;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .moneyweek-logo-cofc {
+      max-width: 301px; } }
+
+.moneyweek-logo-moneyweek {
+  max-width: 100px;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .moneyweek-logo-moneyweek {
+      max-width: 186px; } }
+
+/* FOOTER END */
+.font-white {
+  color: #fff; }
+
+.lighter {
+  opacity: 0.8; }
+
+/* Helpers */
+.sit-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.masked-resources {
+  overflow: hidden;
+  max-height: 10000px;
+  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  -moz-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  -o-transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  transition: all 1000ms cubic-bezier(1, 0, 0, 1);
+  /* easeInOutExpo */ }
+
+.main {
+  opacity: 0;
+  -webkit-transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+  /* easeOutExpo */ }
+  .main.fadeIn {
+    opacity: 1; }

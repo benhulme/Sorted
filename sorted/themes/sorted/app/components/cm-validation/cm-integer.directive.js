@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),INTEGER_REGEXP=/^\-?\d+$/;app.directive("cmInteger",function(){return{require:"ngModel",link:function(n,t,e,i){i.$validators.integer=function(n,t){return!!i.$isEmpty(n)||("false"===e.cmCondition||!!INTEGER_REGEXP.test(t))}}}});

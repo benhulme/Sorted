@@ -1,0 +1,102 @@
+<div ng-repeat="(inputKey, input) in calculator.inputs"
+     ng-class="{selected: (inputKey === 0)}"
+     data-form-type="{{calculator.type}}"
+     class="calc-input-group">
+
+  <div class="calc-heading calc-input-heading font-medium"
+       data-form-type="{{calculator.type}}"
+       data-unique="{{input.unique}}"
+       data-model-id="{{input.id}}">
+    <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+    <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+    <span class="calc-title-text _left _inline-block font-sm _capitalize">{{input.title}}</span>
+    <span class="calc-input-title-amount _right _inline-block font-book"
+          ng-show="model.collection.at(input.id).has('loan1')">{{model.collection.at(input.id).$attributes.loan1 | currency:"$":0}}</span>
+  </div>
+
+  <div class="calc-input-container" ng-class="{_hidden: inputKey > 0}">
+
+    <form class="calc-input-form" name="{{input.unique}}">
+
+      <div class="_clear visible-xs visible-sm">
+        <a href="/#/" class="ui-results-link _inline-block font-orange _right">
+          <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+          <img class="ui-results-image" ng-src="/themes/sorted/assets/images/ui-down.svg"/>
+        </a>
+      </div>
+
+      <div class="calc-input-fieldset" ng-repeat="(fieldKey, field) in calculator.fields" ng-if="field.type !== 'HIDDEN'">
+
+        <div ng-switch="field.type">
+
+          <div ng-switch-when="SELECT">
+
+            <calc-select
+              field="field"
+              model="model.collection.at(input.id)"></calc-select>
+          </div>
+
+          <div ng-switch-when="MONEY">
+
+            <calc-input-money
+              field="field"
+              model="model.collection.at(input.id)"></calc-input-money>
+
+          </div><!-- switch-when -->
+
+          <div ng-switch-when="PERCENT">
+
+            <calc-input-interest-rate
+              field="field"
+              model="model.collection.at(input.id)"></calc-input-interest-rate>
+
+          </div><!-- switch-when -->
+
+          <div ng-switch-when="BUTTON_SELECTOR">
+
+            <calc-input-button-select
+              field="field"
+              model="model.collection.at(input.id)"></calc-input-button-select>
+
+
+          </div><!-- switch-when -->
+
+          <div ng-switch-when="YEARS">
+
+            <calc-input-years
+              field="field"
+              model="model.collection.at(input.id)"></calc-input-years>
+
+          </div><!-- switch-when -->
+
+        </div><!-- switch -->
+
+      </div><!-- repeat -->
+
+      <div class="_clear visible-xs visible-sm">
+        <a href="/#/" class="ui-results-link _inline-block font-orange _right">
+          <span class="ui-results-text font-sm _inline-block">SEE RESULT</span><img class="ui-results-image" ng-src="/themes/sorted/assets/images/ui-down.svg" />
+        </a>
+      </div>
+
+    </form>
+
+    <!--<div class="calc-input-container"
+         ng-if="inputKey < calculator.inputs.length - 1 && calculator.inputs[inputKey+1].visible === false">
+      <button class="_no-border calc-input-add" data-form-type="{{calculator.type}}" data-unique="{{input.unique}}">
+        <span class="ui-add font-lg">+</span> <span class="font-sm font-light _inline-block calc-input-add-text">Add another {{calculator.title}}</span>
+      </button>
+    </div>-->
+
+  </div>
+
+</div><!-- input in inputs -->
+
+<div class="calc-total font-medium">
+
+    Mortgage(s) Total
+    <span class="calc-input-title-amount _right _inline-block font-book">
+    {{calcTotal() | currency:"$":0}}
+    </span>
+</div>
+

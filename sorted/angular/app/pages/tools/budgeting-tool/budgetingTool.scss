@@ -1,0 +1,146 @@
+
+
+.container-fluid {
+  padding: 0;
+}
+
+section.budget-breakdown, .budget-master-category {
+  border-top: 1px #d9dad5 solid;
+  width: 100%;
+  margin: 0;
+}
+
+.budget-main {
+  padding-bottom: 20px;
+  @media (min-width: $screen-md-min) {
+    margin-right: 40px;
+
+  }
+
+  .budget-print {
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+      display: inline-block;
+
+      .budget-print-link {
+        cursor: pointer !important;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+
+    button {
+      cursor: pointer !important;
+      border-color:$orange;
+    }
+  }
+
+  .budget-mobile-save {
+    margin: 10px 0;
+  }
+
+  header-share-buttons {
+    .header-share-buttons-container {
+      margin: 10px 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 3px;
+      }
+    }
+  }
+
+  .budget-tip {
+    display: none;
+    margin: 50px 0 100px 0;
+    min-height: 100px;
+
+    .nudge-container {
+      padding: 20px;
+    }
+  }
+
+  @media(min-width: $screen-md-min) {
+    transition: 0.5s linear margin-right;
+    position: relative;
+    z-index: 99;
+    padding: 0 30px;
+    margin-bottom: 320px;
+
+    .budget-tip {
+      display: block;
+    }
+
+    .budget-mobile-save {
+      display: none;
+    }
+
+    @media(min-width: $screen-lg-min) {
+          margin-right: 40px;
+    }
+  }
+
+  .add-to-home-tip {
+    @media (min-width: $screen-md-min) {
+      display: none;
+    }
+  }
+
+}
+
+/*@media(min-width: 1420px) {*/
+@media(min-width: $screen-md-min) {
+  .budget-shrink {
+    margin-right: 420px;
+  }
+}
+
+@media print {
+
+  .budget-category-title,.budget-category-amount,.category-period-container {
+    width: 33%;
+    float: left;
+    display: block !important;
+  }
+  .budget-category-period{
+    text-align: center;
+    span{
+      padding-left: 20%;}
+
+    i{
+      display: none;
+    }
+  }
+
+
+  .budget-breakdown{
+    display: none;
+  }
+  .budget-shrink{
+    margin: auto;
+  }
+
+  .printable-part {
+    .logo-container {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      margin: 30px auto 10px;
+
+    }
+  }
+}
+
+@media print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  *:not(.glyphicon,i){
+    font-family: Gotham,sans-serif !important;
+  }
+}
+
+.master-category-title-edit{
+  background: url('../../assets/images/edit-grey.svg') no-repeat;
+  background-size: contain;
+}

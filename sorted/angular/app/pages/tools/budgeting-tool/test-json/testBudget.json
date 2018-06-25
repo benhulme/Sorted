@@ -1,0 +1,460 @@
+{
+  "IncomeStreams": [
+    {
+      "Title":  "My income",
+      "Cents":  100000, 
+      "Removeable":  false
+    }
+  ],
+  "Period": {
+    "Shortname": "monthly",
+    "Title": "Per month", 
+    "PerYear": 12
+  },
+  "Cents": 100000, 
+  "MasterCategories": [
+    {
+      "Cents": 20900, 
+      "ID":  1,
+      "Title":  "Everyd111ay Expenses",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/everyday_expenses.svg"
+      },
+      "Color": "#CE0058",
+      "Default": true,
+      "Expanded": false,
+      "Categories": [
+        { 
+          "ID": 11,
+          "Title": "Groceries",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/groceries.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 12,
+          "Title": "Takeaways",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/takeaways.jpg"
+          },
+          "Cents": 10000,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 13,
+          "Title": "Dining",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/dining-out.jpg"
+          },
+          "Cents": 0,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 16,
+          "Title": "Entertainment",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/entertainment.jpg"
+          },
+          "Cents": 9900,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 18,
+          "Title": "Bought Lunches",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/bought-lunches.jpg"
+          },
+          "Cents": 1000,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 1200,
+      "ID": 2,
+      "Title": "Living Expenses",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/living_expenses.svg"
+      },
+      "Color": "#704C99",
+      "Default": true,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 29,
+          "Title": "Laundry / Drycleaning",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/laundry-drycleaning.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 30,
+          "Title": "Mobile Phone",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/mobile-phone.jpg"
+          },
+          "Cents": 1200,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 10300,
+      "ID": 3,
+      "Title": "Regular Expenses",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/regular_expenses.svg"
+      },
+      "Color": "#CADC3C",
+      "Default": true,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 31,
+          "Title": "Sky / Paid TV",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/sky-paid-tv.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 32,
+          "Title": "Bank Fees",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/bank-fees.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 33,
+          "Title": "Recreation/Subscription Fees",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/recreation-subscription-fees.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 34,
+          "Title": "Social Club/Union Fees",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/social-club-union-fees.jpg"
+          },
+          "Cents": 500,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 35,
+          "Title": "Appliance Rentals",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/appliance-rentals.jpg"
+          },
+          "Cents": 9800,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 39,
+          "Title": "Clubs & Membership",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/clubs-membership.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 12700,
+      "ID": 4,
+      "Title": "Irregular Expenses",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/irregular_expenses.svg"
+      },
+      "Color": "#00AFFF",
+      "Default": true,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 40,
+          "Title": "Christmas Savings",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/christmas-savings.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 41,
+          "Title": "Optician/Glasses",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/optician-glasses.jpg"
+          },
+          "Cents": 400,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 42,
+          "Title": "Dental",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/dental.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 43,
+          "Title": "Life Insurance",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/life-insurance.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 44,
+          "Title": "Medical Insurance",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/medical-insurance.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 45,
+          "Title": "Doctors",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/doctors.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 46,
+          "Title": "Health Products",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/health-products.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 47,
+          "Title": "Gifts",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/gifts.jpg"
+          },
+          "Cents": 12300,
+          "Default": true,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 56,
+          "Title": "Contents Insurance",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/contents-insurance.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 1200,
+      "ID": 5,
+      "Title": "Savings",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/savings.svg"
+      },
+      "Color": "#006E96",
+      "Default": false,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 67,
+          "Title": "KiwiSaver Top-ups",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/kiwisaver-top-ups.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 79,
+          "Title": "Something else",
+          "Icon": {
+            "Filename": "assets/budget-custom-images/nudge-repayment-icon.jpg",
+            "ID": "1157",
+            "IsCustom": true
+          },
+          "Cents": 1200,
+          "Default": false,
+          "newCategoryImagePreview": ""
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 0,
+      "ID": 6,
+      "Title": "Personal",
+      "Icon": {
+        "Filename": "assets/images/tools/budgeting-tool/personal.svg"
+      },
+      "Color": "#FFD700",
+      "Default": true,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 69,
+          "Title": "Personal Cash",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/personal-cash.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 70,
+          "Title": "Clothing / Shoes",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/clothing-shoes.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 71,
+          "Title": "Hair & Beauty",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/hair-beauty.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 72,
+          "Title": "Charity",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/charity.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 73,
+          "Title": "Religious & Community Contributions",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/religious-community-contributions.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 74,
+          "Title": "Tobacco / Nicotine Replacement",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/tobacco-nicotine-replacement.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 75,
+          "Title": "Beverages",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/beverages.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        },
+        {
+          "ID": 76,
+          "Title": "Lotto",
+          "Icon": {
+            "Filename": "assets/images/tools/budgeting-tool/categories/lotto.jpg"
+          },
+          "Cents": 0,
+          "Default": true
+        }
+      ]
+    },
+    {
+      "Cents": 1200,
+      "ID": 7,
+      "Title": "111",
+      "Icon": {
+        "Filename": ""
+      },
+      "Color": "#dd5690",
+      "Default": false,
+      "Expanded": false,
+      "Categories": [
+        {
+          "ID": 77,
+          "Title": "111",
+          "Icon": {
+            "Filename": ""
+          },
+          "Cents": 0,
+          "Default": false,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        },
+        {
+          "ID": 78,
+          "Title": "111",
+          "Icon": {
+            "Filename": ""
+          },
+          "Cents": 1200,
+          "Default": false,
+          "newCategoryImage": null,
+          "newCategoryImagePreview": null
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "Cents": 0,
+      "ID": 8,
+      "Title": "111112",
+      "Icon": {
+        "Filename": ""
+      },
+      "Color": "#9f88ba",
+      "Default": false,
+      "Expanded": false,
+      "Categories": []
+    }
+  ],
+  "Title": "Rich's budget",
+  "BreakdownExpanded": true,
+  "Subtotal": 47500
+}

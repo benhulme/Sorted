@@ -1,0 +1,130 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<!--<tool-title data="data"></tool-title>-->
+
+
+
+
+<div class="layout-container savings-container">
+  <div class="layout-content">
+
+
+
+    <div class="row  layout-row">
+      <div class="col-xs-12">
+        <p>
+          <ol>
+            <li>Pick a goal or add a new one.</li>
+            <li>Drag and drop goals to the short, medium or long-term zones.</li>
+            <li>Drag a goal to ‘Edit’ to set its amount or ‘Delete’ to remove it from your plan.</li>
+          </ol>
+          <a href="/how-these-calculators-work#goal-planner" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light visible-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+          <a href="/how-these-calculators-work#goal-planner" target="_blank" analytics-on="click" analytics-event="howthiscalculatorsworks" analytics-category="calculators" analytics-interaction-type="0" class="tool-title-link font-sm font-light _right hidden-xs"><span class="fa fa-chevron-right font-orange font-xs"></span>How this tool works</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row layout-row control-container">
+      <div class="col-xs-3 text-center control-but">
+        <span data-drop="true" data-jqyoui-options ng-model="editGoal" jqyoui-droppable="{beforeDrop: 'beforeEdit'}">
+          <button class="edit-goal"></button>
+          <p>Edit</p>
+        </span>
+      </div>
+      <div class="col-xs-3 text-center control-but">
+        <span data-drop="true" data-jqyoui-options ng-model="goals.deleted.GoalList" jqyoui-droppable="{beforeDrop: 'beforeDelete'}">
+          <button class="delete-goal"></button>
+          <p>Delete</p>
+        </span>
+
+      </div>
+      <div class="col-xs-3 text-center control-but">
+        <span ng-click="beforeAdd()">
+          <button class="add-goal">+</button>
+          <p>Add</p>
+        </span>
+      </div>
+      <div class="col-xs-3 text-center control-but">
+        <span  ng-click="saveGoals()">
+          <button class="save-goal"></button>
+          <p>Save</p>
+        </span>
+      </div>
+    </div>
+    <div class="row fullwidth-row titles-line">
+       <div class="col-xs-8 col-sm-4 goal" ng-show="target === 'goals'" >
+          <h4>Goals</h4>
+        </div>
+        <div class="col-xs-4 col-sm-8 plan" ng-class="{'open' : target !=='goals'}">
+          <h4>My Plan</h4>
+        </div>
+    </div>
+
+    <div class="row fullwidth-row" ng-class="{'light-green' : target !=='goals'}">
+
+      <div class="col-xs-8 col-sm-4 goals-block ">
+        <div class="row">
+
+          <goal-draggable ng-show="target === 'goals'" data="goals.allGoals"></goal-draggable>
+          <goal-draggable class="terms visible-xs"  ng-show="target === 'short'" data="goals.short"></goal-draggable>
+          <goal-draggable class="terms visible-xs"  ng-show="target === 'medium'" data="goals.medium"></goal-draggable>
+          <goal-draggable class="terms visible-xs"  ng-show="target === 'long'" data="goals.long"></goal-draggable>
+
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-8 plan-block">
+        <div class="row"  ng-class="{'active':target === 'short'}">
+            <div class="col-sm-3 col-xs-12">
+              <goal-droppable ng-click="small() && changeFlow('short')" ng-class="{'active':target === 'short','not-empty': goals.short.GoalList.length !== 0}"  data="goals.short"></goal-droppable>
+            </div>
+            <div class="col-sm-9 desktop-dropzone hidden-xs" data-drop="true" data-jqyoui-options ng-model="goals.short.GoalList" jqyoui-droppable="{}">
+              <p ng-show="goals.short.GoalList.length === 0">Drag short-term goals here</p>
+              <goal-draggable data="goals.short" class=" desktop-goals"></goal-draggable>
+            </div>
+        </div>
+
+        <div class="row" ng-class="{'active':target === 'medium'}">
+          <div class="col-sm-3 col-xs-12">
+            <goal-droppable ng-click="small() && changeFlow('medium')" ng-class="{'active':target === 'medium','not-empty': goals.medium.GoalList.length !== 0}" data="goals.medium"></goal-droppable>
+          </div>
+          <div class="col-sm-9 desktop-dropzone hidden-xs " data-drop="true" data-jqyoui-options ng-model="goals.medium.GoalList" jqyoui-droppable="{}">
+            <p ng-show="goals.medium.GoalList.length === 0">Drag medium-term goals here</p>
+            <goal-draggable data="goals.medium" class="desktop-goals"></goal-draggable>
+          </div>
+        </div>
+        <div class="row" ng-class="{'active':target === 'long'}">
+          <div class="col-sm-3 col-xs-12">
+            <goal-droppable ng-click="small() && changeFlow('long')" ng-class="{'active':target === 'long','not-empty': goals.long.GoalList.length !== 0}" data="goals.long"></goal-droppable>
+          </div>
+          <div class="col-sm-9 desktop-dropzone hidden-xs " data-drop="true" data-jqyoui-options ng-model="goals.long.GoalList" jqyoui-droppable="{}">
+            <p ng-show="goals.long.GoalList.length === 0">Drag long-term goals here</p>
+            <goal-draggable data="goals.long" class="desktop-goals"></goal-draggable>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="row fullwidth-row">
+      <a ng-href="/tools/goal-planner/results" class="btn btn-primary happen-button">
+          Make it happen
+        </a>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<email-signup></email-signup>
+
+<footer></footer>

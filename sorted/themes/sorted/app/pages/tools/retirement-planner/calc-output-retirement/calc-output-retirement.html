@@ -1,0 +1,212 @@
+<div class="calc-output">
+
+  <div class="calc-form-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-black">Results</span>
+
+    <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+    <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+ <div class="calc-output-container">
+
+    <div class="row calc-output-row">
+
+      <div class="col-sm-6 layout-col" ng-class="{'retirement-output-income-text': model.$attributes.live_on && model.hasResult()}">{{calculator[0].outputs[0].label}}
+        <popover>
+          <button
+            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                data-toggle="popover"  data-trigger="focus"
+            data-placement="top"
+            data-content="{{calculator[0].outputs[0].tooltip}}">
+          </button>
+        </popover>
+      </div>
+      <div class="col-sm-6 layout-col calc-output-value font-medium" ng-show="!model.$attributes.live_on || !model.hasResult()">-</div>
+
+      <div class="col-sm-6 layout-col calc-output-value" ng-show="model.$attributes.live_on && model.hasResult()">
+
+        <div class="_right-sm-above">
+
+          <div class="input-group form-inline-addon form-addon-dollar retirement-output-income _left">
+            <input type="text" class="form-control font-md" name="{{form.fields[field].model}}"
+                   ng-model="model.$attributes.live_on" ng-model-options="{updateOn: 'blur'}"
+                   cm-money
+                   maxlength="10">
+          </div>
+          <div class="calc-output-freq _left calc-output-value retirement-output-income-text">
+            per
+            <span ng-show="model.$attributes.lifestyle_freq == 52">week</span>
+            <span ng-show="model.$attributes.lifestyle_freq == 26">fortnight</span>
+            <span ng-show="model.$attributes.lifestyle_freq == 12">month</span>
+            <span ng-show="model.$attributes.lifestyle_freq == 1">year</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row calc-output-row" ng-show="model.$attributes.your_retire_age >= '65' &&
+    (model.$attributes.partner_retire_age >= '65' || model.$attributes.partner === 0) || !model.hasResult()">
+
+      <div class="col-sm-6 layout-col">{{calculator[0].outputs[1].label}}</div>
+      <div class="col-sm-6 layout-col calc-output-value">
+        {{model.result.$attributes.retirement_income | currency: "$" : 0}}
+        per
+        <span ng-show="model.$attributes.lifestyle_freq == 52">week</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 26">fortnight</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 12">month</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 1">year</span>
+      </div>
+
+    </div>
+
+   <div class="row calc-output-row" ng-show="(model.$attributes.your_retire_age < '65' || model.$attributes.partner_retire_age < '65' && model.hasResult()) &&
+   !(model.$attributes.your_month_born === model.$attributes.partner_month_born && model.$attributes.your_year_born === model.$attributes.partner_year_born)">
+
+     <div class="col-sm-6 layout-col">Before you <span ng-show="model.$attributes.partner === 1">both </span>turn 65 you're on track to have:</div>
+     <div class="col-sm-6 layout-col calc-output-value">
+       {{getWeekly(model.$attributes.live_on, model.result.$attributes.shortfall_pre_65) | currency: "$" : 0}}
+       per
+       <span ng-show="model.$attributes.lifestyle_freq == 52">week</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 26">fortnight</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 12">month</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 1">year</span>
+     </div>
+
+   </div>
+
+   <div class="row calc-output-row" ng-show="model.$attributes.your_retire_age < '65' || model.$attributes.partner_retire_age < '65' && model.hasResult()">
+
+     <div class="col-sm-6 layout-col">After you <span ng-show="model.$attributes.partner === 1">both </span>turn 65 you're on track to have:</div>
+     <div class="col-sm-6 layout-col calc-output-value">
+       {{getWeekly(model.$attributes.live_on, model.result.$attributes.shortfall_post_65) | currency: "$" : 0}}
+       per
+       <span ng-show="model.$attributes.lifestyle_freq == 52">week</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 26">fortnight</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 12">month</span>
+       <span ng-show="model.$attributes.lifestyle_freq == 1">year</span>
+     </div>
+
+   </div>
+
+    <div class="row calc-output-row">
+
+      <div class="col-sm-6 layout-col">{{calculator[0].outputs[2].label}}</div>
+      <div class="col-sm-6 layout-col calc-output-value font-red font-medium" ng-show="!model.result.$attributes.deficit_lump_amount || !model.hasResult() || (model.result.$attributes.retirement_income >= model.$attributes.live_on)">-</div>
+      <div class="col-sm-6 layout-col calc-output-value font-red" ng-show="model.result.$attributes.deficit_lump_amount && model.hasResult() && (model.result.$attributes.retirement_income <  model.$attributes.live_on)">
+        {{model.result.$attributes.deficit_lump_amount  | currency: "$" : 0}}
+        per
+        <span ng-show="model.$attributes.lifestyle_freq == 52">week</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 26">fortnight</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 12">month</span>
+        <span ng-show="model.$attributes.lifestyle_freq == 1">year</span>
+      </div>
+
+    </div>
+
+    <div class="row calc-output-row">
+      <div class="col-sm-12 layout-col">
+        <div class="layout-divider-dashed"></div>
+      </div>
+    </div>
+
+    <div class="row calc-output-row">
+
+      <div class="col-sm-6 layout-col">{{calculator[0].outputs[4].label}}</div>
+      <div class="col-sm-6 layout-col calc-output-value font-red font-medium" ng-show="!model.result.$attributes.amount_total || !model.hasResult() || (model.result.$attributes.retirement_income >= model.$attributes.live_on)">-</div>
+      <div class="col-sm-6 layout-col calc-output-value font-red" ng-show="model.result.$attributes.amount_total && model.hasResult() && (model.result.$attributes.retirement_income < model.$attributes.live_on)">
+        {{model.result.$attributes.amount_total | currency: "$" : 0}}
+      </div>
+
+    </div>
+
+   <div class="row" ng-show="model.hasResult() && model.result.$attributes.retirement_income < model.$attributes.live_on">
+     <div class="col-xs-12">
+       <div class="retirement-text-prompt _align-center">
+        Based on that lifestyle you’d like, you’ll need to save more.
+       </div>
+     </div>
+   </div>
+
+
+   <div class="row" ng-show="model.hasResult() && model.result.$attributes.retirement_income >= model.$attributes.live_on">
+     <div class="col-xs-12">
+       <div class="retirement-text-prompt _align-center">
+        Based on that lifestyle you’d like, your retirement plans are on track.
+       </div>
+     </div>
+   </div>
+
+    <div class="nudge-container" ng-show="result.amount_total !== 0">
+
+      <div class="_clear">
+        <div class="_left nudge-icon _align-center">
+          <img ng-src="{{calculator[0].nudge.icon}}" class="_full-width" />
+        </div>
+
+        <div class="_left nudge-main">
+
+          <label class="font-sm">
+            {{calculator[0].nudge.label}}
+            <popover>
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{calculator[0].nudge.tooltip}}">
+              </button>
+            </popover>
+          </label>
+
+          <div class="font-sm">{{calculator[0].nudge.text}}</div>
+
+          <div class="nudge-slider-container _clear hidden-xs">
+            <div class="_left font-orange nudge-slider-left">$</div>
+            <rzslider
+              class="_left nudge-slider slider-orange"
+              rz-slider-model="model.$attributes.your_other_schemes"
+              rz-slider-options="slider.options"></rzslider>
+            <div class="_left font-orange nudge-slider-right">$$$</div>
+          </div>
+
+          <div ng-if="calculator[0].nudge.extraText === 'RETIREMENT'" class="calc-output-extra hidden-xs">
+            <div class="layout-divider-dashed"></div>
+            <div >
+              Could your retirement savings last you
+              <span class="font-orange font-bold font-h3" ng-show="model.$attributes.your_life_expectancy && model.$attributes.your_retire_age">{{model.$attributes.your_life_expectancy - model.$attributes.your_retire_age}}</span>
+              <span class="font-orange font-bold font-h3" ng-show="!model.$attributes.your_life_expectancy || !model.$attributes.your_retire_age">25</span>
+              years?
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nudge-slider-container _clear visible-xs">
+        <div class="_left font-orange nudge-slider-left">$</div>
+        <rzslider
+          class="_left nudge-slider slider-orange"
+          rz-slider-model="model.$attributes.your_other_schemes"
+          rz-slider-options="slider.options"></rzslider>
+        <div class="_left font-orange nudge-slider-right">$$$</div>
+      </div>
+
+      <div ng-if="calculator[0].nudge.extraText === 'RETIREMENT'" class="calc-output-extra visible-xs">
+        <div class="layout-divider-dashed"></div>
+        <div class="_align-center">
+          Could your retirement savings last you
+          <span class="font-orange font-bold font-h3" ng-show="model.$attributes.your_life_expectancy && model.$attributes.your_retire_age">{{model.$attributes.your_life_expectancy - model.$attributes.your_retire_age}}</span>
+          <span class="font-orange font-bold font-h3" ng-show="!model.$attributes.your_life_expectancy || !model.$attributes.your_retire_age">25</span>
+          years?
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

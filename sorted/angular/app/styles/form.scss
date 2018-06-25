@@ -1,0 +1,360 @@
+.input-group {
+    margin: 10px 0;
+    width: 100%;
+}
+
+#Form_CommentsForm {
+  .field{
+    width:100%;
+  }
+    margin: 10px -10px 40px -10px;
+
+    textarea {
+        padding: 20px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-bottom: 0;
+        height: 96px;
+        color: black;
+    }
+
+
+    input[type=email], input[type=text] {
+        padding: 10px;
+        margin: 10px 0 0 0;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid grey;
+        color: black;
+
+    }
+
+    .labels-subline {
+        font-size: 14px;
+        line-height: 0px;
+    }
+
+    input[type=submit] {
+        margin: 30px 0 10px 0;
+    }
+  input,textarea{
+    &:focus{
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+    &.required{
+      border-color: #D00;
+    }
+
+  }
+
+
+}
+#Form_CommentsForm_action_doPostComment{
+  margin-bottom: 50px;
+
+}
+
+.comments-holder {
+    .comments-list {
+        padding: 0;
+        list-style: none;
+        .comment {
+          p {
+            word-break: break-word;
+          }
+          &:last-of-type {
+            .layout-divider-dashed-medium {
+              display: none;
+            }
+          }
+
+        }
+
+        img {
+            width: 50px;
+        }
+
+        .comment {
+            margin-bottom: 20px;
+        }
+
+
+
+        .date {
+            font-size: 14px !important;
+        }
+
+    }
+
+}
+
+.input-group {
+  .form-control {
+    &:first-child {
+      @include border-radius(4px);
+    }
+  }
+}
+
+.form-inline-addon {
+  .form-control {
+    &:first-child {
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+
+  &.form-addon-dollar {
+    .form-control {
+      padding-left: 50px;
+    }
+    &::before {
+      content: "$";
+      line-height: 50px;
+      width: 50px;
+    }
+  }
+
+  &.form-addon-percent {
+    .form-control {
+      padding-right: 90px;
+    }
+    &::after {
+      content: "% p.a.";
+      line-height: 50px;
+      width: 90px;
+    }
+  }
+
+  &.form-addon-years {
+    .form-control {
+      padding-right: 90px;
+    }
+    &::after {
+      content: "years";
+      line-height: 50px;
+      width: 90px;
+    }
+  }
+
+  &.form-addon-calendar {
+    .form-control {
+      padding-right: 90px;
+    }
+    &::after {
+      content: "[1 Jan]";
+      /*display: inline-block;*/
+      line-height: 50px;
+      width: 90px;
+    }
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    z-index: 90;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    z-index: 90;
+    right: 0;
+    text-align: center;
+    pointer-events: none;
+  }
+
+}
+
+.form-label-group {
+
+    .input-group {
+        float: left;
+    }
+
+    .form-label {
+        line-height: 50px;
+        float: left;
+        margin: 10px 0;
+    }
+
+    @extend ._clear;
+
+}
+
+.form-error{
+    @extend .font-xx;
+    color: $red;
+    position: absolute;
+    bottom: -17px;
+    &.calc-input-error {
+      position: relative;
+      top: 8px;
+      margin-bottom: 5px;
+    }
+}
+
+.form-input-error {
+    border-color: $red;
+}
+
+
+.form-icon {
+    width: 16px;
+    display: inline-block;
+}
+
+.form-borderless-field {
+    border: none;
+    outline: none;
+}
+
+.form-control {
+    height: 50px;
+    padding: 0 20px;
+    @include appearance(none);
+}
+
+
+.Actions{
+  padding:  0 10px;
+}
+
+.required.message{
+  @extend .form-error;
+  width: 100%;
+  left: 10px;
+  bottom: -9px;
+
+}
+
+input.form-inline-checkbox-left {
+  width: auto;
+  margin: 0 10px 0 0;
+}
+
+
+//Campaign Competition Form
+#draw-form-container{
+  position:relative;
+  padding:20px 20px 40px;
+  margin-bottom:20px;
+  min-height:300px;
+
+  @media(max-width: $screen-xs-max){
+    min-height:150px;
+  }
+
+  h2{
+    margin-bottom:20px;
+  }
+
+  &.already-entered{
+    h2{
+      display:none;
+    }
+    #Form_DrawForm{
+      fieldset,
+      .Actions{
+        display:none;
+      }
+    }
+  }
+}
+
+#draw-form-container__unsigned-view{
+  p{
+    margin-bottom:30px;
+  }
+  button{
+    @media(max-width: $screen-xs-max){
+      font-size: $font-xs;
+      height: 28px;
+      line-height: 28px;
+      padding: 0 20px;
+    }
+  }
+}
+
+#Form_DrawForm{
+
+  fieldset{
+    position:relative;
+    text-align:center;
+  }
+
+  #Form_DrawForm_acceptance_Holder{
+    position: relative;
+    display:inline-block;
+    width:auto;
+    margin:0 auto;
+    float:none;
+
+      input[type="checkbox"]{
+        display:inline-block;
+        height:auto;
+        width: 20px;
+        float:none;
+        vertical-align: middle;
+
+        @media(max-width: $screen-sm-max){
+          float:left;
+          margin:15px 0 0 0;
+        }
+
+      }
+
+      label[for=Form_DrawForm_acceptance]{
+        display:inline-block;
+        vertical-align: middle;
+        line-height: 48px;
+        font-weight:200;
+        float:none;
+
+        @media(max-width: $screen-sm-max){
+          width: 90%;
+          line-height:normal;
+          text-align:left;
+        }
+
+      }
+
+      .message.required{
+        text-align:left;
+        padding-left:20px;
+      }
+  }
+
+  .Actions{
+    text-align:center;
+    margin:20px 0 0;
+    #Form_DrawForm_action_submitDrawForm{
+      margin-bottom:0;
+      padding:0;
+
+    }
+  }
+
+  #Form_DrawForm_error{
+    text-align:center;
+    &.message{
+      &.good{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        @extend .font-light;
+        @extend .font-h2;
+        width: 100%;
+      }
+    }
+  }
+
+}
+

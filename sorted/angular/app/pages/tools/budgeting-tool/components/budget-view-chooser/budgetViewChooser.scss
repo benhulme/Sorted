@@ -1,0 +1,56 @@
+budget-view-chooser {
+  .budget-view-chooser-container.row {
+    border-top: 2px #d9dad5 solid;
+    padding: 10px 10px 5px 10px;
+
+    .budget-view-copy-container {
+      height: 30px;
+      padding-top: 5px;
+      padding-left: 7%;
+    }
+
+    .budget-view-button-container {
+      display: inline-block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      margin-left: 10px;
+      padding: 0;
+      cursor:pointer;
+
+      .budget-view-button {
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .budget-view-button.selected,
+      .budget-view-button:hover {
+        top: -30px;
+        @media (max-width: $screen-sm) {
+          top: -25px;
+        }
+      }
+
+      @media (max-width: $screen-sm) {
+        width: 25px;
+        height: 25px;
+
+      }
+    }
+
+  }
+
+  @media(min-width: $screen-md-min) {
+    .budget-view-chooser-container.row {
+      border-top:none;
+    }
+  }
+   @media(min-width: $screen-lg-min) {
+    .budget-view-copy-container  {
+      //padding-left:70px;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("calcSelect",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/components/calc-select/select.html",restrict:"EA",scope:{field:"=",model:"=",label:"="},controller:["$scope",function(e){_.find(e.field.options,{selected:!0})&&e.model.set(e.field.calcModel,_.find(e.field.options,{selected:!0}).value)}]}}])}();

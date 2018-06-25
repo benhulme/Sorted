@@ -1,0 +1,43 @@
+
+<div class="result-collapse">
+  <button class="result-collapse-button" type="button" data-toggle="collapse" data-target="#collapseExample-{{base.BaseName}}" aria-expanded="false" aria-controls="collapseExample" >
+    {{base.Title}}
+
+  </button>
+  <div class="collapse in collapse-container" id="collapseExample-{{base.BaseName}}">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          {{base.Copy}}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div ng-if="!data.GoalList.length" class="col-xs-12">
+        <p><b>{{base.Placeholder}}</b></p>
+      </div>
+      <div ng-if="data.GoalList.length" ng-repeat="item in data.GoalList" class="col-xs-4">
+        <div class="goal-bubble {{item.Color}}" ng-show="item.Title">
+          <div class="goal-content">
+            <p>
+              {{item.Title}}
+              {{item.Type}} <br>
+              <strong>
+                $ {{item.Price}}
+              </strong>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <link-box data="base"></link-box>
+
+      </div>
+    </div>
+  </div>
+
+</div>

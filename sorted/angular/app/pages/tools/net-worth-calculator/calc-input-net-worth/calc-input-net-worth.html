@@ -1,0 +1,113 @@
+<div ng-repeat="(modelKey, model) in calculator.models">
+
+  <!-- ng-repeat="(categoryKey, category) in model.categories" -->
+  <div ng-class="{selected: model.identifier === 0}"
+       data-form-type="{{model.unique}}"
+       class="calc-input-net-worth-group">
+
+    <!-- Top level according heading -->
+    <div class="calc-heading calc-input-net-worth-heading"
+         data-form-type="{{category.id}}"
+         data-unique="{{category.name}}"
+         ng-class="{selected: model.identifier === 0}">
+
+      <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+      <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+      <span class="calc-title-text _left _inline-block font-sm ">{{model.title}}</span>
+      <span class="calc-input-net-worth-title-amount _right _inline-block font-book">{{models.findWhere({unique: model.unique}).calTotal()}}</span>
+    </div>
+
+    <!-- input container -->
+    <div class="calc-input-container" ng-class="{_hidden: model.identifier !== 0}">
+
+      <!-- form start here -->
+      <form class="calc-input-net-worth-form" name="{{model.unique}}">
+
+        <!-- Sub-heading according heading -->
+        <div ng-repeat="(cID, category) in model.categories">
+
+          <div class="calc-heading calc-sub-heading calc-input-net-worth-sub-heading"
+          ng-class="{selected: (cID === 0 && model.identifier === 0)}">
+
+            <span class="fa fa-plus font-xs _inline-block _left font-orange"></span>
+            <span class="fa fa-minus font-xs _inline-block _left font-orange"></span>
+            <span class="calc-title-text _left _inline-block font-sm">{{category.label}}</span>
+
+          </div>
+
+          <!-- input container -->
+          <div class="calc-input-container-child" ng-class="{_hidden: (cID !== 0 || modelKey !== 0)}">
+
+            <!--<div class="_clear hidden-xs hidden-sm">-->
+              <!--<a href="/#/tools/net-worth-calculator#results"-->
+                 <!--class="ui-results-link _inline-block font-orange _right">-->
+                <!--<span class="ui-results-text  font-sm _inline-block">SEE RESULT</span>-->
+                <!--<img class="ui-results-image" ng-src="{{siteConfig.APP_PATH}}/assets/images/ui-down.svg"/>-->
+              <!--</a>-->
+            <!--</div>-->
+
+            <div class="calc-input-net-worth-categoryset"
+                 ng-repeat="(fieldKey, field) in model.fields | filter:{categoryId: category.id, level: 1}">
+
+              <div ng-switch="field.type">
+
+                <div ng-switch-when="MONEY">
+
+                  <calc-input-money
+                    field="field"
+                    model="models.findWhere({unique: model.unique})"></calc-input-money>
+
+
+                </div><!-- switch-when -->
+
+              </div><!-- switch -->
+
+            </div><!-- repeat -->
+
+            <!-- Loop over any 2nd level inputs and hide by default -->
+            <div class="calc-input-net-worth-fieldset calc-input-net-worth-second-level-container"
+                 ng-repeat="(fieldKey, field) in model.fields | filter:{categoryId: category.id, level: 2}">
+
+                <div ng-show="$first" class="calc-heading calc-input-level-heading">
+                  <span class="fa fa-plus font-xs _inline-block _left font-orange"></span>
+                  <span class="fa fa-minus font-xs _inline-block _left font-orange"></span>
+                  <span class="calc-title-text _left _inline-block font-sm">Other {{category.name}}</span>
+                </div>
+
+              <!-- hidden by default -->
+              <div ng-switch="field.type" class="second-level-item _hidden">
+
+                <div ng-switch-when="MONEY">
+
+                  <calc-input-money
+                    field="field"
+                    model="models.findWhere({unique: model.unique})"></calc-input-money>
+
+                </div><!-- switch-when -->
+
+              </div><!-- switch -->
+
+            </div>
+            <!-- end of 2nd level loop -->
+
+            <!--<div class="_clear  hidden-xs hidden-sm">-->
+              <!--<a href="/#/tools/net-worth-calculator"-->
+                 <!--class="ui-results-link _inline-block font-orange _right">-->
+                <!--<span class="ui-results-text  font-sm _inline-block">SEE RESULT</span>-->
+                <!--<img class="ui-results-image" src="/assets/images/ui-down.svg"/>-->
+              <!--</a>-->
+            <!--</div>-->
+
+
+          </div> <!-- input container -->
+
+        </div> <!-- Sub-heading -->
+
+        <!-- form end here -->
+      </form>
+
+    </div>
+
+  </div><!-- input in inputs -->
+
+</div><!-- form in calculator -->

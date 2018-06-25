@@ -1,0 +1,514 @@
+{
+  "title": "KiwiSaver savings",
+  "model": "KiwiSaverSavings",
+  "CalcID": "7",
+  "sections": [
+    {
+      "id": 0,
+      "name": "my_details",
+      "title": "Your details"
+    },
+    {
+      "id": 1,
+      "name": "my_contributions",
+      "title": "Your contributions"
+    }
+  ],
+  "fields": [
+    {
+      "id": "birth_month",
+      "type": "SELECT_MONTH",
+      "label": false,
+      "groupLabel": "Your birthdate",
+      "calcModel": "monthborn",
+      "format": {
+        "type": "TEXT"
+      },
+      "value": "",
+      "placeholder": "Month",
+      "required": true,
+      "tooltip": "You need to be under the age of 65 to join KiwiSaver.",
+      "section": {
+        "id": 0,
+        "level": 0
+      }
+    },
+    {
+      "id": "birth_year",
+      "type": "TEXT",
+      "label": false,
+      "calcModel": "year_born",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "Year",
+      "tooltip": false,
+      "section": {
+        "id": 0,
+        "level": 0
+      },
+      "section": {
+        "id": 0,
+        "level": 0
+      }
+    },
+    {
+      "id": "gender",
+      "type": "BUTTON_SELECT",
+      "label": "Your gender",
+      "calcModel": "gender",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": null,
+      "tooltip": "Men and women have different life expectancies, and may need different levels of savings.",
+      "buttons": [
+        {
+          "text": "MALE",
+          "value": "2",
+          "class": "btn btn-default font-xs btn-yellow",
+          "related": "",
+          "toggle": ".kiwisaver-savings-gender"
+        },
+        {
+          "text": "FEMALE",
+          "value": "1",
+          "class": "btn btn-default font-xs btn-yellow",
+          "related": "",
+          "toggle": ".kiwisaver-savings-gender"
+        }
+      ]
+    },
+    {
+      "id": "life_expectancy",
+      "type": "TEXT",
+      "label": "Your life expectancy",
+      "calcModel": "life_expectancy",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "We’re living longer than ever – the average ages shown here are for 80% of us, based on Stats New Zealand data. <a href='https://www.sorted.org.nz/guides/planning-for-retirement' target='_blank'>Read more</a>",
+      "section": {
+        "id": 0,
+        "level": 0
+      }
+    },
+    {
+      "id": "employment",
+      "type": "TEXT",
+      "label": "Your employment status",
+      "calcModel": "employment_status",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "1",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "KiwiSaver works differently if you are an employee, self-employed or not working.",
+      "section": {
+        "id": 0,
+        "level": 0
+      },
+      "placeholder": "Please select",
+      "related": "earnings",
+      "options": [
+        {
+          "label": "Employed",
+          "value": "2",
+          "selected": true
+        },
+        {
+          "label": "Self-employed",
+          "value": "1"
+        },
+        {
+          "label": "Not working",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "earnings",
+      "type": "MONEY",
+      "label": "Annual earnings before tax",
+      "label2": "Estimated earnings before tax",
+      "calcModel": "salary",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "Enter the amount that you expect to earn before taxes and other deductions.",
+      "section": {
+        "id": 0,
+        "level": 0
+      }
+    },
+    {
+      "id": "has_kiwisaver",
+      "type": "BUTTON_SELECT",
+      "label": "Do you already belong to KiwiSaver?",
+      "calcModel": "has_kiwisaver",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "0",
+      "placeholder": null,
+      "tooltip": "If you are unsure, check your pay slip and look for any KiwiSaver deductions.",
+      "section": {
+        "id": 1,
+        "level": 0
+      },
+      "buttons": [
+        {
+          "text": "YES",
+          "value": "1",
+          "class": "btn btn-default font-xs btn-yellow has_kiwisaver",
+          "related": ".kiwisaver-savings-registered-yes",
+          "toggle": ".kiwisaver-savings-registered"
+        },
+        {
+          "text": "NO",
+          "value": "0",
+          "class": "btn btn-default font-xs btn-yellow has_kiwisaver",
+          "related": ".kiwisaver-savings-registered-no",
+          "toggle": ".kiwisaver-savings-registered"
+        }
+      ]
+    },
+    {
+      "id": "joined_month",
+      "type": "SELECT_MONTH",
+      "label": false,
+      "groupLabel": "Approximate date you joined KiwiSaver?",
+      "calcModel": "joined_month",
+      "format": {
+        "type": "TEXT"
+      },
+      "value": "",
+      "placeholder": "Month",
+      "required": true,
+      "tooltip": "This date doesn’t have to be exact – a rough idea is fine.",
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "joined_year",
+      "type": "TEXT",
+      "label": false,
+      "calcModel": "joined_year",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "Year",
+      "tooltip": "This is my placeholder tooltip",
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "kiwisaver_acct_balance",
+      "type": "MONEY",
+      "label": "Current value of your account",
+      "calcModel": "kiwisaver_value",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "0",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "Plug in the current value of your KiwiSaver account if you’d like to include it in the calculations.",
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "my_contributions",
+      "type": "SELECT",
+      "label": "Your contributions",
+      "calcModel": "kiwisaver_contribs",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "3",
+      "required": false,
+      "placeholder": "Please select",
+      "tooltip": "You can contribute 3%, 4% or 8% of your salary automatically to your KiwiSaver account if you’re employed.  If you’re unsure of your contribution amount, use 3%.",
+      "options": [
+        {
+          "label": "3%",
+          "value": "3",
+          "selected": true
+        },
+        {
+          "label": "4%",
+          "value": "4"
+        },
+        {
+          "label": "8%",
+          "value": "8"
+        }
+      ],
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "employer_contributions",
+      "type": "SELECT",
+      "label": "Your employer's contributions",
+      "calcModel": "employer_contrib",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "3",
+      "required": false,
+      "placeholder": "Please select",
+      "tooltip":"If you’re unsure how much your employer contributes, use the minimum 3% rate.",
+      "options": [
+        {
+          "label": "0%",
+          "value": "0"
+        },
+        {
+          "label": "1%",
+          "value": "1"
+        },
+        {
+          "label": "2%",
+          "value": "2"
+        },
+        {
+          "label": "3%",
+          "value": "3"
+        },
+        {
+          "label": "4%",
+          "value": "4"
+        },
+        {
+          "label": "5%",
+          "value": "5"
+        },
+        {
+          "label": "6%",
+          "value": "6"
+        },
+        {
+          "label": "7%",
+          "value": "7"
+        },
+        {
+          "label": "8%",
+          "value": "8"
+        },
+        {
+          "label": "9%",
+          "value": "9"
+        },
+        {
+          "label": "10%",
+          "value": "10"
+        }
+
+      ],
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "kiwisaver_contributions_self",
+      "type": "MONEY",
+      "label": "How much could you contribute?",
+      "calcModel": "kiwisaver_contribs_self",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "0",
+      "placeholder": "0",
+      "tooltip": "The regular amount you will contribute to KiwiSaver. We all need to contribute at least $1,043 a year to get the full $521 government contribution.",
+      "required": false,
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "contribution_frequency",
+      "type": "SELECT",
+      "label": "How often?",
+      "calcModel": "contrib_freq",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "52",
+      "required": false,
+      "placeholder": "Please select",
+      "tooltip": "This may depend on how often you get paid.",
+      "options": [
+        {
+          "label": "Weekly",
+          "value": "52",
+          "selected": true
+        },
+        {
+          "label": "Fortnightly",
+          "value": "26"
+        },
+        {
+          "label": "Monthly",
+          "value": "12"
+        },
+        {
+          "label": "Yearly",
+          "value": "1"
+        }
+      ],
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "lump_sum_contributions",
+      "type": "MONEY",
+      "label": "Any planned extra payments?",
+      "calcModel": "lump_sum_contrib",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "0",
+      "placeholder": "",
+      "required": true,
+      "tooltip": "In addition to your regular contributions, you can also make extra payments to your KiwiSaver account. These can be made directly to your provider or through Inland Revenue.",
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "lump_sum_contributions_frequency",
+      "type": "SELECT",
+      "label": false,
+      "calcModel": "lump_sum_freq",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "0",
+      "required": false,
+      "placeholder": "Please select",
+      "options": [
+        {
+          "label": "One-off",
+          "value": 0,
+          "selected": true
+        },
+        {
+          "label": "Per week",
+          "value": 52
+        },
+        {
+          "label": "Per fortnight",
+          "value": 26
+        },
+        {
+          "label": "Per month",
+          "value": 12
+        },
+        {
+          "label": "Per year",
+          "value": 1
+        }
+      ],
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    },
+    {
+      "id": "inflationAdjust",
+      "type": "BUTTON_SELECTOR",
+      "label": "Adjusted for inflation",
+      "calcModel": "iar",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 1,
+      "required": true,
+      "tooltip": false,
+      "buttons": [
+        {
+          "text": "ON",
+          "value": 1,
+          "class": "btn btn-default font-xs btn-yellow",
+          "related": false,
+          "toggle": ""
+        },
+        {
+          "text": "OFF",
+          "value": 0,
+          "class": "btn btn-default font-xs btn-yellow",
+          "related": false,
+          "toggle": ""
+        }
+      ]
+    },
+
+    {
+      "id": "result_income_freq",
+      "type": "HIDDEN",
+      "label": "",
+      "calcModel": "result_income_freq",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "52",
+      "class": "",
+      "placeholder": "",
+      "related": false,
+      "required": false,
+      "tooltip": {},
+      "section": {
+        "id": 1,
+        "level": 0
+      }
+    }
+  ],
+  "nudge": {
+    "label": "Sorted tip",
+    "tooltip": "It’s easy to change your contribution amount – simply notify your employer or contact your KiwiSaver provider directly. ",
+    "text": "The more you contribute, the better your results.",
+    "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+    "options": {
+      "stepsArray": [3,4,8],
+      "showSelectionBar": true,
+      "showTicksValues": true
+    },
+    "field": "kiwisaver_contribs"
+  },
+  "altNudge": {
+    "label": "Sorted tip",
+    "tooltip": "This is my placeholder tool tip",
+    "text": "Want to save more? Increase your weekly KiwiSaver contributions",
+    "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+    "options": {
+      "floor": 0,
+      "ceil": 1000,
+      "showSelectionBar": true
+    },
+    "field": "kiwisaver_contribs_self"
+  }
+}

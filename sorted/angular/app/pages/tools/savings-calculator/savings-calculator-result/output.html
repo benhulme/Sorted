@@ -1,0 +1,144 @@
+<div class="savings-calc-result calc-output">
+
+  <div class="calc-heading savings-calculator-heading">
+    <span class="calc-title-text _left _inline-block font-sm _capitalize bold">Results</span>
+
+    <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+
+    <a href="/#/tools/savings-calculator"
+       class="font-xs font-orange font-medium _right calc-output-print hidden-sm hidden-xs" cm-print>
+      PRINT <span class="fa fa-chevron-right font-xs"></span>
+    </a>
+
+  </div>
+
+  <div class="calc-output-container">
+    <!-- Saving for a Goal -->
+    <div id="savingsGoalResult" class="savings-type-result" ng-show="model.collection.currentType === 1">
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">You need to set aside:
+          <popover>
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="This is the amount you need to save regularly to reach your goal.">
+            </button>
+          </popover>
+        </div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(1).result.$attributes.total > 0" class="fuschia">{{model.collection.get(1).result.$attributes.total | round | currency: "$" : 0}} per week</span>
+            <span ng-if="!model.collection.get(1).result.$attributes.total">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">To save up:
+          <popover>
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="This is the goal you’ve chosen.">
+            </button>
+          </popover>
+        </div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(1).result.$attributes.total_saved > 0" class="fushcia">{{model.collection.get(1).result.$attributes.total_saved | round | currency: "$" : 0}}</span>
+            <span ng-if="!model.collection.get(1).result.$attributes.total_saved">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">Including compound interest of:</div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(1).result.$attributes.interest > 0" class="blue">{{model.collection.get(1).result.$attributes.interest | currency: "$"}}</span>
+            <span ng-if="!model.collection.get(1).result.$attributes.interest">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">Over:</div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(1).result.$attributes.total > 0">{{getDurationDesc(model.collection.get(1))}}</span>
+            <span ng-if="!model.collection.get(1).result.$attributes.total">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nudge Slider -->
+      <!--<savings-calc-nudge-slider
+        model="model"
+        nudge="nudge"></savings-calc-nudge-slider>-->
+
+    </div>
+
+    <!-- Saving Regular Amounts -->
+    <div id="regularSavingsResult" class="savings-type-result" ng-show="model.collection.currentType === 0">
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">You'll have saved up:
+          <popover>
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-html="true"
+              data-content="This is the total you’ll have saved, plus the interest you’ll have earned.
+The longer you save, the more you earn from compound interest. <a href='/#/guides/compound-interest-friend-or-foe' class='popover-link-float' target='_blank'>Find out more</a>.
+">
+            </button>
+          </popover>
+        </div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(0).result.$attributes.total > 0" class="link">{{model.collection.get(0).result.$attributes.total | round | currency: "$" : 0 }}</span>
+            <span ng-if="!model.collection.get(0).result.$attributes.total">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">Including compound interest of:</div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(0).result.$attributes.interest > 0" class="blue">{{model.collection.get(0).result.$attributes.interest | currency: "$"}}</span>
+            <span ng-if="!model.collection.get(0).result.$attributes.interest">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row calc-output-row">
+        <div class="col-sm-7 layout-col">After:</div>
+        <div class="col-sm-5 layout-col calc-output-value">
+          <div class="font-medium">
+            <span ng-if="model.collection.get(0).result.$attributes.period > 0">{{getDurationDesc(model.collection.get(0))}}</span>
+            <span ng-if="!model.collection.get(0).result.$attributes.period">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nudge Slider -->
+      <!--<savings-calc-nudge-slider
+        model="model"
+        nudge="nudge"></savings-calc-nudge-slider>-->
+
+    </div>
+
+  </div>
+
+  <!-- Nudge Slider -->
+  <savings-calc-nudge-slider
+    model="model"
+    nudge="nudge"></savings-calc-nudge-slider>
+
+</div>

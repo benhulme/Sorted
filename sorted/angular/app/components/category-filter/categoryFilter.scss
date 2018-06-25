@@ -1,0 +1,23 @@
+category-filter {
+  &>div{
+    padding: 65px 0 35px 0;
+    @media (max-width: 768px){
+      padding: 0;
+    }
+  }
+  @media(min-width: $screen-sm-min) {
+    h5 {
+      margin-left: 15px;
+    }
+  }
+
+  @media(min-width: $screen-md-min) {
+    h5 {
+      margin-left: 35px;
+    }
+  }
+
+  .category-filter-link {
+    cursor: pointer;
+  }
+}

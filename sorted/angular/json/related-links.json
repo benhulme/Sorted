@@ -1,0 +1,30 @@
+[
+  {
+    "Title": "About Sorted",
+    "Url": "/about-us"
+  },
+  {
+    "Title": "Collateral",
+    "Url": "/order"
+  },
+  {
+    "Title": "Help",
+    "Url": "/help"
+  },
+  {
+    "Title": "Terms & Conditions",
+    "Url": "/terms-and-conditions"
+  },
+  {
+    "Title": "Contact",
+    "Url": "/contact"
+  },
+  {
+    "Title": "Privacy Policy",
+    "Url": "/privacy-policy"
+  },
+  {
+    "Title": "Copyright Statement",
+    "Url": "/copyright-statement"
+  }
+]

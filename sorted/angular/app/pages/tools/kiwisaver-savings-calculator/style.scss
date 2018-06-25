@@ -1,0 +1,40 @@
+.kiwi-saver-savings-heading {
+  background-color: $yellow;
+  color: $black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.kiwisaver-savings-section {
+  background-color: $yellow-light;
+  color: $black;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+
+.kiwisaver-savings-container {
+  .calc-form-heading {
+    background-color: $yellow-dark;
+    margin-bottom: 2px;
+    color: $black;
+  }
+  .calc-heading {
+    background-color: $yellow-light;
+    color: $black;
+  }
+
+  .calc-input-container {
+    background-color: $yellow-lightest;
+  }
+
+  .calc-input-btn-group .btn.selected {
+    background-color: $yellow;
+    color: $black;
+  }
+  .ui-add {
+    background-color: $yellow;
+  }
+}
+

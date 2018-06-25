@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("calcInputTitle",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/components/calc-input-title/index.html",restrict:"EA",scope:{field:"="}}}])}();

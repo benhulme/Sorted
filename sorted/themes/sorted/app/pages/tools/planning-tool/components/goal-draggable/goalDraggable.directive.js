@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("goalDraggable",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/pages/tools/planning-tool/components/goal-draggable/goalDraggable.html",restrict:"E",scope:{data:"="},controller:["$scope","planningData",function(e,o){e.siteConfig=t,e.test=function(t,e,a,n){o.tempCategory=a.Category,o.tempItem=n}}]}}])}();

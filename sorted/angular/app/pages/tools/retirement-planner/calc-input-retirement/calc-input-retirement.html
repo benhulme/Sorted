@@ -1,0 +1,415 @@
+<div class="calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-medium font-sm">Retirement planner</span>
+</div>
+
+<!-- How Close -->
+<div class="calc-input-group selected" data-form-type="{{calculator[0].type}}">
+
+  <!-- Title -->
+  <div class="calc-heading calc-input-heading font-medium"
+       data-form-type="{{calculator[0].type}}"
+       data-unique="{{calculator[0].inputs[0].unique}}">
+    <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+    <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+    <span class="calc-title-text _left _inline-block font-sm">{{calculator[0].inputs[0].title}}</span>
+  </div>
+
+  <!-- First section is NOT hidden by default -->
+  <div class="calc-input-container">
+
+    <form class="calc-input-form"
+          name="{{calculator[0].inputs[0].unique}}"
+          ng-class="{'calc-input-show-partner': model.get('partner')}">
+
+      <!-- Birthdate -->
+      <div class="calc-input-fieldset">
+
+        <!-- label: Your birthdate -->
+
+        <label class="font-sm">
+          {{calculator[0].fields.yourBirthDate.label}}
+          <popover ng-show="calculator[0].fields.yourBirthDate.tooltip">
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="{{calculator[0].fields.yourBirthDate.tooltip}}">
+            </button>
+          </popover>
+        </label>
+
+        <div class="_clear">
+          <!-- birthYear & birthMonth -->
+          <calc-select-months
+            class="calc-input-year font-md _left"
+            field="calculator[0].fields.yourMonthBorn"
+            model="model"></calc-select-months>
+
+          <calc-input-number
+            field="calculator[0].fields.yourYearBorn"
+            class="calc-input-month _inline-block _left"
+            model="model"></calc-input-number>
+        </div>
+      </div>
+
+      <!-- planned retirement age -->
+      <div class="calc-input-fieldset">
+        <calc-input-number
+          field="calculator[0].fields.yourRetirementAge"
+          model="model"></calc-input-number>
+      </div>
+
+      <!-- Expand/Collapse: Add partner -->
+      <div class="calc-input-fieldset">
+        <button class="_no-border calc-add-partners"
+                data-form-type="{{calculator[0].type}}"
+                data-unique="{{calculator[0].unique}}"
+                section-toggle="{{calculator[0].fields.partnerToggle.section}}">
+          <span class="font-lg font-orange calc-add-plus">+</span><span
+          class="font-lg font-orange calc-add-minus _hidden">-</span> <span
+          class="font-sm font-light _inline-block calc-input-add-text">{{calculator[0].fields.partnerToggle.label}}</span>
+        </button>
+      </div>
+
+      <div class="addPartnerSection _hidden">
+
+        <!-- Include partner button selector -->
+        <div class="calc-input-fieldset _clear">
+          <label class="font-sm _left calc-input-inline-label">
+          {{calculator[0].fields.includePartner.label}}
+          <popover ng-show="calculator[0].fields.includePartner.tooltip">
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="{{calculator[0].fields.includePartner.tooltip}}">
+            </button>
+          </popover>
+          </label>
+
+          <div class="calc-input-btn-group retirement-include-partner _right">
+            <calc-input-button-select
+            field="calculator[0].fields.includePartner"
+            model="model"
+            label="false"></calc-input-button-select>
+          </div>
+
+        </div>
+
+        <!-- Partners birth date details as above -->
+        <div class="calc-input-fieldset">
+
+          <label class="font-sm">
+            {{calculator[0].fields.partnerBirthDate.label}}
+            <popover ng-show="calculator[0].fields.partnerBirthDate.tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{calculator[0].fields.partnerBirthDate.tooltip}}">
+              </button>
+            </popover>
+          </label>
+
+          <div class="_clear">
+            <!-- birthYear & birthMonth -->
+            <calc-select-months
+              class="calc-input-year font-md _left"
+              field="calculator[0].fields.partnerMonthBorn"
+              model="model"></calc-select-months>
+
+            <calc-input-number
+              field="calculator[0].fields.partnerYearBorn"
+              class="calc-input-month _inline-block _left"
+              model="model"></calc-input-number>
+          </div>
+
+        </div>
+
+        <!-- Partners retirement age as above -->
+        <div class="calc-input-fieldset">
+          <calc-input-number
+            field="calculator[0].fields.partnerRetirementAge"
+            model="model"></calc-input-number>
+
+        </div>
+
+      </div>
+
+      <div class="_clear visible-xs visible-sm" calc-link>
+        <a href="/#/" class="ui-results-link _inline-block font-orange _right">
+          <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+          <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+        </a>
+      </div>
+
+    </form>
+
+
+  </div>
+
+</div>
+
+<!-- How Long -->
+<div class="calc-input-group" data-form-type="{{calculator[1].type}}">
+
+  <!-- Title -->
+  <div class="calc-heading calc-input-heading font-medium"
+       data-form-type="{{calculator[1].type}}"
+       data-unique="{{calculator[1].inputs.unique}}">
+    <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+    <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+    <span class="calc-title-text _left _inline-block font-sm">{{calculator[1].inputs[0].title}}</span>
+  </div>
+
+  <!-- > Subsequent sections ARE hidden by default -->
+  <div class="calc-input-container _hidden">
+
+    <form class="calc-input-form"
+          name="{{calculator[1].inputs[0].unique}}"
+          ng-class="{'calc-input-show-partner': model.get('partner')}">
+
+      <div class="calc-input-fieldset">
+        <label class="font-lg _block">Life expectancy</label>
+      </div>
+      <div class="calc-input-fieldset">
+        <label class="font-sm">The average life expectancy is 91 for males and 94 for females.</label>
+      </div>
+      <!-- Gender -->
+      <!-- <div class="calc-input-fieldset">
+        <calc-input-button-select
+          field="calculator[1].fields.yourGender"
+          model="model"></calc-input-button-select>
+      </div> -->
+
+      <!-- life expectancy -->
+      <div class="calc-input-fieldset">
+        <calc-input-number
+          field="calculator[1].fields.yourLifeExpectancy"
+          model="model"></calc-input-number>
+      </div>
+
+      <!-- partner gender -->
+      <!-- <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-input-button-select
+          field="calculator[1].fields.partnerGender"
+          model="model"></calc-input-button-select>
+      </div> -->
+
+      <!-- partner life expectancy -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-input-number
+          field="calculator[1].fields.partnerLifeExpectancy"
+          model="model"></calc-input-number>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<!-- How Much -->
+<div class="calc-input-group" data-form-type="{{calculator[2].type}}">
+
+  <!-- Title -->
+  <div class="calc-heading calc-input-heading font-medium"
+       data-form-type="{{calculator[2].type}}"
+       data-unique="{{calculator[2].inputs.unique}}">
+    <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+    <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+    <span class="calc-title-text _left _inline-block font-sm">{{calculator[2].inputs[0].title}}</span>
+  </div>
+
+  <!-- > Subsequent section ARE hidden by default -->
+  <div class="calc-input-container _hidden">
+
+    <form class="calc-input-form"
+          name="{{calculator[2].inputs[0].unique}}"
+          ng-class="{'calc-input-show-partner': model.get('partner')}">
+
+      <!-- retirement income -->
+      <div class="calc-input-fieldset">
+        <calc-input-money
+          field="calculator[2].fields.liveOn"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- retirement income frequency -->
+      <div class="calc-input-fieldset">
+        <calc-select
+          field="calculator[2].fields.lifestyleFreq"
+          model="model"></calc-select>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- Where will the money come from -->
+<div class="calc-input-group" data-form-type="{{calculator[3].type}}">
+
+  <!-- Title -->
+  <div class="calc-heading calc-input-heading font-medium"
+       data-form-type="{{calculator[3].type}}"
+       data-unique="{{calculator[3].inputs.unique}}">
+    <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+    <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+    <span class="calc-title-text _left _inline-block font-sm">{{calculator[3].inputs[0].title}}</span>
+  </div>
+
+
+  <!-- > Subsequent section ARE hidden by default -->
+  <div class="calc-input-container _hidden">
+
+    <form class="calc-input-form"
+          name="{{calculator[3].inputs[0].unique}}"
+          ng-class="{'calc-input-show-partner': model.get('partner')}">
+
+
+      <!-- NZ Superannuation title -->
+      <div class="calc-input-fieldset">
+        <calc-input-title
+          field="calculator[3].fields.superTitle"
+          model="model"></calc-input-title>
+      </div>
+
+
+      <!-- Include NZ Super checkbox -->
+      <div class="calc-input-fieldset">
+        <calc-input-checkbox
+          field="calculator[3].fields.yourSuper"
+          model="model"></calc-input-checkbox>
+      </div>
+
+      <!-- Your Super amount -->
+
+      <div class="calc-input-fieldset">
+
+        <calc-input-label
+          field="calculator[3].fields.yourSuperFreq"
+          model="model"></calc-input-label>
+
+        <div class="calc-input-super-amount font-lg font-bold">
+          {{model.calcSuper() | currency:"$":0}}
+        </div>
+
+        <!-- Your Super payment frequency -->
+        <calc-select
+          field="calculator[3].fields.yourSuperFreq"
+          model="model"
+          label="false"></calc-select>
+      </div>
+
+      <!-- Partner Super amount -->
+
+      <!-- Partner Super payment frequency -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+
+        <calc-input-label
+          field="calculator[3].fields.yourSuperFreq"
+          model="model"></calc-input-label>
+
+        <div class="calc-input-super-amount font-lg font-bold">
+          {{model.calcSuper() | currency:"$":0}}
+        </div>
+
+        <calc-select
+          field="calculator[3].fields.partnerSuperFreq"
+          model="model"
+          label="false"></calc-select>
+      </div>
+
+      <!-- KiwiSaver lump sum title & link -->
+      <div class="calc-input-fieldset">
+        <calc-input-title
+          field="calculator[3].fields.kiwiSaverTitle"
+          model="model"></calc-input-title>
+      </div>
+
+      <div class="calc-input-fieldset">
+        <label class="font-sm"  ng-bind-html="calculator[3].fields.kiwiSaverLabel.label"></label>
+      </div>
+
+      <!-- Kiwisaver lump sum amount -->
+      <div class="calc-input-fieldset">
+        <calc-input-money
+          field="calculator[3].fields.yourKiwiSaver"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Partner Kiwisaver lump sum amount -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-input-money
+          field="calculator[3].fields.partnerKiwiSaver"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Other Lump sum Title -->
+      <div class="calc-input-fieldset">
+        <calc-input-title
+          field="calculator[3].fields.lumpSumTitle"
+          model="model"></calc-input-title>
+      </div>
+
+      <!-- Other lump sums -->
+      <div class="calc-input-fieldset">
+        <calc-input-money
+          field="calculator[3].fields.yourLumpSum"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Partner other lump sum -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-input-money
+          field="calculator[3].fields.partnerLumpSum"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Other income sources title -->
+      <div class="calc-input-fieldset">
+        <calc-input-title
+          field="calculator[3].fields.otherIncomeTitle"
+          model="model"></calc-input-title>
+      </div>
+
+      <!-- Other income amount -->
+      <div class="calc-input-fieldset">
+        <calc-input-money
+          field="calculator[3].fields.yourOtherIncome"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Other income frequency -->
+      <div class="calc-input-fieldset">
+        <calc-select
+          field="calculator[3].fields.yourOtherFreq"
+          model="model"></calc-select>
+      </div>
+
+      <!-- Partner other income amount -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-input-money
+          field="calculator[3].fields.partnerOtherIncome"
+          model="model"></calc-input-money>
+      </div>
+
+      <!-- Partner other income frequency -->
+      <div class="calc-input-fieldset" ng-show="model.$attributes.partner === 1">
+        <calc-select
+          field="calculator[3].fields.partnerOtherFreq"
+          model="model"></calc-select>
+      </div>
+
+      <div class="_clear" calc-link>
+        <a href="/#/" class="ui-results-link _inline-block font-orange _right">
+          <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+          <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+        </a>
+      </div>
+
+    </form>
+
+
+  </div>
+
+</div>

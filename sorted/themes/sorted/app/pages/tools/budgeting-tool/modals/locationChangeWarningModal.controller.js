@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").controller("LocationChangeWarningModalCtrl",["$scope","$uibModalInstance",function(n,o){n.locationChangeContinue=function(){o.close(!0)},n.locationChangeCancel=function(){o.close(!1)}}])}();

@@ -1,0 +1,21 @@
+<div class="layout-header-small">
+
+    <div class="header-small-container">
+        <div ng-if="data.BackgroundImage.Filename" class="header-background" cover-image="{{data.BackgroundImage.Filename}}"></div>
+
+        <div ng-if="!data.BackgroundImage.Filename" class="header-background" cover-image="{{siteConfig.APP_PATH}}assets/images/header-background-tools.jpg"></div>
+
+        <div class="header-small-opacity"></div>
+
+        <div class="layout-container _relative">
+
+            <div class="header-small-text _absolute">
+                <div class="layout-content">
+                  <breadcrumbs></breadcrumbs>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

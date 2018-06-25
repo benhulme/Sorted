@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation");app.directive("cmMaxlength",function(){return{require:"ngModel",link:function(n,t,e,i){i.$validators.maxlength=function(n){return!!i.$isEmpty(n)||("false"===e.cmCondition||n.length<=e.cmMaxlength)}}}});

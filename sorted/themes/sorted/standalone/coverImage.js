@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){var a=$("[cover-image]");a.addClass("cover-image"),a.each(function(){var a=$(this).attr("cover-image");a&&$(this).css({backgroundImage:"url("+a+")"})})});

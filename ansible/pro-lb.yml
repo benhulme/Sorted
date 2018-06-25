@@ -1,0 +1,31 @@
+# Sorted production Load Balancer server setup script
+---
+- hosts: sorted-lb-pro
+  become: yes
+  roles:
+    - nginx
+  tasks:
+    - name: Create dir
+      file: path=/srv/www state=directory
+    - apt: name=nfs-common update_cache=yes
+    - name: Update fstab
+      blockinfile:
+        dest: /etc/fstab
+        backup: yes
+        block: |
+          172.17.14.145:/var/www  /srv/www  nfs auto,noatime,nolock,bg,nfsvers=4,intr,tcp,actimeo=1800  0 0
+    - name: Nginx config
+      template: src=templates/lb-nginx-host.conf dest=/etc/nginx/sites-available/sorted.co.nz.conf
+    - file: src=/etc/nginx/sites-available/sorted.co.nz.conf dest=/etc/nginx/sites-enabled/sorted.co.nz.conf state=link
+    - service: name=nginx state=reloaded
+
+
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty main restricted
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates main restricted
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty universe
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates universe
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security main restricted
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security universe
+deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security multiverse

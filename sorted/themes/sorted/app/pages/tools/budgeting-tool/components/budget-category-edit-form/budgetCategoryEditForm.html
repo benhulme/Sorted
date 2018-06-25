@@ -1,0 +1,28 @@
+<div class="category-edit-form-container">
+  <div class="row">
+    <div class="col-xs-10 col-md-11 category-edit-form-inputs">
+      <div class="row">
+        <div class="category-title-container col-xs-8 col-md-6">
+          <div class="input-group">
+            <input type="text" class="budget-title form-control"
+              ng-model="inlineEditCategory.Title">
+          </div>
+        </div>
+        <div class="category-amount-container col-xs-4 col-md-3">
+          <budget-input-amount
+            amount="inlineEditCategory.Cents"
+            per-year="inlineEditCategory.Period.PerYear"></budget-input-amount>
+        </div>
+        <div class="category-period-container col-xs-12 col-md-3 col-lg-3">
+          <budget-period-dropdown
+            model="inlineEditCategory.Period"
+          ></budget-period-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-1 category-trash-container text-center"
+      ng-click="removeCategory($index)">
+      <img class="category-trash" ng-src="{{siteConfig.APP_PATH}}assets/images/tools/budgeting-tool/trash-grey.svg">
+    </div>
+  </div>
+</div>

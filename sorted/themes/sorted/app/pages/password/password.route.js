@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").config(["$routeProvider","siteConfig",function(o,r){o.when("/password",{templateUrl:r.APP_PATH+"app/pages/password/password.html",controller:"GlossaryController"})}])}();

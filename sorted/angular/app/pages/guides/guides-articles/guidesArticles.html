@@ -1,0 +1,42 @@
+<div class="row">
+<div class="col-md-8">
+
+  <div class="row category-container"
+   ng-repeat="category in data"
+   ng-if="category.Slug === search || search === ''">
+
+    <div class="row category-row">
+      <div class="col-xs-12 dots clearfix">
+
+        <div class="col-md-3 main-content">
+          <div class="icon-container">
+            <img alt=""
+              ng-src="{{siteConfig.APP_PATH}}assets/images/filters/filters-{{category.Slug}}.svg">
+          </div>
+          <div class="header-container">
+            <h4 ng-bind-html="category.Title"></h4>
+          </div>
+        </div>
+
+        <div class="col-md-9 main-content">
+          <p class="content-text">{{category.Description}}</p>
+          <ul class="arrow-list double-col" >
+            <li ng-repeat="guide in category.Pages">
+              <a ng-href="/guides/{{guide.URLSegment}}">{{guide.MenuTitle}}</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div ng-show="article.CustomBlock" ng-bind-html="article.CustomContent"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-4 guides-sidebar">
+  <not-sure-box></not-sure-box>
+
+  <editor-picks title="Editor's Picks" data="guidesArticles[0].EditorsPicks"></editor-picks>
+</div>
+</div>

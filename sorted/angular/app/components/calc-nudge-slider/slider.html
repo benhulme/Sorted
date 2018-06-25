@@ -1,0 +1,47 @@
+<div class="calc-nudge-slider nudge-container">
+
+  <div class="_clear">
+    <div class="_left nudge-icon _align-center">
+      <img ng-src="{{nudge.icon}}" class="_full-width"/>
+    </div>
+
+    <div class="_left nudge-main">
+
+      <label class="font-sm">
+        {{nudge.label}}
+        <popover>
+          <button
+            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                data-toggle="popover"  data-trigger="focus"
+            data-placement="top"
+            data-content="{{nudge.tooltip}}">
+          </button>
+        </popover>
+      </label>
+
+      <div class="font-sm">{{nudge.text}}</div>
+
+      <div class="nudge-slider-container _clear  hidden-xs">
+        <div class="_left font-orange nudge-slider-left">$</div>
+        <rzslider
+          class="_left nudge-slider slider-orange"
+          rz-slider-model="nudgeModel"
+          rz-slider-options="nudge.options"></rzslider>
+        <div class="_left font-orange nudge-slider-right">$$$</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="nudge-slider-container _clear visible-xs">
+    <div class="_left font-orange nudge-slider-left">$</div>
+    <rzslider
+      class="_left nudge-slider slider-orange"
+      rz-slider-model="model.$attributes.nudge_dollars"
+      rz-slider-options="nudge.options"></rzslider>
+    <div class="_left font-orange nudge-slider-right">$$$</div>
+  </div>
+
+</div>
+

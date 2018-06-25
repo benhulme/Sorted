@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("PasswordController",["$scope","siteConfig",function(o,n){o.siteConfig=n}])}();

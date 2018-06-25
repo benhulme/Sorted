@@ -1,0 +1,26 @@
+---
+# tasks file for app-cfg
+
+# PHP5-FPM config
+## Replace php.ini
+#- name: Replace php.ini file
+#  template: src=php.ini.j2 dest=/etc/php5/fpm/php.ini backup=yes
+
+- name: NGINX config update
+  template: src=sorted.nginx.conf dest=/etc/nginx/sites-available/sorted.conf backup=yes
+- file: src=/etc/nginx/sites-available/sorted.conf dest=/etc/nginx/sites-enabled/sorted.conf state=link
+
+#NFS config
+- name: Create dir
+  file: path=/srv/www state=directory
+
+- apt: name=nfs-common update_cache=yes cache_valid_time=3600
+- name: Update fstab
+  blockinfile:
+    dest: /etc/fstab
+    backup: yes
+    block: |
+      172.17.14.145:/var/www  /srv/www  nfs auto,noatime,nolock,bg,nfsvers=4,intr,tcp,actimeo=1800  0 0
+
+
+

@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("orderPostersItem",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/pages/order/order-posters-item/orderPostersItem.html",restrict:"E",link:function(){}}}])}();

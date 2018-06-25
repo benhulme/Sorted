@@ -1,0 +1,1 @@
+!function(){"use strict";function e(e){return e()}e.$inject=["budgetTemplateResolver"],angular.module("budgetingTool").config(["$routeProvider","siteConfig",function(t,o){t.when("/tools/budgeting-tool/budget-template",{templateUrl:o.APP_PATH+"app/pages/tools/budgeting-tool/views/budget-template/budgetTemplate.html",controller:"BudgetTemplateCtrl",resolve:{viewModel:e}})}])}();

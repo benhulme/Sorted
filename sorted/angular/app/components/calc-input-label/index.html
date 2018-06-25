@@ -1,0 +1,14 @@
+
+<label class="font-sm"  tabindex="-100">
+  {{getLabel()}}
+  <popover ng-show="field.tooltip">
+    <button
+      class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+          data-toggle="popover"  data-trigger="focus"
+      data-placement="top"
+      data-html="true"
+      data-content="{{field.tooltip}}" tabindex="-100">
+    </button>
+  </popover>
+</label>
+

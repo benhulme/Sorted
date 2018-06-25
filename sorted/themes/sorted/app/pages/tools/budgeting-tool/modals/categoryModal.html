@@ -1,0 +1,74 @@
+<div class="budget-category-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="cancelCategory()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Edit Category</h4>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="_relative text-center center-block budget-category-modal-image">
+        <label for="category-image-file-input">
+          <div class="budget-category-image-upload-container center-block">
+            <img class="budget-modal-category-image" 
+              ng-if="category.Icon.Filename || category.newCategoryImagePreview"
+              ng-src="{{category.newCategoryImagePreview || getIconPath(category.Icon)}}">
+            <img class="budget-category-image-upload" 
+              ng-if="profile.ID" 
+              ng-src="{{siteConfig.APP_PATH}}assets/images/tools/budgeting-tool/upload.svg">
+          </div>
+          <div class="category-image-edit-link">
+            <span ng-if="profile.ID" class="ui-link font-orange font-small">EDIT PHOTO <i class="fa fa-chevron-right fa-xs"></i></span>
+            <span ng-if="!profile.ID" class="font-small">Register for a free account to upload your own image.</span>
+          </div>
+        </label>
+        <input type="file" id="category-image-file-input" 
+          ng-if="profile.ID"
+          image-file-model="category.newCategoryImage"
+          image-preview-model="category.newCategoryImagePreview">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 category-name-group text-right">
+        <input type="text" class="budget-title form-control" 
+          ng-model="category.Title" 
+          ng-keyup="$event.keyCode == 13 && saveCategory()"
+          placeholder="{{placeholder}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group category-amount-group">
+        <div class="col-md-4 col-md-offset-2">
+          <budget-input-amount placeholder="Budgeted amount" 
+            amount="category.Cents" 
+            per-year="initialPeriod.PerYear"
+            ng-keyup="$event.keyCode == 13 && saveCategory()"></budget-input-amount>
+        </div>
+        <div class="col-md-4">
+          <category-period-dropdown model="initialPeriod"></category-period-dropdown>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 income-stream-trash-container">
+          <span class="fa-stack income-stream-trash" ng-click="removeCategory()">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+          </span>
+          <label for="income-stream-trash font-medium">
+            <span class="income-stream-trash-label" ng-click="removeCategory()">Delete Category</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-sm-6 modal-cancel-link">
+        <a class="font-orange font-medium" href="javascript:void(0)" ng-click="cancelCategory()">CANCEL</a>
+      </div>
+      <div class="col-sm-6 modal-ok-button">
+        <button class="btn btn-primary btn-xs-fullwidth" type="button" ng-click="saveCategory()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

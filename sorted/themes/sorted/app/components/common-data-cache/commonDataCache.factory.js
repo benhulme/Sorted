@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").factory("commonDataCache",[function(){function n(n,t){o[n]=t}function t(n){return o.hasOwnProperty(n)?o[n]:null}function r(){o={}}var o={};return{set:n,get:t,clear:r}}])}();

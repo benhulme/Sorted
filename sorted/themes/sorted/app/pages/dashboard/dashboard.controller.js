@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("DashboardController",["$scope","siteConfig","silverStripeService","userStorage",function(e,r,o,t){e.siteConfig=r,e.user=t.data}])}();

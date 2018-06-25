@@ -1,0 +1,23 @@
+<form name="budgetAmountForm">
+  <div class="form-group">
+    <label for="budget-total">Amount to budget (income)</label>
+    <div class="row">
+      <div class="col-sm-8">
+        <budget-input-amount 
+          amount="budget.Cents"
+          per-year="initialPeriod.PerYear"
+          placeholder="Amount"></budget-input-amount>
+      </div>
+
+      <div class="col-sm-4 budget-period">
+        <budget-period-dropdown
+          model="budget.Period"></budget-period-dropdown>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="budget-next col-sm-6 col-sm-offset-3">
+      <button class="btn btn-primary form-control" type="submit" ng-click="next()">Next</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,103 @@
+<div>
+
+  <div class="calc-form-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-black">Result</span>
+
+    <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+
+    <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-sm hidden-xs" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+  <div class="calc-output-container">
+
+    <h4 class="font-medium _align-center quiz-output-heading" ng-show="!quizResult">Take the quiz to find out your money personality type.</h4>
+    <h4 class="font-medium _align-center quiz-output-heading" ng-show="quizResult">Your money personality is: <span class="font-book font-h3">{{quizResultTitle}}</span></h4>
+
+    <div class="quiz-output-form bg-grey-lightest">
+
+      <div class="row">
+        <div class="col-lg-6 _align-right-md-above _align-center-xs-max">
+          <label class="quiz-output-form-label">Select a money personality type</label>
+        </div>
+        <div class="col-lg-6">
+          <cm-select cm-placeholder="{{dropdown.placeholder}}"
+                     cm-options="dropdown.options"
+                     ng-model="dropdown.value"
+                     class="_inline-block _full-width"></cm-select>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="quiz-output-default" ng-show="!currentResult">
+      <img ng-src="{{siteConfig.APP_PATH}}/assets/images/quiz-personality-default.jpg" />
+    </div>
+
+    <div class="quiz-output-result" ng-show="currentResult">
+      <div class="row">
+
+        <div class="col-sm-5">
+          <div class="personality-output-image">
+            <img ng-src="{{currentResult.ThumbnailImage.Filename}}" />
+          </div>
+        </div>
+
+        <div class="col-sm-7">
+          <h3 class="font-book personality-output-title">{{currentResult.Title}}</h3>
+          <p class="personality-output-copy">{{currentResult.ShortCopy}}</p>
+        </div>
+      </div>
+
+      <div class="personality-output-accordion" accordion
+           ng-if="currentResult.Heading1 && currentResult.Heading2 && currentResult.Heading3">
+
+        <div class="accordion-item selected bg-aqua-lightest">
+
+          <div class="accordion-heading font-medium" data-unique="section1" vert-middle="accordion-heading-text">
+            <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+            <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+            <span class="accordion-heading-text accordion-heading1 _left _inline-block font-lg">{{currentResult.Heading1}}</span>
+          </div>
+
+          <div class="accordion-content" data-unique="section1" ng-bind-html="currentResult.Copy1"></div>
+
+        </div>
+
+        <div class="accordion-item bg-aqua-lightest">
+
+          <div class="accordion-heading font-medium" data-unique="section2" vert-middle="accordion-heading-text">
+            <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+            <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+            <span class="accordion-heading-text accordion-heading2 _left _inline-block font-lg">{{currentResult.Heading2}}</span>
+          </div>
+
+          <div class="accordion-content _hidden" data-unique="section2" ng-bind-html="currentResult.Copy2"></div>
+
+        </div>
+
+        <div class="accordion-item bg-aqua-lightest">
+
+          <div class="accordion-heading font-medium" data-unique="section3" vert-middle="accordion-heading-text">
+            <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+            <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+            <span class="accordion-heading-text accordion-heading3 _left _inline-block font-lg">{{currentResult.Heading3}}</span>
+          </div>
+
+          <div class="accordion-content _hidden" data-unique="section3" ng-bind-html="currentResult.Copy3"></div>
+
+        </div>
+
+      </div>
+
+      <div class="personality-output-content" ng-bind-html="currentResult.Content">
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

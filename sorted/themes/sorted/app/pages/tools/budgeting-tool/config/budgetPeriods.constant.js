@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").constant("budgetPeriods",[{Shortname:"monthly",Title:"Per month",PerYear:12},{Shortname:"fortnightly",Title:"Per fortnight",PerYear:26},{Shortname:"weekly",Title:"Per week",PerYear:52}])}();

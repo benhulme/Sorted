@@ -1,0 +1,34 @@
+<div class="calc-select">
+
+  <label class="font-sm" ng-if="field.label && label !== false">
+    {{field.label}}
+    <popover ng-show="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-html="true"
+        data-placement="top"
+        data-content="{{field.tooltip}}">
+      </button>
+    </popover>
+  </label>
+
+  <div class="input-group-select">
+
+    <cm-select cm-placeholder="{{field.placeholder}}"
+               ng-if="field.placeholder"
+               cm-options="field.options"
+               ng-model="model.$attributes[field.calcModel]"
+               class="_inline-block _full-width"></cm-select>
+
+    <select name="{{field.calcModel}}"
+            ng-if="!field.placeholder"
+            ng-model="model.$attributes[field.calcModel]"
+            data-related="{{field.related}}">
+      <option ng-repeat="(itemKey, item) in field.options"
+              value="{{item.value}}"
+              ng-selected="model.$attributes[field.calcModel] === item.value">{{item.text || item.label}}</option>
+    </select>
+
+  </div>
+</div>

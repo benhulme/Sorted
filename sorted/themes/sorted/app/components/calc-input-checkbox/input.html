@@ -1,0 +1,18 @@
+<div class="_clear">
+  <input type="checkbox"
+         ng-model="model.$attributes[field.calcModel]"
+         ng-true-value="1"
+         ng-false-value="0"
+         class="_inline-block _left form-inline-checkbox-left"></input>
+  <label class="font-sm calc-input-inline-label _left">
+    {{field.label}}
+    <popover ng-if="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip}}">
+      </button>
+    </popover>
+  </label>
+</div>

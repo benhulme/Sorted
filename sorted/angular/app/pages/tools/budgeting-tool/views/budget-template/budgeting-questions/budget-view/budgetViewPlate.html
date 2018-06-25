@@ -1,0 +1,20 @@
+
+<div class="budget-template-question text-center">
+  <div class="row text-center budget-question">
+    <h5>6. Which type of view do you prefer?</h5>
+  </div>
+  <div class="row preset-container text-center">
+    <div class="preview-style-container" ng-repeat="(key, viewTemplate) in viewTemplates">
+      <div class="preset-icon preview-style col-xs-6"  ng-class="{'preset-selected': isViewSelected(key)}">
+        <figure class="figure" ng-click="setView(key)" >
+          <div class="preset-image-container center-block">
+            <img class="preset-image figure-img preview-style"
+                 ng-src="{{getTemplateIconPath(viewTemplate.plateIcon)}}">
+          </div>
+          <figcaption class="preset-caption figure-caption">{{viewTemplate.plateTitle}}</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</div>

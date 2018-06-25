@@ -1,0 +1,59 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+
+<div class="layout-container kiwisaver-fees-container _no-padding-sm-below">
+  <div class="layout-content _no-padding-sm-below">
+    <div class="row layout-row  _no-margin-sm-below">
+      <div class="col-md-4 _no-padding-sm-below">
+
+
+
+        <calc-input-kiwisaver-fees
+          model="model"
+          calculator="calculator"></calc-input-kiwisaver-fees>
+
+      </div>
+      <div class="col-md-8 _relative _no-padding-sm-below">
+
+        <calc-output-kiwisaver-fees
+          model="model"></calc-output-kiwisaver-fees>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <calc-input-iar-select
+              field="calculator.fields.inflation"
+              model="model"></calc-input-iar-select>
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="kiwisaver-fees-print-bottom calc-results-print-bottom _inline-block _right">
+              <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+              <a href="/#/tools/kiwisaver-fees-calculator" class="font-xs font-orange font-medium _right calc-output-print hidden-sm hidden-xs hidden-md" cm-print>PRINT
+                <span class="fa fa-chevron-right font-xs"></span></a>
+            </div>
+
+          </div>
+        </div>
+
+        <cm-spinner></cm-spinner>
+
+        <div class="calc-overlay" ng-class="{disabled: model.isValid() && !model.calculating && model.hasResult()}"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<related-content data="data" title="More from Sorted"></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>
+
+

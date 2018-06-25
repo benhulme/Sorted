@@ -1,0 +1,113 @@
+logged-in {
+  p {
+    text-align: center;
+  }
+}
+
+
+#signed-view{
+  padding: 8px 0;
+  line-height: 35px;
+
+  @media(max-width: 1025px){
+    padding: 3px 0;
+
+  }
+
+  .dropdown{
+    position: relative;
+    &:before{
+      content: '';
+      background: url("../../assets/images/arrow.png") no-repeat center;
+      position: absolute;
+      top: 2px;
+      left: -15px;
+      width: 15px;
+      height: 35px;
+      @include transition(all .3s);
+      @include transform(rotate(-90deg));
+    }
+    &.open{
+      &:before{
+        @include transform(rotate(90deg));
+
+      }
+    }
+  }
+
+  .member-dropdown{
+    line-height: 35px;
+    background: none;
+    border: none;
+
+
+
+    &:focus{
+      outline: none;
+    }
+    .member-greet{
+      text-transform: uppercase;
+      font-size: $font-xs;
+      padding-right: 15px;
+      display: inline-block;
+      float: left;
+      @media(max-width: 1025px){
+        display: none;
+
+      }
+
+    }
+    .member-circle{
+      text-transform: uppercase;
+      float: left;
+      display: inline-block;
+      color: white;
+      border-radius: 50%;
+      background: #ff550f;
+      width:35px;
+      height:35px;
+      overflow: hidden;
+      text-align: center;
+      line-height: 35px;
+      background-size: cover;
+      background-position: center;
+      &.bordered{
+        border: 1px solid $grey-light;
+      }
+      img{
+        width:100%;
+      }
+    }
+
+
+
+
+
+
+
+  }
+  .dropdown-menu{
+    top: 110%;
+    width:auto;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    &:before{
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid white;
+      margin-top: -15px;
+      float: right;
+      margin-right: 10px;
+    }
+    a{
+      @extend .link-black-orange;
+      &:hover{
+        background: none;
+      }
+    }
+  }
+}

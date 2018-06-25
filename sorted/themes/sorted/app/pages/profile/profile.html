@@ -1,0 +1,111 @@
+<users-header></users-header>
+<navigation></navigation>
+<div class="layout-container">
+  <users-avatar></users-avatar>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center font-light">{{user.FirstName}}’s Profile</h2>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <form name="userForm" ng-submit="profileFormSubmit()" novalidate>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group required" ng-class="{ 'has-error' : userForm.FirstName.$invalid && userForm.$submitted}">
+                <label for="">First name</label>
+                <input name="FirstName" ng-model="user.FirstName" type="text" maxlength="25" required>
+
+                <div ng-show="userForm.$submitted || userForm.FirstName.$touched" class="error-helper">
+                  <div ng-show="userForm.FirstName.$error.required" >This field is required.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group required" ng-class="{ 'has-error' : userForm.LastName.$invalid && userForm.$submitted}">
+                <label for="">Last name</label>
+                <input type="text" name="LastName" ng-model="user.Surname" required>
+                <div ng-show="userForm.$submitted || userForm.LastName.$touched" class="error-helper">
+                  <div ng-show="userForm.LastName.$error.required">This field is required.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Mobile phone</label>
+                <input type="tel" maxlength="15"  ng-model="user.MobilePhone">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="col-md-6 left">
+                <div class="form-group required" ng-class="{ 'has-error' : userForm.dataMonth.$invalid && userForm.$submitted}">
+                  <label for="">Date of birth</label>
+                    <select  name="dataMonth" ng-model="user.dataMonth" required>
+                      <option value="" disabled selected hidden>Month</option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="03">March</option>
+                      <option value="04">April</option>
+                      <option value="05">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  <div ng-show="userForm.$submitted || userForm.dataMonth.$touched" class="error-helper">
+                    <div ng-show="userForm.dataMonth.$error.required">This field is required.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 right">
+                <div class="form-group required" ng-class="{ 'has-error' : userForm.dataYear.$invalid && userForm.$submitted}">
+                  <label for="">&nbsp;</label>
+                  <input type="number" max="{{ThisYear}}" min="1900"   name="dataYear" ng-model="user.dataYear" required>
+                  <div ng-show="userForm.$submitted || userForm.dataYear.$touched" class="error-helper">
+                    <div ng-show="userForm.dataYear.$error.required">This field is required.</div>
+                    <div ng-show="userForm.dataYear.$error.max">Are you from future? </div>
+                    <div ng-show="userForm.dataYear.$error.min">Are you immortal? </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group ">
+                <a href="/Security/changepassword">Change password</a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group required" ng-class="{ 'has-error' : userForm.Email.$invalid && userForm.$submitted}">
+                <label for="">Email address</label>
+                <input type="email" name="Email"  ng-model="user.Email" email-valid required>
+                <div ng-show="userForm.$submitted || userForm.Email.$touched" class="error-helper">
+                  <div ng-show="userForm.Email.$error.required">This field is required.</div>
+                  <div ng-show="userForm.Email.$error.inUse">This email is already in use</div>
+                  <div ng-show="userForm.Email.$error.email">This is not a valid email</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <p class="save-reply-message" ng-show="sent"><span class="fa fa-check"></span> Your changes have been saved</p>
+            <input  ng-hide="sent" type="submit" value="Save my profile">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+<email-signup></email-signup>
+<footer></footer>

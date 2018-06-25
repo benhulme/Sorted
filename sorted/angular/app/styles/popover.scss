@@ -1,0 +1,62 @@
+.popover {
+	font-size: 18px !important;
+	font-family: "Gotham SSm A", "Gotham SSm B" !important;
+	border: 1px solid #ff550f;
+	background: #ffeee7;
+	border-radius: 0;
+	max-width: 450px !important;
+	padding: 25px;
+  line-height: 1.5;
+
+	.popover-title {
+		padding: 0;
+		font-size: 18px !important;
+		background: none;
+		border-bottom: 0px;
+		font-weight: bolder;
+		margin-bottom: 5px;
+
+		span {
+			margin: -20px -15px;
+			float: right !important;
+			cursor: pointer;
+		}
+	}
+
+	.popover-content {
+		padding: 0;
+    text-transform: none;
+    font-weight: 300;
+
+		a {
+			line-height: 14px;
+			margin-top: 20px;
+			display: block;
+      &.popover-link-float{
+        display: inline;
+      }
+		}
+
+	}
+
+	.arrow {
+	display:none !important;
+		border-top-color: #ff550f !important;
+
+		&:after {
+			border-top-color: #ffeee7 !important;
+		}
+
+	}
+
+}
+
+.popover-inline-links .popover .popover-content a {
+	margin: 0;
+	display: inline-block;
+}
+
+
+.fa-question-circle{
+  padding-right: 0;
+}

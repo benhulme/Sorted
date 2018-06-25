@@ -1,0 +1,175 @@
+
+
+<div  ng-repeat="plate in data | orderBy: 'CalcID' " class="col-md-4 col-sm-6 tool-{{plate.ID}}">
+
+    <div class="tool-plate used row " id="{{plate.CalcID}}"  ng-class="usedPlatesCustom[plate.CalcID].color">
+      <div class="top-part" style="background-image:url({{usedPlatesCustom[plate.CalcID].backgroundImage}})">
+        <button  class="delete pull-right"  data-toggle="modal" data-target=".modal-{{plate.ID}}"><i class="fa fa-trash"></i></button>
+        <div class="icon-container" style="background-image:url({{usedPlatesCustom[plate.CalcID].iconImage}})"></div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h4 class="text-center plate-title">{{plate.Title}}</h4>
+          </div>
+        </div>
+
+      </div>
+      <div class="bottom-part">
+        <div class="plate-content">
+          <div class="col-md-12 plate-content-text">
+
+
+            <div ng-if="plate.Imported === '1'"><p class="text-center font-medium">This calculator has been migrated from the old Sorted. Save it again to see data on your dashboard</p></div>
+
+            <div ng-if="plate.CalcID==='1' && plate.Imported === '0'">
+              <table>
+                <tr>
+                  <td class="font-medium">Desired retirement lifestyle</td>
+                  <td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Weekly&nbsp;surplus/shortfall</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":0}}</td>
+                </tr>
+
+              </table>
+
+            </div>
+            <div ng-if="plate.CalcID==='2' && plate.Imported === '0'">
+              <!--<table>-->
+                <!--<tr>-->
+                  <!--<td class="font-medium">Weekly budget-->
+                    <!--</td>-->
+                  <!--<td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>-->
+                <!--</tr>-->
+              <!--</table>-->
+
+              <p class="text-center">My saved budget</p>
+
+            </div>
+            <div ng-if="plate.CalcID==='3' && plate.Imported === '0'">
+              <table>
+                <tr>
+                  <td class="font-medium">Total debt</td>
+                  <td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total interest</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total you will pay</td>
+                  <td class="text-right">{{plate.Summary3 | currency:"$":0}}</td>
+                </tr>
+              </table>
+
+            </div>
+            <div ng-if="plate.CalcID==='4' && plate.Imported === '0'">
+              <table>
+                <tr>
+                  <td class="font-medium">Total repayments</td>
+                  <td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total borrowed</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total you will pay</td>
+                  <td class="text-right">{{plate.Summary3 | currency:"$":0}}</td>
+                </tr>
+              </table>
+
+            </div>
+            <div ng-if="plate.CalcID==='5' && plate.Imported === '0'">
+
+              <table>
+                <tr>
+                  <td class="font-medium">Total net worth</td>
+                  <td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total assets</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Total liabilities</td>
+                  <td class="text-right">{{plate.Summary3 | currency:"$":0}}</td>
+                </tr>
+              </table>
+            </div>
+            <div ng-if="plate.CalcID==='6' && plate.Imported === '0'">
+              <p class="text-center">Visit the tool to view your saved search.</p>
+
+            </div>
+            <div ng-if="plate.CalcID==='7' && plate.Imported === '0'">
+
+              <table>
+                <tr>
+                  <td class="font-medium">KiwiSaver savings at age 65</td>
+                  <td class="text-right font-h3">{{plate.Summary1 | currency:"$":0}}</td>
+                </tr>
+                <tr>
+                  <td>Amount per week</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":0}}</td>
+                </tr>
+
+              </table>
+
+            </div>
+            <div ng-if="plate.CalcID==='8' && plate.Imported === '0'">
+              <table>
+                <tr>
+                  <td class="font-medium">Total savings</td>
+                  <td class="text-right font-h5">{{plate.Summary1 | currency:"$":2}}</td>
+                </tr>
+                <tr>
+                  <td>Total interest earned</td>
+                  <td class="text-right">{{plate.Summary2 | currency:"$":2}}</td>
+                </tr>
+                <tr>
+                  <td>Savings amount</td>
+                  <td class="text-right">{{plate.Summary3}}</td>
+                </tr>
+              </table>
+
+            </div>
+            <div ng-if="plate.CalcID==='9' && plate.Imported === '0'">
+              <p class="text-center font-medium">Investor type</p>
+              <p class="font-h3 text-center font-medium">{{plate.Summary1}}</p>
+
+            </div>
+            <div ng-if="plate.CalcID==='10' && plate.Imported === '0'">
+              <p class="text-center font-medium">Personality type</p>
+              <p class="font-h3 text-center font-medium">{{plate.Summary1}}</p>
+
+            </div>
+            <div ng-if="plate.CalcID==='12' && plate.Imported === '0'">
+              <table>
+                <tr>
+                  <td>Short Term</td>
+                  <td class="text-right">{{plate.Summary1}}</td>
+                </tr>
+                <tr>
+                  <td>Medium Term</td>
+                  <td class="text-right">{{plate.Summary2}}</td>
+                </tr>
+                <tr>
+                  <td>Long Term</td>
+                  <td class="text-right">{{plate.Summary3}}</td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+          <div class="row text-center">
+
+
+            <a ng-show="hideUndone(plate.CalcID)" ng-href="{{plate.Link}}" class="btn disabled btn-primary dashboard-button">coming soon</a>
+
+            <a ng-hide="hideUndone(plate.CalcID)" ng-href="{{plate.Link}}" class="btn btn-primary dashboard-button" analytics-on="click" analytics-event="savedcalccta" analytics-category="dashboard" analytics-label="{{plate.CalcID}}" analytics-interaction-type="0">view tool</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <modal-window></modal-window>
+  </div>

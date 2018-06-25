@@ -1,0 +1,39 @@
+---
+# tasks file for zabbix_agent
+#- name: Get real IP
+#  shell: wget -qO- http://ipecho.net/plain ; echo
+#  register: real_ip
+
+- name: Mysql server checker
+  shell: service mysql
+  register: mysql_check
+  ignore_errors: True
+
+- name: Add repo 1
+  apt_repository: repo='deb http://repo.zabbix.com/zabbix/2.4/ubuntu trusty main' state=present 
+- name: Add repo 2
+  apt_repository: repo='deb-src http://repo.zabbix.com/zabbix/2.4/ubuntu trusty main' state=present
+
+- name: Add repo key
+#  apt_key: keyserver=keyserver.ubuntu.com id=D13D58E479EA5ED4
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0xD13D58E479EA5ED4 state=present
+- name: Install zabbix agent
+  apt: name=zabbix-agent update_cache=yes
+- name: Install config file
+  template: src=zabbix_agentd.conf.j2 dest=/etc/zabbix/zabbix_agentd.conf owner=root group=root backup=yes
+
+#- name: Install python-mysqldb (for next step)
+#  apt: name=python-mysqldb update_cache=yes
+#  when: mysql_check.stdout.find('unrecognized') != -1
+#
+#- name: Add zabbix mysql user
+#  mysql_user: login_user=root login_password=Yohmear5 name=zabbix password=Aesh7ohh state=present
+#  when: mysql_check.stdout.find('unrecognized') != -1
+#- name: Create directory for zabbix mysql user config file
+#  file: path=/var/lib/zabbix state=directory mode=0755 owner=zabbix group=zabbix
+#  when: mysql_check.stdout.find('unrecognized') != -1
+#- name: Install config file with zabbix mysql user
+#  template: src=.my.cnf dest=/var/lib/zabbix/.my.cnf owner=zabbix group=zabbix mode=440
+#  when: mysql_check.stdout.find('unrecognized') != -1
+- name: Restart daemon
+  service: name=zabbix-agent state=restarted

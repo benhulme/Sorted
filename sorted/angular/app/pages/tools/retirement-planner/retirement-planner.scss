@@ -1,0 +1,56 @@
+.retirement-container {
+  .calc-form-heading {
+    background-color: $yellow-dark;
+    margin-bottom: 2px;
+    color: $black;
+  }
+  .calc-heading {
+    background-color: $yellow-light;
+    color: $black;
+  }
+
+  .calc-input-container {
+    background-color: $yellow-lightest;
+  }
+
+  .calc-input-btn-group .btn.selected {
+    background-color: $yellow;
+    color: $black;
+  }
+  .ui-add {
+    background-color: $yellow;
+  }
+}
+
+.calc-add-partners {
+  .calc-add-minus {
+    display: none;
+    width: 16px;
+  }
+  .calc-add-plus {
+    display: inline-block;
+    width: 16px;
+  }
+  &.open {
+    .calc-add-minus {
+      display: inline-block;
+    }
+    .calc-add-plus {
+      display: none;
+    }
+  }
+}
+
+.retirement-inflation {
+  margin-top: 40px;
+}
+
+.retirement-print-bottom {
+  margin-top: 40px;
+  @media(max-width: $screen-sm-max){
+    width:100%;
+    .btn{
+      width:100%;
+    }
+  }
+}

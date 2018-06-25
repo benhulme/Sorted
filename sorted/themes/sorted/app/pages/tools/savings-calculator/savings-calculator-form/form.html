@@ -1,0 +1,196 @@
+<!-- Form Heading -->
+<div class="calc-heading savings-calculator-heading">
+  <span class="calc-title-text _left _inline-block font-sm bold">{{calculator.title}}</span>
+</div>
+
+<div class="calc-input-container-savings">
+  <div class="calc-input-form savings-calc-form">
+
+    <div class="_clear visible-xs visible-sm" calc-link>
+      <a href="/#/tools/savings-calculator" class="ui-results-link _inline-block font-orange _right">
+        <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+        <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+      </a>
+    </div>
+
+    <!-- Saving approach selector -->
+    <form name="control">
+      <div class="form-group">
+        <!--<calc-input-button-select
+          field="calculator.controls[0]" model="models.at("></calc-input-button-select>-->
+
+        <!-- Manually build button select -->
+
+        <div class="calc-input-button-select savings-calc-type-selector">
+
+          <label class="font-sm" tabindex="-100" ng-if="calculator.controls[0].label && calculator.controls[0].label !== false">
+            {{calculator.controls[0].label}}
+            <popover ng-show="calculator.controls[0].tooltip">
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{calculator.controls[0].tooltip}}" tabindex="-100">
+              </button>
+            </popover>
+          </label>
+
+          <!-- btn-group-justified  -->
+          <div class="btn-group btn-container btn-group-full-width"
+               role="group"
+               aria-label="">
+
+            <div class="btn-group calc-input-btn-group {{calculator.controls[0].class}} savings-calc-controls"
+                 role="group"
+                 ng-repeat="(btnKey, button) in calculator.controls[0].buttons">
+
+              <!-- Regular Amt -->
+              <button type="button" class="btn btn-default btn-boolean input-select-button {{button.class}}"
+                      data-value="{{button.value}}"
+                      data-related="{{button.related}}"
+                      data-toggle="{{button.toggle}}"
+                      data-result="{{button.toggleOutput}}"
+                      ng-class="{selected: button.value === selectedButton}">{{button.text}}</button>
+
+            </div>
+          </div>
+
+          <a ng-if="calculator.controls[0].link" ng-href="{{calculator.controls[0].link.url}}" class="font-xx">{{calculator.controls[0].link.text}}</a>
+        </div>
+
+
+      </div>
+    </form>
+
+
+    <!-- Loop over the models, build button select control and create a form for each -->
+
+
+    <div ng-repeat="(modelKey, model) in calculator.models"
+         class="calc-input-container savings-type-select"
+         ng-class="{_hidden: model.id == 1}"
+         id="{{model.name}}">
+
+      <form name="{{model.name}}">
+
+        <fieldset class="calc-input-container">
+
+          <!-- Savings Goal -->
+          <div class="form-group" ng-show="model.id == 1">
+
+            <!-- savings goal amount -->
+            <calc-input-money
+              field="model.fields[0]"
+              model="models.get(model.id)"
+              validation="getValidation(model.id, model.fields[0].id)"
+              form="model.name"></calc-input-money>
+          </div>
+
+          <div class="form-group" ng-show="model.id == 1">
+            <!-- start savings goal -->
+            <calc-input-select-date
+              field="model.fields[1]"
+              model="models.get(model.id)"></calc-input-select-date>
+
+          </div>
+
+          <div class="form-group" ng-show="model.id == 1">
+            <!-- end savings goal -->
+            <calc-input-select-date
+              field="model.fields[2]"
+              model="models.get(model.id)"></calc-input-select-date>
+          </div>
+
+
+          <!-- Regular Amount -->
+          <div class="form-group" ng-show="model.id == 0">
+            <!-- regular amount planned -->
+            <calc-input-money
+              field="model.fields[3]"
+              model="models.get(model.id)"
+              validation="getValidation(model.id, model.fields[0].id)"
+              form="model.name"></calc-input-money>
+
+          </div>
+
+          <div class="form-group" ng-show="model.id == 0">
+            <!-- regular amount planned -->
+
+            <calc-select
+              field="model.fields[4]"
+              model="models.get(model.id)"></calc-select>
+
+          </div>
+
+          <div class="form-group" ng-show="model.id == 0">
+            <!-- regular amount duration amount -->
+            <calc-input-number
+              field="model.fields[5]"
+              model="models.get(model.id)"></calc-input-number>
+          </div>
+
+          <div class="form-group" ng-show="model.id == 0">
+
+            <!-- regular amount duration type -->
+            <calc-input-button-select
+              field="model.fields[6]"
+              model="models.get(model.id)"></calc-input-button-select>
+          </div>
+
+          <div class="form-group">
+            <!-- interest rate -->
+            <calc-input-interest-rate
+              field="model.fields[7]"
+              model="models.get(model.id)"></calc-input-interest-rate>
+          </div>
+
+          <div class="form-group">
+            <!-- amount already saved -->
+            <calc-input-money
+              field="model.fields[8]"
+              model="models.get(model.id)"></calc-input-money>
+          </div>
+
+          <!--<div class="form-group">
+            &lt;!&ndash; inflation adjust results &ndash;&gt;
+            <calc-input-button-select
+              field="model.fields[10]"
+              model="model"></calc-input-button-select>
+          </div>-->
+
+          <!-- age month -->
+          <input type="hidden"
+                 id="{{_.find(model.fields, {calcModel: 'age_month'}).id}}"
+                 ng-model="models.get(model.id).$attributes.age_month">
+
+          <!-- age year -->
+          <input type="hidden"
+                 id="{{_.find(model.fields, {calcModel: 'age_year'}).id}}"
+                 ng-model="models.get(model.id).$attributes.age_year">
+
+          <!-- nudge dollar amount -->
+          <input type="hidden"
+                 id="{{_.find(model.fields, {calcModel: 'nudge_dollars'}).id}}"
+                 ng-model="models.get(model.id).$attributes.nudge_dollars">
+
+          <input type="hidden"
+                 id="{{model.type}}"
+                 ng-model="models.get(model.id).$attributes.type">
+
+          <div class="_clear visible-xs visible-sm" calc-link>
+            <a href="/#/tools/savings-calculator" class="ui-results-link _inline-block font-orange _right">
+              <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+              <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+            </a>
+          </div>
+
+        </fieldset>
+      </form>
+
+
+    </div>
+
+  </div>
+</div>
+
+

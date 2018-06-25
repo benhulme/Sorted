@@ -1,0 +1,1 @@
+"use strict";angular.module("sorted").factory("calcPreviewModel",function(){var e={salary:null,expense:null},r=function(e){return JSON.parse(JSON.stringify(e))},n={fields:r(e),reset:function(){n.fields=r(e)},prepare:function(e){var r={};return angular.forEach(e,function(e,n){var a=e.replace("$","").replace(",","");r[n]=parseFloat(a).toFixed(2)}),r}};return n});

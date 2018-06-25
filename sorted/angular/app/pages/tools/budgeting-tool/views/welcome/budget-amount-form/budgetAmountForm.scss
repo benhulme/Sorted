@@ -1,0 +1,72 @@
+.budget-amount-form-container {
+  form {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding: 20px;
+
+    .dropdown {
+      margin: 10px 0;
+    }
+
+    input[type=number].ng-invalid {
+      margin-bottom: 5px !important;
+    }
+
+    input[type=number].ng-empty.ng-invalid {
+      border-color: #ccc !important;
+    }
+
+    input.budget-amount {
+      margin-bottom: 20px !important;
+      border-radius: 4px !important;
+    }
+
+    label {
+      padding-left: 10px;
+    }
+
+    budget-period-dropdown {
+      .dropdown {
+        .dropdown-toggle {
+          padding: 0 20px;
+          border: 1px #ccc solid;
+          background-color: white;
+          text-align: left;
+          background-position: right 20px center;
+          span{
+            display: inline;
+            float: left;
+            @media (max-width: $screen-md-max) {
+              max-width: 65%;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              display: inline-block;
+              overflow: hidden;
+            }
+          }
+          i{
+            float: right;
+          }
+        }
+
+        .dropdown-menu{
+          li{
+            .dropdown-link{
+              text-align: left;
+              padding-left: 20px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  @media(min-width: $screen-sm-min) {
+    .budget-amount {
+      margin-bottom: 0;
+    }
+  }
+
+}
+

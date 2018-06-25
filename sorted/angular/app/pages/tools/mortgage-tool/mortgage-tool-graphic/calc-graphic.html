@@ -1,0 +1,47 @@
+<div class="graphic-container _relative">
+  <div class="graphic-house-dark _absolute _block">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-house-dark.svg" class="_full-width graphic-house-dark-img" />
+    <div class="graphic-interest _absolute _full-width _align-center font-white" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Interest</div>
+      <div class="graphic-value font-book">{{currentModel.result.$attributes.interest | currency:"$":0}}</div>
+    </div>
+  </div>
+  <div class="graphic-house-light _absolute">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-house-light.svg" class="_full-width graphic-house-light-img" />
+    <div class="graphic-principal _absolute _full-width _align-center font-purple" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Principal</div>
+      <div class="graphic-value font-book">{{currentModel.$attributes.loan1 | currency:"$":0}}</div>
+    </div>
+  </div>
+  <div class="graphic-sign _absolute">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-sign.svg" class="_full-width" />
+    <div class="graphic-total _absolute _full-width _align-center font-white" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Total you'll pay</div>
+      <div class="graphic-value font-book">{{currentModel.result.$attributes.total | currency:"$":0}}</div>
+    </div>
+  </div>
+  <div class="graphic-tree graphic-tree-small _absolute" ng-show="years <= 10">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-tree-small.svg" class="_full-width" />
+    <div class="graphic-years _absolute _full-width _align-center font-white" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Mortgage Term</div>
+      <div class="graphic-value font-book">{{years | number : 0}} years</div>
+    </div>
+  </div>
+  <div class="graphic-tree graphic-tree-medium _absolute">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-tree-medium.svg" class="_full-width"  ng-show="years > 10 && years <= 20" />
+    <div class="graphic-years _absolute _full-width _align-center font-white" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Mortgage Term</div>
+      <div class="graphic-value font-book">{{years | number : 0}} years</div>
+    </div>
+  </div>
+  <div class="graphic-tree graphic-tree-large _absolute" ng-show="years > 20">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-tree-large.svg" class="_full-width" />
+    <div class="graphic-years _absolute _full-width _align-center font-white" ng-show="currentModel.hasResult()">
+      <div class="graphic-label">Mortgage term</div>
+      <div class="graphic-value font-book">{{years | number : 0}} years</div>
+    </div>
+  </div>
+  <div class="graphic-grass _absolute">
+    <img ng-src="{{siteConfig.APP_PATH}}/assets/images/results/mortgage-grass.svg" class="_full-width" />
+  </div>
+</div>

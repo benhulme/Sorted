@@ -1,0 +1,80 @@
+add-master-category {
+  .add-master-category {
+    border-top: 1px #d9dad5 solid;
+    padding: 0;
+
+    @media (min-width: $screen-md-min) {
+       padding: 20px 0 0;
+    }
+
+    .add-master-category-copy {
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+
+      .add-master-category-button {
+        width: 30px;
+        height: 30px;
+        margin-right:5px;
+      }
+
+      .add-master-category-title {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 10px 0;
+        padding-left: 15px;
+
+        @media (min-width: $screen-md-min) {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+
+  input {
+    boder-color: #75787b;
+  }
+
+  .modal-close-button {
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: 500;
+  }
+
+  .popover {
+    max-width: 100%;
+    width: 95%;
+    background-color: white;
+    border-color: #d9d9d6;
+    @media (min-width: $screen-sm-min) {
+      margin-left: 30px;
+    }
+
+    /* Unfortunately requires !important because uib-popover
+       makes heavy use of it */
+    div.arrow {
+      border-top-color: #d9d9d6 !important;
+      margin-left: 0px !important;
+    }
+    div.arrow:after {
+      border-top-color: #ffffff !important;
+    }
+  }
+
+
+  @media(min-width: $screen-md-min) {
+    .add-master-category {
+      .budget-print {
+        margin-top: 15px;
+      }
+    }
+  }
+}

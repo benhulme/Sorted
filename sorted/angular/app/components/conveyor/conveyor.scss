@@ -1,0 +1,108 @@
+$arrow-thickness: 3px;
+$arrow-height: 36px;
+$arrow-width: 36px;
+$arrow-color: $grey-medium-light;
+$arrow-angle: 45;
+
+.conveyor-left {
+  left: 2px;
+  position: absolute;
+  text-align: center;
+  height: $arrow-width;
+  width: $arrow-height;
+  background: transparent;
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.disabled {
+    display: none;
+  }
+  @include transform('rotate(-90deg)');
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: $arrow-thickness;
+    width: 51%;
+    background: $arrow-color;
+    @include transform('skew(0deg, -#{$arrow-angle}deg)');
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    height: $arrow-thickness;
+    width: 50%;
+    background: $arrow-color;
+    @include transform('skew(0deg, #{$arrow-angle}deg)');
+  }
+
+}
+
+.conveyor-right {
+  right: 2px;
+  position: absolute;
+  text-align: center;
+  height: $arrow-width;
+  width: $arrow-height;
+  background: transparent;
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.disabled {
+    display: none;
+  }
+
+  @include transform('rotate(90deg)');
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: $arrow-thickness;
+    width: 51%;
+    background: $arrow-color;
+    @include transform('skew(0deg, -#{$arrow-angle}deg)');
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    height: $arrow-thickness;
+    width: 50%;
+    background: $arrow-color;
+    @include transform('skew(0deg, #{$arrow-angle}deg)');
+  }
+
+}
+
+.conveyor-outer {
+  position: relative;
+
+}
+
+.conveyor-mask {
+  left: 35px;
+  overflow: hidden;
+  @include calc(width, '100% - 70px');
+  float: left;
+  position: absolute;
+}
+
+.conveyor-belt {
+  position: absolute;
+  width: 9999px;
+}

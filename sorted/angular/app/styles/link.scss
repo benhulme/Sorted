@@ -1,0 +1,13 @@
+.link-black-orange {
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $black;
+  }
+  &:hover {
+    color: $orange;
+  }
+  -webkit-tap-highlight-color: $orange;
+}
+

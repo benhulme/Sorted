@@ -1,0 +1,22 @@
+
+.kiwisaver-savings-result {
+
+  .calc-heading.kiwi-saver-savings-heading{
+    background-color: #ffd700;
+
+  }
+  .calc-output-row{
+    &:nth-last-of-type(0){
+      .calc-output-value{
+
+      }
+
+    }
+    &:nth-last-of-type(1){
+      .calc-output-value{
+        color: #ce0058;
+      }
+
+    }
+  }
+}

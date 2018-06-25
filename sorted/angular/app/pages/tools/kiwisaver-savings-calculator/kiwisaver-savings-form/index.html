@@ -1,0 +1,226 @@
+<!-- Form heading -->
+
+
+<div class="kiwi-saver-savings-heading calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-sm bold">{{calculator.title}}</span>
+</div>
+
+<form class="kiwisaver-savings-form" name="{{calculator.model}}">
+
+  <!-- Section heading | My Details -->
+  <div class="kiwisaver-savings-my-details kiwisaver-savings-section-container selected calc-input-group">
+
+    <div class="calc-heading calc-sub-heading kiwisaver-savings-section">
+      <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+      <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+      <span class="calc-title-text _left _inline-block font-sm">{{calculator.sections[0].title}}</span>
+    </div>
+
+    <!-- My Details inputs -->
+    <div class="calc-input-container">
+
+      <div class="calc-input-form">
+
+        <!-- DOB -->
+        <div class="calc-input-fieldset">
+
+          <calc-input-label field="calculator.fields[0]"></calc-input-label>
+
+          <div class="_clear">
+            <calc-select-months
+              id="calculator.fields[0].id"
+              class="calc-input-year font-md _left"
+              field="calculator.fields[0]"
+              model="model"></calc-select-months>
+
+            <calc-input-number
+              field="calculator.fields[1]"
+              class="calc-input-month _inline-block _left"
+              model="model"></calc-input-number>
+          </div>
+
+
+        </div>
+
+        <!-- Gender -->
+        <!-- <div class="calc-input-fieldset">
+
+          <calc-input-button-select
+            field="calculator.fields[2]"
+            model="model"></calc-input-button-select>
+
+        </div> -->
+
+        <!-- Lifetime -->
+        <div class="calc-input-fieldset">
+
+          <calc-input-years
+            field="calculator.fields[3]"
+            model="model"></calc-input-years>
+
+        </div>
+
+        <!-- Employment -->
+        <div class="calc-input-fieldset">
+
+          <calc-select
+            field="calculator.fields[4]"
+            model="model"
+            data-related="{{calculator.fields[4].related}}"></calc-select>
+
+        </div>
+
+        <!-- Earnings -->
+        <div class="calc-input-fieldset">
+
+          <calc-input-money
+            field="calculator.fields[5]"
+            model="model"></calc-input-money>
+
+        </div>
+
+      </div>
+
+      <div class="_clear visible-xs visible-sm calc-input-form" calc-link>
+        <a href="/#/tools/kiwisaver-savings-calculator" class="ui-results-link _inline-block font-orange _right">
+          <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+          <img class="ui-results-image"  src="/themes/sorted/assets/images/ui-down.svg"/>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Section heading | My Contributions -->
+  <div class="kiwisaver-savings-my-contributions kiwisaver-savings-section-container calc-input-group">
+
+    <div class="calc-heading cal-sub-heading kiwisaver-savings-section">
+      <span class="fa fa-chevron-up font-xs _inline-block _left font-orange"></span>
+      <span class="fa fa-chevron-down font-xs _inline-block _left font-orange"></span>
+      <span class="calc-title-text _left _inline-block font-sm">{{calculator.sections[1].title}}</span>
+    </div>
+
+    <!-- My Contributions inputs -->
+    <div class="calc-input-container _hidden">
+
+      <div class="calc-input-form">
+
+        <!-- Registered with KiwiSaver ??-->
+        <div class="calc-input-fieldset">
+
+          <calc-input-button-select
+            field="calculator.fields[6]"
+            model="model"></calc-input-button-select>
+
+        </div>
+
+        <!-- Registered == NO -->
+        <div class="calc-input-group kiwisaver-savings-registered kiwisaver-savings-registered-no">
+
+          <!-- If you contribute message -->
+          <!--<div class="calc-input-fieldset">
+            <label class="font-lg _block">If you contribute to a KiwiSaver scheme</label>
+          </div>-->
+
+        </div>
+
+        <!-- Registered == YES -->
+        <div class="calc-input-group kiwisaver-savings-registered kiwisaver-savings-registered-yes _hidden">
+
+          <!-- Approx registration date -->
+          <div class="calc-input-fieldset">
+
+            <calc-input-label field="calculator.fields[7]"></calc-input-label>
+
+
+            <div class="_clear">
+              <calc-select-months
+                id="calculator.fields[7].id"
+                class="calc-input-year font-md _left"
+                field="calculator.fields[7]"
+                model="model"></calc-select-months>
+
+              <calc-input-number
+                field="calculator.fields[8]"
+                class="calc-input-month _inline-block _left"
+                model="model"></calc-input-number>
+            </div>
+
+          </div>
+
+          <!-- KiwiSaver Acct balance -->
+          <div class="calc-input-fieldset">
+
+            <calc-input-money
+              field="calculator.fields[9]"
+              model="model"></calc-input-money>
+
+          </div>
+
+        </div>
+
+        <!-- Shared by Both YES & NO -->
+        <!-- My contributions -->
+        <div class="calc-input-fieldset"
+             ng-show="model.$attributes.employment_status === '2'">
+
+          <calc-select
+            field="calculator.fields[10]"
+            model="model"></calc-select>
+
+        </div>
+
+        <!-- Employer contribution -->
+        <div class="calc-input-fieldset"
+             ng-show="model.$attributes.employment_status === '2'">
+
+          <calc-select
+            field="calculator.fields[11]"
+            model="model"></calc-select>
+
+        </div>
+
+        <!-- Contribution frequency -->
+        <div class="calc-input-fieldset"
+             ng-show="model.$attributes.employment_status !== '2'">
+
+          <calc-input-money
+            class="row your-contr"
+            field="calculator.fields[12]"
+            model="model"></calc-input-money>
+
+        </div>
+
+        <div class="calc-input-fieldset">
+
+          <calc-select
+            field="calculator.fields[13]"
+            model="model"></calc-select>
+
+        </div>
+
+        <!-- Lump sum contribution -->
+        <div class="calc-input-fieldset">
+
+          <calc-input-money
+            field="calculator.fields[14]"
+            model="model"></calc-input-money>
+
+        </div>
+
+        <div class="calc-input-fieldset">
+
+          <calc-select
+            field="calculator.fields[15]"
+            model="model"></calc-select>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</form>

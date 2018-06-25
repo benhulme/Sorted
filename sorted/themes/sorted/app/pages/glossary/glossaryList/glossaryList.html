@@ -1,0 +1,17 @@
+<div class="row category-group" ng-repeat="term in data.Terms | filter:search:strict" ng-hide="term.articles.length === 0">
+
+  <h2 class="icon-container font-light">
+      {{term.category}}
+  </h2>
+
+  <div class="glossary-text">
+    <div class="row article-row" ng-repeat="article in term.articles">
+      <div class="col-md-12 article-content">
+        <h4 class="font-medium">{{article.Title}}</h4>
+        <div class="font-book"  adjustable-font ng-bind-html="article.Content"></div>
+      </div>
+    </div>
+    <!--<scroll-top class="hidden-sm"></scroll-top>-->
+  </div>
+
+</div>

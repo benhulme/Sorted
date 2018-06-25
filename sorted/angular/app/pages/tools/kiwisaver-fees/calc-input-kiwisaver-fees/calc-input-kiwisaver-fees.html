@@ -1,0 +1,141 @@
+<div class="calc-form-heading">
+  <span class="calc-title-text _left _inline-block font-medium font-sm">My details</span>
+</div>
+
+<div data-form-type="{{calculator.type}}" class="calc-input-group">
+
+  <div class="calc-input-container">
+
+    <form class="calc-input-form"
+          name="{{calculator.type}}">
+
+
+
+
+      <div class="calc-input-section">
+
+
+
+        <div class="_clear visible-xs visible-sm" calc-link>
+          <a href="/#/tools/kiwisaver-fees-calculator" class="ui-results-link _inline-block font-orange _right">
+            <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+            <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+          </a>
+        </div>
+
+        <!-- My Birth date -->
+        <div class="calc-input-fieldset">
+          <calc-input-label
+            field="calculator.fields.yourBirthDate"></calc-input-label>
+
+          <div class="_clear">
+
+            <calc-select-months
+              class="calc-input-year font-md _left"
+              field="calculator.fields.monthBorn"
+              model="model"></calc-select-months>
+
+            <calc-input-number
+              placeholder="calculator.fields.placeholder"
+              field="calculator.fields.yearBorn"
+              class="calc-input-month _inline-block _left"
+              model="model"></calc-input-number>
+          </div>
+
+        </div>
+
+        <!-- My Employment status -->
+        <div class="calc-input-fieldset">
+          <calc-select
+            field="calculator.fields.employmentStatus"
+            model="model"></calc-select>
+        </div>
+
+        <!-- Expected annual income -->
+        <div class="calc-input-fieldset" ng-show="model.$attributes.employment === '1'">
+          <calc-input-money
+            field="calculator.fields.annualIncome"
+            model="model"></calc-input-money>
+        </div>
+
+        <!-- Expected annual salary -->
+        <div class="calc-input-fieldset" ng-show="model.$attributes.employment !== '1'">
+          <calc-input-money
+            field="calculator.fields.earnings"
+            model="model"></calc-input-money>
+        </div>
+
+        <!-- My KiwiSaver contributions -->
+        <div class="calc-input-fieldset">
+          <calc-input-label
+            field="calculator.fields.contributionsTitle"></calc-input-label>
+        </div>
+
+        <!-- START Employed Contribution strategy -->
+        <div class="calc-input-group kiwisaver-fees-employment-status kiwisaver-fees-employment-status-employed"
+             ng-class="{_hidden: model.$attributes.employment !== '1'}">
+          <!-- Employee contributions -->
+          <div class="calc-input-fieldset">
+            <calc-select
+              field="calculator.fields.employeeContributions"
+              model="model"></calc-select>
+          </div>
+
+          <!-- Employer contributions -->
+          <div class="calc-input-fieldset">
+            <calc-select
+              field="calculator.fields.employerContributions"
+              model="model"></calc-select>
+          </div>
+        </div>
+        <!-- END Employed Contribution strategy -->
+
+        <!-- START Self or Un employed contribution strategy -->
+        <!-- Your contributions -->
+        <div class="calc-input-group kiwisaver-fees-employment-status kiwisaver-fees-employment-status-not"
+             ng-class="{_hidden: model.$attributes.employment === '1'}">
+          <div class="calc-input-fieldset">
+            <calc-input-money
+              field="calculator.fields.contributionAmount"
+              model="model"></calc-input-money>
+          </div>
+
+          <!-- Contribution frequency -->
+          <div class="calc-input-fieldset">
+            <calc-select
+              field="calculator.fields.contributionFrequency"
+              model="model"></calc-select>
+          </div>
+        </div>
+        <!-- END Self or Un employed contribution strategy -->
+
+        <!-- Fund type -->
+        <div class="calc-input-fieldset">
+          <calc-select
+            field="calculator.fields.fundType"
+            model="model"></calc-select>
+        </div>
+
+
+        <div class="_clear visible-xs visible-sm" calc-link>
+          <a href="/#/tools/kiwisaver-fees-calculator" class="ui-results-link _inline-block font-orange _right">
+            <span class="ui-results-text font-sm _inline-block">SEE RESULT</span>
+            <img class="ui-results-image" src="/themes/sorted/assets/images/ui-down.svg"/>
+          </a>
+        </div>
+
+      </div>
+
+    </form>
+
+    <!--<div class="calc-input-container"
+         ng-if="inputKey < calculator.inputs.length - 1 && calculator.inputs[inputKey+1].visible === false">
+      <button class="_no-border calc-input-add" data-form-type="{{calculator.type}}" data-unique="{{input.unique}}">
+        <span class="ui-add font-lg">+</span> <span class="font-sm font-light _inline-block calc-input-add-text">Add another {{calculator.title}}</span>
+      </button>
+    </div>-->
+
+  </div>
+
+</div>
+

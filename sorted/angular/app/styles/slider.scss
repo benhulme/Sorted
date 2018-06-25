@@ -1,0 +1,86 @@
+div {
+  .rz-pointer:after,
+  .rz-pointer:hover:after {
+    display: none !important;
+  }
+
+  .rz-bubble {
+    display: none !important;
+  }
+
+  .slider-purple .rz-pointer {
+    background-color: $purple;
+    border: 2px solid $white;
+    outline: none;
+  }
+
+  .slider-purple .rz-bar {
+    background: $purple-light;
+    border: 2px solid $purple-light;
+    height: 8px;
+    @include border-radius(5px);
+    &.rz-selection {
+      background: $purple;
+      border: 2px solid $purple-light;
+      height: 8px;
+      @include border-radius(5px);
+    }
+  }
+
+  .slider-orange .rz-pointer {
+    background-color: $orange;
+    border: 2px solid $white;
+    outline: none;
+  }
+
+  .slider-orange .rz-bar {
+    background: $orange-medium;
+    border: 2px solid $orange-medium;
+    height: 8px;
+    @include border-radius(5px);
+    &.rz-selection {
+      background: $orange;
+      border: 2px solid $orange-medium;
+      height: 8px;
+      @include border-radius(5px);
+    }
+  }
+
+}
+
+.rz-slider-has-ticks {
+
+  .nudge-slider-container {
+    padding-bottom: 28px;
+  }
+
+  .rzslider .rz-ticks {
+    top: 20px;
+    .rz-tick {
+      background-color: transparent!important;
+      .rz-tick-value {
+        top: 0;
+        color: $orange;
+        &::after {
+          content: "%";
+        }
+      }
+    }
+  }
+
+}
+
+.rzslider{
+  .rz-ticks{
+    .tick{
+      background: none;
+      .tick-value{
+        color: $orange;
+        top: 0;
+        &:after{
+          content:'%'
+        }
+      }
+    }
+  }
+}

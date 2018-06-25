@@ -1,0 +1,115 @@
+<div>
+
+  <div class="calc-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-purple">Results</span>
+
+    <button class="btn btn-bar btn-primary _right calc-output-save" save-trigger>SAVE</button>
+
+    <a href="/#/" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+
+  </div>
+
+  <div class="calc-output-container" ng-repeat="(formKey, form) in calculator" ng-show="formType === form.type">
+
+    <div class="row calc-output-row" ng-repeat="output in form.outputs">
+        <div class="col-sm-7 layout-col" ng-if="output.model == 'min_repayment'">
+          {{output.label[model.fields.repaymentFrequency.value]}}
+          <popover ng-show="output.tooltip">
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="{{output.tooltip}}">
+            </button>
+          </popover>
+        </div>
+        <div class="col-sm-7 layout-col" ng-if="output.model != 'min_repayment'">
+          {{output.label}}
+          <popover ng-show="output.tooltip">
+            <button
+              class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                  data-toggle="popover"  data-trigger="focus"
+              data-placement="top"
+              data-content="{{output.tooltip}}">
+            </button>
+          </popover>
+        </div>
+        <div class="col-sm-5 layout-col calc-output-value" class="{{output.color}}">
+
+          <div ng-if="output.type === 'MONEY'" class="{{output.color}} font-medium">
+            <span ng-if="model.result[output.model]">{{model.result[output.model] | currency: "$": 0}}</span>
+            <span ng-if="!model.result[output.model]">$-</span>
+          </div>
+
+          <div ng-if="output.type === 'TIME'" class="{{output.color}} font-medium">
+            <span ng-if="model.result[output.model]">{{model.result[output.model] | number : 0}} {{output.units}}</span>
+            <span ng-if="!model.result[output.model]">-</span>
+          </div>
+
+          <div ng-if="output.type === 'AGE'" class="calc-output-age" class="{{output.color}} font-medium">
+            <span ng-if="model.result[output.model] && model.fields.yearBorn.value && model.fields.monthBorn.value">{{model.result[output.model]}} years old</span>
+            <span ng-show="!model.result[output.model] || !model.fields.yearBorn.value || !model.fields.monthBorn.value">
+              <a href="/#/show-age-form" ng-show="ageFormHidden" class="font-sm font-italic font-black calc-output-birthdate">Enter your birthdate</a>
+              <span ng-show="!ageFormHidden">
+                <cm-select cm-placeholder="Month" cm-options="calcOutputConsts.months" ng-model="model.fields.yearBorn.value" class="calc-output-month _inline-block _right"></cm-select>
+                <input type="text" ng-model="model.fields.monthBorn.value" ng-model-options="{updateOn: 'blur'}" class="calc-output-year form-control font-md _right">
+              </span>
+            </span>
+          </div>
+
+        </div>
+
+    </div>
+
+    <div class="nudge-container" ng-show="model.nudge">
+
+      <div class="_clear">
+        <div class="_left nudge-icon _align-center">
+          <img ng-src="{{model.nudge.icon}}" class="_full-width" />
+        </div>
+
+        <div class="_left nudge-main">
+
+          <label class="font-sm">
+            {{model.nudge.label}}
+            <popover>
+              <button
+                class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                    data-toggle="popover"  data-trigger="focus"
+                data-placement="top"
+                data-content="{{model.nudge.tooltip}}">
+              </button>
+            </popover>
+          </label>
+
+          <div class="font-sm">{{model.nudge.text}}</div>
+
+          <div class="nudge-slider-container _clear  hidden-xs">
+            <div class="_left font-orange nudge-slider-left">$</div>
+            <rzslider
+              class="_left nudge-slider slider-orange"
+              rz-slider-model="model.fields[model.nudge.model].value"
+              rz-slider-options="slider.options"></rzslider>
+            <div class="_left font-orange nudge-slider-right">$$$</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nudge-slider-container _clear visible-xs">
+        <div class="_left font-orange nudge-slider-left">$</div>
+        <rzslider
+          class="_left nudge-slider slider-orange"
+          rz-slider-model="model.fields[model.nudge.model].value"
+          rz-slider-options="slider.options"></rzslider>
+        <div class="_left font-orange nudge-slider-right">$$$</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

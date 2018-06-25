@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),INTEGER_REGEXP=/^\-?\d+$/;app.directive("cmMinamount",function(){return{require:"ngModel",link:function(n,t,i,a){a.$validators.minamount=function(n,t){return!!a.$isEmpty(n)||("false"===i.cmCondition||!!(INTEGER_REGEXP.test(t)&&parseInt(t)>=parseInt(i.cmMinamount)))}}}});

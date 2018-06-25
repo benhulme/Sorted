@@ -1,0 +1,63 @@
+[
+  {
+    "text": "Mortgage",
+    "url": "/tools/mortgage-calculator",
+    "icon": "assets/images/tools/tools-mortgage.svg"
+  },
+  {
+    "text": "Budgeting",
+    "url": "/tool/budget-tool",
+    "icon": "assets/images/tools/tools-budgeting.svg"
+  },
+  {
+    "text": "Debt",
+    "url": "/tools/debt-calculator",
+    "icon": "assets/images/tools/tools-debts.svg"
+  },
+  {
+    "text": "Retirement",
+    "url": "/tools/retirement-planner",
+    "icon": "assets/images/tools/tools-retirement.svg"
+  },
+  {
+    "text": "Goal planner",
+    "url": "/tools/goal-planner/welcome",
+    "icon": "assets/images/tools/tools-goal-planner.svg"
+  },
+    {
+    "text": "KiwiSaver Fund finder",
+    "url": "http://fundfinder.sorted.org.nz/",
+    "icon": "assets/images/tools/tools-kiwisaver-fund-finder.svg"
+  },
+  {
+    "text": "Personality quiz",
+    "url": "/tools/money-personality-quiz",
+    "icon": "assets/images/tools/tools-money-personal.svg"
+  },
+  {
+    "text": "Saving",
+    "url": "/tools/savings-calculator",
+    "icon": "assets/images/tools/tools-saving.svg"
+  },
+  {
+    "text": "KiwiSaver",
+    "url": "/tools/kiwisaver-savings-calculator",
+    "icon": "assets/images/tools/tools-kiwisaver-account.svg"
+  },
+  {
+    "text": "Net worth",
+    "url": "/tools/net-worth-calculator",
+    "icon": "assets/images/tools/tools-net-worth.svg"
+  },
+  {
+    "text": "Investor kickstarter",
+    "url": "/tools/investor-kickstarter",
+    "icon": "assets/images/tools/tools-investment.svg"
+  },
+  {
+    "text": "KiwiSaver fees",
+    "url": "/tools/kiwisaver-fees-calculator",
+    "icon": "assets/images/tools/tools-kiwisaver-fees.svg"
+  }
+]
+

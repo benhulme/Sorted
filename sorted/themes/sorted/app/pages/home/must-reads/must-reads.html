@@ -1,0 +1,43 @@
+<div class="layout-container articles-container" scroll-fade>
+  <div scroll-fade-item class="layout-content">
+    <h2 class="_align-center articles-heading">Must-reads</h2>
+      <div class="row">
+        <div class="layout-row">
+          <div class="col-md-4 col-sm-6 col-xs-12 articles-column" ng-repeat="(index, post) in mustReads" data-index="{{index}}">
+
+            <div class="articles-info _clear" vert-middle="must-reads-info-text" vert-middle-relative="ui-circle">
+              <div class="ui-circle bg-fuschia _left">
+                <div class="ui-circle-inner">
+                  <div class="articles-day">{{post.PublishDate.date}}</div>
+                  <div class="articles-month">{{post.PublishDate.month}} {{post.PublishDate.year}}</div>
+                </div>
+              </div>
+              <div class="_left articles-info-text must-reads-info-text">
+                <div class="font-h4 _elipsis _no-wrap"><a class="font-black" ng-href="{{post.Link}}" target="_self" analytics-on="click" analytics-category="mustreadsteaser" analytics-event="click" analytics-label="individual" analytics-interaction-type="0">{{post.Title}}</a></div>
+                <div class="font-xs">
+                  Posted by {{post.Author.FirstName}} {{post.Author.LastName}}
+                  | <a ng-href="{{post.Link}}/#comments-holder" target="_self">{{post.CommentsNumber}}&nbsp;comment<span ng-show="{{post.CommentsNumber}} !== 1">s</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="must-reads-content" ng-if="post.ThumbnailImage.Filename || post.FeaturedImage.Filename">
+              <a class="_block _relative" ng-href="{{post.Link}}"  target="_self" aspect-ratio="16:9" analytics-on="click" analytics-category="mustreadsteaser" analytics-event="click" analytics-label="individual" analytics-interaction-type="0">
+                <div class="articles-thumbnail _full-height" ng-if="post.ThumbnailImage.Filename && !post.FeaturedImage.Filename" cover-image="{{post.ThumbnailImage.Filename}}"></div>
+                <div class="articles-thumbnail _full-height" ng-if="post.FeaturedImage.Filename" cover-image="{{post.FeaturedImage.Filename}}"></div>
+              </a>
+            <div class="_elipsis articles-copy" num-lines="2">
+              <img ng-show="post.IsVideoPost == 1" ng-src="{{siteConfig.APP_PATH}}assets/images/video-icon.png" class="articles-video-icon" />
+              {{stripTags(post.Content)}}
+            </div>
+              <a href="{{post.Link}}" target="_self" class="ui-link font-sm articles-more" analytics-on="click" analytics-category="mustreadsteaser" analytics-event="click" analytics-label="individual" analytics-interaction-type="0">Read More <span class="fa fa-chevron-right font-xs"></span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="_align-center">
+        <a href="/must-reads" target="_self" class="btn btn-primary btn-xs-fullwidth articles-go" analytics-on="click" analytics-category="mustreadsteaser" analytics-event="click" analytics-label="sectioncta" analytics-interaction-type="0">Go to must-reads</a>
+      </div>
+  </div>
+</div>

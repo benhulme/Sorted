@@ -1,0 +1,6 @@
+<div class="graphic-text _align-center" ng-show="showText">
+  <div>You'll pay <span class="graphic-text-fraction">{{factor}}</span> times
+    <img ng-repeat="num in numIcons" ng-src="{{calculator.graphic.smallIcons[0]}}" class="graphic-text-icon-morg" />
+    <img ng-show="fraction > 0" ng-src="{{fractionSrc}}" class="graphic-text-icon-morg" />
+  the amount you borrow.</div>
+</div>

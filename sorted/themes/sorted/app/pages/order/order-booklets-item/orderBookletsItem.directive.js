@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("orderBookletsItem",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/pages/order/order-booklets-item/orderBookletsItem.html",restrict:"E",link:function(){}}}])}();

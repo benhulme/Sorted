@@ -1,0 +1,173 @@
+.order {
+
+  .form-group:last-of-type{
+    margin-bottom: 60px;
+  }
+
+  .orderForm{
+    padding-top: 50px;
+  }
+  .saf-list{
+    padding: 40px 0 30px 0;
+  }
+
+  .place-order-copy{
+    margin: 50px 0 20px 0;
+  }
+
+  .organisation-copy{
+    padding: 15px 0;
+  }
+
+  .order-content{
+    padding: 20px 0 40px 0;
+  }
+  .caret-order{
+    position: relative;
+    width: 30px;
+    height: 16px;
+    display: inline-block;
+    background: url("../../assets/images/arrow.png") no-repeat center;
+    @include transform(rotate(90deg));
+  }
+
+  .in{
+    .caret-order{
+      @include transform(rotate(-90deg));
+    }
+  }
+
+
+
+  &-qty {
+    width: 75px;
+    margin-bottom: 0;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+  }
+
+  input.ng-invalid {
+    border: 1px solid red;
+  }
+
+  &-btn-subtext {
+    font-size: .7em;
+    margin-left: 3.5em;
+  }
+
+
+
+  .order-panel{
+    border: none;
+    background: #fffbe5;
+    margin-bottom: 5px;
+    .panel-collapse{
+      margin-bottom: -5px;
+    }
+
+    .panel,.panel-body{
+      background: none;
+      border: none;
+
+    }
+    img{
+      border: none;
+      background: none;
+    }
+  }
+
+
+
+  .order-badge{
+    background: #ff550f;
+    color: white;
+    width:35px;
+    height:35px;
+    line-height: 35px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .order-box{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px #b7b8ba dashed;
+    border-top: 1px #b7b8ba dashed;
+    &:first-of-type{
+      border-top: none;
+    }
+    &:last-of-type{
+      border-bottom: none;
+    }
+  }
+.copy-count{
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+}
+
+.btn-icon-pdf {
+
+  i.pdf {
+    background-image: url('../../assets/images/pdf.png');
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span {
+    font-size: .75em;
+  }
+
+}
+
+.post-code-finder {
+
+  a {
+    background-image: url(https://www.nzpost.co.nz/sites/all/themes/nzpost_responsive_20/images/logo-button-large-2x.png?1425264782);
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    width: 16px;
+    height: 22px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  span {
+    font-size: .75em;
+  }
+
+}
+
+#postCodeAddress{
+  margin-bottom: 5px;
+}
+
+.seminar{
+  .checkbox{
+    margin: 20px 0 0 0 ;
+    label{
+      line-height: 1;
+      input{
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
+
+.order-panel{
+  .panel-collapse{
+    &.collapse{
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+  }
+}

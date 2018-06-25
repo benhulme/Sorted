@@ -1,0 +1,22 @@
+version: '3'
+services:
+ web:
+   build: .
+   working_dir: /var/www
+   ports:
+    - 80:80
+   volumes:
+    - .:/var/www/html
+
+ database:
+   image: mysql
+   volumes:
+    - db-data:/var/lib/mysql
+   restart: always
+   environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=true
+   ports:
+     - 3306:3306  
+
+volumes:
+ db-data:

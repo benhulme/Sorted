@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("notLoggedIn",[function(){return{restrict:"E",transclude:!0,scope:!1,template:'<p class="login-prompt" ng-if="!isLoggedIn"><ng-transclude></ng-transclude></p>'}}])}();

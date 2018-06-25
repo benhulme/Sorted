@@ -1,0 +1,191 @@
+/**
+ * Created by greg on 19/02/2016.
+ */
+
+"use strict";
+
+
+angular.module('sorted')
+  .factory('SavingsCalculatorModel', ['siteConfig', function (siteConfig) {
+
+
+    /// Helper functions
+    function formatFloat(val, decimal) {
+      var parsedFloat = false;
+      if (val) {
+        if (typeof (val) === 'string') {
+          val = val.replace('$', '').replace(',', '');
+        }
+        parsedFloat = parseFloat(val).toFixed(decimal);
+      }
+
+      if (!parsedFloat || isNaN(parsedFloat)) {
+        return false;
+      } else {
+        return parsedFloat;
+      }
+    }
+
+    function formatInteger(val) {
+
+      var parsedInteger = false;
+
+      if (_.isEmpty(val)) {
+        return val;
+      }
+
+      if (Number.isInteger(val)) {
+        parsedInteger = val;
+      }
+      else if (typeof (val) === 'string') {
+        val = val.replace('$', '').replace(',', '');
+        parsedInteger = parseInt(val);
+      }
+
+      return (!Number.isNaN(parsedInteger)) ? parsedInteger : 0;
+    }
+
+    function formatDate(val) {
+      // if not empty string, build with defined format, if null then new date else don't build
+      var d = (!_.isEmpty(val)) ? moment(val, siteConfig.DATE_FORMAT) : (_.isNull(val)) ? moment() : false;
+      return (d) ? d.format(siteConfig.DATE_FORMAT) : "";
+    }
+
+    var Model = function (fields, modelName) {
+      var self = this;
+      this.fields = {};
+      this.result = {};
+      this.modelName = modelName;
+
+      this.defaults = {
+        //type: 0,                                  // 0 = regular amt, 1 = savings goal
+        saving_freq: 52,                          // weekly
+        regular_duration_amount_type: "weekly",   // weekly (duration unit)
+        starting: moment().format(siteConfig.DATE_FORMAT) // today
+
+      };
+
+      /**
+       * calculate the starting attr
+       * based on input and savings type
+       * @private
+       */
+      this._calcStartEnd = function () {
+        if (!_.has(self.fields, 'savingType')) {
+          return;
+        }
+
+        var type    = _.get(self.fields, 'savingType').value,
+          regAmt    = _.get(self.fields, 'reqularDurationAmount').value,
+          regFreq   = _.get(self.fields, 'regularDurationAmountType').value,
+          starting  = _.get(self.fields, 'savingStart').value;
+
+        if (type === 0 &&
+          regAmt > 0 &&
+          regFreq &&
+          starting) { // Regular Amt
+
+          var duration = moment.duration(parseInt(regAmt), regFreq);
+          self.fields.savingEnd.value = moment(starting, siteConfig.DATE_FORMAT).add(duration).format(siteConfig.DATE_FORMAT);
+        }
+
+        // for Savings goal, use start and ending values directly
+        return self;
+      };
+
+
+      // changed to use id index as opposed to integer to support
+      // form value assignment when filtering collection
+      _.forEach(fields, function (itm) {
+        self.fields[itm.id] = {
+          calcModel: itm.calcModel,
+          format: itm.format,
+          required: itm.required,
+          value: (_.isEmpty(itm.value) && _.has(self.defaults, itm.calcModel)) ? _.get(self.defaults, itm.calcModel) : itm.value
+        };
+      });
+
+      /**
+       * Goal::::
+       * type: "1",
+       saving_amount: "5000",
+       regular_amount: "",
+       saving_freq: 26,
+       starting: "21/12/2011",
+       ending: "21/12/2015",
+       initial_savings: 100,
+       interest_rate: 2,
+       age_month: 6,
+       age_year: 1985,
+       iar: 0,
+       nudge_dollars: 50,
+
+       * Regular Amount
+       type: "0",
+       saving_amount: "",
+       regular_amount: "50.13",
+       saving_freq: "52",
+       starting: "28/11/2012",
+       ending: "28/01/2013",
+       initial_savings: "0",
+       interest_rate: "2",
+       age_month: "6",
+       age_year: "1985",
+       iar: 0,
+       nudge_dollars: "60",
+
+       * @returns {{}}
+       */
+
+      this.prepare = function () {
+        var prepared = {};
+
+        // calculate the 'starting' and 'ending' values
+        self._calcStartEnd();
+
+        _.each(this.fields, function (field, key) {
+
+          try {
+            var value = field.value;
+
+            if (field.format) {
+              switch (field.format.type) {
+                case 'INTEGER':
+                  value = formatInteger(field.value);
+                  break;
+                case 'FLOAT':
+                  value = formatFloat(field.value, field.format.decimals);
+                  break;
+                case 'DATE':
+                  value = formatDate(field.value);
+                  break;
+              }
+            }
+            prepared[field.calcModel] = value;
+          }
+          catch(e){
+            console.error(e.message, field, key);
+          }
+
+        });
+
+        return prepared;
+
+      };
+
+
+    };
+
+    /**
+     * @param fields - fields from json file
+     * @param inputs - inputs from json file aka Sections e.g. CurrentYear, 10Years, etc
+     * @type {{getInstance: modelInstance.getInstance}}
+     */
+    var modelInstance = {
+      getInstance: function (fields, name) {
+        return new Model(fields, name);
+      }
+    };
+
+    return modelInstance;
+  }]);

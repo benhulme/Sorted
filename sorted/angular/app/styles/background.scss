@@ -1,0 +1,60 @@
+.bg-white {
+  background-color: $white;
+  color: $black;
+}
+
+.bg-orange {
+  background-color: $orange;
+  color: $white;
+}
+
+.bg-orange-light {
+  background-color: $orange-light;
+}
+
+.bg-black {
+  background-color: $black;
+  color: $white;
+}
+
+.bg-fuschia {
+  background-color: $fuschia;
+  color: $white;
+}
+
+.bg-grey-medium {
+  background-color: $grey-medium;
+}
+
+.bg-grey-light {
+  background-color: $grey-light;
+}
+
+.bg-grey-lightest {
+  background-color: $grey-lightest;
+}
+
+.bg-green-gradient {
+  @include gradient-linear($aqua, 25%);
+}
+
+.bg-grey-texture {
+  background-color: $grey-medium;
+  background-image: url(../images/footer-texture.jpg);
+}
+
+.bg-purple-light {
+  background-color: $purple-light;
+}
+
+.bg-purple-lightest {
+  background-color: $purple-lightest;
+}
+
+.bg-blue-lightest {
+  background-color: $blue-lightest;
+}
+
+.bg-aqua-lightest {
+  background-color: $aqua-lightest;
+}

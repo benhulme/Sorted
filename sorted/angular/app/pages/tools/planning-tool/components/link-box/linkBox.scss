@@ -1,0 +1,31 @@
+.link-box{
+  margin-top: 20px;
+  border: 1px solid #ff550f;
+  background: #ffeee7;
+  padding: 20px;
+  .link-title{
+    .icon-container{
+      float: left;
+      width:40px;
+      height:40px;
+      overflow: hidden;
+      margin-right: 14px;
+      img{
+        width: inherit;
+        height:80px;
+
+      }
+    }
+
+  }
+
+  .arrow-list{
+    list-style-image: url("../../assets/images/arrow.png");
+    padding:20px 0 30px 20px;
+    clear: both;
+    li {
+      margin-bottom: 14px;
+    }
+
+  }
+}

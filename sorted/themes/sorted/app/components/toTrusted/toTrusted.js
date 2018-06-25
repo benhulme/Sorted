@@ -1,0 +1,1 @@
+(function(){"use strict";angular.module("sorted").filter("toTrusted",["$sce",function(t){return function(r){return t.trustAsHtml(r)}}])}).call(this);

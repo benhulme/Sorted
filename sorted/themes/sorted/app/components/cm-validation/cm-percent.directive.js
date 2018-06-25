@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),REGEXP=/^(\d+\.?\d{0,2}|\.\d{1,2})$/;app.directive("cmPercent",function(){return{require:"ngModel",link:function(n,t,e,i){i.$validators.percent=function(n,t){return!!i.$isEmpty(n)||("false"===e.cmCondition||!!(REGEXP.test(t)&&t<=100))}}}});

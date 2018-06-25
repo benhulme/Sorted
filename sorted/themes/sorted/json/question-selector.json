@@ -1,0 +1,43 @@
+[
+  {
+    "text": "How to pay off my mortgage faster?",
+    "url": "/tools/mortgage-calculator",
+    "icon": "assets/images/icon1.svg"
+  },
+  {
+    "text": "How do I handle my money when studying?",
+    "url": "/guides/studying",
+    "icon": "assets/images/icon2.svg"
+  },
+  {
+    "text": "How to get out of debt?",
+    "url": "/tools/debt-calculator",
+    "icon": "assets/images/icon3.svg"
+  },
+  {
+    "text": "What do I need to save for retirement?",
+    "url": "/tools/retirement-planner",
+    "icon": "assets/images/icon4.svg"
+  },
+  {
+    "text": "Where do I start when buying a house?",
+    "url": "/guides/buying-a-first-home",
+    "icon": "assets/images/icon5.svg"
+  },
+    {
+    "text": "How to set and achieve my money goals?",
+    "url": "/tools/budgeting-tool/welcome",
+    "icon": "assets/images/icon5.svg"
+  },
+  {
+    "text": "What’s my money style?",
+    "url": "/tools/money-personality-quiz",
+    "icon": "assets/images/icon5.svg"
+  },
+  {
+    "text": "How do I get the best out of KiwiSaver?",
+    "url": "/guides/kiwisaver-looking-after-it",
+    "icon": "assets/images/icon5.svg"
+  }
+]
+

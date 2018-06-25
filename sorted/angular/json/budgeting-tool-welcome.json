@@ -1,0 +1,29 @@
+[
+  {
+    "Title": "Budgeting Tool",
+    "Content":"Personal budgeting can be easy and fun with the Sorted Budgeting Tool.",
+    "BackgroundImage": {
+      "Filename": "assets/images/header-background-tools.jpg"
+    },
+    "LoginLink": {
+      "Content": "Already got a budget saved?"
+    },
+    "BudgetPeriods": [
+      {
+        "Shortname": "monthly",
+        "Title": "per month"
+      },
+      {
+        "Shortname": "fortnightly",
+        "Title": "per fortnight"
+      },
+      {
+        "Shortname": "weekly",
+        "Title": "per week"
+      }
+    ],
+    "StaticImage": {
+      "Filename": "assets/images/test.jpg"
+    }
+  }
+]

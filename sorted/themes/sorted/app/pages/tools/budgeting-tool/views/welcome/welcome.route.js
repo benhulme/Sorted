@@ -1,0 +1,1 @@
+!function(){"use strict";function e(e){return e()}e.$inject=["welcomeResolver"],angular.module("budgetingTool").config(["$routeProvider","siteConfig",function(o,l){o.when("/tools/budgeting-tool/welcome",{templateUrl:l.APP_PATH+"app/pages/tools/budgeting-tool/views/welcome/welcome.html",controller:"WelcomeCtrl",resolve:{viewModel:e}})}])}();

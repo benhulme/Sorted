@@ -1,0 +1,10 @@
+---
+# tasks file for git-client
+
+- apt: name=git update_cache=yes
+
+- name: Create www-data group
+  group: name=www-data state=present
+
+- name: Add Git user
+  user: name=git comment="Git user" group=www-data shell=/bin/bash generate_ssh_key=yes

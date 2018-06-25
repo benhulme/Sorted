@@ -1,0 +1,27 @@
+<div class="layout-container tools-conveyor" scroll-fade>
+  <div scroll-fade-item class="layout-content">
+    <div>
+      <h2 class="tools-title _align-center">Popular Tools</h2>
+      <div conveyor>
+        <div conveyor-mask>
+          <ul conveyor-belt class="_inline-list">
+            <li conveyor-items ng-repeat="tool in tools" class="tools-li _inline-list _left">
+              <a ng-href="{{tool.url}}" target="_blank" class="tools-icon _inline-block" ng-if="tool.text == 'KiwiSaver Fund Finder'" analytics-on="click" analytics-category="populartools" analytics-event="click" analytics-label="{{tool.text}}" analytics-interaction-type="0" >
+                <div class="tools-icon-container">
+                  <img ng-src="{{siteConfig.APP_PATH}}{{tool.icon}}" class="tools-icon-image _absolute" />
+                </div>
+                <p class="tools-text font-sm">{{tool.text}}</p>
+              </a>
+              <a ng-href="{{tool.url}}" class="tools-icon _inline-block" ng-if="tool.text != 'KiwiSaver Fund Finder'" analytics-on="click" analytics-category="populartools" analytics-event="click" analytics-label="{{tool.text}}" analytics-interaction-type="0" >
+                <div class="tools-icon-container">
+                  <img ng-src="{{siteConfig.APP_PATH}}{{tool.icon}}" class="tools-icon-image _absolute" />
+                </div>
+                <p class="tools-text font-sm">{{tool.text}}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

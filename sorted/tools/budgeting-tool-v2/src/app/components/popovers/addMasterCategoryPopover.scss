@@ -1,0 +1,9 @@
+.add-master-category-popover {
+  background-color: #fff;
+  border-color: #d9d9d6;
+  min-width: 400px;
+  @media(max-width: 400px) {
+    min-width: 280px;
+    width: calc(100% - 40px);
+  }
+}

@@ -1,0 +1,30 @@
+---
+# tasks file for apache2
+
+- name: Install dependent repository
+  apt: name=python-apt state=present
+
+- name: Add PHP-FPM repo
+  apt_repository: repo='ppa:ondrej/apache2'
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+# Install apache modules #######
+- apt: name=apache2
+- apt: name=apache2-utils
+
+- apt: name=php5-mcrypt
+- apt: name=php5-cli
+- apt: name=php5-mysql
+- apt: name=php5-imagick
+- apt: name=php5-curl
+- apt: name=php5-gd
+- apt: name=imagemagick
+- apt: name=curl
+#############################
+
+# Install composer
+- name: Composer installation
+  become_user: root
+  shell: curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin

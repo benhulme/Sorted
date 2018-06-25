@@ -1,0 +1,32 @@
+
+
+
+<div class="goal-modal save-resolve-dialog">
+  <button type="button"  ng-click="cancel()"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <form id="save-as-form" class="login-form ng-pristine ng-valid">
+
+    <h2>Save this tool</h2>
+    <p class="font-xs sign-in-text">Tools are saved to your dashboard.</p>
+
+
+    <div class="field text">
+      <label for="">Name of your tool</label>
+      <div><input id="save-as-title" name="Title" ng-model="title" type="title"></div>
+      <p class="font-xx">You can edit this name to personalise it</p>
+    </div>
+
+
+
+    <div class="Actions">
+      <div class="row">
+        <div class="col-md-6">
+          <input ng-click="ok()" name="submit" type="submit" value="SAVE">
+        </div>
+        <div class="col-md-6">
+          <a data-dismiss="modal" ng-click="cancel()" class="ui-link cancel">cancel</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

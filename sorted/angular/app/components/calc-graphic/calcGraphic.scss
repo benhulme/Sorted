@@ -1,0 +1,127 @@
+.graphic-container {
+  height: 100%;
+}
+
+.graphic-sign {
+  bottom: 0;
+  left: 15%;
+  width: 23%;
+  @media(max-width: $screen-sm-max){
+    left: 0;
+    width: 29%;
+  }
+}
+
+.graphic-tree {
+  bottom: 0;
+  right: 6%;
+  width: 31%;
+  @media(max-width: $screen-sm-max){
+    right: 0;
+    width: 38%;
+  }
+  &.graphic-tree-small .graphic-years {
+    top: 41%;
+  }
+  &.graphic-tree-medium .graphic-years {
+    top: 28%;
+  }
+  &.graphic-tree-large .graphic-years {
+    top: 23%;
+  }
+}
+
+.graphic-house-light {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  overflow: hidden;
+  @media(max-width: $screen-sm-max){
+    left: 13%;
+    width: 62%;
+    right: auto;
+  }
+}
+
+.graphic-house-light-img {
+  bottom: 0;
+  position: absolute;
+}
+
+.graphic-house-dark {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  @media(max-width: $screen-sm-max){
+    left: 13%;
+    right: auto;
+    width: 62%;
+  }
+}
+
+.graphic-grass {
+  bottom: 0;
+  left: 14%;
+  width: 60%;
+  @media(max-width: $screen-sm-max){
+    left: 2%;
+    width: 80%;
+  }
+}
+
+.graphic-total {
+  top: 22%;
+}
+
+.graphic-interest {
+  top: 20%;
+}
+
+.graphic-principal {
+  top: 33%;
+}
+
+.graphic-label {
+  font-size: $font-sm;
+  line-height: $line-sm;
+  @media(max-width: $screen-md-max){
+    font-size: $font-sm * 0.9;
+    line-height: $line-sm * 0.9;
+  }
+  @media(max-width: $screen-sm-max){
+    font-size: $font-sm * 1.1;
+    line-height: $line-sm * 1.1;
+  }
+  @media(max-width: $screen-xs-max){
+    font-size: $font-sm * 0.7;
+    line-height: $line-sm * 0.7;
+  }
+  @media(max-width: $screen-xs){
+    font-size: $font-sm * 0.5;
+    line-height: $line-sm * 0.5;
+  }
+}
+.graphic-value {
+  font-size: $font-lg;
+  line-height: $line-md;
+  @media(max-width: $screen-md-max){
+    font-size: $font-lg * 0.9;
+    line-height: $line-md * 0.9;
+  }
+  @media(max-width: $screen-sm-max){
+    font-size: $font-lg * 1.1;
+    line-height: $line-md * 1.1;
+  }
+  @media(max-width: $screen-xs-max){
+    font-size: $font-lg * 0.7;
+    line-height: $line-md * 0.7;
+  }
+  @media(max-width: $screen-xs){
+    font-size: $font-lg * 0.5;
+    line-height: $line-md * 0.5;
+  }
+}

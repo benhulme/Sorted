@@ -1,0 +1,238 @@
+budget-header {
+  .budget-header {
+     position: relative;
+     margin-bottom: 20px;
+     z-index: 200;
+     text-align: center;
+    @media (min-width: $screen-md-max  ) {
+        margin-right: 430px;
+    }
+
+
+
+    .budgeting-tool-alert {
+      position: fixed;
+      top: 10%;
+      z-index: 201;
+      margin: 5% auto;
+      margin: 0 auto;
+      width: 80%;
+      left: 0;
+      right: 0;
+      height: 100px;
+      padding-top: 30px;
+      text-align: center;
+    }
+
+    .budgeting-tool-alert-fade.ng-enter {
+      transition:0.5s linear all;
+      opacity:0;
+    }
+
+    .budgeting-tool-alert-fade.ng-enter.ng-enter-active {
+      opacity:1;
+    }
+
+    .budgeting-tool-alert-fade.ng-leave {
+      transition:1.5s linear all;
+      opacity:1;
+    }
+
+    .budgeting-tool-alert-fade.ng-leave.ng-leave-active {
+      opacity:0;
+    }
+
+    .budget-title-edit {
+      display: inline-block;
+      max-width: 30px;
+      max-height: 30px;
+      margin-bottom: 15px;
+      margin-left:5px;
+    }
+
+    .budget-title {
+      display: inline-block;
+      margin: 15px 0;
+      word-wrap: break-word;
+      cursor: pointer;
+    }
+
+    .budget-amount {
+      letter-spacing: -2px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .budget-print {
+      display: none;
+    }
+
+    .budget-exceeded {
+      color: red;
+    }
+
+    .budget-period,
+    .budget-amount-copy {
+      font-size:16px;
+    }
+
+    .how-this-tools-works-container{
+      float:left;
+      width: 100%;
+      margin-top:30px;
+      text-align:left;
+    }
+
+
+    @media(min-width: $screen-sm-min) {
+      .budget-title {
+        .edit-button {
+          height: 35px;
+          width: 35px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+
+
+    @media(min-width: $screen-md-min) {
+      margin-top: -130px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: left;
+
+      .budget-title {
+        margin: 0;
+        padding-top: 30px;
+        font-size: 30px;
+        line-height: 44px;
+      }
+
+      .budget-amount {
+        font-size: 30px;
+        margin: 0;
+        padding-top: 30px;
+        font-weight: 400;
+        line-height: 44px;
+      }
+
+      .budget-print {
+        display: block;
+        font-size: 13px;
+        margin: 0;
+        padding-top: 40px;
+
+        button {
+          margin-top: -5px;
+          cursor: pointer;
+          &.btn-primary{
+            border-color:$orange;
+          }
+        }
+
+        .budget-print-link {
+          margin-right: 25px;
+          cursor: pointer;
+          padding-right:10px;
+        }
+      }
+
+    }
+
+    @media(min-width: $screen-lg-min) {
+      text-align: left;
+
+      .budget-title {
+        padding-top: 35px;
+        font-size: 36px;
+        line-height: 50px;
+        .edit-button {
+          margin-bottom: 10px;
+        }
+      }
+
+      .budget-period {
+        margin:-5px 0 0 5px;
+      }
+
+      .budget-amount {
+        padding-top: 35px;
+        font-size: 36px;
+        line-height: 50px;
+        font-weight: 400;
+      }
+
+      .budget-print {
+        font-size: 14px;
+        padding-top: 50px;
+      }
+
+      .how-this-tools-works-container{
+        float:none;
+        position:absolute;
+        width: auto;
+        height:100%;
+        min-width:250px;
+        max-height:130px;
+        right:-400px;
+        margin-top:0;
+        div{
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%, -50%);
+        }
+      }
+
+    }
+  }
+}
+
+
+@media (min-width: 1199px) and (max-width: 1600px) {
+  budget-header{
+    .budget-header{
+      padding-right: 0;
+      .budget-header-user-avatar{
+        width: 130px;
+        height: 130px;       
+      }
+      
+      .budget-title,.budget-amount{
+        font-size: 22px;
+        line-height: 30px;
+      }
+      .budget-title-edit{
+        margin-bottom: 0;
+      }
+      .budget-print{
+        padding-top: 35px;
+        .budget-print-link{
+          margin-right: 10px;
+        }
+      }
+      .budget-period,.budget-amount-copy{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+button.btn.btn-primary.btn-small[disabled]:hover {
+  background-color: #ff4b05 !important;
+  border-color: #ff4b05 !important;
+}
+
+
+.budget-header-user-avatar {
+    z-index: 99;
+    display: inline-block;
+    color: #fff;
+    border-radius: 50%;
+    //background: center #ff550f;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    background-size: cover;
+}

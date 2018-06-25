@@ -1,0 +1,620 @@
+{
+  "Title":"Create a budget template",
+  "URLSegment":"budget-template",
+  "HeaderCopy":"Tell us a bit about yourself and we'll create a budget with the right categories just for you.",
+  "DefaultCategories": [
+    {
+      "ID": 11,
+      "Title": "Groceries",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 31,
+      "Title": "Mobile Phone",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 80,
+      "Title": "Personal Cash",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 81,
+      "Title": "Entertainment",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 90,
+      "Title": "Charity",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 12,
+      "Title": "Takeaways",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 40,
+      "Title": "Christmas Savings",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 32,
+      "Title": "Sky/Paid TV",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 33,
+      "Title": "Bank Fees",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 82,
+      "Title": "Clothing/Shoes",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 41,
+      "Title": "Optician/Glasses",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 42,
+      "Title": "Dental",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 43,
+      "Title": "Life Insurance",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 44,
+      "Title": "Medical Insurance",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 45,
+      "Title": "Doctors",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 46,
+      "Title": "Prescriptions/Medical Disbursements",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 83,
+      "Title": "Hair Cuts",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 34,
+      "Title": "Recreation/Subscription Fees",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 35,
+      "Title": "Social Club/Union Fees",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    },
+    {
+      "ID": 47,
+      "Title": "Gifts",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      }
+    }
+  ],
+  "BudgetQuestions": [
+    {
+      "ID": 2,
+      "Title": "Living Arrangement",
+      "Question": "Do you rent, own, or a combination of the two?",
+      "Icon": {
+        "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+      },
+      "BudgetPresets": [
+        {
+          "ID": 2,
+          "Title": "Rent",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 21,
+              "Title": "Rent",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 22,
+              "Title": "Power",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 23,
+              "Title": "Gas/Wood",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 24,
+              "Title": "Water",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 25,
+              "Title": "Internet/Home Phone",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Title": "Own",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 21,
+              "Title": "Rent",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 22,
+              "Title": "Power",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 23,
+              "Title": "Gas/Wood",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 24,
+              "Title": "Water",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 25,
+              "Title": "Internet/Home Phone",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 26,
+              "Title": "Garden Maintenance",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 27,
+              "Title": "House Maintenance",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 28,
+              "Title": "Land Rates",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "Title": "Family Situation",
+      "Question": "What's your family situation?",
+      "BudgetPresets": [
+        {
+          "ID": 4,
+          "Title": "Kids (4 & Under)",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 70,
+              "Title": "Baby Expenses",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 71,
+              "Title": "Pocket Money",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Title": "Kids (5 & Over)",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 72,
+              "Title": "After School Care",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 71,
+              "Title": "Pocket Money",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 73,
+              "Title": "School Trips",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 74,
+              "Title": "School Fees/Stationery",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 75,
+              "Title": "School Uniforms",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "Title": "Pets",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 48,
+              "Title": "Vet Fees",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 49,
+              "Title": "Pet Registration",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 13,
+              "Title": "Pet food",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "Title": "Transport",
+      "Question": "What forms of transport do you use?",
+      "BudgetPresets": [
+        {
+          "ID": 7,
+          "Title": "Public Transport",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 36,
+              "Title": "Public Transport Fares",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 8,
+          "Title": "Vehicles",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 410,
+              "Title": "Car Maintenance",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 411,
+              "Title": "Car Rego",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 412,
+              "Title": "WOF",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 413,
+              "Title": "AA Membership",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 414,
+              "Title": "RUCs",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            },
+            {
+              "ID": 14,
+              "Title": "Petrol",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "Title": "Savings",
+      "Question": "What goals are you saving towards?",
+      "BudgetPresets": [
+        {
+          "ID": 9,
+          "Title": "Emergency Savings",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 50,
+              "Title": "Emergency Savings",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 10,
+          "Title": "House Deposit",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 51,
+              "Title": "House Deposit",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 11,
+          "Title": "Long-term Savings",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 53,
+              "Title": "Long-term Savings",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 12,
+          "Title": "Retirement",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 54,
+              "Title": "Retirement",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 13,
+          "Title": "Holiday",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 52,
+              "Title": "Holiday",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": 6,
+      "Title": "Debts",
+      "Question": "What debts are you paying off?",
+      "BudgetPresets": [
+        {
+          "ID": 14,
+          "Title": "Credit Card",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 60,
+              "Title": "Credit Card",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 15,
+          "Title": "Hire Purchase",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 61,
+              "Title": "Hire Purchase",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 16,
+          "Title": "Car Loan",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 62,
+              "Title": "Car Loan",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 17,
+          "Title": "Personal Loan",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 63,
+              "Title": "Personal Loan",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        },
+        {
+          "ID": 18,
+          "Title": "Other Loans(s)",
+          "Icon": {
+            "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+          },
+          "Categories": [
+            {
+              "ID": 64,
+              "Title": "Other Loan(s)",
+              "Icon": {
+                "Filename": "assets/Uploads/budget-template-placeholder-option.png"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

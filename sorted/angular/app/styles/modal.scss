@@ -1,0 +1,90 @@
+/* NOTE: these styles affect both Sorted and Budgeting Tool:
+   please CHECK to make sure changes made here don't break either one! */
+
+body.modal-open {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.modal {
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
+}
+
+.modal-open {
+  @media (max-width: $screen-md-max) {
+    top: 0;
+    width: 100%;
+  }
+
+  .modal {
+    -webkit-overflow-scrolling: auto !important;
+    overflow-y: auto !important;
+  }
+
+  
+
+  #login-modal.modal, 
+  #save-as-modal.modal {
+    @media (max-width: $screen-md-max) {
+      //position: absolute !important;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: $black;
+      opacity: 1;
+    }
+
+    .modal-cancel-link {
+      padding-top: 10px;
+    }
+
+    .login-modal-content {
+      max-width: 370px;
+      margin: 0 auto;
+    }
+    .modal-content {
+      padding: 30px 20px 0 20px;
+      border-radius: 3px;
+    }
+
+    .sign-in-text {
+      margin-bottom: 40px;
+    }
+  }
+
+  #login-modal,
+  #signup-modal{
+    form input{
+      line-height:normal;
+    }
+  }
+
+  #save-as-modal {
+    .field {
+      input {
+        margin-bottom: 3px;
+      }
+      margin-bottom: 20px;
+    }
+
+    .Actions {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.reset-password-notification{
+  background: #fdeee7;
+  padding: 12px 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

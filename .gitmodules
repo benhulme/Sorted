@@ -1,0 +1,11 @@
+[submodule "blog"]
+	path = sorted/blog
+	url = https://github.com/silverstripe/silverstripe-blog
+
+[submodule "fulltextsearch-localsolr"]
+	path = sorted/fulltextsearch-localsolr
+	url = https://github.com/silverstripe-labs/silverstripe-fulltextsearch-localsolr
+
+[submodule "memberprofiles"]
+	path = sorted/memberprofiles
+	url = https://github.com/silverstripe-australia/silverstripe-memberprofiles

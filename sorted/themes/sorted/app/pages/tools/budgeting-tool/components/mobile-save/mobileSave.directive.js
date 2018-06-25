@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").directive("mobileSave",["siteConfig",function(e){return{restrict:"E",templateUrl:e.APP_PATH+"app/pages/tools/budgeting-tool/components/mobile-save/mobileSave.html"}}])}();

@@ -1,0 +1,36 @@
+<div class="calc-input-iar-select">
+
+  <label class="font-sm" tabindex="-100">
+    {{field.label}}
+    <popover ng-show="field.tooltip.visible">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip.text}}" tabindex="-100">
+      </button>
+    </popover>
+  </label>
+
+  <!-- btn-group-justified  -->
+  <div class="btn-group btn-container"
+       role="group"
+       aria-label="">
+
+    <div class="btn-group btn-group-lg calc-input-btn-select-group"
+         role="group"
+         ng-repeat="(btnKey, button) in field.buttons">
+      <button class="{{button.class}}" tabindex="-300"
+              data-related="{{button.related}}"
+              data-toggle="{{button.toggle}}"
+              data-result="{{button.toggleOutput}}"
+              data-value="{{button.value}}"
+              ng-class="{selected: model.$attributes[field.calcModel] === button.value}">
+        <span class="font-xs">{{button.text}}</span>
+      </button>
+    </div>
+
+  </div>
+
+  <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx">{{field.link.text}}</a>
+</div>

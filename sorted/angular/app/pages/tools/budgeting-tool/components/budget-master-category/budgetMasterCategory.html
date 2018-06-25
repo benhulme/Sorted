@@ -1,0 +1,13 @@
+<section class="budget-master-category"
+  ng-class="{'budget-master-category-first': $first}">
+  <budget-section-heading></budget-section-heading>
+
+  <div class="row budget-category-list" uib-collapse="!mc.expanded">
+  	<div class="budget-category-container">
+  		<budget-category class="budget-category"
+       	ng-repeat="category in mc.Categories"></budget-category>
+       	 <add-new-category></add-new-category>
+  	</div>
+
+  </div>
+</section>

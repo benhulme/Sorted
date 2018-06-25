@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "toTrusted.js",
+  "sourceRoot": "",
+  "sources": [
+    "toTrusted.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA;EAEA,OAAO,CAAC,MAAR,CAAe,QAAf,CACE,CAAC,MADH,CACU,WADV,EACuB;IAAC,MAAD,EAAS,SAAC,IAAD;aAC5B,SAAC,IAAD;eACE,IAAI,CAAC,WAAL,CAAiB,IAAjB;MADF;IAD4B,CAAT;GADvB;AAFA"
+}

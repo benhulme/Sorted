@@ -1,0 +1,107 @@
+<div class="budget-header-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="$ctrl.onCancel_clickHandler($event)" aria-hidden="true">×</button>
+    <h4 class="modal-title">Edit Budget</h4>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- <div class="col-md-3">
+          <div class="profile-picture">
+            <img ng-src="{{$ctrl.TOOL_ASSETS + $ctrl.userProfileData.Profile.ImageSource}}" />
+          </div>
+        </div> -->
+        <div class="budget-modal-user-avatar center-block text-center _relative col-md-3">
+          <div class="budget-header-user-avatar center-block text-center _relative profile-picture"
+            style="background-image:url({{$ctrl.userProfileData.Profile.ImageSource}});">
+          </div>
+          <div class="modal-edit-profile-link">
+            <!--<a class="font-orange" ng-click="">EDIT PROFILE <i class="fa fa-chevron-right font-xs"></i> (todo)</a>-->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="budget-title">Budget name:</label>
+            <input type="text" id="budget-title" class="budget-title form-control" autofocus="" ng-model="$ctrl.budgetCalculator.Income.Title">
+          </div>
+        </div>
+        <div class="col-md-3 budget-period">
+          <label for="budget-period-dropdown">Budgeting period:</label>
+          <div class="dropdown" uib-dropdown>
+            <button class="btn btn-default dropdown-toggle form-control modal-only"
+                    id="budget-period-dropdown"
+                    type="button"
+                    uib-dropdown-toggle
+                    aria-haspopup="true"
+                    aria-expanded="true"
+            ><span>{{$ctrl.budgetCalculator.Income.Period.Title}}</span>  <i class="icon-chevron-down" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="period in $ctrl.budgetPeriods">
+                <a class="dropdown-link" ng-click="$ctrl.onSetBudgetPeriod_clickHandler($event, period)">{{period.Title}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <label>Income streams:</label>
+        </div>
+      </div>
+
+      <!-- Loop through the income streams -->
+      <div class="row income-stream-group" ng-repeat="stream in $ctrl.budgetCalculator.Income.Streams">
+        <div class="col-md-8 form-group income-stream-name-group">
+          <input type="text" class="budget-title form-control" ng-model="stream.Title" placeholder="Income source">
+        </div>
+        <div class="col-md-3">
+          <div class="form-inline-addon form-addon-dollar">
+
+          <input type="text"
+                 class="budget-title form-control"
+                 ng-model="stream.CentsFormattedString"
+                 placeholder="Amount to budget"
+                 ng-blur="$ctrl.onUpdateStream_blurHandler($event, stream)"
+                 restrict-currency>
+
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-1" ng-if="stream.Removable">
+          <button class="btn-income-stream-remove btn-wrap" ng-click="$ctrl.onRemoveIncome_clickHandler($event, stream, $index)"></button>
+          <label for="btn-income-stream-remove" class="remove-income-label">
+            Remove Income
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Add a new stream -->
+      <div class="row">
+        <div class="col-sm-12 col-md-8 remove-income-container">
+          <button class="btn-income-stream-add" ng-click="$ctrl.onAddIncome_clickHandler($event)">
+            Add Income
+          </button>
+        </div>
+
+        <div class="col-sm-12 col-md-4 btn-wrap">
+          <h2 class="calculated-income-stream">${{$ctrl.budgetCalculator.Income.TotalFormattedString}}</h2>
+          <span class="budget-amount">
+            Available to budget
+          </span>
+        </div>
+      </div>
+
+  </div>
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-sm-6 modal-cancel-link">
+        <a class="font-orange" ng-click="$ctrl.onCancel_clickHandler($event)">CANCEL</a>
+      </div>
+      <div class="col-sm-6 modal-ok-button">
+        <button class="btn btn-primary btn-xs-fullwidth" type="button" ng-click="$ctrl.onOk_clickHandler($event)">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

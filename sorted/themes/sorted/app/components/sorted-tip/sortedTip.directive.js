@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("sortedTip",["siteConfig",function(t){return{restrict:"AE",templateUrl:t.APP_PATH+"app/components/sorted-tip/sortedTip.html",transclude:!0}}])}();

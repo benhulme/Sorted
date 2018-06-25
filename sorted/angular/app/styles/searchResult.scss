@@ -1,0 +1,33 @@
+.search-result{
+  .filt-link{
+    margin-right: 8%;
+    &.selected{
+      img{
+        top:0;
+      }
+    }
+  }
+
+  .edit-date{
+    color: #757879;
+  }
+
+  .layout-col:last-of-type{
+    .layout-divider-dashed-medium{
+      display: none;
+    }
+  }
+
+  .search-icon-container{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    img{
+      margin-top: -60px;
+      &:hover{
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "Title":"Tools",
+    "HeaderCopy":"All the tools and calculators you need to get your money plans on track.",
+    "ForegroundImage": {
+      "Filename": "assets/Uploads/Sorted-Budgeting.png"
+    },
+    "BackgroundImage": {
+      "Filename": "assets/Uploads/header-background-tools.jpg"
+    }
+  }
+]

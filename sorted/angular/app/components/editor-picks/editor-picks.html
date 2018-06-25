@@ -1,0 +1,38 @@
+<div id="editor-picks" class="bg-grey-lightest">
+
+    <h4 class="sidebar-heading font-light">{{title}}</h4>
+  <div class="row" ng-repeat="(index,section) in data | limitTo: 6">
+
+    <div >
+
+      <div class="col-sm-6 col-md-12 layout-col _no-float-md-above">
+
+        <a class="sidebar-link _block _clear link-black-orange" ng-href="{{section.Link}}" vert-middle="sidebar-text-cell"  analytics-on="click" analytics-category="sidecta" analytics-event="mostpopular" analytics-label="{{section.Title}}" analytics-interaction-type="0">
+
+          <div class="sidebar-thumb _left _block" aspect-ratio="16:9" style="height: 64.6875px;">
+
+            <div class="_full-width _full-height cover-image" cover-image="siteConfig.APP_PATH{{section.ThumbnailImage}}" style="background-image: url({{section.ThumbnailImage.Filename}});"></div>
+
+          </div>
+
+                <span class="sidebar-text _left _block">
+                    <div class="sidebar-link-container _relative">
+                      <div class="sidebar-text-table">
+                        <div class="sidebar-text-cell font-sm">{{section.MenuTitle}}</div>
+                      </div>
+                    </div>
+                </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <div ng-hide="index === data.length-1" class="layout-divider-dashed sidebar-divider"></div>
+  </div>
+
+
+
+
+</div>

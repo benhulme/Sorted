@@ -1,0 +1,51 @@
+<intro-header data="btemplate.data.Header" breadcrumbs="btemplate.breadcrumbs"></intro-header>
+<div class="container">
+  <div class="budgeting-questions">
+
+    <form name="budgetTemplateQuestions" ng-submit="btemplate.submitForm()">
+      <div class="row">
+        <div class="budget-skip-link-top">
+          <a class="font-orange" ng-click="btemplate.onSkip_clickHandler($event)">SKIP <i class="fa fa-chevron-right font-xs"></i></a><br>
+        </div>
+      </div>
+      <div class="budget-template-question text-center"
+           ng-repeat="question in btemplate.data.Questions.List">
+        
+        <div class="row text-center budget-question">
+          <h5>{{$index+1}}. {{question.Question}}</h5>
+        </div>
+
+        <div class="row preset-container text-center">
+          <div class="budget-preset" ng-repeat="preset in question.Buttons" >
+            <div class="preset-icon col-xs-6" ng-style="preset.isSelected ? {'background-color':'{{question.TemplateColor}}'} : {'background-color':'transparent'}">
+              <!-- <button class="preset-button" ng-click="btemplate.onQuestion_clickHandler($event, preset, $index, question)" ng-class="{active:preset.isSelected}">
+                <div class="preset-icon-image">
+                  <img src="{{btemplate.TOOL_ASSETS + preset.Icon}}" class="preset-image">
+                </div>
+                <span class="preset-label">{{preset.Title}}</span>
+              </button> -->
+              <button class="preset-button tools-icon _inline-block" ng-click="btemplate.onQuestion_clickHandler($event, preset, $index, question)" ng-class="{active:preset.isSelected}">
+                <div class="tools-icon-container">
+                  <img ng-src="{{btemplate.TOOL_ASSETS + preset.Icon}}" class="tools-icon-image _absolute" />
+                </div>
+                <span class="preset-label">{{preset.Title}}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-sm-4 col-sm-offset-4 budget-template-create">
+          <button class="btn btn-primary btn-xs-fullwidth" type="submit">Create template</button>
+        </div>
+        <div class="col-sm-4 budget-skip-link">
+          <a class="font-orange" ng-click="btemplate.onSkip_clickHandler($event)">SKIP <i class="fa fa-chevron-right font-xs"></i></a><br>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+</div>

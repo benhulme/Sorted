@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").config(["$routeProvider","siteConfig",function(e,c){e.when("/check-email",{templateUrl:c.APP_PATH+"app/pages/password/checkEmail/checkEmail.html"})}])}();

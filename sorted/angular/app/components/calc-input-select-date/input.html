@@ -1,0 +1,24 @@
+<div class="calc-input-select-date">
+
+  <label class="font-sm">
+    {{field.label}}
+    <popover ng-show="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip}}">
+      </button>
+    </popover>
+  </label>
+
+
+  <input kendo-date-picker
+         class="font-md"
+         autocomplete="off"
+         k-ng-model="dateModel"
+         k-options="{{options}}"
+         placeholder="{{field.placeholder}}">
+</div>
+
+

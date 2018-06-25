@@ -1,0 +1,75 @@
+.calc-output-print {
+  line-height: 48px;
+  margin-right: 20px;
+}
+
+.calc-output-container {
+  padding: 20px;
+}
+
+.calc-output-row {
+  margin-bottom: 20px;
+  &.calc-output-input-row {
+    line-height: 50px;
+    margin-bottom: 10px;
+  }
+}
+
+.calc-output-month {
+  margin: 0 0 0 10px;
+  width: 120px;
+  @media(max-width: $screen-xs-max){
+    margin: 0 10px 0 0;
+  }
+}
+
+.calc-output-year {
+  margin: 0 0 0 10px;
+  width: 120px;
+  @media(max-width: $screen-xs-max){
+    margin: 0;
+  }
+}
+
+.calc-output-age {
+  .form-control {
+    height: 38px;
+  }
+  .dropdown-menu {
+    min-width: 100%;
+  }
+}
+
+.calc-output-value {
+  text-align: right;
+  @media(max-width: $screen-xs-max) {
+    text-align: left;
+  }
+}
+
+.calc-output-money-input {
+  .input-group {
+    margin: 0;
+    width: 150px;
+  }
+}
+
+.calc-output-freq {
+  margin-left: 10px;
+}
+
+.calc-output-extra {
+  .layout-divider-dashed {
+    margin: 20px 0 16px 0;
+  }
+}
+
+.calc-results-print-bottom{
+  @media(max-width: $screen-sm-max){
+    margin-top: 40px;
+    width:100%;
+    .btn{
+      width:100%;
+    }
+  }
+}

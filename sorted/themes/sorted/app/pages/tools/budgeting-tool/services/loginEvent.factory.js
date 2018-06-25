@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").factory("loginEventHandler",["$scope","$window","Budget",function(e,n,o){function a(){e.profile=angular.fromJson(n.sessionStorage.getItem("userData")),e.saveInProgress&&(o.save(),e.saveInProgress=!1)}angular.element(n).on("hidden.bs.modal",a),e.on("$destroy",function(){angular.element(n).off("hidden.bs.modal",a)})}])}();

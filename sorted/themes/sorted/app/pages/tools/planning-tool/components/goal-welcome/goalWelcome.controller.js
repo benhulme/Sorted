@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("GoalWelcomeController",["$scope","pageData","siteConfig",function(a,o,t){a.appPath=t.APP_PATH,a.data=o.data[0],a.data.Link="/tools/goal-planner/welcome"}])}();

@@ -1,0 +1,49 @@
+<div class="header-container header-home" parallax ng-if="data && headerType == 'HOME'">
+
+  <div class="header-background" parallax-layer="1" cover-image="{{data.BackgroundImage.Filename}}">
+    <div class="header-hand-container">
+      <img class="header-hand" ng-src="{{data.ForegroundImage.Filename}}" />
+    </div>
+  </div>
+  <div class="layout-container header-home-copy _relative">
+    <div class="row layout-row sequence" sequence="1000">
+      <div class="col-md-6">
+        <div class="layout-content">
+          <ul class="_no-bullets font-h1">
+            <li class="header-li"><a ng-href="{{data.links[0].Url}}" target="_self" class="header-link" sequence-order="1" analytics-on="click" analytics-category="homepage" analytics-event="cta" analytics-label="tacklemydebt" analytics-interaction-type="0">{{data.links[0].Text}}</a></li>
+            <li class="header-li"><a ng-href="{{data.links[1].Url}}" target="_self" class="header-link" sequence-order="2"  analytics-on="click" analytics-category="homepage" analytics-event="cta" analytics-label="sortmymoney" analytics-interaction-type="0">{{data.links[1].Text}}</a></li>
+            <li class="header-li"><a ng-href="{{data.links[2].Url}}" target="_self" class="header-link" sequence-order="3"  analytics-on="click" analytics-category="homepage" analytics-event="cta" analytics-label="seemyfuture" analytics-interaction-type="0">{{data.links[2].Text}}</a></li>
+          </ul>
+          <p class="header-subhead font-h3" sequence-order="4">{{data.HeaderCopy}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="header-container header-standard" parallax ng-if="data && headerType == 'STANDARD'">
+
+  <div class="header-background" parallax-layer="1" cover-image="{{data.BackgroundImage.Filename}}"></div>
+
+  <div class="layout-container _relative">
+    <div class="header-foreground-layout _full-width _absolute">
+      <div class="header-foreground-container">
+        <img class="header-foreground-image" ng-src="{{data.ForegroundImage.Filename}}" />
+      </div>
+    </div>
+    <div class="header-standard-copy _absolute _full-width">
+      <div class="row" sequence sequence-delay="500">
+        <div class="layout-col col-sm-7 col-md-6 _full-height">
+          <div class="layout-content">
+            <h1 sequence-order="1">{{data.Title}}</h1>
+            <p class="header-subhead font-h5" sequence-order="2">{{data.HeaderCopy}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

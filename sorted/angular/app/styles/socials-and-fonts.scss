@@ -1,0 +1,74 @@
+.social-and-fonts {
+  line-height: 32px;
+    margin-bottom: 20px;
+      &>.bubbles-container{
+        padding:20px 0 5px 0;
+        &.bottom-bubbles{
+          padding: 0 0 10px 0;
+        }
+      }
+
+    @media(max-width: $screen-sm-max){
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .bubbles {
+        display: inline-block;
+        margin: 0 12px 0 0;
+        width: 35px;
+        height: 35px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        img{
+          width: 35px;
+
+          margin-top: -35px;
+          &:hover{
+            margin-top: 0;
+        }
+        }
+
+    }
+
+
+    .saf-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+        &.fonts {
+            float: right;
+
+            li {
+                padding: 0;
+                cursor: pointer;
+            }
+
+        }
+
+    }
+
+}
+
+
+@media(max-width: $screen-xs-max){
+
+  .bubbles{
+    img{
+      margin-top: 0 !important;
+      &:hover{
+        margin-top: 0 !important;
+      }
+    }
+
+  }
+}
+
+

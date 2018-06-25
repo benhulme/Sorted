@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+
+<script src="standalone/calculators/_sorted_super_class.js"></script>
+<script src="standalone/calculators/_sorted-constants.js"></script>
+
+<script src="standalone/calculators/mortgage_repayment.js"></script>
+
+
+<script src="standalone/timeSpan-1.2.js"></script>
+
+<script src="standalone/en-NZ.js"></script>
+
+<script src="standalone/date.js"></script>
+
+<script type="text/javascript">
+
+
+  var calculator = new SortedCalculator_Mortgage_Repayment();
+
+  var testObj = {
+    loan1: 300000,
+    type1: 1,
+    interest1: 7.5,
+    repay_freq1: 12,
+    term1: 20,
+    loan2: 480000,
+    type2: 2,
+    interest2: 5.8,
+    repay_freq2: 12,
+    term2: 30,
+    loan3: 200000,
+    type3: 2,
+    interest3: 6,
+    repay_freq3: 26,
+    term3: 10,
+    month_born: 6,
+    year_born: 1977
+  };
+
+  var result = calculator.calculate(testObj, true);
+
+  console.log(result);
+
+
+</script>
+
+</body>
+</html>

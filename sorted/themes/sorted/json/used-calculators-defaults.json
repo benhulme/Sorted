@@ -1,0 +1,58 @@
+{
+
+  "1": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/01.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/01.svg",
+    "color": "yellow"
+  },
+  "2": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/02.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/02.svg",
+    "color": "cyan"
+  },
+  "3": {
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/03.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/03.svg",
+    "color": "pink"
+  },
+  "4":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/04.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/04.svg",
+    "color": "magenta"
+  },
+  "5":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/05.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/05.svg",
+    "color": "cyan"
+  },
+  "6":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/06.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/06.svg",
+    "color": "yellow"
+  },
+  "7":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/07.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/07.svg",
+    "color": "yellow"
+  },
+  "8":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/08.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/08.svg",
+    "color": "blue"
+  },
+  "9":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/09.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/09.svg",
+    "color": "blue"
+  },
+  "10":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/10.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/10.svg",
+    "color": "cyan"
+  },
+  "12":{
+    "backgroundImage": "/themes/sorted/assets/images/tools/usedBackgrounds/12.png",
+    "iconImage": "/themes/sorted/assets/images/tools/usedIcons/12.svg",
+    "color": "cyan"
+  }
+}

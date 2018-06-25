@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("loggedIn",["siteConfig",function(){return{restrict:"A",link:function(t){window.checkLogin(),t.$watch(function(){return sessionStorage.getItem("userData")},function(){sessionStorage.getItem("userData")&&window.fillLogged()})}}}])}();

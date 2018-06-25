@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation"),STRING_REGEXP=/^[a-zA-Z0-9 \-\']+$/;app.directive("cmString",function(){return{require:"ngModel",link:function(i,n,t,r){r.$validators.string=function(i,n){return!!r.$isEmpty(i)||("false"===t.cmCondition||!!STRING_REGEXP.test(n))}}}});

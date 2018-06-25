@@ -1,0 +1,1 @@
+(function(){"use strict";angular.module("sorted").directive("stickyBlock",function(){return{restrict:"A",link:function(t,o){var i,e;e=o.offset().top-97,window.outerWidth>1024&&(i=800,o.affix({offset:{top:e,bottom:i}}))}}})}).call(this);

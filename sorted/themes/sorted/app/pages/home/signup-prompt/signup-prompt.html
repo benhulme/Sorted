@@ -1,0 +1,32 @@
+<div class="bg-green-gradient _relative signup-prompt-container" scroll-fade>
+  <div class="_full-height-xs-above _relative" vert-middle="signup-prompt-content" vert-disable-below="480">
+    <div class="layout-container" scroll-fade-item>
+
+      <div class="row _relative _full-height-xs-above">
+
+        <div class="layout-col col-sm-6 _relative _full-height-xs-above">
+          <div class="signup-prompt-content layout-content">
+
+            <h2 class="signup-prompt-title">{{signupPrompt.Title}}</h2>
+
+            <p>{{signupPrompt.Content}}</p>
+
+            <div class="signup-prompt-mobile-container xs-visible">
+              <img class="signup-prompt-mobile-image" ng-src="{{signupPrompt.BladeImage.Filename}}" />
+            </div>
+
+            <a type="submit" class="btn btn-primary signup-prompt-link btn-xs-fullwidth" data-toggle="modal" data-target="#signup-modal" title="{{signupPrompt.ButtonCopy}}">{{signupPrompt.ButtonCopy}}</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="signup-prompt-container signup-prompt-row hidden-xs" scroll-fade-item>
+        <img class="signup-prompt-image" ng-src="{{signupPrompt.BladeImage.Filename}}" />
+    </div>
+  </div>
+</div>

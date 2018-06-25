@@ -1,0 +1,22 @@
+<div class="calc-select">
+
+  <label class="font-sm" ng-if="field.label">
+    {{field.label}}
+    <popover ng-show="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip}}">
+      </button>
+    </popover>
+  </label>
+
+  <div class="input-group-select">
+
+    <cm-select cm-placeholder="Month"
+               cm-options="options"
+               ng-model="model.$attributes[field.calcModel]"
+               class="_inline-block _full-width"></cm-select>
+  </div>
+</div>

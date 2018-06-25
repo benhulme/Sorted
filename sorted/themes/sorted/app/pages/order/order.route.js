@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").config(["$routeProvider","siteConfig",function(r,e){r.when("/order",{templateUrl:e.APP_PATH+"app/pages/order/order.html",controller:"OrderController"})}])}();

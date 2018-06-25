@@ -1,0 +1,12 @@
+[
+  {
+    "Title": "See what's possible",
+    "Content": "Steer your way to being better off, starting with this one easy step.",
+    "ButtonCopy": "Find out more",
+    "URLSegment":"preview-calculator",
+    "BladeImage": {
+      "Filename": "assets/Uploads/home-calc-preview.png"
+    }
+  }
+]
+

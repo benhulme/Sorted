@@ -1,0 +1,20 @@
+budget-master-category-listview {
+  margin: 0;
+
+  .budget-master-category {
+    border-top: 2px #d9dad5 solid;
+  }
+
+  .budget-category-list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .budget-master-category-total{
+    @media (max-width: $screen-sm-max) {
+      text-align: right;
+      padding-right: 0;
+    }
+  }
+
+}

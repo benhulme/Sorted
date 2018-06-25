@@ -1,0 +1,16 @@
+<div class="text-center budget-category-container _relative"> <!-- col-sm-6 col-md-4  -->
+  <div class="budget-category-image" 
+    ng-click="openCategoryModal(category, mc)"
+    ng-style="{'background-image': 'url({{getIconPath(category.Icon)}})'}"></div>
+  <img class="budget-category-edit" 
+    ng-click="openCategoryModal(category, mc)"
+    ng-src="{{siteConfig.APP_PATH}}assets/images/edit-orange.svg">
+  <div class="budget-category-copy-container">
+    <h3 class="budget-category-title">{{category.Title | truncate:MAX_CATEGORY_TITLE}}</h3>
+    <inline-editable-amount
+      ng-click="toggleEditable(category,mc)"></inline-editable-amount>
+    <budget-period-dropdown 
+      amount="category.Cents"
+      model="category.Period"></budget-period-dropdown>
+  </div>
+</div>

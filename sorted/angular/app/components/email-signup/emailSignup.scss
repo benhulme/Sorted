@@ -1,0 +1,22 @@
+.email-signup-container {
+  padding: 40px 0;
+  .email-signup-row {
+    margin-top: 20px;
+  }
+}
+
+.email-signup-button {
+  float: left;
+}
+
+.email-signup-input {
+  @include calc(width, '100% - 156px');
+  float: left;
+  margin-right: 10px;
+  @media(max-width: $screen-xs){
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+
+

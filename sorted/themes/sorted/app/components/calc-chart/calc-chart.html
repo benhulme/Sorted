@@ -1,0 +1,13 @@
+<div class="legend-container row font-sm">
+  <div class="col-xs-12">
+    <ul class="_inline-list legend-list">
+      <li class="legend-item" ng-repeat="series in chartData.series">
+        <span class="legend-square _inline-block" ng-style="{'background-color': series.color}"></span><span class="legend-label">{{series.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="bar-chart-graph">
+  <div id="chart"></div>
+</div>

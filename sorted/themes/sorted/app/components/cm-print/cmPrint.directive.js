@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("cmPrint",["$window","$analytics",function(t,n){return{restrict:"A",scope:{},link:function(i,c){c.on("click",function(i){n.eventTrack("button",{category:"print",action:"button"}),i.preventDefault(),t.print()})}}}])}();

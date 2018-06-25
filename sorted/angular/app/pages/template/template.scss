@@ -1,0 +1,12 @@
+.template-header-container {
+  height: 540px;
+  overflow: hidden;
+}
+
+.template-header-image {
+  height: 540px;
+  width: 100%;
+  bottom: 0;
+  background: url(../images/header.jpg) no-repeat bottom center;
+  background-size: cover;
+}

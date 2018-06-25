@@ -1,0 +1,179 @@
+tool-header {
+  .layout-header-small {
+    min-height: 260px;
+    height: auto;
+    position: relative;
+    @media(max-width: 991px) {
+      min-height: 162px;
+    }
+    .header-small-container {
+      .header-background {
+        min-height: 230px;
+        height: auto;
+        background-position: center bottom;
+        @media(max-width: 991px) {
+          min-height: 162px;
+        }
+      }
+      .breadcrumb {
+        top: 100px;
+        @media (min-width: 992px) {
+          top: 80px;
+        }
+      }
+    }
+  } // .layout-header-small - END
+  .author-details-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative; // removed absolute positioning
+    width: 100%;
+    z-index: 100;
+    @media(min-width: 992px) {
+      margin-top: -120px; // negated margin
+    }
+    .budget-header {
+      position: relative;
+      margin-bottom: 20px;
+      z-index: 200;
+      text-align: left;
+      @media(max-width: 991px) {
+        text-align: center;
+      }
+      .profile-picture-wrap {
+        .profile-picture.center-block {
+          img {
+            width: 150px;
+            height: 150px;
+          }
+          @media(min-width: 992px) {
+            float: right;
+          }
+          @media(max-width: 991px) {
+            float: none;
+          }
+        }
+      }
+      a#how-this-tool-works {
+        &:before {
+          display: inline-block;
+          /* use !important to prevent issues with browser extensions that change fonts */
+          font-family: 'icomoon' !important;
+          speak: none;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          text-decoration: none;
+          line-height: 1;
+      
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      
+          content: $icon-chevron-right;
+          color: #FF4B05;
+          position: relative;
+          top: 0px;
+          padding-right: 5px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          &:before {
+            text-decoration: none;
+          }
+        }
+      }
+    } // .budget-header - END
+    .tool-title-wrap {
+      padding-top: 15px;
+      @media(max-width:991px) {
+        padding-top: 0px;
+      }
+      h1.prompt-editable {
+        display: inline-block;
+        &:after {
+          top: 11px;
+        }
+        @media (max-width: 480px) {
+          font-size: 30px;
+          line-height: 36px;
+          &:after {
+            top: 4px;
+          }
+        }
+        @media (min-width: 481px) {
+          font-size: 40px;
+          line-height: 48px;
+        }
+        @media(min-width: 992px) {
+          font-size: 30px;
+          line-height: 44px;
+        }
+        @media(min-width: 1601px) {
+          font-size: 36px;
+          line-height: 50px;
+        }
+      }
+      .budget-period {
+        font-size: 16px;
+        margin-top: -13px;
+      }
+    } // .tool-title-wrap - END
+    .tool-budget-amount-wrap {
+      padding-top: 15px;
+      @media(max-width:991px) {
+        padding-top: 0px;
+      }
+      h2 {
+        @media (max-width: 480px) {
+          line-height: 33px;
+        }
+        @media (max-width: 991px) {
+          letter-spacing: -2px;
+          font-size: 40px;
+          line-height: 38px;
+          font-weight: 200;
+        }
+        @media(min-width: 992px) {
+          font-size: 36px;
+          line-height: 50px;
+          font-weight: 400;
+        }
+        &.budget-exceeded {
+          color: red;
+        }
+      }
+      .budget-amount-copy {
+        font-size: 16px;
+        margin-top: -13px;
+      }
+    } // .tool-budget-amount-wrap - END
+  } // .author-details-container - END
+  .tool-print-options-wrap {    
+    padding-top: 30px;
+    text-align: left;
+    .options-row {
+      width: 100%;
+      margin-top: 10px;
+    }
+    @media (max-width: 991px) {
+      text-align: center;
+      padding-top: 10px;
+      #how-this-tool-works {
+        margin-top: 10px;
+      }
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+      line-height: 26px;
+    }
+  }
+  .hide-for-mobile {
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+} // tool-header - END

@@ -1,0 +1,98 @@
+<div collapse-toggler class="panel-heading toggler">
+  <div class="row">
+    <div class="pull-left">
+      <h4 class="panel-title font-h4 font-medium"><span class="caret-order"></span>{{category.Title}}</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+
+      <!--<span class="_uppercase font-sm font-medium">-->
+        <!--Coming soon-->
+      <!--</span>-->
+    </div>
+  </div>
+
+</div>
+
+<div class="panel-collapse collapse seminar in">
+  <div class="col-md-12">
+    <form>
+      <p>Sorted's free seminars have been designed for any manager or community leader to pick up and run with their teams
+        or communities. Each seminar includes a comprehensive facilitators's guide and presentation. They take about an
+        hour although we recommend allowing longer for any discussion.</p>
+      <p>You can deliver the seminars yourself, or you may
+        wish to use an external facilitator. If you need help with finding a facilitator, <a
+          href="https://www.cffc.org.nz/financial-capability/looking-for-a-facilitator/sorted-facilitators/" target="_blank">here's a list of
+          external facilitators</a> who may be able to help.</p>
+
+      <div class="row">
+        <div class="col-md-12 order-box" ng-repeat="(index, item) in data[category.Title]">
+
+          <div>
+            <div>
+
+              <div class="row">
+                <!-- Item thumbnail -->
+                <div class="col-sm-2">
+
+                  <div class="">
+                    <img class="img-responsive img-thumbnail"
+                         ng-src="{{item.ThumbnailImage.Filename}}"
+                         alt="{{item.ThumbnailImage.Title}}">
+                  </div>
+
+                </div>
+
+                <!-- Item description -->
+                <div class="col-sm-7">
+
+                  <div class="">
+                    <h4 class="">{{item.Title}}</h4>
+                    <p>{{item.ShortCopy}}</p>
+                    <ul>
+                      <li ng-repeat="i in item.Includes">{{i}}</li>
+                    </ul>
+                  </div>
+                </div>
+
+
+
+
+
+                <!-- Buttons -->
+                <div class="col-sm-3">
+                  <!-- Preview btn -->
+                  <div class="order-copy">
+                    <a class="btn-icon-pdf font-md" target="_blank"  ng-href="{{item.Preview.Filename}}" download analytics-on="click" analytics-event="seminar" analytics-category="download" analytics-label="{{item.PDF.Filename.split('/').pop()|lowercase}}">
+                      <i class="pdf"></i>
+                      Preview
+                    </a>
+
+                    <p class="font-xs">{{item.Preview.Description}}</p>
+                  </div>
+
+                  <!-- Add to Order btn -->
+                  <div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ng-model="Order.Seminar[item.ID]"> Add to order
+                      </label>
+                    </div>
+
+                    <div class="small">(Delivered digitally)</div>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

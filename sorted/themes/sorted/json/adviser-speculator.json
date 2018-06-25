@@ -1,0 +1,104 @@
+[
+  {
+    "ClassName": "ToolPage",
+    "LastEdited": "2016-02-15 10:53:11",
+    "Created": "2016-02-15 10:50:07",
+    "URLSegment": "money-personality-profiler",
+    "Title": "Money Personality Profiler",
+    "Content": "<p>With the Money Personality Profiler we can help you figure out how your personality affects your spending habits and where you can make changes.</p>",
+    "ShowInMenus": "1",
+    "ShowInSearch": "1",
+    "Sort": "2",
+    "HasBrokenFile": "0",
+    "HasBrokenLink": "0",
+    "CanViewType": "Inherit",
+    "CanEditType": "Inherit",
+    "Version": "3",
+    "ParentID": "23",
+    "ID": 33,
+    "RecordClassName": "ToolPage",
+    "parser": {},
+    "ShowNudge": "0",
+    "NudgeID": "1",
+    "CalcIconID": "62",
+    "HeaderCopy": null,
+    "ShortCopy": "With the Money Personality Profiler we can help you figure out how your personality affects your spending habits and where you can make changes.",
+    "ForegroundImageID": "0",
+    "BackgroundImageID": "0",
+    "ThumbnailImageID": "0",
+    "ForegroundImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "BackgroundImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "ThumbnailImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "CalcIcon": {
+      "ClassName": "File",
+      "LastEdited": "2016-02-15 10:50:53",
+      "Created": "2016-02-15 10:50:53",
+      "Name": "tools-money-personality-profiler.svg",
+      "Title": "tools money personality profiler",
+      "Filename": "assets/Uploads/tools-money-personality-profiler.svg",
+      "ShowInSearch": "1",
+      "ParentID": "1",
+      "OwnerID": "1",
+      "ID": 62,
+      "RecordClassName": "File"
+    },
+    "Nudge": {
+      "ClassName": "Nudge",
+      "LastEdited": "2016-02-10 10:08:14",
+      "Created": "2016-01-27 15:08:10",
+      "Title": "Test Nudge 1",
+      "Description": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+      "Tag": "<form name=\"wombats\"> <label for=\"wombat\">Wombat:</label> <input type=\"text\" name=\"wombat\" value=\"Enter wombat here.../> <input type=\"submit\" value=\"Go!/> </form>",
+      "ToolPageHolderID": "23",
+      "ToolPageID": "0",
+      "PlaceHolderID": "33",
+      "ID": 1,
+      "RecordClassName": "Nudge"
+    },
+    "Related": [],
+    "Link": "/#/tools/money-personality-profiler",
+    "resultPages": [
+      {
+    "Title": "Grumpy Man",
+    "URLSegment": "grumpyman",
+    "ThumbnailImage": {
+      "ClassName": "Image",
+      "LastEdited": "2016-01-13 13:39:30",
+      "Created": "2016-01-13 13:39:30",
+      "Name": "blog11.jpg",
+      "Title": "blog11",
+      "Filename": "assets/Uploads/blog11.jpg",
+      "ShowInSearch": "1",
+      "ParentID": "1",
+      "OwnerID": "1",
+      "ID": 33,
+      "RecordClassName": "Image"
+    },
+    "ShortCopy": "short copy",
+    "Content": "<p>test Content</p>",
+    "Heading1": null,
+    "Copy1": null,
+    "Heading2": null,
+    "Copy2": null,
+    "Heading3": null,
+    "Copy3": null
+      }
+  ]
+    }
+]
+

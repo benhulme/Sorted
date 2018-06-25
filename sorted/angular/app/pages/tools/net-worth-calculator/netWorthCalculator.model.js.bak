@@ -1,0 +1,113 @@
+/**
+ * Created by greg on 15/02/2016.
+ */
+
+"use strict";
+
+
+angular.module('sorted')
+  .factory('netWorthCalculatorModel', [function () {
+
+    // Helper functions (shared library??)
+    /*var clone = function (obj) {
+      return JSON.parse(JSON.stringify(obj));
+    };*/
+
+    function formatFloat(val, decimal) {
+      var parsedFloat = false;
+      if (val) {
+        if (typeof (val) === 'string') {
+          val = val.replace('$', '').replace(',', '');
+        }
+        parsedFloat = parseFloat(val).toFixed(decimal);
+      }
+
+      if (!parsedFloat || isNaN(parsedFloat)) {
+        return false;
+      } else {
+        return parsedFloat;
+      }
+    }
+
+    function formatInteger(val) {
+
+      var parsedInteger = false;
+
+      if (val) {
+        if (typeof (val) === 'string') {
+          val = val.replace('$', '').replace(',', '');
+        }
+        parsedInteger = parseInt(val);
+      }
+
+      if (!parsedInteger || isNaN(parsedInteger)) {
+        return false;
+      } else {
+        return parsedInteger;
+      }
+
+    }
+
+    var Model = function (fields, inputs) {
+      var self = this;
+      this.fields = {};
+      this.result = {};
+      this.modelName = inputs.unique;
+
+      // changed to use id index as opposed to integer to support
+      // form value assignment when filtering collection
+      _.forEach(fields, function(itm) {
+        self.fields[itm.id] = {
+          calcModel: itm.calcModel,
+          format: itm.format,
+          required: itm.required,
+          value: itm.value
+        };
+      });
+
+      this.prepare = function () {
+
+        var prepared = {};
+
+        // NetWorth only uses Integers, so...
+        _.each(this.fields, function(field){
+
+          if (!_.isEmpty(field.value)) {
+
+            var value = field.value;
+
+            if (field.format) {
+              switch (field.format.type) {
+                case 'INTEGER':
+                  value = formatInteger(field.value);
+                  break;
+                case 'FLOAT':
+                  value = formatFloat(field.value, field.format.decimals);
+                  break;
+              }
+            }
+
+            prepared[field.calcModel] = value;
+          }
+        });
+
+        return prepared;
+
+      };
+
+
+    };
+
+    /**
+     * @param fields - fields from json file
+     * @param inputs - inputs from json file aka Sections e.g. CurrentYear, 10Years, etc
+     * @type {{getInstance: modelInstance.getInstance}}
+     */
+    var modelInstance = {
+      getInstance: function (fields, inputs) {
+        return new Model(fields, inputs);
+      }
+    };
+
+    return modelInstance;
+  }]);

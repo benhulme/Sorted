@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").service("fontStorage",function(){var n=0,t=0;return{incFontSize:function(){n+=3,t+=3},decFontSize:function(){n-=3,t-=3},getFont:function(){return{fontSize:n,lineHeight:t}},setFont:function(e,o){n=e,t=o}}})}();

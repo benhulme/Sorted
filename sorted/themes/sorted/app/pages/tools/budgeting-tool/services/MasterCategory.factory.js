@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").factory("MasterCategory",["Budget","colourGenerator",function(e,t){function r(){return{ID:_.maxBy(e.budget.MasterCategories,"ID").ID+1,Title:"",Icon:{Filename:""},Color:t.getNextColour(),Cents:new BigNumber(0),Default:!1,Expanded:!1,Categories:[]}}return{create:r}}])}();

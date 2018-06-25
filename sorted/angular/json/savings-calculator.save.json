@@ -1,0 +1,15 @@
+{
+  "status":"success",
+  "data":{
+    "ClassName":"CalcData",
+    "LastEdited":"2016-03-17 10:41:47",
+    "Created":"2016-03-17 10:41:47",
+    "Data":[{"saving_amount":0,"starting":"21/03/2016","ending":"21/03/2017","regular_amount":"100","saving_freq":52,"regular_duration_amount":"1","regular_duration_amount_type":"years","interest_rate":"2","initial_savings":0,"iar":1,"age_month":"1","age_year":"1970","nudge_dollars":"50","unique":"regular_amount","name":"regular_amount","id":0,"type":0,"Title":"Savings calculator","result":{"total":5147.87,"contributions":5147.87,"interest":0,"period":12,"age":47,"total_saved":null,"nudge_age":47,"nudge_interest":0,"nudge_period":12,"nudge_total":50,"nudge_total_saved":2573.94}},{"saving_amount":0,"starting":"21/03/2016","ending":"","regular_amount":"0","saving_freq":52,"regular_duration_amount":"0","regular_duration_amount_type":"weeks","interest_rate":"2","initial_savings":0,"iar":1,"age_month":"1","age_year":"1970","nudge_dollars":"50","unique":"goal","name":"goal","id":1,"type":1,"Title":"Savings calculator","result":{}}],
+    "Title":"2 cc's",
+    "CalcID":"3",
+    "Imported":"0",
+    "MemberID":"28",
+    "ID":217,
+    "RecordClassName":"CalcData"
+  }
+}

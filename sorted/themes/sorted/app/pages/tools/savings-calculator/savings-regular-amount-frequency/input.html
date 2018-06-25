@@ -1,0 +1,34 @@
+
+<div class="calc-input-radio-select">
+
+  <label class="font-sm">
+    {{field.label}}
+    <popover ng-show="field.tooltip.visible">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-content="{{field.tooltip.text}}">
+      </button>
+    </popover>
+  </label>
+  <div class="btn-group" data-toggle="buttons">
+    <!--<div ng-repeat="(rKey, radio) in field.radios">-->
+    {ng-repeat="(rKey, radio) in field.radios}
+      <label class="{{radio.class}}">
+        <input type="radio" name="{{field.id}}" id="{{radio.id}}" autocomplete="off" {{radio.checked}}>{{radio.text}}
+      </label>
+    <!--</div>-->
+    <!--<label class="btn btn-default active">
+      <input type="radio" name="{{field.id}}" id="option1" autocomplete="off" checked>Radio 1
+    </label>
+    <label class="btn btn-default active">
+      <input type="radio" name="{{field.id}}" id="option2" autocomplete="off" >Radio 2
+    </label>
+    <label class="btn btn-default active">
+      <input type="radio" name="{{field.id}}" id="option3" autocomplete="off">Radio 3
+    </label>-->
+  </div>
+
+  <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx" tabindex="-99">{{field.link.text}}</a>
+</div>

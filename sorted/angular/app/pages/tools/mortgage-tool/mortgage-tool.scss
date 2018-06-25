@@ -1,0 +1,30 @@
+.mortgage-container {
+  .calc-heading {
+    background-color: $purple-light;
+    color: $black;
+  }
+  .calc-input-container {
+    background-color: $purple-lightest;
+  }
+
+  .calc-input-btn-group .btn.selected {
+    background-color: $purple;
+    color: $white;
+  }
+
+}
+
+.mortgage-age-label {
+  margin-top: 6px;
+}
+
+.mortgage-age-months {
+  width: 120px;
+}
+
+.mortgage-age-years {
+  width: 120px;
+  .input-group {
+  margin: 0 0 0 10px;
+  }
+}

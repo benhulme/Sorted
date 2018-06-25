@@ -1,0 +1,31 @@
+{
+	"name": "silverstripe/installer",
+	"description": "The SilverStripe Framework Installer",
+	"require": {
+		"php": ">=5.3.3",
+		"silverstripe/cms": "^3.3.1",
+		"silverstripe/framework": "^3.6",
+		"silverstripe/reports": "3.*",
+		"silverstripe/siteconfig": "3.*",
+		"silverstripe-themes/simple": "3.*",
+		"silverstripe/blog": "2.4.x",
+		"silverstripe/comments": "*",
+		"silverstripe/widgets": "^1.2",
+		"silverstripe-australia/memberprofiles": "dev-master",
+		"silverstripe/userforms": "*",
+		"undefinedoffset/sortablegridfield": "^0.5.4",
+		"richardsjoqvist/silverstripe-embedder": "^1.1",
+		"silverstripe/googlesitemaps": "^1.5",
+		"facebook/php-sdk-v4": "^5.2",
+		"nesbot/carbon": "^1.21",
+		"colymba/gridfield-bulk-editing-tools": "^2.1",
+		"undefinedoffset/silverstripe-nocaptcha": "^0.4.0"
+	},
+	"require-dev": {
+		"codeception/codeception": "*"
+	},
+	"config": {
+		"process-timeout": 600
+	},
+	"prefer-stable": true
+}

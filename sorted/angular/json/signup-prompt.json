@@ -1,0 +1,12 @@
+[
+  {
+    "Title": "See your future at a glance",
+    "Content": "See all your money matters at a glance. Sign up for your Sorted dashboard today.",
+    "ButtonCopy": "Sign up",
+    "URLSegment":"sign-up",
+    "BladeImage": {
+      "Filename": "assets/Uploads/home-signup-devices.png"
+    }
+  }
+]
+

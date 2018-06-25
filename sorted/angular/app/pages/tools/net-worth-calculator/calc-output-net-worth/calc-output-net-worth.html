@@ -1,0 +1,59 @@
+<div id="results">
+
+  <div class="calc-heading">
+    <span class="calc-title-text _left _inline-block font-sm font-purple">Result</span>
+
+    <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+
+    <a href="/#/tools/net-worth-calculator"
+       class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm" cm-print>
+      PRINT <span class="fa fa-chevron-right font-xs"></span>
+    </a>
+
+  </div>
+
+  <div class="calc-output-container">
+
+    <!-- Current Net Worth -->
+    <div class="row calc-output-row">
+
+      <div class="col-sm-7 layout-col">Your net worth now:</div>
+      <div class="col-sm-5 layout-col calc-output-value">
+        <div class="font-medium">
+          <span ng-if="models.findWhere({unique: 'current_year'}).result.has('total')">{{models.findWhere({unique: 'current_year'}).result.$attributes.total | currency: "$" : 0}}</span>
+          <span ng-if="!models.findWhere({unique: 'current_year'}).result.has('total')">$-</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Projected in 10 years -->
+    <div class="row calc-output-row">
+
+      <div class="col-sm-7 layout-col">In 10 years:</div>
+      <div class="col-sm-5 layout-col calc-output-value">
+        <div class="font-medium">
+          <span ng-if="models.findWhere({unique: 'in_ten_years'}).result.has('total')">{{models.findWhere({unique: 'in_ten_years'}).result.$attributes.total | currency: "$" : 0}}</span>
+          <span ng-if="!models.findWhere({unique: 'in_ten_years'}).result.has('total')">$-</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Projected in 20 years -->
+    <div class="row calc-output-row">
+
+      <div class="col-sm-7 layout-col">In 20 years:</div>
+      <div class="col-sm-5 layout-col calc-output-value">
+        <div class="font-medium">
+          <span ng-if="models.findWhere({unique: 'in_twenty_years'}).result.has('total')">{{models.findWhere({unique: 'in_twenty_years'}).result.$attributes.total | currency: "$" : 0}}</span>
+          <span ng-if="!models.findWhere({unique: 'in_twenty_years'}).result.has('total')">$-</span>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

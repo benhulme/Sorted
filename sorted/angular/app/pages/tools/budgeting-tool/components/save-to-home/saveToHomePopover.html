@@ -1,0 +1,46 @@
+<div>
+  <div class="row">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="closeSaveToHome()" aria-hidden="true">&times;</button>
+    <div class="col-xs-12" 
+      ng-if="isIOS() && isSafari()">To add Budgeting Tool to your home screen:
+      <ol>
+        <li>Touch the <strong>Share</strong> 
+          <img class="ios-share-icon" ng-src="{{siteConfig.APP_PATH}}assets/images/tools/budgeting-tool/ios_share.png"> button.
+        </li>
+        <li>Choose <em>Save to home screen</em>.</li>
+      </ol>
+    </div>
+    <div class="col-xs-12"
+         ng-if="isAndroid()">To add Budgeting Tool to your home screen:
+      <ol>
+        <li>Touch the <strong>Menu</strong>
+          <span class="fa-stack">
+            <i class="fa fa-stop fa-inverse fa-stack-2x"></i>
+            <i class="fa fa-ellipsis-v text-muted fa-stack-1x"></i>
+          </span> button.
+        </li>
+        <li>Choose <em>Add to Home screen</em>.</li>
+      </ol>
+    </div>
+    <div class="col-xs-12"
+      ng-if="isWindowsPhone()">To add Budgeting Tool to your home screen:
+      <ol>
+        <li>Touch the <strong>More</strong>
+          <span class="fa-stack">
+            <i class="fa fa-stop fa-stack-2x"></i>
+            <i class="fa fa-ellipsis-h fa-inverse fa-stack-1x"></i>
+          </span> button.
+        </li>
+        <li>Choose <em>Pin to Start</em>.</li>
+      </ol>
+    </div>
+    <div class="col-xs-12" 
+      ng-if="isUnknown()">We don't have instructions for your exact browser/device yet! Try using the bookmarks feature in your browser.</div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-xs-12 text-center">
+      <button class="btn btn-primary save-to-home-button" type="button" ng-click="closeSaveToHome()">OK</button>
+    </div>
+  </div>
+</div>

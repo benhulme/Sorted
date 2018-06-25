@@ -1,0 +1,230 @@
+<navigation></navigation>
+
+<header-small-title data="data"></header-small-title>
+
+<div class="layout-container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Order Sorted Collateral</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Helping people get their money sorted can be good for business and the community. People without money worries
+        will probably be less stressed and enjoy better relationships, may take fewer days off sick and may perform
+        better at work.</p>
+      <p>If you want to help the people you work with or your community to get sorted we have a range of resources you
+        can use - all of which are free, independent and impartial.</p>
+    </div>
+  </div>
+
+  <!-- Collateral -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel-group">
+        <!-- Order Booklets-->
+        <div class="panel panel-default">
+          <div collapse-toggler class="panel-heading toggler">
+            <h4 class="panel-title">
+              Order Booklets
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p>We have Sorted booklets on a range of topics, from goal setting and budgeting to investing and
+                retirement planning. They'll arrive within four days of placing your order - and like all our resources,
+                they are free.</p>
+
+              <div class="row">
+                <div class="col-md-6" ng-repeat="item in data.Booklets track by item.ID">
+                  <div class="thumbnail">
+                    <img src="{{item.ThumbnailImage.Filename}}" alt="{{item.ThumbnailImage.Title}}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seminars -->
+        <div class="panel panel-default">
+          <div collapse-toggler class="panel-heading toggler">
+            <h4 class="panel-title">
+              Order Seminar
+            </h4>
+          </div>
+          <div class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>You can deliver the seminars yourself, or you may wish to use an external facilitator. If you need help with finding a facilitator, here's a list of external facilitators who may be able to help.</p>
+
+              <ul>
+                <li>Seminar one</li>
+                <li>Seminar two</li>
+                <li>Seminar three</li>
+                <li>Seminar four</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Posters -->
+        <div class="panel panel-default">
+          <div collapse-toggler class="panel-heading toggler">
+            <h4 class="panel-title">
+              Order Posters
+            </h4>
+          </div>
+          <div class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>We have Sorted booklets on a range of topics, blah blah blah</p>
+
+              <ul>
+                <li>Posters one</li>
+                <li>Posters two</li>
+                <li>Posters three</li>
+                <li>Posters four</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <!-- Place Order -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">Place Order</div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <p>Enter your details to place your order for the resources selected above. Blah blah blah</p>
+
+        <form name="orderForm">
+
+          <!-- Your Details -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <h5>Your details</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="firstName">First Name <span>*</span></label>
+                <input ng-model="firstName" id="firstName" type="text">
+              </div>
+
+              <div class="col-md-6">
+                <label for="lastName">Last Name <span>*</span></label>
+                <input ng-model="lastName" id="lastName" type="text">
+              </div>
+
+              <div class="col-md-6">
+                <label for="email">Email Address <span>*</span></label>
+                <input ng-model="email" id="email" type="text">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Your organisation -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <h5>Your organisation</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="organisationName">Organisation name</label>
+                <input ng-model="organisationName" id="organisationName" type="text">
+              </div>
+              <div class="col-md-6">
+                <label for="yourPosition">Your postion/role</label>
+                <input ng-model="yourPosition" id="yourPosition" type="text">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <select name="organisationType"
+                        id="organisationType"
+                        ng-model="data.selectedOrganisationType"
+                        ng-options="option.name for option in data.organisationTypes track by option.id">
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <select name="organisationSize"
+                        id="organisationSize"
+                        ng-model="data.selectedOrganisationSize"
+                        ng-options="option.name for option in data.organisationSizes track by option.id">
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <h5>Delivery address</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="streetAddress">Street address <span>*</span></label>
+                <input ng-model="streetAddress" id="streetAddress" type="text">
+              </div>
+              <div class="col-md-6">
+                <label for="suburbAddress">Suburb <span>*</span></label>
+                <input ng-model="suburbAddress" id="suburbAddress" type="text">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="townCityAddress">Town/City <span>*</span></label>
+                <input ng-model="townCityAddress" id="townCityAddress" type="text">
+              </div>
+              <div class="col-md-3">
+                <label for="postCodeAddress">Postcode <span>*</span></label>
+                <input ng-model="postCodeAddress" id="postCodeAddress" type="text">
+              </div>
+              <div class="col-md-3">
+                <a href="http://tools.nzpost.co.nz/tools/address-postcode-finder/">
+                  <img class="img-circle"
+                       src="https://www.nzpost.co.nz/sites/all/themes/nzpost_responsive_20/images/logo-button-large-2x.png?1425264782"
+                       alt="NZ Post Postcode finder"
+                       width="15px"
+                  />Postcode Finder</a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Submit -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <a class="btn btn-primary btn-lg" type="submit">Request Materials</a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+<footer></footer>

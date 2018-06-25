@@ -1,0 +1,31 @@
+<div class="budget-header-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="$ctrl.onCancel_clickHandler($event)" aria-hidden="true">×</button>
+    <h4 class="modal-title">Warning!</h4>
+  </div>
+  <div class="modal-body">
+    <p>Hi there,</p>
+    <p>You're working on a budget that hasn't been saved yet. Log in or register for a free Sorted account to save your progress.</p>
+  </div>
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-md-4 modal-cancel-link">
+        <a class="font-orange" ng-click="$ctrl.onCancel_clickHandler($event)">CANCEL</a>
+      </div>
+      <div class="col-md-4 modal-ok-button text-center timeout-ok">
+        <button class="btn btn-primary btn-xs-fullwidth"
+                type="button"
+                data-toggle="modal"
+                data-target="#login-modal"
+                ng-click="$ctrl.onCancel_clickHandler($event)">LOGIN</button>
+      </div>
+      <div class="col-md-4 modal-cancel-link text-left">
+        <a class="font-orange"
+           data-toggle="modal"
+           data-target="#signup-modal"
+           ng-click="$ctrl.onCancel_clickHandler($event)">SIGN UP</a>
+      </div>
+    </div>
+  </div>
+</div>
+

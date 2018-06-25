@@ -1,0 +1,130 @@
+inline-editable-category {
+  budget-category-facade {
+    h3 {
+      margin: 0;
+      padding: 0;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .budget-category-container {
+      margin: 0 !important;
+      //padding: 0 5px !important;
+      margin-bottom: 4px !important;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+
+      @media (min-width: $screen-sm-min) {
+        margin: 10px;
+      }
+
+      .category-facade-inputs {
+
+        padding-right: 0;
+
+        .budget-category-copy-container {
+
+          .budget-category-title,
+          .budget-category-amount,
+          .budget-category-period {
+            margin: 10px 0;
+            font-size: 12px;
+            overflow-wrap: break-word;
+            padding: 0;
+
+            @media (min-width: $screen-md-min) {
+              font-size: 16px !important;
+            }
+          }
+
+
+          .budget-category-title {
+            padding-left: 5px;
+            overflow-y: hidden;
+          }
+
+          .budget-category-amount {
+            padding-right: 10px;
+            background-position: right 20px center;
+
+            @media (max-width: $screen-sm-max){
+              text-align: right;
+            }
+
+            @media (min-width: $screen-md-max) {
+              padding-left:35px;
+            }
+            @media (max-width: $screen-md-max) {
+              padding-left: 5px;
+
+            }
+
+          }
+
+          .category-period-container {
+            display: none;
+            padding: 0;
+
+            @media (min-width: $screen-md-min) {
+              display: inline-block;
+            }
+
+            .budget-category-period {
+              padding: 0 20px;
+              span{
+                float: left;
+              }
+              span{
+                max-width: 65%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: inline-block;
+              }
+              @media (max-width: $screen-md-max) {
+                max-height: 32px;
+                padding: 0 5px;
+
+
+              }
+              i{
+                padding: 0 10px;
+                font-size: 24px;
+                float: right;
+                line-height: 36px;
+                vertical-align: bottom;
+              }
+              &:hover{
+                 background-repeat: no-repeat;
+                 background-position: right 15px center;//18px for ipad landscape
+                 background-image: none;
+              }
+            }
+
+
+          }
+        }
+      }
+
+      .category-trash-container {
+        padding: 10px;
+        cursor: pointer;
+
+        .category-trash {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      h3:hover {
+        background-color: white;
+        background-image: url(/themes/sorted/assets/images/grey-pen.png);
+        background-position: right 20px center;
+        background-repeat: no-repeat;
+        background-size: 15px;
+      }
+    }
+  }
+}

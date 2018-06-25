@@ -1,0 +1,281 @@
+.avatar{
+  width: 160px;
+  height: 160px;
+  background: #ff550f;
+  border-radius: 50%;
+  margin: -75px auto 18px auto;
+  text-align: center;
+  line-height: 160px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 111;
+  color: white;
+  font-size: 76px;
+  .avatar-image{
+    width:100%;
+    height:100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: inherit;
+    border: 1px solid $grey-light;
+  }
+  .upload-avatar{
+    color: white;
+    width:30px;
+    height:30px;
+    font-size: 14px;
+    border-radius: 50%;
+    line-height: 26px;
+    background: #ff550f;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    border: 2px solid white;
+    text-align: center;
+    &:focus{
+      outline: none;
+    }
+  }
+  input[type='file']{
+    display: none;
+  }
+}
+
+
+
+.tool-plate{
+  border: 2px solid;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  background-position: center;
+  height: 400px;
+  .plate-title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+
+
+  .plate-content-text{
+    height: 75px;
+    overflow: hidden;
+    padding: 0;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  &.used{
+    .plate-content-text{
+      padding: 0 20px;
+    }
+  }
+  .delete{
+    position: absolute;
+    right:15px;
+    top: 15px;
+    background: #ff550f;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    width:30px;
+    height:30px;
+    padding: 0;
+    text-align: center;
+    &>i{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      padding: 7px 9px;
+    }
+
+
+  }
+  .dashboard-button{
+    font-size: 14px;
+    height:38px;
+    line-height: 38px;
+    padding: 0 30px;
+    margin: 35px 0 45px 0;
+  }
+
+
+  .icon-container{
+    width: 70px;
+    height:70px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    img{
+      width:100%;
+    }
+  }
+}
+
+.tool-plate{
+
+
+  &.cyan {
+    border-color: #bcf2e7;
+  }
+  &.pink{
+    border-color: #f6dcee ;
+  }
+  &.magenta{
+    border-color: #d4c9e0;
+  }
+
+  &.yellow{
+    border-color: #fff3b2;
+  }
+  &.blue{
+    border-color:  #b2d3df;
+  }
+ &.blank{
+   &.cyan{
+     &:hover{
+       background-color: rgba(32,212,175,.1);
+     }
+   }
+
+   &.pink{
+     &:hover{
+       background-color: rgba(225,140,200,.1);
+     }
+   }
+
+   &.magenta{
+     &:hover{
+       background-color: rgba(112,76,153,.1);
+     }
+   }
+
+   &.yellow{
+     &:hover{
+       background-color: rgba(225,215,0,.1);
+     }
+   }
+
+   &.blue{
+     &:hover{
+       background-color: rgba(0,110,150,.1);
+     }
+   }
+
+
+
+ }
+
+
+  &.used{
+    &.cyan {
+      background-color: #20d4af;
+      .bottom-part{
+        background-color: #bcf2e7;
+      }
+    }
+    &.pink{
+      background-color:    #e18cc8;
+      .bottom-part{
+        background-color: #f6dcee;
+      }
+    }
+    &.magenta{
+      background-color: #704c99;
+      h4{
+        color: white;
+      }
+      .bottom-part{
+        background-color:  #ddd4e7;
+      }
+    }
+
+    &.yellow{
+      background-color: #ffd700;
+      .bottom-part{
+        background-color: #fffbe5;
+      }
+    }
+    &.blue{
+      h4{
+        color: white;
+      }
+      background-color: #006e96;
+      .bottom-part{
+        background-color: #ebf4f7 ;
+      }
+    }
+  }
+
+
+
+}
+
+.money-title{
+  margin-bottom: 45px;
+}
+
+.dashboard-contnent{
+  margin-top: 35px;
+  margin-bottom: 55px;
+}
+
+
+.top-part{
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0 30px;
+}
+
+.used{
+  .top-part{
+    padding: 50px 0 10px;
+  }
+  .bottom-part{
+    padding: 20px 0 0 0;
+    .dashboard-button{
+      margin: 19px 0 25px 0;
+    }
+
+  }
+  .plate-content-text{
+    height: 101px;
+    table{
+      width:100%;
+      td{
+        vertical-align: baseline;
+
+      }
+    }
+  }
+}
+
+.modal{
+  .modal-content.delete-modal{
+    padding: 60px 0;
+    border-radius: 3px;
+    .button-row{
+      margin-top: 30px;
+      margin-top: 30px;
+      button{
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.disabled{
+  pointer-events: none;
+  cursor: default;
+}
+
+
+.kiwi-saver-notification{
+  margin: 80px 0 60px 0;
+  p{
+    margin-bottom: 4px;
+  }
+}

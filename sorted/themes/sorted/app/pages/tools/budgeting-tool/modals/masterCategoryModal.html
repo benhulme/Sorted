@@ -1,0 +1,45 @@
+<div class="budget-master-category-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="cancelMasterCategory()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title text-center">Edit Master Category</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row category-name-group">
+      <div class="text-center">
+        <img class="budget-master-category-icon" 
+          ng-if="masterCategory.Icon.Filename.length > 0" 
+          ng-src="{{siteConfig.APP_PATH}}{{masterCategory.Icon.Filename}}">
+        <i class="budget-master-category-icon img-circle" 
+          ng-if="masterCategory.Icon.Filename.length === 0" 
+          ng-style="{'background-color':masterCategory.Color}"></i>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <input type="text" class="budget-title form-control" 
+          ng-model="masterCategory.Title" 
+          placeholder="{{placeholder}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="row text-center" ng-click="removeMasterCategory(masterCategory.ID)">
+        <div class="budget-trash-container">
+          <span class="fa-stack budget-trash">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+          </span>
+          <label for="budget-trash">Delete master category</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 text-right modal-cancel-link">
+        <a class="font-orange font-medium" href="javascript:void(0)" ng-click="cancelMasterCategory()">CANCEL</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 text-left">
+        <button class="btn btn-primary" type="button" ng-click="saveMasterCategory()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

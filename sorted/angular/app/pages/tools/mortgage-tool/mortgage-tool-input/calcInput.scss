@@ -1,0 +1,121 @@
+.calc-input-group {
+
+  margin-bottom: 2px;
+
+  .calc-input-heading {
+    cursor: pointer;
+    .fa-chevron-down {
+      display: inline-block;
+    }
+    .fa-chevron-up {
+      display: none;
+    }
+  }
+
+  &.selected {
+    cursor: default;
+    .calc-input-heading {
+      .fa-chevron-up {
+        display: inline-block;
+      }
+      .fa-chevron-down {
+        display: none;
+      }
+    }
+  }
+}
+.calc-input-heading {
+  .fa {
+    float: left;
+    padding-top: 13px;
+    margin: 0 10px 0 0;
+  }
+
+  .calc-input-title-amount {
+    line-height: 48px;
+    margin: 0 0 0 10px;
+  }
+}
+
+.calc-input-form {
+  padding: 20px;
+  .input-group {
+    margin: 0;
+  }
+}
+
+.calc-input-fieldset {
+  margin-bottom: 16px;
+}
+
+.calc-input-btn-group {
+  .btn {
+    width: 30%;
+    line-height: 50px;
+    padding: 0;
+    color: $grey-medium;
+    &.selected {
+      color: $white;
+    }
+    &.btn-boolean {
+      width: 60px;
+    }
+    &.btn-boolean-wide {
+      width: 50%;
+    }
+  }
+  .btn-wide {
+    width: 40%;
+  }
+}
+
+.calc-input-add {
+  margin: 0 20px 30px 20px;
+}
+
+.calc-input-add-text {
+  line-height: 36px;
+}
+
+.calc-input-year {
+  @include calc('width', '50% - 5px');
+  margin: 0;
+}
+
+.calc-input-month {
+  @include calc('width', '50% - 5px');
+  margin-left: 10px;
+}
+
+.calc-input-inline-label {
+  line-height: 50px;
+  margin-right: 10px;
+}
+
+.calc-input-checkbox {
+  input[type="checkbox"] {
+    width: auto;
+    margin: 0 10px 0 0;
+  }
+}
+
+.calc-input-super-amount {
+  margin-bottom: 10px;
+}
+
+.calc-input-partner {
+  display: none;
+}
+
+.calc-input-show-partner {
+  .calc-input-partner {
+    display: block;
+  }
+}
+
+.calc-total {
+  background-color: $purple-lightest;
+  padding: 0 20px;
+  line-height: 48px;
+  @include border-radius(2px);
+}

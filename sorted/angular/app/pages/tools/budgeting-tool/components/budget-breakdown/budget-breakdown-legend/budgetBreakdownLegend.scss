@@ -1,0 +1,32 @@
+budget-breakdown-legend {
+  .legend-container {
+    margin: 0;
+  }
+
+  ul {
+    -webkit-padding-start: 0;
+  }
+
+  li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px #d9dad5 solid;
+
+    .legend-amount {
+      float: right;
+    }
+
+    .legend-square {
+      border-radius: 3px;
+    }
+  }
+  li:first-child {
+    border-top: 1px #d9dad5 solid;
+  }
+
+  @media (min-width: $screen-md-min) {
+    budget-legend-items {
+      margin: 0;
+    }
+  }
+}

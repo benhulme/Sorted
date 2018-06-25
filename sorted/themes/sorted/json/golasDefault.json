@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "ClassName": "GoalsDefault",
+      "Data": {
+        "CalcID": "12",
+        "allGoals": {
+          "Category": "allGoals",
+          "GoalList": [
+            {
+              "Title": "Emergency",
+              "Type": "Fund",
+              "Price": "-",
+              "Draggable": "true",
+              "Color": "color-3"
+            },
+            {
+              "Title": "Holiday",
+              "Type": "Fund",
+              "Price": "-",
+              "Draggable": "true",
+              "Color": "color-6"
+            },
+            {
+              "Title": "Retirement",
+              "Type": "Fund",
+              "Price": "-",
+              "Draggable": "true",
+              "Color": "color-1"
+            },
+            {
+              "Title": "Tackle",
+              "Type": "Debt",
+              "Price": "-",
+              "Draggable": "true",
+              "Color": "color-2"
+            }
+          ],
+          "short": {
+                  "Category":"short",
+                  "Title": "Short Term",
+                  "Dates": "0-3 years",
+                  "GoalList": []
+                },
+                "medium" : {
+                  "Category":"medium",
+                  "Title": "Medium Term",
+                  "Dates": "4-9 years",
+                  "GoalList": []
+                },
+                "long" : {
+                  "Category":"long",
+                  "Title": "Long Term",
+                  "Dates": "10+ years",
+                  "GoalList": []
+                },
+                "deleted" : {
+                  "Category":"deleted",
+                  "Title": "Deleted",
+                  "GoalList": [
+
+                  ]
+                }
+        }
+
+      },
+      "Title": "Goal Planner",
+      "CalcID": "12"
+    }
+  ]
+}

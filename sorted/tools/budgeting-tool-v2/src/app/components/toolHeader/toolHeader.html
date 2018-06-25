@@ -1,0 +1,51 @@
+<div class="layout-header-small">
+  <div class="header-small-container">
+    <div class="header-background"  style="background-image: url({{vm.TOOL_ASSETS}}assets/images/header-background-tools.jpg)">
+      <div class="intro-header-icon-container center-block" ng-if="data != undefined">
+        <img class="img-responsive" ng-src="{{vm.TOOL_ASSETS}}assets/images/tools-budgeting-tool.png">
+      </div>
+    </div>
+    <div class="header-small-opacity"></div>
+    <breadcrumbs ng-if="breadcrumbs" breadcrumbs="breadcrumbs"></breadcrumbs>
+  </div>
+</div>
+
+<div class="container-fluid author-details-container">
+  <div class="row budget-header">
+    <div class="logo-container print-only">
+      <img ng-src="{{vm.TOOL_ASSETS}}assets/images/tools-budgeting-tool.png">
+    </div>
+    <div class="col-md-2 profile-picture-wrap">
+      <div class="profile-picture center-block"
+            style="background: url({{vm.imagepath}});
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-position: 50%;
+            background-size: cover;
+        ">
+      </div>
+    </div>
+    <div class="col-md-4 tool-title-wrap" modal-activator modal-type="edit_budget">
+      <h1 class="prompt-editable" ng-bind-html="budgetdata.Income.Title"></h1>
+      <p class="budget-period" ng-bind-html="budgetdata.Income.Period.Title"></p>
+    </div>
+    <div class="col-md-3 tool-budget-amount-wrap" modal-activator modal-type="edit_budget">
+      <h2 class="heavy" ng-bind-html="budgetdata.Income.LeftToBudget | currency" ng-class="{'budget-exceeded' : (budgetdata.Income.LeftToBudget < 0) }"></h2>
+      <p class="budget-amount-copy">Available to budget</p>
+    </div>
+    <div class="col-md-3 tool-print-options-wrap">
+      <div class="options-row">
+        <a href="javascript:window.print()" class="ui-link budget-print-link arrow-right hide-for-mobile">PRINT</a>
+        <button ng-if="!vm.isLoggedIn()"
+                data-toggle="modal"
+                data-target="#login-modal"
+                class="btn btn-primary btn-small ui-link">SAVE</button>
+        <button ng-if="vm.isLoggedIn()" class="btn btn-primary btn-small ui-link" ng-click="vm.onSave_clickHandler($event)">SAVE</button>
+      </div>
+      <div class="options-row">
+        <a href="/how-these-calculators-work#budgeting-tool" target="_blank" id="how-this-tool-works" class="font-book">How this tool works</a>
+      </div>
+    </div>
+  </div>
+</div>

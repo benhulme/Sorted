@@ -1,0 +1,25 @@
+<div class="layout-header-small">
+
+  <div class="header-small-container">
+    <div class="header-background"  style="background-image: url({{vm.TOOL_ASSETS}}assets/images/header-background-tools.jpg)">
+      <div class="intro-header-icon-container center-block">
+        <img class="img-responsive" ng-src="{{vm.TOOL_ASSETS}}assets/images/tools-budgeting-tool.png">
+      </div>
+    </div>
+    <div class="header-small-opacity"></div>
+    <breadcrumbs ng-if="breadcrumbs" breadcrumbs="breadcrumbs"></breadcrumbs>
+  </div>
+
+</div>
+
+<div class="row text-center" ng-if="data.Title">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h2>{{data.Title}}</h2>
+  </div>
+</div>
+
+<div class="row text-center" ng-if="data.Content">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <p class="intro-header-copy font-light">{{data.Content}}</p>
+  </div>
+</div>

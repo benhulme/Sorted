@@ -1,0 +1,13 @@
+---
+# tasks file for msmtp
+- name: Install msmtp if it doesn't yet
+  apt: name=msmtp update_cache=yes
+
+- name: Install msmtp-mta
+  apt: name=msmtp-mta state=present
+
+- name: Install config file
+  template: src=msmtprc.j2 dest=/etc/msmtprc owner=root group=root backup=yes
+
+- name: Remove postfix
+  apt: name=postfix state=absent

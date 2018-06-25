@@ -1,0 +1,40 @@
+.breadcrumb {
+  top: 10px;
+  left: 0;
+	background: none;
+	font-size: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  float: left;
+  padding: 0 15px;
+
+	@media(max-width: $screen-xs-max) {
+    font-size: 13px;
+
+    }
+
+	li, .active {
+		font-family: 'Gotham SSm A', 'Gotham SSm B' !important;
+		color: black !important;
+		text-transform: uppercase;
+    display: inline;
+	}
+
+	li:before {
+		content: "> " !important;
+		padding: 0 5px;
+		color: $orange !important;
+	}
+
+	a {
+		color: $orange;
+	}
+
+}
+
+
+
+

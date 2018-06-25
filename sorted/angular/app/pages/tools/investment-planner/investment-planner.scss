@@ -1,0 +1,41 @@
+.investor-container {
+
+  .calc-form-heading {
+    background-color: #b3d3e0;
+    color: $black;
+    margin-bottom: 2px;
+  }
+
+  .calc-heading {
+    background-color: #cbe2ea;
+    color: $black;
+  }
+  .calc-input-container {
+    background-color: #ebf5f7;
+  }
+
+  .calc-input-heading{
+    .fa{
+      padding-top: 10px;
+    }
+  }
+
+  .calc-input-btn-group .btn.selected {
+    background-color: #b3d3e0;
+    color: $black;
+  }
+
+  .quiz-see-result {
+    padding: 10px;
+    margin-top: -3px;
+    background-color: #ebf5f7;
+  }
+
+}
+
+.personality-save {
+  margin-right: 20px;
+  @media(max-width: $screen-sm-max){
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("emailSignup",["siteConfig",function(e){return{templateUrl:e.APP_PATH+"app/components/email-signup/email-signup.html",restrict:"E",scope:{}}}])}();

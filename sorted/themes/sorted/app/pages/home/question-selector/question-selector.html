@@ -1,0 +1,30 @@
+<div class="bg-grey-lightest qs-container">
+
+  <div class="layout-container">
+
+    <div class="row">
+
+        <div class="form-group">
+
+          <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 layout-col">
+            <div class="layout-content _relative">
+              <label class="qs-label _left">I want to see</label>
+
+              <div class="dropdown qs-select _left">
+                <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  analytics-on="click" analytics-category="questionselector" analytics-event="open"  analytics-interaction-type="0">
+                  Select your question
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li ng-repeat="question in questions | orderBy: 'Number' "><a ng-href="{{question.Url}}" class="dropdown-link" analytics-on="click" analytics-category="questionselector" analytics-event="click" analytics-label="{{question.Title}}" analytics-interaction-type="0">{{question.Title}}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

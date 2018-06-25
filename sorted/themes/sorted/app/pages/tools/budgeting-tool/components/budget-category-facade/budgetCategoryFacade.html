@@ -1,0 +1,21 @@
+<div class="budget-category-container">
+  <div class="row">
+    <div class="category-facade-inputs col-xs-10 col-md-11"
+      ng-click="openCategoryEditForm()">
+      <div class="row">
+        <div class="budget-category-copy-container row">
+          <h3 class="budget-category-title col-xs-8 col-md-6">{{category.Title | truncate:24}}</h3>
+          <h3 class="budget-category-amount col-xs-4 col-md-3 text-left">{{(0 || getCategoryAmount()) | currency}}</h3>
+          <div class="category-period-container col-md-3">
+            <h3 class="budget-category-period"><span>{{category.Period.Title}}</span>  <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-1 category-trash-container text-center hidden-print"
+      ng-click="removeCategory($index)">
+
+      <img class="category-trash" ng-src="{{siteConfig.APP_PATH}}assets/images/tools/budgeting-tool/trash-grey.svg">
+    </div>
+  </div>
+</div>

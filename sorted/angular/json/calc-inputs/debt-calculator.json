@@ -1,0 +1,879 @@
+[
+  {
+    "title": "credit card",
+    "type": "creditCard",
+    "model": "debtCalculatorModel",
+    "inputs": [
+      {
+        "title": "Credit card",
+        "unique": "creditCard1",
+        "visible": true
+      },
+      {
+        "title": "Credit card",
+        "unique": "creditCard2",
+        "visible": false
+      },
+      {
+        "title": "Credit card",
+        "unique": "creditCard3",
+        "visible": false
+      }
+    ],
+    "fields": {
+      "amountOwed": {
+        "type": "MONEY",
+        "label": "Amount owed",
+        "calcModel": "amount_owed",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The total amount you owe for that type of loan. It helps to only borrow what you can afford to pay back each month.",
+        "validation": {
+          "type": "money1",
+          "min": 1,
+          "max": 100000,
+          "message": "Please enter a number between 1 and 100000, with no commas, spaces or symbols."
+        }
+      },
+      "interestRate": {
+        "type": "PERCENT",
+        "label": "Interest rate",
+        "calcModel": "interest_rate",
+        "format": {
+          "type": "FLOAT",
+          "decimals": 2
+        },
+        "value": 18,
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The interest rate as stated in your loan agreement. Interest is charged on any outstanding amount. If you have several loans, it helps to pay off the one with the highest interest rate first.",
+        "link": {
+          "text": "See interest.co.nz for current rates",
+          "url": "http://interest.co.nz"
+        },
+        "validation": {
+          "type": "interestRate2",
+          "min": 0,
+          "max": 50,
+          "message": "Please enter a number between 0.00 and 50.00, with no commas, spaces or symbols."
+        }
+      },
+      "repaymentAmount": {
+        "type": "MONEY",
+        "label": "Repayment",
+        "calcModel": "repayment_amount",
+        "format": {
+          "type": "FLOAT",
+          "decimal": 2
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The amount you pay each month. The higher your repayments, the quicker you'll get out of debt and the less interest you will pay.",
+        "validation": false
+      },
+      "repaymentFrequency": {
+        "type": "BUTTON_SELECTOR",
+        "label": "Frequency",
+        "calcModel": "repayment_frequency",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 26,
+        "required": true,
+        "tooltip": "How often you make your repayments. Credit card repayments are usually made monthly.",
+        "buttons": [
+          {
+            "buttonText": "WEEKLY",
+            "buttonValue": 52
+          },
+          {
+            "buttonText": "FORTNIGHTLY",
+            "buttonValue": 26
+          },
+          {
+            "buttonText": "MONTHLY",
+            "buttonValue": 12
+          }
+        ]
+      }
+    },
+    "outputs": [
+      {
+        "type": "MONEY",
+        "label": "Total you will pay:",
+        "tooltip": "The amount borrowed plus any interest charged. Interest increases the cost of a loan and the time it can take to repay the loan.",
+        "model": "result_total",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Including interest of:",
+        "model": "result_interest",
+        "color": "font-pink"
+      },
+      {
+        "type": "TIME",
+        "label": "For:",
+        "model": "result_time_to_repay",
+        "color": "font-black",
+        "units": "months"
+      }
+    ],
+    "nudge": {
+      "label": "Sorted Tip",
+      "tooltip": "Making just the minimum payment makes debt drag on and on.",
+      "text": "The more you increase repayments, the quicker you're debt-free.",
+      "model": "repaymentAmount",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": "amountOwed",
+        "showSelectionBar": true,
+        "transitions": false
+      }
+    },
+    "graphic": {
+      "type": "DONUT",
+      "icon": {
+        "type": "creditCard",
+        "file": "/assets/images/results/credit-card.svg",
+        "color": "#CE0058",
+        "model": "result_total"
+      },
+      "smallIcons": [
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-0.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-1.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-2.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-3.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-4.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-5.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-6.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-7.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-8.svg",
+        "/themes/sorted/assets/images/results/small-icons/creditcard-icon-9.svg"
+      ],
+      "interest": {
+        "color": "#E18CC8",
+        "model": "result_interest"
+      },
+      "amountOwed": {
+        "color": "#ECB7DC",
+        "model": "amountOwed"
+      }
+    }
+  },
+  {
+    "title": "hire purchase",
+    "type": "hirePurchase",
+    "model": "debtCalculatorModel",
+    "inputs": [
+      {
+        "title": "Hire purchase",
+        "unique": "hirePurchase1",
+        "visible": true
+      },
+      {
+        "title": "Hire purchase",
+        "unique": "hirePurchase2",
+        "visible": false
+      },
+      {
+        "title": "Hire purchase",
+        "unique": "hirePurchase3",
+        "visible": false
+      }
+    ],
+    "fields": {
+      "amountOwed": {
+        "type": "MONEY",
+        "label": "Amount owed",
+        "calcModel": "amount_borrowed",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The total amount you owe for that type of loan. It helps to only borrow what you can afford to pay back each month.",
+        "validation": {
+          "type": "money2",
+          "min": 1,
+          "max": 100000,
+          "message": "Please enter a number between 1 and 100000, with no commas, spaces or symbols."
+        }
+      },
+      "startupFees": {
+        "type": "MONEY",
+        "label": "Set-up fees",
+        "calcModel": "startup_fees",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some HP loans charge a range of set-up fees. Check the terms and conditions of the loan agreement before you sign. Interest will be added to any fees.",
+        "validation": {
+          "type": "money3",
+          "min": 0,
+          "max": 10000,
+          "message": "Please enter a number between 0 and 10000, with no commas, spaces or symbols."
+        }
+      },
+      "otherFees": {
+        "type": "MONEY",
+        "label": "Other fees",
+        "calcModel": "other_fees",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some HP loans charge other fees. Check the terms and conditions of the loan agreement before you sign. Interest will be added to any fees.",
+        "validation": {
+          "type": "money3",
+          "min": 0,
+          "max": 10000,
+          "message": "Please enter a number between 0 and 100000, with no commas, spaces or symbols."
+        }
+      },
+      "interestRate": {
+        "type": "PERCENT",
+        "label": "Interest rate",
+        "calcModel": "interest_rate",
+        "format": {
+          "type": "FLOAT",
+          "decimals": 2
+        },
+        "value": 29,
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The interest rate as stated in your loan agreement. Interest is charged on any outstanding amount. If you have several loans, it helps to pay off the one with the highest interest rate first.",
+        "link": {
+          "text": "See www.interest.co.nz for current rates",
+          "url": "http://www.interest.co.nz"
+        },
+        "validation": {
+          "type": "inFterestRate2",
+          "min": 0,
+          "max": 50,
+          "message": "Please enter a number between 0.00 and 50.00, with no commas, spaces or symbols."
+        }
+      },
+      "interestFreePeriod": {
+        "type": "PERIOD",
+        "label": "Interest-free period (months)",
+        "calcModel": "interest_free_period",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some HP loans offer a period of time where you won't be charged any interest. The goal is to repay the full amount owed within the interest-free period.",
+        "validation": {
+          "type": "loanTerm3",
+          "min": 0,
+          "max": 60,
+          "message": "Please enter a number between 0 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "deferredPaymentPeriod": {
+        "type": "PERIOD",
+        "label": "Deferred payment period (months)",
+        "calcModel": "deferred_payment_months",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some HP loans offer a period of time when you don't have to make any repayments. Check whether interest is still added during any deferred payment period.",
+        "validation": {
+          "type": "loanTerm3",
+          "min": 0,
+          "max": 60,
+          "message": "Please enter a number between 0 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "totalTerm": {
+        "unique": true,
+        "type": "PERIOD",
+        "label": "Term (months)",
+        "calcModel": "total_term_months",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The length of time you'll have to repay the amount borrowed. If a HP loan is your only option, choose the shortest repayment term so you pay less interest.",
+        "validation": {
+          "type": "loanTerm2",
+          "min": 1,
+          "max": 60,
+          "message": "Please enter a number between 1 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "repaymentFrequency": {
+        "type": "BUTTON_SELECTOR",
+        "label": "Frequency",
+        "calcModel": "repayment_frequency",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 26,
+        "required": true,
+        "tooltip": "How often you make your repayments. HP repayments are usually made monthly.",
+        "buttons": [
+          {
+            "buttonText": "WEEKLY",
+            "buttonValue": 52
+          },
+          {
+            "buttonText": "FORTNIGHTLY",
+            "buttonValue": 26
+          },
+          {
+            "buttonText": "MONTHLY",
+            "buttonValue": 12
+          }
+        ]
+      },
+      "nudgeInverseTerm": {
+        "type": "HIDDEN",
+        "calcModel": "totalTerm",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+      }
+    },
+    "nudge": {
+      "label": "Sorted Tip",
+      "tooltip": "Making just the minimum payment makes debt drag on and on.",
+      "text": "The more you increase repayments, the quicker you're debt-free.",
+      "model": "nudgeInverseTerm",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": 59,
+        "showSelectionBar": true,
+        "transitions": false
+      }
+    },
+    "outputs": [
+      {
+        "type": "MONEY",
+        "label": "Total you will pay:",
+        "tooltip": "The amount borrowed plus any interest charged. Interest increases the cost of a loan and the time it can take to repay the loan.",
+        "model": "result_total",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Minimum repayment:",
+        "tooltip": "The amount borrowed plus any interest charged. Interest increases the cost of a loan and the time it can take to repay the loan.",
+        "model": "result_min_payment",
+        "color": "font-black"
+      },
+      {
+        "type": "MONEY",
+        "label": "Including interest of:",
+        "model": "result_interest",
+        "color": "font-pink"
+      },
+      {
+        "type": "TIME",
+        "label": "For:",
+        "model": "result_time_to_repay",
+        "color": "font-black",
+        "units": "months"
+      }
+    ],
+    "graphic": {
+      "type": "DONUT",
+      "icon": {
+        "type": "computer",
+        "file": "/assets/images/results/computer.svg",
+        "color": "#CE0058",
+        "model": "result_total"
+      },
+      "smallIcons": [
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-0.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-1.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-2.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-3.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-4.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-5.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-6.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-7.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-8.svg",
+        "/themes/sorted/assets/images/results/small-icons/computer-icon-9.svg"
+      ],
+      "interest": {
+        "color": "#E18CC8",
+        "model": "result_interest"
+      },
+      "amountOwed": {
+        "color": "#ECB7DC",
+        "model": "amountOwed"
+      }
+    }
+  },
+  {
+    "title": "car loan",
+    "type": "carLoan",
+    "model": "debtCalculatorModel",
+    "inputs": [
+      {
+        "title": "Car loan",
+        "unique": "carLoan1",
+        "visible": true
+      },
+      {
+        "title": "Car loan",
+        "unique": "carLoan2",
+        "visible": false
+      },
+      {
+        "title": "Car loan",
+        "unique": "carLoan3",
+        "visible": false
+      }
+    ],
+    "fields": {
+      "amountOwed": {
+        "type": "MONEY",
+        "label": "Amount owed",
+        "calcModel": "amount_borrowed",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The total amount you owe for that type of loan. It helps to only borrow what you can afford to pay back each month.",
+        "validation": {
+          "type": "money2",
+          "min": 1,
+          "max": 100000,
+          "message": "Please enter a number between 1 and 100000, with no commas, spaces or symbols."
+        }
+      },
+      "startupFees": {
+        "type": "MONEY",
+        "label": "Set-up fees",
+        "calcModel": "startup_fees",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some Car loans charge a range of set-up fees. Check the terms and conditions of the loan agreement before you sign. Interest will be added to any fees.",
+        "validation": {
+          "type": "money3",
+          "min": 0,
+          "max": 10000,
+          "message": "Please enter a number between 0 and 10000, with no commas, spaces or symbols."
+        }
+      },
+      "otherFees": {
+        "type": "MONEY",
+        "label": "Other fees",
+        "calcModel": "other_fees",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some Car loans charge other fees. Check the terms and conditions of the loan agreement before you sign. Interest will be added to any fees.",
+        "validation": {
+          "type": "money3",
+          "min": 0,
+          "max": 10000,
+          "message": "Please enter a number between 0 and 10000, with no commas, spaces or symbols."
+        }
+      },
+      "interestRate": {
+        "type": "PERCENT",
+        "label": "Interest rate",
+        "calcModel": "interest_rate",
+        "format": {
+          "type": "FLOAT",
+          "decimals": 2
+        },
+        "value": 13,
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The interest rate as stated in your loan agreement. Interest is charged on any outstanding amount. If you have several loans, it helps to pay off the one with the highest interest rate first.",
+        "link": {
+          "text": "See www.interest.co.nz for current rates",
+          "url": "http://www.interest.co.nz"
+        },
+        "validation": {
+          "type": "interestRate2",
+          "min": 0,
+          "max": 50,
+          "message": "Please enter a number between 0.00 and 50.00, with no commas, spaces or symbols."
+        }
+      },
+      "interestFreePeriod": {
+        "type": "PERIOD",
+        "label": "Interest-free period (months)",
+        "calcModel": "interest_free_period",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some Car loans offer a period of time where you won't be charged any interest. The goal is to repay the full amount owed within the interest-free period.",
+        "validation": {
+          "type": "loanTerm3",
+          "min": 0,
+          "max": 60,
+          "message": "Please enter a number between 0 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "deferredPaymentPeriod": {
+        "type": "PERIOD",
+        "label": "Deferred payment period (months)",
+        "calcModel": "deferred_payment_months",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": false,
+        "tooltip": "Some Car loans offer a period of time when you don't have to make any repayments. Check whether interest is still added during any deferred payment period.",
+        "validation": {
+          "type": "loanTerm3",
+          "min": 0,
+          "max": 60,
+          "message": "Please enter a number between 0 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "totalTerm": {
+        "type": "PERIOD",
+        "label": "Term (months)",
+        "calcModel": "total_term_months",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The length of time you'll have to repay the amount borrowed. If a Car loan is your only option, choose the shortest repayment term so you pay less interest.",
+        "validation": {
+          "type": "loanTerm2",
+          "min": 1,
+          "max": 60,
+          "message": "Please enter a number between 1 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "repaymentFrequency": {
+        "type": "BUTTON_SELECTOR",
+        "label": "Frequency",
+        "calcModel": "repayment_frequency",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 12,
+        "required": true,
+        "tooltip": "How often you make your repayments. Car loan repayments are usually made monthly.",
+        "buttons": [
+          {
+            "buttonText": "WEEKLY",
+            "buttonValue": 52
+          },
+          {
+            "buttonText": "FORTNIGHTLY",
+            "buttonValue": 26
+          },
+          {
+            "buttonText": "MONTHLY",
+            "buttonValue": 12
+          }
+        ]
+      },
+      "nudgeInverseTerm": {
+        "type": "HIDDEN",
+        "calcModel": "totalTerm",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+      }
+    },
+    "nudge": {
+      "label": "Sorted Tip",
+      "tooltip": "Making just the minimum payment makes debt drag on and on.",
+      "text": "The more you increase repayments, the quicker you're debt-free.",
+      "model": "nudgeInverseTerm",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": 59,
+        "showSelectionBar": true,
+        "transitions": false
+      }
+    },
+    "outputs": [
+      {
+        "type": "MONEY",
+        "label": "Minimum repayment:",
+        "tooltip": "The lowest amount you'll need to repay regularly, including interest.If your agreement allows it, pay off more than the minimum to get out of debt quicker and pay less interest.",
+        "model": "result_min_payment",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Total you will pay:",
+        "tooltip": "The amount borrowed plus any interest charged. Interest increases the cost of a loan and the time it can take to repay the loan.",
+        "model": "result_total",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Including interest of:",
+        "model": "result_interest",
+        "color": "font-pink"
+      },
+      {
+        "type": "TIME",
+        "label": "For:",
+        "model": "result_time_to_repay",
+        "color": "font-black",
+        "units": "months"
+      }
+    ],
+    "graphic": {
+      "type": "DONUT",
+      "icon": {
+        "type": "car",
+        "file": "/assets/images/results/car.svg",
+        "color": "#CE0058",
+        "model": "result_total"
+      },
+      "smallIcons": [
+        "/themes/sorted/assets/images/results/small-icons/car-icon-0.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-1.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-2.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-3.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-4.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-5.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-6.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-7.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-8.svg",
+        "/themes/sorted/assets/images/results/small-icons/car-icon-9.svg"
+      ],
+      "interest": {
+        "color": "#E18CC8",
+        "model": "result_interest"
+      },
+      "amountOwed": {
+        "color": "#ECB7DC",
+        "model": "amountOwed"
+      }
+    }
+  },
+  {
+    "title": "personal loan",
+    "type": "personalLoan",
+    "model": "debtCalculatorModel",
+    "inputs": [
+      {
+        "title": "Personal loan",
+        "unique": "personalLoan1",
+        "visible": true
+      },
+      {
+        "title": "Personal loan",
+        "unique": "personalLoan2",
+        "visible": false
+      },
+      {
+        "title": "Personal loan",
+        "unique": "personalLoan3",
+        "visible": false
+      }
+    ],
+    "fields": {
+      "amountOwed": {
+        "type": "MONEY",
+        "label": "Amount owed",
+        "calcModel": "amount_borrowed",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The total amount you owe for that type of loan. It helps to only borrow what you can afford to pay back each month.",
+        "validation": {
+          "type": "money2",
+          "min": 1,
+          "max": 100000,
+          "message": "Please enter a number between 1 and 100000, with no commas, spaces or symbols."
+        }
+      },
+      "interestRate": {
+        "type": "PERCENT",
+        "label": "Interest rate",
+        "calcModel": "interest_rate",
+        "format": {
+          "type": "FLOAT",
+          "decimals": 2
+        },
+        "value": 15,
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The interest rate as stated in your loan agreement. Interest is charged on any outstanding amount. If you have several loans, it helps to pay off the one with the highest interest rate first.",
+        "link": {
+          "text": "See www.interest.co.nz for current rates",
+          "url": "http://www.interest.co.nz"
+        },
+        "validation": {
+          "type": "interestRate2",
+          "min": 0,
+          "max": 50,
+          "message": "Please enter a number between 0.00 and 50.00, with no commas, spaces or symbols."
+        }
+      },
+      "totalTerm": {
+        "type": "PERIOD",
+        "label": "Term (months)",
+        "calcModel": "total_term_months",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "placeholder": "",
+        "required": true,
+        "tooltip": "The length of time you'll have to repay the amount borrowed. If a loan is your only option, choose the shortest repayment term so you pay less interest.",
+        "validation": {
+          "type": "loanTerm2",
+          "min": 1,
+          "max": 60,
+          "message": "Please enter a number between 1 and 60, with no commas, spaces or symbols."
+        }
+      },
+      "repaymentFrequency": {
+        "type": "BUTTON_SELECTOR",
+        "label": "Frequency",
+        "calcModel": "repayment_frequency",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": 12,
+        "required": true,
+        "tooltip": "How often you make your repayments. Loan repayments are usually made monthly.",
+        "buttons": [
+          {
+            "buttonText": "WEEKLY",
+            "buttonValue": 52
+          },
+          {
+            "buttonText": "FORTNIGHTLY",
+            "buttonValue": 26
+          },
+          {
+            "buttonText": "MONTHLY",
+            "buttonValue": 12
+          }
+        ]
+      },
+      "nudgeInverseTerm": {
+        "type": "HIDDEN",
+        "calcModel": "totalTerm",
+        "format": {
+          "type": "INTEGER"
+        },
+        "value": "",
+        "required": false
+      }
+    },
+    "nudge": {
+      "label": "Sorted Tip",
+      "tooltip": "Making just the minimum payment makes debt drag on and on.",
+      "text": "The more you increase repayments, the quicker you're debt-free.",
+      "model": "nudgeInverseTerm",
+      "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+      "options": {
+        "floor": 0,
+        "ceil": 59,
+        "showSelectionBar": true,
+        "transitions": false
+      }
+    },
+    "outputs": [
+      {
+        "type": "MONEY",
+        "label": "Minimum repayment:",
+        "tooltip": "The lowest amount you'll need to repay regularly, including interest.If your agreement allows it, pay off more than the minimum to get out of debt quicker and pay less interest.",
+        "model": "result_min_payment",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Total you will pay:",
+        "tooltip": "The amount borrowed plus any interest charged. Interest increases the cost of a loan and the time it can take to repay the loan.",
+        "model": "result_total",
+        "color": "font-red"
+      },
+      {
+        "type": "MONEY",
+        "label": "Including interest of:",
+        "model": "result_interest",
+        "color": "font-pink"
+      },
+      {
+        "type": "TIME",
+        "label": "For:",
+        "model": "result_time",
+        "color": "font-black",
+        "units": "months"
+      }
+    ],
+    "graphic": {
+      "type": "DONUT",
+      "icon": {
+        "type": "money",
+        "file": "/assets/images/results/money.svg",
+        "color": "#CE0058",
+        "model": "result_total"
+      },
+      "smallIcons": [
+        "/themes/sorted/assets/images/results/small-icons/money-icon-0.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-1.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-2.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-3.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-4.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-5.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-6.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-7.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-8.svg",
+        "/themes/sorted/assets/images/results/small-icons/money-icon-9.svg"
+      ],
+      "interest": {
+        "color": "#E18CC8",
+        "model": "result_interest"
+      },
+      "amountOwed": {
+        "color": "#ECB7DC",
+        "model": "amountOwed"
+      }
+    }
+  }
+]

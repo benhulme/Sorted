@@ -1,0 +1,97 @@
+<div collapse-toggler class="panel-heading toggler in">
+  <div class="row">
+    <div class="pull-left">
+      <h4 class="panel-title font-h4 font-medium"><span class="caret-order"></span>{{category.Title}}</h4>
+    </div>
+    <div class="pull-right text-right">
+
+      <!--<span class="_uppercase font-sm font-medium">-->
+        <!--Total quanity &nbsp;-->
+      <!--</span>-->
+      <!--<span class="order-badge">{{data[category.Title].length}}</span>-->
+      <!--<span class="order-badge">{{order}}</span>-->
+    </div>
+  </div>
+
+</div>
+
+<!-- Booklets expanded by default -->
+<div class="panel-collapse collapse in booklets">
+  <div class="col-md-12">
+    <p adjustable-font>We have Sorted booklets on a range of topics, from goal setting and budgeting to investing and retirement planning. Like all our resources, they are free. Because this is a free service we minimise the delivery cost by using post services where possible. As New Zealand Post have reduced the frequency of delivery to around twice a week please order 10 working days in advance of when you need the resources.
+    </p>
+
+
+    <div class="row">
+      <div class="col-md-12 order-box" ng-repeat="(index, item) in data[category.Title]">
+
+        <div >
+          <div >
+
+            <div class="row">
+              <!-- Item description -->
+              <!-- Item thumbnail -->
+              <div class="col-sm-2">
+                <div class="center-block">
+                  <img class="img-responsive img-thumbnail"
+                       ng-src="{{item.ThumbnailImage.Filename}}"
+                       alt="{{item.ThumbnailImage.Title}}">
+                </div>
+              </div>
+
+              <div class="col-md-7 col-sm-10">
+
+                <div class="order-copy">
+                  <h4 class="">{{item.Title}} </h4>
+                  <p adjustable-font>{{item.ShortCopy}}</p>
+                </div>
+
+              </div>
+              <div class="col-md-3 col-sm-10 col-xs-12 pull-right" >
+
+                <div class="order-copy">
+                  <a class=" btn-icon-pdf font-md" download target="_blank" href="{{item.PDF.Filename}}" role="button" analytics-on="click" analytics-event="booklet" analytics-category="download" analytics-label="{{item.PDF.Filename.split('/').pop()|lowercase}}">
+                    <i class="pdf"></i>
+                    Download PDF
+                  </a>
+                  <p class="font-xs">{{item.PDF.Description}}</p>
+
+                    <div class="copy-count">
+                      <span >Or send me</span>
+                      <span>
+                        <input
+                          ng-model="Order.Items[item.ID]"
+                          ng-model-options="{updateOn: 'default'}"
+                          type="number"
+                          name="{{item.ID}}"
+                          min="0"
+                          max="200"
+                          ng-required=false
+                          placeholder="0"
+                          class="order-qty">
+                        </span>
+                        <span class="">copies</span>
+
+                        <span class="small text-danger"
+                              ng-show="getInput(this.itemsForm, item).$invalid &&
+                            getInput(this.itemsForm, item).$viewValue != null">
+                          Limit is 200 sorry!
+                        </span>
+                    </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

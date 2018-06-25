@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("cmValidation");app.directive("cmMinlength",function(){return{require:"ngModel",link:function(n,i,t,e){e.$validators.minlength=function(n){return!!e.$isEmpty(n)||("false"===t.cmCondition||n.length>=t.cmMinlength)}}}});

@@ -1,0 +1,43 @@
+<navigation></navigation>
+
+<header-small data="data"></header-small>
+
+<tool-title data="data"></tool-title>
+
+<div class="layout-container investor-container _no-padding-sm-below">
+  <div class="layout-content _no-padding-sm-below">
+    <div class="row layout-row  _no-margin-sm-below">
+      <div class="col-md-4 _no-padding-sm-below">
+        <calc-input-quiz-inv
+          model="model"
+          calculator="calculator"
+          update-current-model="updateCurrentModel(formType, unique)"
+          digest-calc="digestCalc()"></calc-input-quiz-inv>
+      </div>
+      <div class="col-md-8 _relative _no-padding-sm-below calc-output">
+
+        <calc-output-investment
+          model="model"
+          result="result"
+          dropdown="dropdown"
+          result-data="data.resultPages"></calc-output-investment>
+<div class="col-xs-12">
+
+  <div class="_inline-block _right personality-save calc-results-print-bottom">
+    <button class="btn btn-bar btn-primary _right" save-trigger>SAVE</button>
+    <a href="/#/tools/mortgage-tool" class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm hidden-md" cm-print>PRINT <span class="fa fa-chevron-right font-xs"></span></a>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<related-content data="data" title="More from Sorted"></related-content>
+
+<email-signup></email-signup>
+
+<footer></footer>
+
+

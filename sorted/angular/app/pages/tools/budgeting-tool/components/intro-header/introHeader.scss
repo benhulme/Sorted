@@ -1,0 +1,43 @@
+intro-header {
+  h2 {
+    margin-top: 95px;
+  }
+
+  .layout-header-small {
+    .header-small-container {
+      .breadcrumb {
+        top: 100px;
+
+        @media (min-width: $screen-md-min) {
+          top: 80px;
+          //left: 20px;
+        }
+      }
+    }
+  }
+
+  .intro-header-icon-container {
+    position: relative;
+    width: 100px;
+
+    img {
+      position: absolute;
+      top: 140px;
+      z-index: 99;
+    }
+  }
+
+  @media(min-width: $screen-md-min) {
+    h2 {
+      margin-top: 0px;
+    }
+
+    .intro-header-icon-container {
+      width: 120px;
+
+      img {
+        top: 90px;
+      }
+    }
+  }
+}

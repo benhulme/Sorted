@@ -1,0 +1,8 @@
+<budget-category-amount-facade 
+  ng-if="!category.editing"></budget-category-amount-facade>
+<budget-input-amount 
+  placeholder="Budgeted amount" 
+  amount="$parent.inlineEditValue"
+  ng-if="category.editing"
+  per-year="category.Period.PerYear"
+  toggle-editable="toggleEditable(category,mc)"></budget-input-amount>

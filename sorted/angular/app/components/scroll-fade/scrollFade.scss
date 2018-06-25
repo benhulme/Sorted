@@ -1,0 +1,9 @@
+.scroll-fade-transitioner {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.scroll-fade-invisible {
+  visibility: 0;
+  opacity: 0;
+
+}

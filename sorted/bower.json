@@ -1,0 +1,54 @@
+{
+  "name": "sorted",
+  "description": "the sorted website",
+  "main": "gulpfile.js",
+  "authors": [
+    "Paul Headington"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.5.0",
+    "angular-animate": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-sanitize": "~1.5.0",
+    "angular-resource": "~1.5.0",
+    "angular-cookies": "~1.5.0",
+    "angular-bootstrap": "~1.2.1",
+    "bootstrap-sass-official": "~3.1.1",
+    "angular-socket-io": "~0.6.0",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.0.1",
+    "animate.css": "~3.4.0",
+    "font-awesome": "fontawesome#~4.4.0",
+    "angular-mocks": "~1.5.0",
+    "hover": "~2.0.2",
+    "gsap": "~1.18.1",
+    "angular-touch": "~1.5.0",
+    "angularjs-slider": "^2.8.0",
+    "jquery-validation": "~1.15.0",
+    "angular-moment": "^0.10.3",
+    "ng-backbone": "^0.1.1",
+    "ng-lodash": "^0.4.0",
+    "angulartics": "^1.0.3",
+    "angulartics-google-tag-manager": "^0.0.1",
+    "ng-device-detector": "^3.0.1",
+    "bignumber.js": "^2.3.0",
+    "es6-shim": "^0.35.1",
+    "array.from": "^0.2.1",
+    "angular-dragdrop": "^1.0.13",
+    "jqueryui-touch-punch": "*"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
+  }
+}

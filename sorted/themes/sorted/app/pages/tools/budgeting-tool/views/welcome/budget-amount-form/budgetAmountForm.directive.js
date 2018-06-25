@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").directive("budgetAmountForm",["$location","siteConfig",function(t,o){return{templateUrl:o.APP_PATH+"app/pages/tools/budgeting-tool/views/welcome/budget-amount-form/budgetAmountForm.html",restrict:"E"}}])}();

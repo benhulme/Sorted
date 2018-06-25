@@ -1,0 +1,323 @@
+.titles-line{
+  .goal{
+    padding: 0 !important;
+
+  }
+  .plan{
+    padding:  0 0 0 5px !important;
+    &.open{
+      width: 100% !important;
+      padding:  0 !important;
+
+    }
+  }
+  h4{
+
+    padding: 15px 20px;
+    font-size: 16px;
+    background: #4dddbf;
+    line-height: 1;
+    font-weight:bold;
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+}
+
+.add-goal{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+  background: #b7b8ba;
+  border: none;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.left-border{
+  border-left: solid 5px white;
+  padding:15px 10px !important;
+}
+
+.delete-goal{
+  width: 40px;
+  height: 40px;
+  border: 2px dotted #b7b8ba;
+  border-radius: 100%;
+  background: none, url('../../assets/images/tools/planning-tool/trash-bin.svg') no-repeat center;
+  background-size: 40%;
+}
+
+.edit-goal{
+  width: 40px;
+  height: 40px;
+  border: 2px dotted #b7b8ba;
+  border-radius: 100%;
+  background: none, url('../../assets/images/tools/planning-tool/pen.png') no-repeat center;
+  background-size: 50%;
+}
+
+.fullwidth-row{
+  margin-left:-15px;
+  margin-right:-15px;
+}
+
+
+.goal-modal{
+  padding: 15px;
+  background: white;
+  input{
+    border: 1px solid black;
+    width:100%;
+  }
+  button{
+    width: 100%;
+    padding:0 15px;
+  }
+}
+
+
+.save-goal{
+  width: 40px;
+  height: 40px;
+  padding:0;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 5px;
+  background:url('../../assets/images/tools/planning-tool/save-new.png') no-repeat;
+  background-size: cover;
+
+}
+
+.happen-button{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.goal-modal{
+  .notice{
+    font-size: 11px;
+    color: #6f7275;
+  }
+
+  &.save-resolve-dialog{
+    padding: 20px 0;
+    .sign-in-text{
+      margin-bottom: 40px;
+    }
+    #save-as-title{
+      margin-bottom: 3px;
+    }
+  }
+  .close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #1E1E1E;
+    opacity: 1;
+    width: 10px;
+  }
+
+  h4{
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d9d9d6;
+  }
+  form{
+    margin: 0 auto;
+    max-width: 370px;
+    .field{
+      position: relative;
+    }
+    .cancel{
+      color: #FF4B05;
+      text-transform: uppercase;
+
+    }
+    .form-addon-dollar{
+      input{
+        padding-left: 40px;
+      }
+    }
+
+
+  }
+
+  .btn-primary{
+    margin-bottom: 0;
+  }
+}
+.plan-block {
+  .row {
+    background: #bcf2e7;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+
+  }
+}
+
+.desktop-dropzone{
+  position: relative;
+  height:100%;
+  &>p{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    width: 100%;
+    margin-bottom: 0;
+    color: #20D4AF;
+  }
+}
+
+
+.control-container{
+  span{
+    display: inline-block;
+  }
+}
+
+@media (min-width: $screen-sm){
+  .desktop-dropzone{
+    goal-draggable{
+      .goal-bubble-container{
+        padding: 25px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .happen-button{
+    width: 240px;
+    float: right;
+  }
+
+  .goal-modal{
+    .resolve-form{
+      max-width: none;
+    }
+    form{
+      .field{
+        width: 100%;
+      }
+      .form-actions{
+        .cancel{
+          height: 50px;
+          border: none;
+          background: none;
+        }
+      }
+    }
+  }
+
+  .control-container{
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 50px;
+    .control-but{
+      span{
+        display: inline-block;
+      }
+      button{
+        display: inline-block;
+        width:50px;
+        height:50px;
+      }
+      p{
+        line-height: 40px;
+        display: inline-block;
+        padding-left: 10px;
+        vertical-align: top;
+      }
+    }
+  }
+
+
+  div.light-green{
+    background-color: white;
+  }
+  .goal-bubble-container{
+    padding: 25px;
+  }
+  .plan-block{
+    .row{
+      position: relative;
+      background: #def9f3;
+      border-bottom: 5px solid white;
+
+      goal-droppable{
+        &.active,&.not-empty{
+          .goal-dropzone{
+            background: #def9f3;
+            border-left: 5px solid #def9f3;
+          }
+        }
+        .goal-dropzone{
+          background: #def9f3;
+          .drop-name{
+            font-size: 14px;
+          }
+          &:before{
+            display: none;
+          }
+          .drop-title{
+            width:65%;
+            height:65%;
+            left:17%;
+            top:17%;
+
+            .drop-amount{
+              top: 0;
+              height: 35px;
+              width: 35px;
+              line-height: 35px;
+            }
+          }
+        }
+
+      }
+      .desktop-goals{
+        .goal-drag{
+            width:33.33333%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1025px){
+  .plan-block{
+    .row{
+      goal-droppable{
+        .goal-dropzone{
+          .drop-title{
+            .drop-amount{
+              top: -7px;
+            }
+          }
+        }
+      }
+    }
+  }
+  goal-draggable{
+    .goal-bubble-container{
+      padding: 5px;
+    }
+  }
+}
+
+
+
+
+
+.over{
+  box-shadow:  0 0 15px 3px rgba(200, 50, 50, .5);
+}
+

@@ -1,0 +1,1 @@
+(function(){"use strict";angular.module("sorted").filter("ceil",function(){return function(t){return Math.ceil(t)}})}).call(this);

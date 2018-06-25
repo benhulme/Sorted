@@ -1,0 +1,26 @@
+---
+# tasks file for nginx
+
+- name: Install dependent repository
+  apt: name=python-apt state=present
+
+- name: Add Nginx repo
+  apt_repository: repo='ppa:nginx/stable'
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install required packages
+  apt: name=nginx
+
+#- name: Replace default nginx site
+#  template: src=nginx-default.j2 dest=/etc/nginx/sites-available/default owner=root group=root mode=644 backup=yes
+#  notify:
+#  - test nginx
+#  - reload nginx
+
+#- name: Replace main config file
+#  template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf backup=yes
+#  notify:
+#  - test nginx
+#  - reload nginx

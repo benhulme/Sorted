@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("savingsType",["siteConfig",function(t){return{templateUrl:t.APP_PATH+"app/pages/tools/savings-calculator/input.html",restrict:"EA",scope:{field:"=",input:"=",models:"="}}}])}();

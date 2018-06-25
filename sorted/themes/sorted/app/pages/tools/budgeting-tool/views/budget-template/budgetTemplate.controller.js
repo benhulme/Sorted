@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").controller("BudgetTemplateCtrl",["$scope","Budget","siteConfig","viewModel",function(t,e,o,g){t.siteConfig=o,t.data=g.data,t.budget=e.get()}])}();

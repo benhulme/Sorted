@@ -1,0 +1,21 @@
+---
+# tasks file for startup
+- name: Install NFS server
+  apt: name='nfs-kernel-server' update_cache=yes cache_valid_time=3600
+
+# Create users
+- name: Create www-data group
+  group: name=www-data state=present
+
+- name: Add Git user
+  user: name=git comment="Git user" group=www-data shell=/bin/bash generate_ssh_key=yes
+
+- name: Create dir
+  file: path=/var/www owner=git group=www-data state=directory
+
+- name: Update NFS settings
+  blockinfile:
+    dest: /etc/exports
+    backup: yes
+    block: |
+      /var/www  172.17.14.135(ro,async,no_subtree_check) 172.17.14.136(rw,sync,no_subtree_check) 172.17.14.137(rw,sync,no_subtree_check)

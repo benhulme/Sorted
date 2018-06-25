@@ -1,0 +1,12 @@
+<div class="budget-view-chooser-container row">
+  <div class="budget-view-copy-container col-xs-3 col-xs-offset-5  col-sm-2 col-sm-offset-6 col-md-offset-5" >Budgeted</div>
+  <div class="col-xs-4 text-right pull-right">
+    <div class="budget-view-button-container text-left"
+      ng-repeat="(key, viewTemplate) in viewTemplates">
+      <img class="budget-view-button"
+        ng-src="{{getTemplateIconPath(viewTemplate.icon)}}"
+        ng-class="{'selected': isViewSelected(key)}"
+        ng-click="setView(key)">
+    </div>
+  </div>
+</div>

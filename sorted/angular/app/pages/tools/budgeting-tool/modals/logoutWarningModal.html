@@ -1,0 +1,25 @@
+<div class="budget-logout-warning-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="logoutCancel()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Warning!</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>You haven't saved your budget yet. Do you really want to log out? All unsaved data will be lost.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-4 modal-cancel-link">
+        <a class="font-orange font-medium" ng-click="logoutCancel()">CANCEL</a>
+      </div>
+      <div class="col-md-8 modal-leave-button">
+        <button class="btn btn-primary" type="button" 
+          ng-click="logoutContinue()">LEAVE WITHOUT SAVING</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+[
+  {
+
+    "Title":"Guides",
+    "HeaderCopy":"Looking for advice? We've got lots of different guides to help you get clued up.",
+    "ForegroundImage": {
+      "Filename": "assets/Uploads/sorted-saving.png"
+    },
+    "BackgroundImage": {
+      "Filename": "assets/Uploads/guide-header-background.jpg"
+    },
+    "GuidePages": [
+      {
+        "URLSegment": "new-guide-page",
+        "Title": "New Guide Page",
+        "CategoryID": "1"
+      },
+      {
+        "URLSegment": "new-guide-page",
+        "Title": "New Guide Page",
+        "CategoryID": "1"
+      },
+      {
+        "URLSegment": "new-guide-page",
+        "Title": "New Guide Page",
+        "CategoryID": "1"
+      }
+    ],
+    "Related": [
+      {
+        "Title": "Budgeting",
+        "ShortCopy": "This is the short copy",
+        "Icon": {
+          "Filename": "/assets/images/test.svg"
+        },
+        "ThumbnailImage": {
+          "Filename": "/assets/images/test-thumbnail.jpg"
+        }
+      },
+      {
+        "Title": "Budgeting",
+        "ShortCopy": "This is the short copy",
+        "Icon": {
+          "Filename": "/assets/images/test.svg"
+        },
+        "ThumbnailImage": {
+          "Filename": "/assets/images/test-thumbnail.jpg"
+        }
+      }
+    ],
+    "Categories": [
+      {
+        "ID": 1,
+        "Title": "Budgeting"
+      },
+      {
+        "ID": 2,
+        "Title": "Budgeting"
+      },
+      {
+        "ID": 3,
+        "Title": "Budgeting"
+      },
+      {
+        "ID": 4,
+        "Title": "Budgeting"
+      },
+      {
+        "ID": 5,
+        "Title": "Budgeting"
+      },
+      {
+        "ID": 6,
+        "Title": "Budgeting"
+      }
+    ]
+  }
+]

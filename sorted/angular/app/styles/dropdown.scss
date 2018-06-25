@@ -1,0 +1,29 @@
+.dropdown-toggle {
+  background-image: url("../images/select-down.png");
+  background-repeat: no-repeat;
+  background-color: $white;
+  background-position: right 20px center;
+  text-align: left;
+}
+
+.open > .btn-default.dropdown-toggle {
+  background-image: url("../images/select-up.png");
+}
+
+.dropdown-menu {
+  width: 100%;
+  min-width: 120px;
+
+  li {
+    &.selected {
+      background-color: #f5f5f5;
+    }
+    .dropdown-link {
+      padding: 15px 20px;
+      white-space: normal;
+    }
+  }
+
+}
+
+

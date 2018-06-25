@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").filter("titleSlug",[function(){return function(t){return t.replace(/[\W]+/g,"-").toLowerCase()}}])}();

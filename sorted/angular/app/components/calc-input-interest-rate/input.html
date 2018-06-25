@@ -1,0 +1,31 @@
+
+<div class="calc-input-interest-rate">
+
+  <label class="font-sm" tabindex="-100">
+    {{field.label}}
+    <popover ng-show="field.tooltip">
+      <button
+        class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+            data-toggle="popover"  data-trigger="focus"
+        data-placement="top"
+        data-html="true"
+        data-content="{{field.tooltip}}" tabindex="-100">
+      </button>
+    </popover>
+  </label>
+  <div class="input-group form-inline-addon form-addon-percent">
+    <input type="text"
+           no-commas
+           id="{{field.id}}"
+           autocomplete="off"
+           class="form-control font-md"
+           data-related="{{field.related}}"
+           ng-model="model.$attributes[field.calcModel]"
+           ng-model-options="{updateOn: 'blur', getterSetter: true }"
+           allow-decimal="true"
+           maxlength="10"
+           ng-enter="doBlur($event)">
+  </div>
+
+  <a ng-if="field.link" ng-href="{{field.link.url}}" class="font-xx" tabindex="-99" target="_blank">{{field.link.text}}</a>
+</div>

@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("calcLink",["$window",function(t){return{restrict:"A",link:function(n,e){e.on("click",".ui-results-link",function(n){n.preventDefault();var e=angular.element(".calc-output"),c=e.offset().top-80;t.scrollTo(0,c)})}}}])}();

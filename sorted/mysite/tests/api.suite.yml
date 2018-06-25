@@ -1,0 +1,12 @@
+class_name: ApiGuy
+modules:
+    enabled:
+        - REST
+        - PhpBrowser
+    config:
+        PhpBrowser:
+          url: 'http://sorted.dev/api/v0.1'
+        REST:
+            url: 'http://sorted.dev/api/v0.1'
+            depends: PhpBrowser
+            part: Json

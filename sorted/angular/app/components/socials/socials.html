@@ -1,0 +1,21 @@
+<div class="bubbles-container">
+
+  <ol class="_inline-list _clear">
+    <li class="bubbles facebook _left">
+      <a ng-href="{{fbUrl}}" class="fb-share" target="e">
+        <img ng-src="{{siteConfig.APP_PATH}}/assets/images/icon-facebook.svg">
+      </a>
+    </li>
+    <li class="bubbles twitter _left">
+      <a ng-href="https://twitter.com/intent/tweet?text={{data.Title}}&url={{url}}" target="e">
+        <img ng-src="{{siteConfig.APP_PATH}}/assets/images/icon-twitter.svg">
+      </a>
+    </li>
+    <li class="bubbles email _left">
+      <a ng-href="mailto:?Subject=Check this out on Sorted.org.nz&body={{url}}" target="e">
+        <img ng-src="{{siteConfig.APP_PATH}}/assets/images/icon-mail.svg">
+      </a>
+    </li>
+  </ol>
+
+</div>

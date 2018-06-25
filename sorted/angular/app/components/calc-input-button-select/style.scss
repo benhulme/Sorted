@@ -1,0 +1,7 @@
+.calc-input-button-select {
+
+  .btn-group-full-width {
+    @extend .btn-group-justified;
+    display: inline-block !important;
+  }
+}

@@ -1,0 +1,61 @@
+.required{
+  label{
+    &:after{
+      content: '*';
+      color: $red;
+    }
+  }
+  &.has-error{
+    input,select{
+      border: 1px solid $red;
+    }
+  }
+  .ng-invalid.ng-touched{
+      border: 1px solid $red;
+  }
+
+  .error-helper{
+    color: $red;
+    @extend .font-xx;
+  }
+}
+
+[name='userForm']{
+  margin-top: 80px;
+  input,select{
+    margin-bottom: 0;
+    padding:  0 15px;
+  }
+  .left{
+    padding-left: 0;
+
+  }
+  .right{
+    padding-right: 0;
+    label{
+      &:after{
+        content: '';
+      }
+    }
+  }
+
+  .left,.right{
+    @media (max-width: $screen-md-max) {
+      padding: 0;
+      float: none;
+    }
+  }
+  [type="submit"]{
+    width: 235px;
+    margin-top: 40px;
+  }
+}
+
+
+.save-reply-message{
+  margin: 40px 0 90px 0;
+  span{
+    color: #1fd4af;
+    font-size: 28px;
+  }
+}

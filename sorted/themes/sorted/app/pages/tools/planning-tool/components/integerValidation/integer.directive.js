@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").directive("integer",function(){return{require:"ngModel",link:function(t,e,n,r){r.$validators.integer=function(t,e){var n=/^\-?\d+$/;return!!r.$isEmpty(t)||!!n.test(e)}}}})}();

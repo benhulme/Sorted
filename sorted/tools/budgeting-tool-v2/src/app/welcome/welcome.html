@@ -1,0 +1,82 @@
+<intro-header data="welcome.data.Header" breadcrumbs="welcome.breadcrumbs"></intro-header>
+<p ng-if="!welcome.isLoggedIn || vm.getProfile.getProfile()"
+   class="font-medium login-prompt">Already got a budget? <a class="not-logged-in-link"
+                                                data-toggle="modal"
+                                                data-target="#login-modal">Log in here &gt;</a></p>
+
+<div class="layout-container">
+  <div class="row">
+    <div class="budget-amount-form-container col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <form name="budgetAmountForm">
+        <div class="form-group">
+          <label for="amount-to-budget">Amount to budget (income)</label>
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="input-group form-inline-addon form-addon-dollar">
+                <input name="amount-to-budget" id="amount-to-budget" type="text" class="budget-amount form-control" required ng-model="welcome.budget.Cents" placeholder="Amount" restrict-currency prevent-input-zoom>
+                <span class="help-block hidden">Please enter a valid amount.</span>
+              </div>
+            </div>
+
+            <div class="col-sm-4 budget-period">
+              <div class="dropdown" uib-dropdown>
+                <button class="btn btn-default dropdown-toggle form-control modal-only"
+                        type="button"
+                        uib-dropdown-toggle
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                ><span>{{welcome.budget.Period.Title}}</span>  <i class="icon-chevron-down" aria-hidden="true"></i></button>
+                <ul class="dropdown-menu">
+                  <li ng-repeat="period in welcome.budgetPeriods">
+                    <a class="dropdown-link" ng-click="welcome.onSetPeriod_clickHandler($event, period)">{{period.Title}}</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="budget-next col-sm-6 col-sm-offset-3">
+            <button class="btn btn-primary form-control" type="submit" ng-click="welcome.next()">Next</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div class="create-a-budget bg-green-gradient _relative">
+  <div class="_full-height-xs-above _relative">
+    <div class="layout-container">
+
+      <div class="row _relative _full-height-xs-above">
+
+        <div class="layout-col col-sm-4 _relative _full-height-xs-above">
+
+          <div class="row text-center">
+            <div class="col-xs-10 col-xs-offset-1">
+              <h2>Create a budget that keeps pace with your lifestyle</h2>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-10 col-xs-offset-1">
+              <p class="font-light">The quick and easy way to keep track of your spending.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="layout-col col-sm-8 _relative _full-height-xs-above">
+          <div class="device-image-container">
+            <img class="img-responsive" ng-src="{{welcome.TOOL_ASSETS}}assets/images/DEVICES.png">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,46 @@
+
+<navigation></navigation>
+<users-header></users-header>
+
+<div class="layout-container">
+  <users-avatar ></users-avatar>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center font-light">{{user.FirstName}}’s Sorted Dashboard</h2>
+    </div>
+  </div>
+
+  <div class="row" ng-show="data.Content">
+    <div class="col-lg-6 col-lg-offset-3 text-center dashboard-contnent">
+      <p ng-bind-html="data.Content"></p>
+    </div>
+  </div>
+  <div class="row">
+    <h3 class="font-medium text-center money-title">My Money World</h3>
+  </div>
+
+  <div class="row">
+    <used-plates ></used-plates>
+    <dashboard-plates ></dashboard-plates>
+  </div>
+
+  <div class="row kiwi-saver-notification">
+      <div class="col-md-2">
+        <img src="/themes/sorted/assets/images/kiwi-saver.png" alt="">
+      </div>
+      <div class="col-md-10">
+        <p class="font-h4">KiwiSaver providers offer hundreds of funds. How do they compare? </p>
+        <p><a href="http://fundfinder.sorted.org.nz/" class="ui-link font-sm">GO TO KIWISAVER FUND FINDER ></a></p>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+<email-signup></email-signup>
+
+<footer></footer>
+
+

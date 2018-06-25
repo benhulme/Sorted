@@ -1,0 +1,1 @@
+!function(){"use strict";var t=angular.module("sorted.config",[]),A={siteConfig:{APP_NAME:"Sorted",APP_VERSION:"0.1",APP_PATH:"/themes/sorted/",DATE_FORMAT:"DD/MM/YYYY",API_PREFIX:"/api/v0.1",GTM_PAGEVIEW_VARIABLE:"vPageUrl",GTM_CUSTOM_EVENT_NAME:"VirtualPageView"}};angular.forEach(A,function(A,P){t.constant(P,A)})}();

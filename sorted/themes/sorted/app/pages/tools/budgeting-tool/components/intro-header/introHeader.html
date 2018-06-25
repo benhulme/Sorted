@@ -1,0 +1,28 @@
+<div class="layout-header-small">
+
+  <div class="header-small-container">
+    <div ng-if="data.BackgroundImage.Filename" class="header-background" 
+      cover-image="{{data.BackgroundImage.Filename}}">
+      <div ng-if="data.ForegroundImage.Filename" class="intro-header-icon-container center-block">
+        <img class="img-responsive" ng-src="{{data.ForegroundImage.Filename}}">
+      </div>
+    </div>
+    <div ng-if="!data.BackgroundImage.Filename" class="header-background" 
+      cover-image="{{siteConfig.APP_PATH}}assets/images/header-background-tools.jpg"></div>
+    <div class="header-small-opacity"></div>
+    <breadcrumbs></breadcrumbs>
+  </div>
+
+</div>
+
+<div class="row text-center" ng-if="data.Title">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h2>{{data.Title}}</h2>
+  </div>
+</div>
+
+<div class="row text-center" ng-if="data.HeaderCopy">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <p class="intro-header-copy font-light">{{data.HeaderCopy}}</p>
+  </div>
+</div>

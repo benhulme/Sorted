@@ -1,0 +1,18 @@
+<div>
+  <div class="row">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="cancelMasterCategory()" aria-hidden="true">&times;</button>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Add name" autofocus
+        ng-model="newMasterCategory.Title" 
+        ng-keyup="$event.keyCode == 13 && saveMasterCategory()">
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-xs-6 text-center">
+      <a class="font-orange" ng-click="cancelMasterCategory()">CANCEL</a>
+    </div>
+    <div class="col-xs-6 text-center">
+      <button class="btn btn-primary" type="button" ng-click="saveMasterCategory()">OK</button>
+    </div>
+  </div>
+</div>

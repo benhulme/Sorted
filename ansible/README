@@ -1,0 +1,17 @@
+## Some helpful command examples
+
+
+# ./hosts file contain hosts config
+
+# Execute command on each server in group [migrated]
+
+ansible migrated -a "/bin/echo hello"
+
+# Install Zabbix agents on servers
+
+1. Edit playbook file zabbix-install.yml
+2. Run:
+    #ansible-playbook zabbix-install.yml
+
+# Create new role in directory ./roles
+ansible-galaxy init nginx -p roles 

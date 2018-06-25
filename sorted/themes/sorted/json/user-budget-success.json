@@ -1,0 +1,103 @@
+[
+  {
+    "Categories": [
+      {
+        "ID": 1,
+        "Name": "rent",
+        "Title": "Rent",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 2,
+        "Name": "mortgage",
+        "Title": "Mortgage",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 3,
+        "Name": "",
+        "Title": "Per month",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 4,
+        "Name": "fortnightly",
+        "Title": "Per fortnight",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 5,
+        "Name": "weekly",
+        "Title": "Per week",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 6,
+        "Name": "lorem",
+        "Title": "Lorem",
+
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 7,
+        "Name": "ipsum",
+        "Title": "Ipsum",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 8,
+        "Name": "dolor",
+        "Title": "Dolor",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 9,
+        "Name": "sit",
+        "Title": "Sit",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 10,
+        "Name": "amet",
+        "Title": "Amet",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 11,
+        "Name": "consectetur",
+        "Title": "Consectetur",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      },
+      {
+        "ID": 12,
+        "Name": "adipiscing",
+        "Title": "Adipiscing",
+        "Icon": {
+          "Filename": "assets\/Uploads\/budget-template-placeholder-option.png"
+        }
+      }
+    ]
+  }
+]

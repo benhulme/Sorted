@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 25/06/2015, 3:55:22 PM
+    Author     : craigmacgregor
+*/
+
+.full-width {
+  width: 100%;
+}
+
+.left {
+  float: left;
+}
+
+.cm-select {
+  .btn {
+    padding: 8px 12px;
+    text-align: left;
+    text-transform: none;
+    color: #333;
+    &:hover {
+      color: #333;
+    }
+    .caret {
+      float: right;
+      margin-top: 8px;
+      border-top: 6px solid;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .dropdown-item {
+    border-top: 1px solid $grey-light;
+    &.selected {
+      border-top: 2px solid $orange;
+      .cm-option {
+        text-decoration: none;
+        color: $orange;
+        background-color: $white;
+      }
+    }
+  }
+
+  .cm-option {
+    cursor: pointer;
+    padding: 8px 12px;
+    line-height: 28px;
+    white-space: normal;
+  }
+}
+
+.cm-select .dropdown-menu li {
+  height: auto;
+}

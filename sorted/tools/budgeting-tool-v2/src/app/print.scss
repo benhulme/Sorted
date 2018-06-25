@@ -1,0 +1,170 @@
+.print-only {
+  display: none !important;
+}
+@media print {
+  .print-only {
+    display: block !important;
+  }
+  display: block !important;
+
+  breadcrumbs,
+  div.nav-sticky,
+  div.footer-container {
+    display: none !important;
+  }
+
+  tool-header {
+    .layout-header-small {
+      display: none !important;
+    }
+    .author-details-container {
+      width: 50% !important;
+      float: left !important;
+      margin: 0 !important;
+      text-align: center !important;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      min-height: 370px !important;
+      .budget-header {
+        margin: auto !important;
+        width: 100% !important;
+        text-align: center !important;
+        .logo-container {
+          width: 100px;
+          height: 100px;
+          overflow: hidden;
+          margin: 30px auto 10px;
+        }
+        .profile-picture-wrap {
+          display: none;
+        }
+        .tool-title-wrap,
+        .tool-budget-amount-wrap {
+          width: 100% !important;
+        }
+        .prompt-editable {
+          padding-right: 0px;
+        }
+        .tool-title-wrap {
+          .budget-period {
+            margin-bottom: 0px;
+          }
+        }
+        .tool-budget-amount-wrap h2 {
+          font-size: 28px;
+          line-height: 38px;
+          font-weight: 200;
+          margin-bottom: 0px;
+        }
+        p.budget-amount-copy {
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+        }
+        .profile-picture-wrap {
+          width: 100% !important;
+          max-height: 150px !important;
+          .profile-picture {
+            max-height: 150px;
+            float: none !important;
+            img {
+              max-width: 150px !important;
+              max-height: 150px !important;
+            }
+          }
+        }
+        .tool-print-options-wrap {
+          display: none !important;
+        }
+      }
+    }
+  }
+  print-view {
+    display: block !important;
+    .budget-breakdown-wrap.breakdown-vertical {
+      display: block !important;
+      width: 50% !important;
+      height: auto !important;
+      top: 0 !important;
+      right: 0 !important;
+      .budget-breakdown-chart {
+        display: none !important;
+      }
+      .budget-breakdown-readable {
+        li {
+          font-size: 14px !important;
+          span.legend-label {
+            font-size: 14px !important;
+          }
+        }
+        .budget-breakdown-titles {
+          h5.subtotal-copy {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          .subtotal-period {
+            font-size: 16px;
+          }
+        }
+        h3.subtotal {
+          font-family: "Gotham SSm A","Gotham SSm B";
+          font-style: normal;
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 28.8px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+  .budget-tool-container {
+    #main-breakdown-vertical,
+    .breakdown-horizontal {
+      display: none;
+    }
+    .budget-items-form-wrap{
+      width: 100% !important;
+      min-height: auto !important;
+      .budget-tool-head {
+        display: none;
+      }
+      .budget-breakdown-wrap.breakdown-horizontal {
+        display: none;
+      }
+      .budget-tool-rows {
+        &>:first-child {
+          border-top: 0px;
+        }
+        .btn-sub-category-add {
+          display: none;
+        }
+      }
+    }
+    .master-category-title {
+      width: calc(100% - (50% + 50px)) !important;
+    }
+    .master-category-value {
+      width: 50% !important;
+      input {
+        text-align: right;
+      }
+    }
+    .master-category-add {
+      display: none;
+    }
+    .master-category-view-toggle {
+      display: none;
+    }
+    .sub-category-period {
+      width: calc(100% - (40% + 22% + 50px)) !important;
+      button.dropdown-toggle {
+        text-align: center;
+      }
+    }
+    .sub-category-view-toggle {
+      display: none;
+    }
+    .icon-chevron-down {
+      display: none;
+    }
+  }
+}

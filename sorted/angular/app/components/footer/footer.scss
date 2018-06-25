@@ -1,0 +1,89 @@
+.footer-container {
+  //prevent budgeting tool vertical breakdown from overlapping - position and z-index
+  position: relative;
+  z-index:101;
+  padding: 40px 0;
+}
+
+.footer-list {
+  @media(max-width: $screen-md-max){
+    .footer-li {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+}
+
+.footer-li {
+  margin: 0 20px;
+}
+
+.footer-list-link {
+  @extend .font-white;
+}
+
+.footer-social {
+  margin-top: 40px;
+  line-height: 50px;
+}
+
+.footer-social-span {
+  @media(max-width: $screen-xs){
+    display: block;
+  }
+}
+
+.footer-social-logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  @media(max-width:$screen-xs-max){
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.footer-logo-img {
+  height: 40px;
+  @media(max-width:$screen-xs-max){
+    height: 32px;
+  }
+}
+
+.footer-logo-span {
+  margin: 0 10px;
+  line-height: 40px;
+  @media(max-width: $screen-xs-max){
+    display: block;
+  }
+}
+
+.footer-legal {
+  margin-top: 40px;
+}
+
+.footer-legal-logo {
+  height: 20px;
+  @media(max-width:$screen-xs-max){
+    height: 16px;
+  }
+}
+
+.footer-divider {
+  margin: 40px 0;
+}
+
+#shieldedButton{
+  margin-right: 23px;
+  display: inline-block;
+  width: 52px;
+  height:52px;
+  img{
+    max-width: 100%;
+  }
+
+  @media(max-width:480px){
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

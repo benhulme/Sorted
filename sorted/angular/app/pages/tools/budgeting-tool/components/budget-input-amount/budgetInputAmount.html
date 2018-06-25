@@ -1,0 +1,13 @@
+<div class="input-group form-inline-addon form-addon-dollar">
+  <input type="number" name="salary" class="budget-amount form-control" step="any" required
+    ng-model="amount"
+    ng-blur="toggleEditable()"
+    placeholder="{{placeholder}}"
+    per-year="perYear"
+    display-dollars
+    guarantee-viewport
+    min="0" max="{{maxInt}}"
+    >
+  <span class="help-block">Please enter a valid amount.</span>
+</div>
+ <!-- focus-input -->

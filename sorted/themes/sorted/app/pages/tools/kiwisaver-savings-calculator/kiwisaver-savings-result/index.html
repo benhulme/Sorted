@@ -1,0 +1,172 @@
+<div class="kiwisaver-savings-result calc-output">
+
+  <div class="calc-heading kiwi-saver-savings-heading">
+    <span class="calc-title-text _left _inline-block font-sm">Results</span>
+
+    <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+    <a href="/#/tools/kiwisaver-savings-calculator"
+       class="font-xs font-orange font-medium _right calc-output-print" cm-print>
+      PRINT <span class="fa fa-chevron-right font-xs"></span>
+    </a>
+
+  </div>
+
+  <div class="calc-output-container">
+
+    <div class="row calc-output-row">
+      <div class="col-sm-9 layout-col">
+        At age 65, you could have:
+        <popover>
+          <button
+            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                data-toggle="popover"  data-trigger="focus"
+            data-placement="top"
+            data-content="This amount is an estimate only, based on a number of assumptions.">
+          </button>
+        </popover>
+      </div>
+      <div class="col-sm-3 calc-output-value">
+        <span ng-if="model.result.has('retirement_lump_sum')" class="black">{{model.result.$attributes.retirement_lump_sum | currency: "$"}}</span>
+        <span ng-if="!model.result.has('retirement_lump_sum')">-</span>
+      </div>
+    </div>
+
+    <div class="row calc-output-row">
+      <div class="col-sm-9 layout-col">
+        From 65 until age {{model.$attributes.life_expectancy || 90}}, this would give you:
+        <popover>
+          <button
+            class="fa fa-question-circle font-md font-grey-medium-light _no-border"
+                data-toggle="popover"  data-trigger="focus"
+            data-placement="top"
+            data-content="Sorted assumes your KiwiSaver will continue to earn interest and that you will draw down all of your KiwiSaver balance over your retirement years.">
+          </button>
+        </popover>
+      </div>
+      <div class="col-sm-3 fuschia calc-output-value">
+        <span ng-if="model.result.has('retirement_income')">{{model.result.$attributes.retirement_income | currency: "$"}} per&nbsp;week</span>
+        <span ng-if="!model.result.has('retirement_income')">-</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-graphic-container" >
+    <!-- Nudge Contributions -->
+    <div class="row ks-nudge" ng-show="model.$attributes.employment_status === '2'">
+      <div class="col-xs-12">
+        <kiwisaver-savings-calc-nudge-slider
+          class="rz-slider-has-ticks"
+          model="model"
+          nudge="calculator.nudge"></kiwisaver-savings-calc-nudge-slider>
+      </div>
+    </div>
+    <div class="row contrb-nudge" ng-show="model.$attributes.employment_status !== '2'">
+      <div class="col-xs-12">
+        <kiwisaver-savings-calc-nudge-slider
+          model="model"
+          nudge="calculator.altNudge"></kiwisaver-savings-calc-nudge-slider>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">&nbsp;</div>
+    </div>
+
+    <!-- Is that amount enough? Well -->
+    <div class="row calc-output-row">
+      <div class="col-xs-12">
+        <div class="kiwisaver-savings-calc-nudge-slider nudge-container">
+          <div class="_clear">
+            <div class="_left nudge-icon-wide _align-center">
+              <img ng-src="{{siteConfig.APP_PATH}}assets/images/nudge-kiwi.jpg" class="_full-width"/>
+            </div>
+
+            <div class="_left nudge-main">
+              <div class="font-sm">
+                <strong>
+                  Will <span class="fuschia">{{model.result.$attributes.retirement_income | currency: '$'}} per week</span> on top of NZ Super be enough to live on?</strong>
+              </div>
+              <div class="font-sm">
+                Use our <a href="/#/tools/retirement-planner">retirement planner</a> to figure out what else you might need
+                to save.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">&nbsp;</div>
+      </div>
+      <!-- Did you know you could use lump sum contributions? Well -->
+
+      <div class="row calc-output-row ks-result" ng-show="lessThanXYears(5)">
+        <div class="col-xs-12">
+            <div class="kiwisaver-savings-calc-nudge-slider nudge-container">
+            <div class="_clear">
+              <div class="_left nudge-icon-wide _align-center">
+                <img ng-src="{{siteConfig.APP_PATH}}assets/images/nudge-house.jpg" class="_full-width"/>
+              </div>
+
+              <div class="_left nudge-main">
+                <div class="font-sm">
+                  <strong>Did you know...</strong>
+                </div>
+                <div class="font-sm">You may be able to use your KiwiSaver money to buy a first home.
+                  <a href="/#/guides/buying-a-first-home" target="_blank" class="orange">LEARN MORE.</a>
+                </div>
+                <div>
+                  <hr/>
+                </div>
+                <div class="font-sm">
+                  You could be eligible for these amounts:
+                </div>
+                <div class="row" ng-show="lessThanXYears(3)">
+                  <div class="col-sm-9 layout-col">After 3 years in KiwiSaver</div>
+                  <div class="col-sm-3 layout-col calc-output-value">
+                    <span>{{model.result.$attributes.years_3 | currency: '$'}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-9 layout-col">After 5 years in KiwiSaver</div>
+                  <div class="col-sm-3 layout-col calc-output-value">
+                    <span>{{model.result.$attributes.years_5 | currency: '$'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <calc-input-iar-select
+        field="calculator.fields[16]"
+        model="model"></calc-input-iar-select>
+
+
+
+    </div>
+
+    <div class="calc-results-print-bottom col-md-6">
+
+      <button class="btn btn-bar btn-primary _right btn-save" save-trigger>SAVE</button>
+
+      <a href="/#/tools/kiwisaver-savings-calculator"
+         class="font-xs font-orange font-medium _right calc-output-print hidden-xs hidden-sm hidden-md" cm-print>
+        PRINT <span class="fa fa-chevron-right font-xs" ></span>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

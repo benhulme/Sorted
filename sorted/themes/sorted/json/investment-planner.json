@@ -1,0 +1,153 @@
+[
+  {
+    "ClassName": "ToolPage",
+    "LastEdited": "2016-02-15 10:53:11",
+    "Created": "2016-02-15 10:50:07",
+    "URLSegment": "investor-kickstarter",
+    "Title": "Investment Planner",
+    "Content": "<p>To invest your money well, you need to see: <\/p>\n<ul><li>What type of investor you are (your \"investor profile\")<\/li>\n<li>The right mix of investments to put your money in<\/li>\n<li>What sorts of results you can expect<\/li>\n<\/ul><p>Note: this is only a guide - a starting point before <a href=\"http://sorted.org.nz/#/guides/investment-advice\" target=\"_blank\">seeking expert advice<\/a>.<\/p>",
+    "ShowInMenus": "1",
+    "ShowInSearch": "1",
+    "Sort": "2",
+    "HasBrokenFile": "0",
+    "HasBrokenLink": "0",
+    "CanViewType": "Inherit",
+    "CanEditType": "Inherit",
+    "Version": "3",
+    "ParentID": "23",
+    "ID": 33,
+    "RecordClassName": "ToolPage",
+    "parser": {},
+    "ShowNudge": "0",
+    "NudgeID": "1",
+    "CalcIconID": "62",
+    "HeaderCopy": null,
+    "ShortCopy": "With the Money Personality Profiler we can help you figure out how your personality affects your spending habits and where you can make changes.",
+    "ForegroundImageID": "0",
+    "BackgroundImageID": "0",
+    "ThumbnailImageID": "0",
+    "ForegroundImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "BackgroundImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "ThumbnailImage": {
+      "ID": 0,
+      "ClassName": "Image",
+      "RecordClassName": "Image",
+      "ShowInSearch": 1
+    },
+    "CalcIcon": {
+      "ClassName": "File",
+      "LastEdited": "2016-02-15 10:50:53",
+      "Created": "2016-02-15 10:50:53",
+      "Name": "tools-money-personality-profiler.svg",
+      "Title": "tools money personality profiler",
+      "Filename": "assets/Uploads/tools-investment.svg",
+      "ShowInSearch": "1",
+      "ParentID": "1",
+      "OwnerID": "1",
+      "ID": 62,
+      "RecordClassName": "File"
+    },
+    "Nudge": {
+      "ClassName": "Nudge",
+      "LastEdited": "2016-02-10 10:08:14",
+      "Created": "2016-01-27 15:08:10",
+      "Title": "Test Nudge 1",
+      "Description": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+      "Tag": "<form name=\"wombats\"> <label for=\"wombat\">Wombat:</label> <input type=\"text\" name=\"wombat\" value=\"Enter wombat here.../> <input type=\"submit\" value=\"Go!/> </form>",
+      "ToolPageHolderID": "23",
+      "ToolPageID": "0",
+      "PlaceHolderID": "33",
+      "ID": 1,
+      "RecordClassName": "Nudge"
+    },
+    "Related": [],
+    "Link": "/#/tools/money-personality-profiler",
+    "resultPages": [
+      {
+        "Title": "Advisor Speculator",
+        "URLSegment": "adviser-speculator",
+        "ThumbnailImage": {
+          "ClassName": "Image",
+          "LastEdited": "2016-01-13 13:39:30",
+          "Created": "2016-01-13 13:39:30",
+          "Name": "blog11.jpg",
+          "Title": "blog11",
+          "Filename": "assets/Uploads/sorted-saving.png",
+          "ShowInSearch": "1",
+          "ParentID": "1",
+          "OwnerID": "1",
+          "ID": 33,
+          "RecordClassName": "Image"
+        },
+        "ShortCopy": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. ",
+        "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>",
+        "Heading1": "Money tips",
+        "Copy1": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+        "Heading2": "What's Advisor Speculator",
+        "Copy2": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.",
+        "Heading3": "Detailed Summary",
+        "Copy3": "Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+      },
+      {
+        "Title": "System Innovator",
+        "URLSegment": "system-innovator",
+        "ThumbnailImage": {
+          "ClassName": "Image",
+          "LastEdited": "2016-01-13 13:39:30",
+          "Created": "2016-01-13 13:39:30",
+          "Name": "blog11.jpg",
+          "Title": "blog11",
+          "Filename": "assets/Uploads/sorted-saving.png",
+          "ShowInSearch": "1",
+          "ParentID": "1",
+          "OwnerID": "1",
+          "ID": 33,
+          "RecordClassName": "Image"
+        },
+        "ShortCopy": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. ",
+        "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>",
+        "Heading1": "Money tips",
+        "Copy1": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+        "Heading2": "What's Advisor Speculator",
+        "Copy2": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.",
+        "Heading3": "Detailed Summary",
+        "Copy3": "Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+      },
+      {
+        "Title": "Money Mentor",
+        "URLSegment": "money-mentor",
+        "ThumbnailImage": {
+          "ClassName": "Image",
+          "LastEdited": "2016-01-13 13:39:30",
+          "Created": "2016-01-13 13:39:30",
+          "Name": "blog11.jpg",
+          "Title": "blog11",
+          "Filename": "assets/Uploads/sorted-saving.png",
+          "ShowInSearch": "1",
+          "ParentID": "1",
+          "OwnerID": "1",
+          "ID": 33,
+          "RecordClassName": "Image"
+        },
+        "ShortCopy": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. ",
+        "Content": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>",
+        "Heading1": "Money tips",
+        "Copy1": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+        "Heading2": "What's Advisor Speculator",
+        "Copy2": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.",
+        "Heading3": "Detailed Summary",
+        "Copy3": "Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+      }
+    ]
+  }
+]

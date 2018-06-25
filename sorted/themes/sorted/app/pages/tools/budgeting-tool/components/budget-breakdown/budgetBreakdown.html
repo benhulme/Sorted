@@ -1,0 +1,51 @@
+<section class="budget-breakdown"
+   ng-class="{'_collapsed': !breakdownDesktopExpanded}">
+  <div class="breakdown-wrapper">
+    <div class="row">
+      <div class="breakdown-title-vertical col-md-2"
+           ng-click="breakdownToggleDesktop()">
+        <i class="fa"
+          ng-class="{'fa-chevron-left': !breakdownDesktopExpanded, 'fa-chevron-right': breakdownDesktopExpanded}"></i><br>
+        <img class="breakdown-title-image"
+          ng-src="{{siteConfig.APP_PATH}}assets/images/tools/budgeting-tool/breakdown-vertical.png">
+      </div>
+
+      <div class="breakdown-mobile-container col-sm-12 col-md-10 hidden-print">
+        <div class="row budget-section-heading"
+             ng-class="{'_expanded': breakdownMobileExpanded}">
+          <div class="col-xs-10 text-left">
+            <img class="budget-breakdown-icon"
+                 ng-src="{{siteConfig.APP_PATH}}assets/images/icon-breakdown.png"
+                 ng-hide="breakdownMobileExpanded">
+            <h3>{{budget.BreakdownExpanded ? '' : 'Show '}}Budget Breakdown</h3>
+          </div>
+          <div class="col-xs-2 budget-section-toggle-control text-center"
+            ng-click="breakdownToggleMobile()">
+            <img class="budget-toggle-section"
+                 ng-src="{{siteConfig.APP_PATH}}assets/images/section-minus.svg"
+                 ng-show="breakdownMobileExpanded">
+            <img class="budget-toggle-section"
+                 ng-src="{{siteConfig.APP_PATH}}assets/images/section-plus.svg"
+                 ng-hide="breakdownMobileExpanded">
+          </div>
+        </div>
+
+        <div class="budget-breakdown-content text-center" uib-collapse="!breakdownMobileExpanded">
+          <div class="budget-breakdown-chart"
+               kendo-chart
+               k-options="breakdownChartOptions"></div>
+          <div class="row text-center">
+            <div class="total-budgeted text-center">
+              <h3 class="subtotal">{{subtotalDisplay() | currency}}</h3>
+              <h5 class="subtotal-copy">Total budgeted</h5>
+              <p class="subtotal-period">{{budget.Period.Title}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <budget-breakdown-legend></budget-breakdown-legend>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

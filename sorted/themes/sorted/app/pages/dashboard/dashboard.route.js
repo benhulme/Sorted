@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").config(["$routeProvider","siteConfig",function(o,e){o.when("/dashboard",{templateUrl:e.APP_PATH+"app/pages/dashboard/dashboard.html",controller:"DashboardController",resolve:{check:["$location","userStorage",function(o,e){e.isLoggedIn()||o.path("/")}]}})}])}();

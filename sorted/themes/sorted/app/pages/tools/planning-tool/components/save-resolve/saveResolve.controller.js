@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("sorted").controller("ModalInstanceSaveResolve",["$scope","$uibModalInstance","planningData",function(n,e,t){n.title="",n.ok=function(){t.setTitle(n.title),e.close()},n.cancel=function(){e.dismiss("cancel")}}])}();

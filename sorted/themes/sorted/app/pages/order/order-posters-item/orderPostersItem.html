@@ -1,0 +1,93 @@
+<div collapse-toggler class="panel-heading toggler">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="panel-title font-h4 font-medium"><span></span>{{category.Title}}</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+      <span class="_uppercase font-sm font-medium">Coming soon </span>
+      <!--<span class="badge">{{data[category.Title].length}}</span>-->
+    </div>
+  </div>
+
+</div>
+
+<!-- Posters collapsed by default -->
+<!--<div class="panel-collapse collapse">-->
+  <!--<div class="panel-body">-->
+    <!--<p>COPY YET TO BE PROVIDED..</p>-->
+
+    <!--<div class="row">-->
+      <!--<div class="col-md-6" ng-repeat="(index, item) in data[category.Title]">-->
+
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-body">-->
+
+            <!--<div class="row">-->
+              <!--&lt;!&ndash; Item description &ndash;&gt;-->
+              <!--<div class="col-sm-9">-->
+
+                <!--<div class="">-->
+                  <!--<h4 class="">{{item.Title}}</h4>-->
+                  <!--<p>{{item.ShortCopy}}</p>-->
+
+                  <!--&lt;!&ndash; Needs a button designed  &ndash;&gt;-->
+                  <!--<div class="text-center">-->
+                    <!--<a class="btn btn-default btn-lg btn-icon-pdf" href="{{item.PDF.Filename}}">-->
+                      <!--<i class="pdf"></i>-->
+                      <!--<span>Download as PDF</span>-->
+                    <!--</a>-->
+                  <!--</div>-->
+
+                  <!--<div class="small">({{item.PDF.Description}})</div>-->
+
+                  <!--<hr>-->
+
+                  <!--<div class="center-block">-->
+                    <!--Please send me-->
+                    <!--<span>-->
+                      <!--<input-->
+                        <!--ng-model="Order.Items[item.ID]"-->
+                        <!--ng-model-options="{updateOn: 'default blur'}"-->
+                        <!--type="number"-->
+                        <!--name="{{item.ID}}"-->
+                        <!--min="0"-->
+                        <!--max="5"-->
+                        <!--required="false"-->
+                        <!--placeholder="1"-->
+                        <!--class="order-qty">-->
+                    <!--</span>-->
+                    <!--<span>copies</span>-->
+
+                    <!--<span class="small text-danger"-->
+                          <!--ng-show="getInput(this.itemsForm, item).$invalid &&-->
+                        <!--getInput(this.itemsForm, item).$viewValue != null">-->
+                      <!--Limit is 5 sorry!-->
+                    <!--</span>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+
+              <!--&lt;!&ndash; Item thumbnail &ndash;&gt;-->
+              <!--<div class="col-sm-3">-->
+
+                <!--<div class="pull-right">-->
+                  <!--<div class="center-block">-->
+                    <!--<img class="img-reponsive thumbnail"-->
+                         <!--ng-src="{{item.ThumbnailImage.Filename}}"-->
+                         <!--alt="{{item.ThumbnailImage.Title}}">-->
+                  <!--</div>-->
+                <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+
+
+          <!--</div>-->
+
+        <!--</div>-->
+
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

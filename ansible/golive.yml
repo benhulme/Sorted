@@ -1,0 +1,14 @@
+# Sorted prdouction deployment script
+---
+- hosts: sorted-app1
+  user: dmitry
+
+  vars_prompt:
+    - name: "release_commit"
+      prompt: "Input release commit:"
+      private: no
+  tasks:
+    - name: Pull last changes from git repo
+      shell: cd /srv/www/sorted && git pull && git checkout {{ release_commit }}
+      become: true
+      become_user: git

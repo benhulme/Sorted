@@ -1,0 +1,142 @@
+<div class="add-category-modal">
+  <div class="modal-header">
+    <button type="button" class="modal-close-button btn btn-default" ng-click="$ctrl.onCancel_clickHandler($event)"
+            aria-hidden="true">×
+    </button>
+    <h4 class="modal-title">{{$ctrl.title}}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center category-image-container"  >
+          <div class="category-image-wrap"
+               ng-if="$ctrl.newCategory.File || $ctrl.isLoggedIn"
+               ng-class="{'have-image' : $ctrl.newCategory.File, 'have-not-image' : !$ctrl.newCategory.File }">
+
+            <div style="
+                  background-image: url('{{$ctrl.newCategory.File}}');
+                  background-position: 50%;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  "
+                 ng-if="$ctrl.newCategory.File" ng-src="{{$ctrl.newCategory.File}}" class="drop-image center-block">
+
+            </div>
+
+
+            <div ng-if="$ctrl.isLoggedIn" class="category-image drop-box"
+                 ngf-select
+                 ngf-model-invalid="$ctrl.errorFiles"
+                 ng-model="$ctrl.files"
+                 ngf-fix-orientation="true"
+                 accept="'image/*'"
+                 ngf-max-size="3MB"
+            >
+
+              <img ng-if="$ctrl.isLoggedIn"  class="budget-category-image-upload ng-scope"
+                   src="https://sorted.org.nz/themes/sorted/assets/images/tools/budgeting-tool/upload.svg" style="">
+
+              <div ng-if="$ctrl.isUploading" class="progress" style="width: 200px;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                     aria-valuemin="0" aria-valuemax="100" style="width:{{$ctrl.uploadProgress}}%">
+                  <span class="sr-only">70% Complete</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- max file upload error -->
+          <span ng-if="$ctrl.errorFiles.$errorMessages.maxSize" class="text-danger">Your image must be less than 3 MB</span>
+
+
+          <div ng-if="$ctrl.isLoggedIn" class="text-center font-orange"
+               style="margin-bottom: 10px; cursor: pointer"
+               ngf-select
+               ngf-model-invalid="$ctrl.errorFiles"
+               ng-model="$ctrl.files"ww
+               ngf-fix-orientation="true"
+               accept="'image/*'"
+               ngf-max-size="3MB"
+          >Edit Photo &gt;</a></div>
+
+          <span ng-if="!$ctrl.isLoggedIn" class="font-small register-prompt">Register for a free account to upload your own image.</span>
+        </div>
+        <div ng-if="$ctrl.isLoggedIn" class="image-modal-spacer"></div>
+        <div class="col-md-8 col-md-offset-2 category-name-group text-right">
+          <input type="text" class="budget-title form-control" ng-model="$ctrl.newCategory.Title"
+                 ng-keyup="$ctrl.onCategoryName_keyUpHandler($event)" placeholder="Name your category" prevent-input-zoom>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-2">
+          <div class="input-group form-inline-addon form-addon-dollar">
+            <input name="amount-to-budget"
+                   id="amount-to-budget"
+                   type="text"
+                   class="budget-amount form-control"
+                   required ng-model="$ctrl.budget"
+                   placeholder="Amount"
+                   restrict-currency
+                   prevent-input-zoom>
+            <span class="help-block hidden">Please enter a valid amount.</span>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 budget-period">
+          <div class="dropdown" uib-dropdown>
+            <button class="btn btn-default dropdown-toggle form-control modal-only"
+                    type="button"
+                    uib-dropdown-toggle
+                    aria-haspopup="true"
+                    aria-expanded="true"
+            ><span>{{$ctrl.period.Title}}</span> <i class="icon-chevron-down" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="period in $ctrl.budgetPeriods">
+                <a class="dropdown-link" ng-click="$ctrl.onSetPeriod_clickHandler($event, period)">{{period.Title}}</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-offset-2 edit-cat-delete">
+          <span modal-activator
+                ng-if="$ctrl.subcategoryData"
+                modal-type="delete_subcategory"
+                data-subcategory="{{$ctrl.subcategoryData}}"
+                data-mastercategory="{{$ctrl.mastercategoryData}}"
+                data-mastercatindex="{{$ctrl.masterCategoryIndex}}"
+                data-catindex="{{$ctrl.categoryIndex}}"
+                class="edit-subcategory-modal-delete-text"
+          >
+
+            <span class="fa-stack budget-trash" >
+              <i class="fa fa-circle fa-stack-2x" style="color: #b7b8ba;"></i>
+              <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+            </span>
+
+             Delete category
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal-footer text-center">
+  <div class="row">
+    <div class="col-sm-6 modal-cancel-link">
+      <a class="font-orange" ng-click="$ctrl.onCancel_clickHandler($event)">CANCEL</a>
+    </div>
+    <div class="col-sm-6 modal-ok-button text-left">
+      <button class="btn btn-primary btn-xs-fullwidth" type="button"
+              ng-click="$ctrl.onOk_clickHandler($event)">OK
+      </button>
+    </div>
+  </div>
+</div>
+</div>

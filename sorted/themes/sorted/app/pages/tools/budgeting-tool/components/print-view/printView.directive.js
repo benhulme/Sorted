@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("budgetingTool").directive("printView",["siteConfig",function(t){return{restrict:"E",templateUrl:t.APP_PATH+"app/pages/tools/budgeting-tool/components/print-view/printView.html"}}])}();

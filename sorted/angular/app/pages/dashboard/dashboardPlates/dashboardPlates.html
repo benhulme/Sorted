@@ -1,0 +1,19 @@
+
+  <div class="col-md-4 col-sm-6" ng-repeat="plate in data.ToolPages" ng-hide="checkId(plate.CalcID)" ng-class="blank-tool-{{plate.CalcID}}">
+    <div class="tool-plate row blank" id="{{plate.CalcID}}" style="background-image:url({{blankPlatesCustom[plate.CalcID].backgroundImage}})" ng-class="blankPlatesCustom[plate.CalcID].color">
+      <div class="top-part">
+        <div class="icon-container"><img ng-src="{{plate.Icon.Filename}}" alt=""></div>
+        <h4 class="text-center">{{plate.Title}}</h4>
+      </div>
+        <div class="plate-content">
+          <div class="col-md-10 col-md-offset-1 plate-content-text text-center"  >{{blankPlatesCustom[plate.CalcID].copy}}</div>
+          <div class="row text-center">
+            <a  ng-href="{{plate.Link}}/welcome" ng-if="plate.CalcID == 12" class="btn btn-primary dashboard-button" analytics-on="click" analytics-event="unsavedcalccta" analytics-category="dashboard" analytics-label="{{plate.CalcID}}" analytics-interaction-type="0">{{blankPlatesCustom[plate.CalcID].buttonText}}</a>
+            <a  ng-href="{{plate.Link}}" ng-if="plate.CalcID != 12" class="btn btn-primary dashboard-button" analytics-on="click" analytics-event="unsavedcalccta" analytics-category="dashboard" analytics-label="{{plate.CalcID}}" analytics-interaction-type="0">{{blankPlatesCustom[plate.CalcID].buttonText}}</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+

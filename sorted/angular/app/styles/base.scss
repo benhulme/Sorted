@@ -1,0 +1,114 @@
+html,
+body {
+  background-color: $white;
+  color: $black;
+  @extend .font-book;
+  @extend .font-md;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+
+h1 {
+  @extend .font-h1;
+  @extend .font-book;
+}
+
+h2 {
+  @extend .font-h2;
+  @extend .font-light;
+}
+
+h3 {
+  @extend .font-h3;
+  @extend .font-medium;
+}
+
+h4 {
+  @extend .font-h4;
+  @extend .font-book;
+}
+
+h5 {
+  @extend .font-h5;
+  @extend .font-medium;
+}
+
+h6 {
+  @extend .font-h6;
+  @extend .font-book;
+}
+
+p {
+  @extend .font-md;
+}
+
+a {
+  &:link,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $link;
+  }
+  &:hover {
+    color: $link;
+  }
+}
+
+.blockquote {
+  color: $grey-medium;
+  font-weight: italic;
+  @extend .font-bq;
+  @extend ._align-center;
+}
+
+input,
+select,
+option {
+  font-size: $font-md;
+  &[disabled] {
+    font-style: italic;
+    color: $grey-light;
+  }
+}
+
+label {
+  font-weight: normal;
+  line-height: 50px;
+  margin: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

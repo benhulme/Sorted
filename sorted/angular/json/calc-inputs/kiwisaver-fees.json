@@ -1,0 +1,451 @@
+{
+  "title": "KiwiSaver Fees",
+  "type": "kiwisaverFees",
+  "CalcID": "6",
+  "model": "kiwisaverFeesModel",
+  "inputs": [
+    {
+      "title": "My Details",
+      "unique": "kiwisaverFees",
+      "visible": true,
+      "sections": {
+        "yourSection": {
+          "visible": true,
+          "fields": [
+            "yourBirthDate",
+            "employmentStatus",
+            "annualIncome",
+            "earnings",
+            "contributionsTitle",
+            "employeeContributions",
+            "contributionAmount",
+            "contributionFrequency",
+            "employerContributions",
+            "fundType"
+          ]
+        }
+      }
+    }
+  ],
+  "fields": {
+    "yourBirthDate": {
+      "type": "BIRTH_DATE",
+      "label": "My birthdate",
+      "calcModel": "my_birthdate",
+      "format": {
+        "type": "DATE"
+      },
+      "value": "",
+      "monthField": "monthBorn",
+      "yearField": "yearBorn",
+      "required": false,
+      "tooltip": "You need to be under the age of 65 to join KiwiSaver."
+    },
+    "monthBorn": {
+      "type": "HIDDEN",
+      "calcModel": "month_born",
+      "placeholder": "Year",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true
+    },
+    "yearBorn": {
+      "type": "HIDDEN",
+      "calcModel": "year_born",
+      "placeholder": "Year",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true
+    },
+    "employmentStatus": {
+      "type": "SELECT",
+      "label": "My employment status",
+      "tooltip": "KiwiSaver contributions work differently depending on whether you are employed, self-employed or not working.",
+      "calcModel": "employment",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "1",
+      "placeholder": "Please Select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Employed",
+          "selected": true,
+          "related": ".kiwisaver-fees-employment-status-employed",
+          "toggle": ".kiwisaver-fees-employment-status"
+        },
+        {
+          "value": "2",
+          "label": "Self-employed",
+          "related": ".kiwisaver-fees-employment-status-not",
+          "toggle": ".kiwisaver-fees-employment-status"
+        },
+        {
+          "value": "3",
+          "label": "Not Working",
+          "related": "kiwisaver-fees-employment-status-not",
+          "toggle": "kiwisaver-fees-employment-status"
+        }
+      ],
+      "required": true
+    },
+    "annualIncome": {
+      "type": "MONEY",
+      "label": "Expected annual income",
+      "calcModel": "salary",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true,
+      "tooltip": "This is the amount you expect to earn before tax and other deductions."
+    },
+    "earnings": {
+      "type": "MONEY",
+      "label": "Expected annual earnings",
+      "calcModel": "earnings",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": true,
+      "tooltip": "This is the amount you expect to earn before tax and other deductions."
+    },
+    "contributionsTitle": {
+      "type": "TITLE",
+      "label": "My KiwiSaver contributions"
+    },
+    "employeeContributions": {
+      "type": "SELECT",
+      "label": "My contributions",
+      "visible": {
+        "IF": [
+          {
+            "employmentStatus": 1
+          }
+        ]
+      },
+      "tooltip": "You can contribute 3%, 4% or 8% of your salary to your KiwiSaver account if you’re employed.",
+      "calcModel": "employee_contrib",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "3",
+      "placeholder": "Please Select",
+      "options": [
+        {
+          "value": "3",
+          "label": "3% p.a."
+        },
+        {
+          "value": "4",
+          "label": "4% p.a."
+        },
+        {
+          "value": "8",
+          "label": "8% p.a."
+        }
+      ],
+      "required": true
+    },
+    "employerContributions": {
+      "type": "SELECT",
+      "label": "My employer's contributions",
+      "tooltip": "Employers are required to contribute at least 3% although they can put in more. If you're unsure how much your employer contributes, use the minimum 3%.",
+      "calcModel": "employer_contrib",
+      "visible": {
+        "IF": [
+          {
+            "employmentStatus": 1
+          }
+        ]
+      },
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "3",
+      "placeholder": "Please Select",
+      "options": [
+        {
+          "value": "3",
+          "label": "3% p.a."
+        },
+        {
+          "value": "4",
+          "label": "4% p.a."
+        },
+        {
+          "value": "5",
+          "label": "5% p.a."
+        },
+        {
+          "value": "6",
+          "label": "6% p.a."
+        },
+        {
+          "value": "7",
+          "label": "7% p.a."
+        },
+        {
+          "value": "8",
+          "label": "8% p.a."
+        },
+        {
+          "value": "9",
+          "label": "9% p.a."
+        },
+        {
+          "value": "10",
+          "label": "10% p.a."
+        }
+      ],
+      "required": {
+        "IF": [
+          {
+            "employmentStatus": "1"
+          }
+        ]
+      }
+    },
+    "contributionAmount": {
+      "type": "MONEY",
+      "label": "My contributions",
+      "visible": {
+        "IF": [
+          {
+            "employmentStatus": "2"
+          },
+          {
+            "employmentStatus": "3"
+          }
+        ]
+      },
+      "calcModel": "contrib",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "required": {
+        "IF": [
+          {
+            "employmentStatus": 2
+          },
+          {
+            "employmentStatus": 3
+          }
+        ]
+      },
+      "tooltip": "Input the amount you save into your KiwiSaver account."
+    },
+    "contributionFrequency": {
+      "type": "SELECT",
+      "label": "Contribution frequency",
+      "visible": {
+        "IF": [
+          {
+            "employmentStatus": 2
+          },
+          {
+            "employmentStatus": 3
+          }
+        ]
+      },
+      "calcModel": "contrib_freq",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "52",
+      "placeholder": "Please Select",
+      "options": [
+        {
+          "value": "52",
+          "label": "Weekly"
+        },
+        {
+          "value": "26",
+          "label": "Fortnightly"
+        },
+        {
+          "value": "12",
+          "label": "Monthly"
+        },
+        {
+          "value": "1",
+          "label": "Yearly"
+        }
+      ],
+      "tooltip": false,
+      "required": {
+        "IF": [
+          {
+            "employmentStatus": 2
+          },
+          {
+            "employmentStatus": 3
+          }
+        ]
+      }
+    },
+    "fundType": {
+      "type": "SELECT",
+      "label": "Fund type",
+      "tooltip": "Sorted groups KiwiSaver funds into five types: defensive, conservative, balanced, growth and aggressive. <a  class='popover-link-float' href='http://fundfinder.sorted.org.nz/find-the-right-type-of-fund-for-you/'>See which type suits you here.</a>",
+      "calcModel": "risk_profile",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": "",
+      "placeholder": "Please Select",
+      "options": [
+        {
+          "value": "0",
+          "label": "All types"
+        },
+        {
+          "value": "1",
+          "label": "Defensive"
+        },
+        {
+          "value": "2",
+          "label": "Conservative"
+        },
+        {
+          "value": "3",
+          "label": "Balanced"
+        },
+        {
+          "value": "4",
+          "label": "Growth"
+        },
+        {
+          "value": "5",
+          "label": "Aggressive"
+        }
+      ],
+      "required": true
+    },
+    "inflation": {
+      "type": "HIDDEN",
+      "label": "Adjusted for inflation",
+      "tooltip": {
+        "text": "These results have been adjusted downwards to show the effects of inflation. In 20 years, for example, today’s $200,000 will only be worth around $135,000 (if there’s 2% inflation). To see the results without the effect of inflation, select ‘OFF’.",
+        "visible": true
+      },
+      "calcModel": "iac",
+      "format": {
+        "type": "INTEGER"
+      },
+      "value": 1,
+      "class": "kiwisaver-fees-inflation _inline-block _left",
+      "buttons": [
+        {
+          "text": "YES",
+          "value": 1,
+          "class": "btn btn-default btn-boolean font-xx btn-yellow"
+        },
+        {
+          "text": "NO",
+          "value": 0,
+          "class": "btn btn-default btn-boolean font-xx btn-yellow"
+        }
+      ],
+      "required": true
+    }
+  },
+  "outputs": [
+    {
+      "type": "MONEY_INPUT",
+      "label": "Desired retirement income",
+      "tooltip": false,
+      "model": "liveOn",
+      "modelUnique": "howMuch",
+      "modelFreq": "lifestyleFreq",
+      "color": "font-red"
+    },
+    {
+      "type": "MONEY_PERIOD",
+      "label": "You're on track to have",
+      "tooltip": false,
+      "model": "retirement_income",
+      "modelUnique": "howMuch",
+      "modelFreq": "lifestyleFreq",
+      "color": "font-black"
+    },
+    {
+      "type": "MONEY_PERIOD",
+      "label": "You'll need to save an extra",
+      "model": "deficit_lump_amount",
+      "modelUnique": "howMuch",
+      "modelFreq": "lifestyleFreq",
+      "color": "font-red"
+    },
+    {
+      "type": "DIVIDER"
+    },
+    {
+      "type": "MONEY",
+      "label": "You'll need an extra lump sum of",
+      "tooltip": false,
+      "model": "amount_total",
+      "color": "font-red"
+    }
+  ],
+  "nudge": {
+    "label": "Sorted Tip",
+    "tooltip": false,
+    "text": "Increase your savings to see how it affects your retirement.",
+    "extraText": "RETIREMENT",
+    "model": "yourLumpSum",
+    "icon": "/assets/Uploads/nudge-repayment-icon.jpg",
+    "options": {
+      "floor": 0,
+      "ceil": "total_amount"
+    }
+  },
+  "graphic": {
+    "type": "STACKED",
+    "super": {
+      "color": "#ffd700",
+      "model": "income_nz_superannuation"
+    },
+    "kiwiSaver": {
+      "color": "#ffe140",
+      "model": "income_kiwisaver_lump_sum"
+    },
+    "otherLump": {
+      "color": "#ffed8c",
+      "model": "income_other_lump_sums"
+    },
+    "otherIncome": {
+      "color": "#fff5bf",
+      "model": "income_other_income_sources"
+    },
+    "liveOn": {
+      "color": "#cadc3c",
+      "model": "desired_retirement_income"
+    },
+    "deficitLump": {
+      "color": "#ce0058",
+      "model": "deficit_lump_amount"
+    }
+  },
+  "dummyData": {
+    "month_born": "1",
+    "year_born": "1982",
+    "risk_profile": "2",
+    "employment": false,
+    "iac": true,
+    "salary": "",
+    "employee_contrib": "0",
+    "employer_contrib": "0",
+    "earnings": "50000",
+    "contrib_freq": "1",
+    "contrib": "1000"
+  }
+}
+

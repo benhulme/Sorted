@@ -1,0 +1,1 @@
+(function(){"use strict";angular.module("sorted").filter("round",function(){return function(n){return Math.round(n)}})}).call(this);

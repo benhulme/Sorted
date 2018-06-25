@@ -1,0 +1,1 @@
+!function(){$(document).ready(function(){$(".article-link-search").on("click",function(){var e=$(this).attr("id");i(),$(this).addClass("selected"),$(".article-line").not("."+e).hide()});var i=function(){$(".filt-link").removeClass("selected"),$(".article-line").show()};$(".article-link-all").on("click",function(){i(),$(this).addClass("selected")})})}();

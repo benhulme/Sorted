@@ -1,0 +1,11 @@
+.must-reads-content {
+  @include calc(width, '100% - 82px');
+  margin-left: 82px;
+  @media(max-width: $screen-sm-max){
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  @media(max-width: $screen-xs-max){
+    padding-bottom: 10px;
+  }
+}

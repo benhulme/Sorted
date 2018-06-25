@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "ceil.filter.js",
+  "sourceRoot": "",
+  "sources": [
+    "ceil.filter.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA;EAEA,OAAO,CAAC,MAAR,CAAe,QAAf,CACE,CAAC,MADH,CACU,MADV,EACmB,SAAA;WACf,SAAC,KAAD;aACE,IAAI,CAAC,IAAL,CAAU,KAAV;IADF;EADe,CADnB;AAFA"
+}
