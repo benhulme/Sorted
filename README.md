@@ -6,12 +6,6 @@
 $ git clone git@bitbucket.org:sortednz/sorted.git
 ```
 
-or:
-
-```
-$ git clone https://richchurcher@bitbucket.org/sortednz/sorted.git
-```
-
 Default branch is `unstable` (feature branches are created from this).
 
 
