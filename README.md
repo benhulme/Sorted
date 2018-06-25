@@ -8,7 +8,6 @@ $ git clone git@bitbucket.org:sortednz/sorted.git
 
 Default branch is `unstable` (feature branches are created from this).
 
-
 ## Front-end
 
 ```
